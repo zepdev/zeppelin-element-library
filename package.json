@@ -1,0 +1,24 @@
+{
+  "name": "zeppelin-elements-library",
+  "version": "0.1.0",
+  "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
+  "main": "index.js",
+  "repository": "git@gitlab.com:z-lab-garching/design-system/elements-library.git",
+  "author": "Joerg Schneider <joerg.schneider@z-lab.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "",
+    "build:bundle": "webpack --config webpack-config/webpack.config.bundle.js --progress",
+    "test": ""
+  },
+  "devDependencies": {
+    "compression-webpack-plugin": "^2.0.0",
+    "css-loader": "^2.1.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.29.1",
+    "webpack-cli": "^3.2.3"
+  }
+}
