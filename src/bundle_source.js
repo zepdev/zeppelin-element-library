@@ -3,6 +3,6 @@
  *
  * import all relevant scripts here
  */
-import styles from "./bundle_source.scss";
+import "./bundle_source_styles.scss";
 
 console.log("this will the main js bundle entry point.");
