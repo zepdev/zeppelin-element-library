@@ -2,17 +2,22 @@
   "name": "zeppelin-elements-library",
   "version": "0.1.0",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
-  "main": "index.js",
+  "main": "dist/zeppelin-element-library.js",
   "repository": "git@gitlab.com:z-lab-garching/design-system/elements-library.git",
   "author": "Joerg Schneider <joerg.schneider@z-lab.com>",
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
     "dev": "",
+    "minify:css": "node node_scripts/minifycss.js",
     "build:bundle": "webpack --config webpack-config/webpack.config.bundle.js --progress --mode production",
+    "build": "yarn run lint && yarn run build:bundle && yarn minify:css",
     "test": ""
   },
   "devDependencies": {
+    "@node-minify/core": "^4.0.5",
+    "@node-minify/cssnano": "^4.1.0",
+    "clean-webpack-plugin": "^1.0.1",
     "compression-webpack-plugin": "^2.0.0",
     "css-loader": "^2.1.0",
     "eslint": "^5.13.0",
@@ -28,5 +33,10 @@
     "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^4.29.1",
     "webpack-cli": "^3.2.3"
-  }
+  },
+  "engines": {
+    "node": ">=10.15.0"
+  },
+  "files": [],
+  "unpkg": "dist/zeppelin-element-library.min.js"
 }
