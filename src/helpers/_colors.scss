@@ -1,0 +1,28 @@
+// COLORS
+$color-map: (
+  purple: '#27166f',
+  grey1: '#323848',
+  grey2: '#5d6373',
+  grey3: '#9da3b4',
+  grey4: '#cdd0d9',
+  grey5: '#e6e7eb',
+  grey6: '#f4f5f7',
+  grey7: '#f9f9fa',
+  white: '#ffffff'
+);
+
+// usage example of color map
+$color-brand-01: map-get($color-map, grey1);
+
+// create dummy color classes
+@each $name, $value in $color-map {
+  .zep-color__#{$name} {
+    color: $value;
+  }
+  .zep-background-color__#{$name} {
+    background-color: $value;
+  }
+  .zep-border-color__#{$name} {
+    border-color: $value;
+  }
+}
