@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -12,7 +13,7 @@ const PATH_OUTPUT = path.join(PROJECT_ROOT, 'dist/');
 const devMode = process.env.NODE_ENV !== 'production';
 const productName = 'zeppelin-element-library';
 
-const pathsToClean = [`dist/${productName}.*`];
+const pathsToClean = [`dist/${productName}.*`, 'dist/assets/fonts'];
 // the clean options to use
 const cleanOptions = {
   root: PROJECT_ROOT,
@@ -51,6 +52,11 @@ module.exports = {
     new CleanWebpackPlugin(pathsToClean, cleanOptions),
     new MiniCssExtractPlugin({
       filename: 'zeppelin-element-library.css'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'demo.html',
+      template: path.join(PATH_ENTRY, 'demo_template.html'),
+      chunks: ['zeppelin-element-library.min.js']
     })
   ],
 
@@ -62,11 +68,26 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { url: false, sourceMap: true }
+            options: {
+              url: true,
+              sourceMap: true
+            }
           },
           {
             loader: 'sass-loader',
             options: { sourceMap: true }
+          }
+        ]
+      },
+      {
+        test: /\.(ttf|woff|woff2|eot|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 1,
+              name: './assets/fonts/[name].[ext]'
+            }
           }
         ]
       },

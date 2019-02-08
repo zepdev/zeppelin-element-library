@@ -1,2 +1,8 @@
 @import './helpers/colors';
+@import './assets/fonts';
 @import './elements/button/button';
+
+//just for testing
+body {
+  font-family: 'Roboto', sans-serif;
+}
