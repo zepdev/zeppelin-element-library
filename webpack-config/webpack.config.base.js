@@ -19,7 +19,10 @@ const cleanOptions = {
 
 module.exports = merge.smartStrategy({})(configBundle, {
   plugins: [
+    // delete old dist output
     new CleanWebpackPlugin(pathsToClean, cleanOptions),
+
+    // copy folder structure from src to dist - TODO: refactor!
     new CopyWebpackPlugin([
       {
         from: path.join(PATH_ENTRY, 'elements'),
