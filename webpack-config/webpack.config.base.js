@@ -25,12 +25,8 @@ module.exports = merge.smartStrategy({})(configBundle, {
     // copy folder structure from src to dist - TODO: refactor!
     new CopyWebpackPlugin([
       {
-        from: path.join(PATH_ENTRY, 'elements'),
-        to: path.join(PATH_OUTPUT, 'library/elements')
-      },
-      {
-        from: path.join(PATH_ENTRY, 'blocks'),
-        to: path.join(PATH_OUTPUT, 'library/blocks')
+        from: path.join(PATH_ENTRY, 'library'),
+        to: path.join(PATH_OUTPUT, 'library')
       }
     ])
   ]
