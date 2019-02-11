@@ -1,0 +1,69 @@
+@mixin typo(
+  $_font-size,
+  $_font-family,
+  $_text-transform: none,
+  $_font-weight: 400,
+  $_line-height: 1.5,
+  $_font-size-base: $global-font-size
+) {
+  font-family: $_font-family;
+  font-size: em-calc($_font-size, $_font-size-base);
+  font-weight: $_font-weight;
+  line-height: $_line-height;
+  text-transform: $_text-transform;
+}
+
+// create typo templates 'display sizes'
+$typo-display-fontsize-list: (6rem, 5.5rem, 4.5rem, 3.5rem);
+
+@for $i from 1 through (length($typo-display-fontsize-list)) {
+  %typo-display-#{$i} {
+    @include typo(nth($typo-display-fontsize-list, $i), 'Teko');
+  }
+
+  // test
+  .zep-typo--display-#{$i} {
+    @extend %typo-display-#{$i};
+  }
+}
+
+// create typo templates 'normal sizes'
+$typo-normal-fontsize-list: (
+  2.5rem,
+  2.25rem,
+  1.75rem,
+  1.5rem,
+  1.25rem,
+  1rem,
+  0.875rem,
+  0.75rem
+);
+
+@for $i from 1 through (length($typo-normal-fontsize-list)) {
+  %typo-normal-#{$i} {
+    $_font-size: nth($typo-normal-fontsize-list, $i);
+    $_font-family: if(strip-unit($_font-size) <= 1, 'Roboto', 'Teko');
+    @include typo($_font-size, $_font-family);
+  }
+
+  // dev dummy - TODO: remove for production
+  .zep-typo--normal-#{$i} {
+    @extend %typo-normal-#{$i};
+  }
+}
+
+// create typo templates 'special sizes'
+$typo-special-fontsize-list: (1.5rem, 1rem, 0.875rem, 0.75rem);
+
+@for $i from 1 through (length($typo-special-fontsize-list)) {
+  %typo-special-#{$i} {
+    $_font-size: nth($typo-special-fontsize-list, $i);
+    $_font-family: if(strip-unit($_font-size) < 1, 'Roboto', 'Teko');
+    @include typo($_font-size, $_font-family, uppercase);
+  }
+
+  // dev dummy - TODO: remove for production
+  .zep-typo--special-#{$i} {
+    @extend %typo-special-#{$i};
+  }
+}

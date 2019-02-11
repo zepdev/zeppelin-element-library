@@ -1,8 +1,9 @@
-@import './helpers/colors';
-@import './assets/fonts';
-@import './library/elements/button/button';
+@import './style-basics/variables';
+@import './style-basics/utils';
+@import './assets/fontsets';
+@import './style-basics/globals';
 
-//just for testing
-body {
-  font-family: 'Roboto', sans-serif;
-}
+// find colors  and typo in themes
+@import './themes/theme-base';
+
+//@import './library/elements/button/button';
