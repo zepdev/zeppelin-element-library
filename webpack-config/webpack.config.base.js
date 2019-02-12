@@ -17,6 +17,8 @@ const cleanOptions = {
   dry: false
 };
 
+// TODO: refactor config into parts
+
 module.exports = merge.smartStrategy({})(configBundle, {
   plugins: [
     // delete old dist output
