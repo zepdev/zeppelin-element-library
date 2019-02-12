@@ -1,6 +1,28 @@
+@import 'mixins';
+
 //just for testing
-.zep-button {
-  display: block;
-  font-family: 'Roboto';
-  font-weight: normal;
+
+@mixin button {
+  .#{$prefix}button {
+    border: 0;
+    background: transparent;
+    outline: 0;
+    text-align: left;
+    font-family: 'Roboto';
+
+    // temporary values - TODO: delete/refactor
+    color: map-get($colormap-base, grey-mid-dark);
+    font-size: 0.875rem;
+    padding: 0.75rem;
+    //
+  }
+
+  .#{$prefix}button__full {
+    display: block;
+    width: 100%;
+  }
+}
+
+@include exports('button') {
+  @include button;
 }

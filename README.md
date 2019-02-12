@@ -1,4 +1,4 @@
-# Zeppelin Elements Library
+# ![alt text][logo] Zeppelin Element Library
 
 [//]: # 'TODO: change intro text - current one is from carbon components'
 
@@ -25,3 +25,5 @@ yarn add zeppelin-element-library
 [//]: # 'TODO: change the URL to production in time'
 
 - See our documentation site [here](https://dev-zds.zepdev.net) for full how-to docs and guidelines
+
+[logo]: static/images/icon-48x48.png 'Zeppelin Logo'

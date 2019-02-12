@@ -1,9 +1,20 @@
+//---------------------------------
+// Global
+//---------------------------------
+
+$include-typography: true !default;
+
+@import './style-basics/import_once';
 @import './style-basics/variables';
 @import './style-basics/utils';
 @import './assets/fontsets';
 @import './style-basics/globals';
 
-// find colors  and typo in themes
+// find colors and typo in themes - additional themes have to have seperate output
 @import './themes/theme-base';
 
-//@import './library/elements/button/button';
+//---------------------------------
+// Library
+//---------------------------------
+
+@import './library/elements/button/button';

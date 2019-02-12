@@ -22,13 +22,13 @@ $hover-example: darken(map-get($colormap-base, indigo-blue), 15%);
 
 // create dummy color classes
 @each $name, $value in $colormap-base {
-  .zep-color__#{$name} {
+  .#{$prefix}color__#{$name} {
     color: $value;
   }
-  .zep-background-color__#{$name} {
+  .#{$prefix}background-color__#{$name} {
     background-color: $value;
   }
-  .zep-border-color__#{$name} {
+  .#{$prefix}border-color__#{$name} {
     border-color: $value;
   }
 }

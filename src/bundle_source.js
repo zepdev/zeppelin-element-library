@@ -7,4 +7,4 @@ import './bundle_source_styles.scss';
 import './library/elements/button/button';
 
 // eslint-disable-next-line
-console.log('this will the main js bundle entry point.');
+console.log('this will be the main js bundle entry point.');

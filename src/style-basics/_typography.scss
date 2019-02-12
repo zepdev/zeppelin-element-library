@@ -22,7 +22,7 @@ $typo-display-fontsize-list: (6rem, 5.5rem, 4.5rem, 3.5rem);
   }
 
   // test
-  .zep-typo--display-#{$i} {
+  .#{$prefix}typo--display-#{$i} {
     @extend %typo-display-#{$i};
   }
 }
@@ -47,7 +47,7 @@ $typo-normal-fontsize-list: (
   }
 
   // dev dummy - TODO: remove for production
-  .zep-typo--normal-#{$i} {
+  .#{$prefix}typo--normal-#{$i} {
     @extend %typo-normal-#{$i};
   }
 }
@@ -63,7 +63,7 @@ $typo-special-fontsize-list: (1.5rem, 1rem, 0.875rem, 0.75rem);
   }
 
   // dev dummy - TODO: remove for production
-  .zep-typo--special-#{$i} {
+  .#{$prefix}typo--special-#{$i} {
     @extend %typo-special-#{$i};
   }
 }
