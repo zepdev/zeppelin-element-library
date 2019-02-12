@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: $global-font-size;
+  font-family: 'Roboto', -apple-system, system-ui, BlinkMacSystemFont, Segoe UI,
+    Open Sans, Helvetica Neue, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
