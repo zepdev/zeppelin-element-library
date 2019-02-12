@@ -1,20 +1,28 @@
+@import 'mixins';
+
 //just for testing
 
-.zep-button {
-  border: 0;
-  background: transparent;
-  outline: 0;
-  text-align: left;
-  font-family: 'Roboto';
+@mixin button {
+  .#{$prefix}button {
+    border: 0;
+    background: transparent;
+    outline: 0;
+    text-align: left;
+    font-family: 'Roboto';
 
-  // temporary values - TODO: delete/refactor
-  color: map-get($colormap-base, grey-mid-dark);
-  font-size: 0.875rem;
-  padding: 0.75rem;
-  //
+    // temporary values - TODO: delete/refactor
+    color: map-get($colormap-base, grey-mid-dark);
+    font-size: 0.875rem;
+    padding: 0.75rem;
+    //
+  }
+
+  .#{$prefix}button__full {
+    display: block;
+    width: 100%;
+  }
 }
 
-.zep-button__full {
-  display: block;
-  width: 100%;
+@include exports('button') {
+  @include button;
 }
