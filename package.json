@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "dev": "",
+    "dev": "webpack-dev-server --config webpack-config/webpack.config.dev.js --progress --mode development",
     "minify:css": "node node_scripts/minifycss.js",
     "build:bundle": "webpack --config webpack-config/webpack.config.base.js --progress --mode production",
     "build:bundle-es5": "webpack --config webpack-config/webpack.config.bundle-es5.js --progress --mode production",
@@ -42,6 +42,7 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.29.1",
     "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.2.1"
   },
   "engines": {
