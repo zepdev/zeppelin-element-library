@@ -1,12 +1,20 @@
+import buttonTemplate from './button.hbs';
+// import './_button.scss';
+
 export default class Button {
   constructor() {
     this.init();
   }
 
   init() {
-    this.bla = 'haha';
+    this.div = document.createElement('div');
+    this.template = buttonTemplate({
+      prefix: 'zep-'
+    });
+    this.div.innerHTML = this.template;
 
-    /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
-    console.warn('button construct');
+    document.body.appendChild(this.div);
+
+    console.log('button construct:', typeof this.template);
   }
 }

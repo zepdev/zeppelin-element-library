@@ -8,9 +8,9 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "dev": "webpack-dev-server --config webpack-config/webpack.config.dev.js --progress --mode development",
+    "dev": "webpack-dev-server --config webpack-config/webpack.config.js --mode development --hot",
     "minify:css": "node node_scripts/minifycss.js",
-    "build:bundle": "webpack --config webpack-config/webpack.config.base.js --progress --mode production",
+    "build:bundle": "webpack --config webpack-config/webpack.config.js --progress --mode production",
     "build:bundle-es5": "webpack --config webpack-config/webpack.config.bundle-es5.js --progress --mode production",
     "build": "yarn run lint && yarn run build:bundle && yarn run build:bundle-es5 && yarn minify:css",
     "test": ""
@@ -31,6 +31,9 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-prettier": "^3.0.1",
     "file-loader": "^3.0.1",
+    "handlebars": "^4.1.0",
+    "handlebars-loader": "^1.7.1",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "ignore-loader": "^0.1.2",
     "mini-css-extract-plugin": "^0.5.0",
