@@ -1,0 +1,15 @@
+{
+  "short_name": "ZEL",
+  "name": "Zeppelin Element Library",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#27166f",
+  "background_color": "#ffffff"
+}
