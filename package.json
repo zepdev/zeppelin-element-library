@@ -15,7 +15,7 @@
     "prettier": "^1.16.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-scripts": "file:../create-react-app/packages/react-scripts"
   },
   "scripts": {
     "start": "react-scripts start",

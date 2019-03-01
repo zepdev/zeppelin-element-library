@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import elements from './elements/elements';
-import Button from './elements/button/Button';
-import './guidelines/_variables.scss';
-import './guidelines/_utils.scss';
-import './guidelines/_colors.scss';
-import './guidelines/_globals.scss';
-import './guidelines/_import_once.scss';
-import './guidelines/_typography.scss';
+import Button from './elements/button/ButtonComponent';
+import './bundle_source_styles.scss';
 import './App.css';
 
 function App() {
@@ -35,8 +30,9 @@ function App() {
             padding: 30
           }}
         >
-          {Object.keys(elements).map(elem => (
+          {Object.keys(elements).map((elem, i) => (
             <button
+              key={`btn-${i}`}
               className="zel-button"
               onClick={() => setContent(elements[elem].name)}
             >
