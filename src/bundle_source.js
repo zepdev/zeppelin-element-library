@@ -14,7 +14,6 @@ export function getButtons() {
   for (let [i, elem] of buttonElements.entries()) {
     new Button(elem, `button_${i}`);
   }
-}
 
-// eslint-disable-next-line
-console.log('this will be the main js bundle entry point.');
+  return buttonElements;
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import elements from './elements/elements';
-import Button from './elements/button/ButtonComponent';
+import ButtonPage from './elements/button/ButtonPage';
 import './bundle_source_styles.scss';
 import './App.css';
 
@@ -44,7 +44,7 @@ function App() {
           {content === 'welcome' && (
             <p>Welcome to the Zeppelin Element Library</p>
           )}
-          {content === 'button' && <Button />}
+          {content === 'button' && <ButtonPage />}
           {content === 'tabs' && <p>This element is not ready</p>}
         </div>
       </div>

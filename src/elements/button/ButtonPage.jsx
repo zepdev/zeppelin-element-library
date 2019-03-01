@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import data from './buttonData';
 import * as bundleSrc from '../../bundle_source.js';
 
-function ButtonComponent() {
+function ButtonPage() {
   bundleSrc.getButtons();
   useEffect(() => {
     bundleSrc.getButtons();
@@ -20,4 +20,4 @@ function ButtonComponent() {
   );
 }
 
-export default ButtonComponent;
+export default ButtonPage;
