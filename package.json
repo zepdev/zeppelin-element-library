@@ -22,7 +22,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --coverage -u",
     "eject": "react-scripts eject",
-    "bundle": "node rollup.build.js"
+    "bundle:js": "node rollup.build.js",
+    "bundle:css": "./bundlehandler.sh",
+    "bundle": "bundle:js && bundle:css"
   },
   "eslintConfig": {
     "extends": "react-app"
