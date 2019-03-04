@@ -3,7 +3,6 @@ import data from './buttonData';
 import * as bundleSrc from '../../bundle_source.js';
 
 function ButtonPage() {
-  bundleSrc.getButtons();
   useEffect(() => {
     bundleSrc.getButtons();
   });
