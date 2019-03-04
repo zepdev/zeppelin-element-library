@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1551458505162" clover="3.2.0">
-  <project timestamp="1551458505162" name="All files">
-    <metrics statements="63" coveredstatements="13" conditionals="38" coveredconditionals="4" methods="28" coveredmethods="5" elements="129" coveredelements="22" complexity="0" loc="63" ncloc="63" packages="3" files="7" classes="7">
+<coverage generated="1551703635919" clover="3.2.0">
+  <project timestamp="1551703635919" name="All files">
+    <metrics statements="62" coveredstatements="8" conditionals="38" coveredconditionals="4" methods="28" coveredmethods="4" elements="128" coveredelements="16" complexity="0" loc="62" ncloc="62" packages="3" files="7" classes="7">
       <package name="src">
-        <metrics statements="47" coveredstatements="7" conditionals="38" coveredconditionals="4" methods="19" coveredmethods="3"/>
+        <metrics statements="47" coveredstatements="3" conditionals="38" coveredconditionals="4" methods="19" coveredmethods="2"/>
         <file name="App.js" path="/Users/joergschneider/Projekte/zeppelin-element-library/src/App.js">
           <metrics statements="4" coveredstatements="3" conditionals="6" coveredconditionals="4" methods="3" coveredmethods="2"/>
           <line num="8" count="1" type="stmt"/>
@@ -12,12 +12,12 @@
           <line num="37" count="0" type="stmt"/>
         </file>
         <file name="bundle_source.js" path="/Users/joergschneider/Projekte/zeppelin-element-library/src/bundle_source.js">
-          <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="11" count="1" type="stmt"/>
-          <line num="12" count="1" type="stmt"/>
-          <line num="14" count="1" type="stmt"/>
+          <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
           <line num="15" count="0" type="stmt"/>
-          <line num="18" count="1" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
         </file>
         <file name="serviceWorker.js" path="/Users/joergschneider/Projekte/zeppelin-element-library/src/serviceWorker.js">
           <metrics statements="38" coveredstatements="0" conditionals="32" coveredconditionals="0" methods="15" coveredmethods="0"/>
@@ -69,14 +69,13 @@
         </file>
       </package>
       <package name="src.elements.button">
-        <metrics statements="15" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="2"/>
+        <metrics statements="14" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="2"/>
         <file name="ButtonPage.jsx" path="/Users/joergschneider/Projekte/zeppelin-element-library/src/elements/button/ButtonPage.jsx">
-          <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+          <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
           <line num="6" count="1" type="stmt"/>
-          <line num="7" count="1" type="stmt"/>
-          <line num="8" count="0" type="stmt"/>
-          <line num="11" count="1" type="stmt"/>
-          <line num="14" count="3" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="13" count="3" type="stmt"/>
         </file>
         <file name="button.js" path="/Users/joergschneider/Projekte/zeppelin-element-library/src/elements/button/button.js">
           <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
