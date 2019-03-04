@@ -20,7 +20,4 @@ sed -i '' 's@/\*.*\*/@@g' $TARGET_FILE
 sed -i '' 's#/static/media#assets/fonts#g'  $TARGET_FILE 
 
 # gzip files
-#find bundle -type f -name "*.css*" -or -name "*.min.js*" -exec sh -c "gzip < {} > {}.gz" \;
-#find bundle -type f -name "*.css" -o -name "*.min.js" -exec sh -c "gzip < {} > {}.gz" \;
-
 for file in bundle/*.min.js bundle/*.css; do gzip -k $file; done
