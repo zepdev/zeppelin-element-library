@@ -1,25 +1,14 @@
 {
   "name": "zeppelin-element-library",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
-  "main": "bundle/zeppelin-element-library.cjs.js",
+  "main": "bundle/zeppelin-element-library.js",
   "module": "bundle/zeppelin-element-library.esm.js",
   "author": "Joerg Schneider <joerg.schneider@z-lab.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/zepdev/zeppelin-element-library.git"
-  },
-  "dependencies": {
-    "husky": "^1.3.1",
-    "lint-staged": "^8.1.4",
-    "mdx": "^0.3.1",
-    "node-sass": "^4.11.0",
-    "node-sass-utils": "^1.1.2",
-    "prettier": "^1.16.4",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-scripts": "^2.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -60,6 +49,15 @@
   "devDependencies": {
     "@babel/preset-env": "^7.3.4",
     "babel-preset-es2015-rollup": "^3.0.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.4",
+    "mdx": "^0.3.1",
+    "node-sass": "^4.11.0",
+    "node-sass-utils": "^1.1.2",
+    "prettier": "^1.16.4",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "^2.1.5",
     "rollup": "^1.4.1",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-node-resolve": "^4.0.1",
