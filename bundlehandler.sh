@@ -17,7 +17,7 @@ cp -r build/static/media/* bundle/assets/fonts
 sed -i '' 's@/\*.*\*/@@g' $TARGET_FILE 
 
 # change 
-sed -i '' 's#/static/media#assets/fonts#g'  $TARGET_FILE 
+sed -i '' 's#/static/media/#assets/fonts/#g'  $TARGET_FILE 
 
 # gzip files
 for file in bundle/*.min.js bundle/*.css; do gzip -k -f $file; done

@@ -27,6 +27,40 @@ const options = [
   // standard output
   { input: inputOptions, output: outputOptions },
 
+  /*
+  // ESM output (module)
+  {
+    input: {
+      ...inputOptions,
+      plugins: [resolve()]
+    },
+    output: {
+      ...outputOptions,
+      format: "esm",
+      file: path.resolve(__dirname, "bundle/zeppelin-element-library.esm.js")
+    }
+  },
+
+  // CJS output
+  {
+    input: inputOptions,
+    output: {
+      ...outputOptions,
+      format: "cjs",
+      file: path.resolve(__dirname, "bundle/zeppelin-element-library.cjs.js")
+    }
+  },
+
+  // UMD output (main)
+  {
+    input: inputOptions,
+    output: {
+      ...outputOptions,
+      format: "umd",
+      file: path.resolve(__dirname, "bundle/zeppelin-element-library.umd.js")
+    }
+  },
+ */
   // uglified output
   {
     input: { ...inputOptions, plugins: [...defaultPlugins, uglify({})] },
