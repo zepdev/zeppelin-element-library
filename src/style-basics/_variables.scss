@@ -1,2 +1,5 @@
 $prefix: 'zep-';
 $global-font-size: 16px !default;
+$spacing: get('spacing');
+$breakpoints: get('breakpoints');
+$colors: get('colors');

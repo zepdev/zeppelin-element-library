@@ -3,11 +3,16 @@
  *
  * import all relevant scripts here
  */
-import './bundle_source_styles.scss';
-import Button from './library/elements/button/button';
 
-// eslint-disable-next-line
-console.log('this will be the main js bundle entry point.');
+import Button from './elements/button/button.js';
 
-const btn = new Button();
-console.log('btn', btn);
+// test
+export function getButtons() {
+  let buttonElements = document.querySelectorAll('[data-zep-type="button"]');
+
+  for (let [i, elem] of buttonElements.entries()) {
+    new Button(elem, `button_${i}`);
+  }
+
+  return buttonElements;
+}

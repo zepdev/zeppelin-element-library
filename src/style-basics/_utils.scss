@@ -136,7 +136,7 @@
     @return strip-unit($value) / strip-unit($base);
   }
 
-  // assume that line-heights greatern then 10 are meant to be absolute in 'px'
+  // assume that line-heights greater then 10 are meant to be absolute in 'px'
   @if unitless($value) and ($value > 10) {
     @return $value / strip-unit($base);
   }
