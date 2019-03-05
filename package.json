@@ -1,8 +1,8 @@
 {
   "name": "zeppelin-element-library",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
-  "main": "bundle/zeppelin-element-library.umd.js",
+  "main": "bundle/zeppelin-element-library.js",
   "author": "Joerg Schneider <joerg.schneider@z-lab.com>",
   "license": "MIT",
   "repository": {
