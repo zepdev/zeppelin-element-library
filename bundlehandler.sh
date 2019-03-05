@@ -20,4 +20,4 @@ sed -i '' 's@/\*.*\*/@@g' $TARGET_FILE
 sed -i '' 's#/static/media#assets/fonts#g'  $TARGET_FILE 
 
 # gzip files
-for file in bundle/*.min.js bundle/*.css; do gzip -k $file; done
+for file in bundle/*.min.js bundle/*.css; do gzip -k -f $file; done

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import elements from './elements/elements';
 import ButtonPage from './elements/button/ButtonPage';
 import './bundle_source_styles.scss';
-import './App.css';
 
 function App() {
   const [content, setContent] = useState('welcome');
