@@ -1,6 +1,6 @@
 {
   "name": "zeppelin-element-library",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
   "main": "bundle/zeppelin-element-library.cjs.js",
   "module": "bundle/zeppelin-element-library.esm.js",
@@ -62,6 +62,7 @@
     "rimraf": "^2.6.3",
     "rollup": "^1.4.1",
     "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-json": "^3.1.0",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-uglify": "^6.0.2"
   },
