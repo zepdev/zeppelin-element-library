@@ -1,6 +1,6 @@
 {
   "name": "zeppelin-element-library",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
   "main": "bundle/zeppelin-element-library.cjs.js",
   "module": "bundle/zeppelin-element-library.esm.js",
@@ -15,9 +15,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --coverage -u",
     "eject": "react-scripts eject",
+    "cleanup": "rimraf bundle",
     "bundle:js": "node rollup.build.js",
-    "bundle:assets": "./bundlehandler.sh",
-    "bundle": "yarn bundle:js && yarn bundle:assets"
+    "bundle:misc": "./bundlehandler.sh",
+    "bundle": "yarn cleanup && yarn bundle:js && yarn bundle:misc"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -58,6 +59,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "^2.1.5",
+    "rimraf": "^2.6.3",
     "rollup": "^1.4.1",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-node-resolve": "^4.0.1",
