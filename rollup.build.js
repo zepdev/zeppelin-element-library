@@ -1,5 +1,6 @@
 const rollup = require("rollup");
 const babel = require("rollup-plugin-babel");
+const json = require("rollup-plugin-json");
 const resolve = require("rollup-plugin-node-resolve");
 const { uglify } = require("rollup-plugin-uglify");
 const path = require("path");
@@ -10,11 +11,20 @@ const defaultPlugins = [
   }),
   babel({
     exclude: "node_modules/**"
+  }),
+  json({
+    // All JSON files will be parsed by default,
+    // but you can also specifically include/exclude files
+    exclude: ["node_modules/**"],
+    //include: ["src/**"],
+
+    // ignores indent and generates the smallest code
+    compact: true // Default: false
   })
 ];
 
 const inputOptions = {
-  input: "src/bundle_source.js",
+  input: "./src/zel.js",
   plugins: defaultPlugins
 };
 const outputOptions = {
@@ -27,12 +37,24 @@ const options = [
   // standard output
   { input: inputOptions, output: outputOptions },
 
-  /*
   // ESM output (module)
   {
     input: {
       ...inputOptions,
-      plugins: [resolve()]
+      plugins: [
+        ...defaultPlugins,
+        resolve({
+          module: true,
+          main: true,
+          browser: true,
+          extensions: [".js", ".json"],
+          jail: "/src/",
+          modulesOnly: true
+        }),
+        babel({
+          exclude: "node_modules/**"
+        })
+      ]
     },
     output: {
       ...outputOptions,
@@ -60,7 +82,7 @@ const options = [
       file: path.resolve(__dirname, "bundle/zeppelin-element-library.umd.js")
     }
   },
- */
+
   // uglified output
   {
     input: { ...inputOptions, plugins: [...defaultPlugins, uglify({})] },

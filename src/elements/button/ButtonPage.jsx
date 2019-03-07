@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import data from './buttonData';
-import * as bundleSrc from '../../bundle_source.js';
+import ZEL from '../../zel.js';
 
 function ButtonPage() {
   useEffect(() => {
-    bundleSrc.getButtons();
+    ZEL.getButtons();
   });
 
   return (
