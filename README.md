@@ -9,7 +9,7 @@ The Zeppelin Element Library gives developers the basic styles, scripts and asse
 Run the following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install zeppelin-element-library --save-dev
+npm install zeppelin-element-library --save
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command instead:

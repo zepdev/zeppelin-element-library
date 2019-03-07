@@ -5,17 +5,19 @@
  */
 import Button from './elements/button/button.js';
 
-import { version } from '../package.json';
+import { version } from '../package.json'; //TOFIX: currently one behind -> automate version injection in prepublish process
 
+// TODO: initialize elements
 class ZEL {
   constructor(__version) {
-    console.log(`ZEL version ${__version} construct`);
+    console.log(`ZEL v${__version} - built with ♥`);
     this.init();
   }
   init() {
     this.getButtons();
   }
 
+  // dummy for testing
   getButtons() {
     let buttonElements = document.querySelectorAll('[data-zep-type="button"]');
     for (let [i, elem] of buttonElements.entries()) {
