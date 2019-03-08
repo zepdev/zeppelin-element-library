@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/9</span>
+        <span class='fraction'>9/9</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>6/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/9</span>
+        <span class='fraction'>9/9</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -75,62 +75,62 @@
 30
 31</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default class Button {
-<span class="fstat-no" title="function not covered" >  co</span>nstructor(__html, __id) {
-<span class="cstat-no" title="statement not covered" >    this._html = __html;</span>
-<span class="cstat-no" title="statement not covered" >    this._id = __id;</span>
-<span class="cstat-no" title="statement not covered" >    this.init();</span>
+  constructor(__html, __id) {
+    this._html = __html;
+    this._id = __id;
+    this.init();
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  in</span>it() {
-<span class="cstat-no" title="statement not covered" >    console.log(`Button.init() - ${this.id}`);</span>
-<span class="cstat-no" title="statement not covered" >    this.html.addEventListener(</span>
+  init() {
+    console.log(`Button.init() - ${this.id}`);
+    this.html.addEventListener(
       'click',
-<span class="fstat-no" title="function not covered" >      e </span>=&gt; {
-<span class="cstat-no" title="statement not covered" >        this.clickHandler(e);</span>
+      e =&gt; {
+        this.clickHandler(e);
       },
       false
     );
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  ge</span>t html() {
-<span class="cstat-no" title="statement not covered" >    return this._html;</span>
+  get html() {
+    return this._html;
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  ge</span>t id() {
-<span class="cstat-no" title="statement not covered" >    return this._id;</span>
+  get id() {
+    return this._id;
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  cl</span>ickHandler(e) {
-<span class="cstat-no" title="statement not covered" >    console.log('click', this.id);</span>
+  clickHandler(e) {
+    console.log('click', this.id);
   }
 }
 &nbsp;</pre></td></tr>
@@ -139,7 +139,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Mar 04 2019 13:47:15 GMT+0100 (GMT+01:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Mar 08 2019 16:04:13 GMT+0100 (GMT+01:00)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

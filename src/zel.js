@@ -5,7 +5,7 @@
  */
 import Button from './elements/button/button.js';
 
-import { version } from '../package.json'; //TOFIX: currently one behind -> automate version injection in prepublish process
+import { version } from '../package.json'; //FIXME: currently one behind -> automate version injection in prepublish process
 
 // TODO: initialize elements
 class ZEL {

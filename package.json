@@ -18,7 +18,7 @@
     "bundle:js": "node rollup.build.js",
     "bundle:misc": "./bundlehandler.sh",
     "bundle": "rm -rf bundle && yarn bundle:js && yarn bundle:misc",
-    "distribute": "yarn publish "
+    "distribute:prod": "yarn publish"
   },
   "eslintConfig": {
     "extends": "react-app"
