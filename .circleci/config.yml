@@ -54,12 +54,31 @@ jobs:
             - run:
                 name: Build build dir
                 command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths: build
+
+  bundle:
+    executor: node_10
+    steps:
+      - checkout # check out the code in the project directory
+      - attach_workspace:
+          at: ~/project
+      - node/with-cache:
+          steps:
             - run:
                 name: Create bundle
                 command: yarn bundle
       - persist_to_workspace:
           root: .
           paths: bundle
+
+  publish:
+    steps:
+      - checkout
+      - run:
+        name: release
+        command: npm run semantic-release || true
 
   deploy:
     parameters:
@@ -102,7 +121,7 @@ jobs:
 
 workflows:
   version: 2
-  test_build_bundle_deploy:
+  test_build_bundle_publish_deploy:
     jobs:
       - test
       # - sonarqube:
@@ -120,6 +139,11 @@ workflows:
       - bundle:
           requires:
             - build
+      - publish:
+          context: zds
+          requires:
+            - bundle
+
       - hold:
           type: approval
           requires:
