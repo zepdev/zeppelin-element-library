@@ -26,7 +26,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
@@ -50,6 +51,8 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.3.4",
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
     "babel-preset-es2015-rollup": "^3.0.0",
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
