@@ -41,13 +41,6 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "bundle",
-          "npmPublish": false
-        }
-      ],
       "@semantic-release/github"
     ]
   },

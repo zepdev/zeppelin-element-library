@@ -123,9 +123,8 @@ jobs:
           arguments: --exclude "*" --include "*.css" --include "*.css.gz"
           overwrite: true
       - aws-s3/sync:
-          from: bundle
+          from: bundle/assets/fonts
           to: "s3://<< parameters.bucket >>/fonts"
-          arguments: --exclude "*" --include "assets/fonts/*"
           overwrite: true
       # - aws-s3/sync:
       #     from: badges
