@@ -1,0 +1,34 @@
+// COLORS
+$colormap-base: (
+  indigo-blue: #27166f,
+  cat-yellow: #f0b823,
+  rental-red: #af0e0e,
+  gray-dark: #101111,
+  gray-mid-dark: #373d3f,
+  gray: #464a4c,
+  gray-light: #6f7c80,
+  gray-lighter: #eceeef,
+  gray-mid: #f2f3f4,
+  gray-lightest: #f7f7f9,
+  white: #ffffff,
+  success: #5cb85c,
+  warning: #f0ad4e,
+  alert: #ff6562,
+  info: #5bc0de
+);
+
+//use darken 15% on hover colors
+$hover-example: darken(map-get($colormap-base, indigo-blue), 15%);
+
+// create dummy color classes
+@each $name, $value in $colormap-base {
+  .#{$prefix}color__#{$name} {
+    color: $value;
+  }
+  .#{$prefix}background-color__#{$name} {
+    background-color: $value;
+  }
+  .#{$prefix}border-color__#{$name} {
+    border-color: $value;
+  }
+}
