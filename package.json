@@ -19,7 +19,8 @@
     "bundle:misc": "./bundlehandler.sh",
     "bundle": "rm -rf bundle && yarn bundle:js && yarn bundle:misc",
     "commit": "git-cz",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "publish:dev": "yarn publish --tag=developemt"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,6 +44,7 @@
       [
         "@semantic-release/npm",
         {
+          "pkgRoot": "bundle",
           "npmPublish": false
         }
       ],
