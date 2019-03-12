@@ -2,8 +2,8 @@
 
 version: 2.1
 orbs:
-  node: circleci/node@0.0.7
-  aws-cli: circleci/aws-cli@0.1.2
+  node: circleci/node@0.0.8
+  aws-cli: circleci/aws-cli@0.1.11
   aws-s3: circleci/aws-s3@1.0.4
 executors:
   node_10:
