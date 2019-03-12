@@ -1,8 +1,181 @@
-version: 2
+# TODO: integrate npm sematic-release first!!
+
+version: 2.1
+orbs:
+  node: circleci/node@0.0.7
+  aws-cli: circleci/aws-cli@0.1.2
+  aws-s3: circleci/aws-s3@1.0.4
+executors:
+  node_10:
+    docker:
+      - image: circleci/node:10.15
+
 jobs:
-  build:
-    docker: # use the docker executor type; machine and macos executors are also supported
-      - image: circleci/node:10 # the primary container, where your job's commands are run
+  test:
+    executor: node_10
     steps:
       - checkout # check out the code in the project directory
-      - run: echo "hello world" # run the `echo` command
+      - attach_workspace:
+          at: ~/project
+      - node/with-cache:
+          steps:
+            - run:
+                name: Yarn install
+                command: yarn install
+            - run:
+                name: Run all tests
+                command: yarn test
+      - persist_to_workspace:
+          root: .
+          paths: coverage
+
+  # sonarqube:
+  #   executor: node_10
+  #   steps:
+  #     - checkout # check out the code in the project directory
+  #     - attach_workspace:
+  #         at: ~/project
+  #     - node/with-cache:
+  #         steps:
+  #           - run:
+  #               name: Generate eslint report
+  #               command: yarn eslint-sonarqube
+  #           - run:
+  #               name: Run sonar scanner
+  #               command: yarn sonar-scanner -Dsonar.login=$SONAR_LOGIN
+  build:
+    executor: node_10
+    steps:
+      - checkout # check out the code in the project directory
+      - attach_workspace:
+          at: ~/project
+      - node/with-cache:
+          steps:
+            - run:
+                name: Build build dir
+                command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths: build
+
+  bundle:
+    executor: node_10
+    steps:
+      - checkout # check out the code in the project directory
+      - attach_workspace:
+          at: ~/project
+      - node/with-cache:
+          steps:
+            - run:
+                name: Create bundle
+                command: yarn bundle
+      - persist_to_workspace:
+          root: .
+          paths: bundle
+
+  release:
+    executor: node_10
+    steps:
+      - checkout
+      - run:
+          name: release
+          command: yarn semantic-release || true
+
+  deploy:
+    parameters:
+      bucket:
+        description: "Target bucket name where the build should be copied"
+        default: ""
+        type: string
+      aws_region:
+        description: "The AWS region where the infrastructure is"
+        default: "eu-central-1"
+        type: string
+      cloudfront_distribution:
+        description: "The CloudFront Distribution caching the site"
+        default: ""
+        type: string
+    executor: aws-cli/default
+    environment:
+      AWS_REGION: << parameters.aws_region >>
+    steps:
+      - checkout # check out the code in the project directory
+      - attach_workspace:
+          at: ~/project
+      # - run:
+      #     name: create and upload badges
+      #     command: |
+      #       mkdir badges
+      #       cd badges
+      #       curl -u $SONAR_LOGIN "http://sq.zepdev.net/api/project_badges/measure?project=zeppelin-element-library&metric={bugs,code_smells,coverage,duplicated_lines_density,ncloc,sqale_rating,alert_status,reliability_rating,security_rating,sqale_index,vulnerabilities}" -o "#1.svg"
+      - aws-s3/sync:
+          from: bundle
+          to: "s3://<< parameters.bucket >>/zel/js"
+          arguments: --exclude "*" --include "*.js" --include "*.js.gz"
+          overwrite: true
+      - aws-s3/sync:
+          from: bundle
+          to: "s3://<< parameters.bucket >>/zel/css"
+          arguments: --exclude "*" --include "*.css" --include "*.css.gz"
+          overwrite: true
+      - aws-s3/sync:
+          from: bundle
+          to: "s3://<< parameters.bucket >>/fonts"
+          arguments: --exclude "*" --include "assets/fonts/*"
+          overwrite: true
+      # - aws-s3/sync:
+      #     from: badges
+      #     to: 's3://zds-badges/ZEL/'
+      #     overwrite: true
+      - run:
+          name: Invalidate CloudFront Distribution Cache
+          command: aws cloudfront create-invalidation --distribution-id << parameters.cloudfront_distribution >> --paths "/*"
+
+workflows:
+  version: 2
+  test_build_bundle_release_deploy:
+    jobs:
+      - test
+      # - sonarqube:
+      #     context: zds
+      #     requires:
+      #       - test
+      #     filters:
+      #       branches:
+      #         only:
+      #           - development
+      #           - master
+      - build:
+          requires:
+            - test
+      - bundle:
+          requires:
+            - build
+      - hold:
+          type: approval
+          requires:
+            - bundle
+          filters:
+            branches:
+              only:
+                - master
+      - release:
+          context: zds
+          requires:
+            - hold
+          filters:
+            branches:
+              only:
+                - master
+
+      - deploy: # deployment step for live environment
+          bucket: com.zeppelin.zds.assets
+          aws_region: eu-central-1
+          cloudfront_distribution: E3BEUB4XQDLXXN
+          context: zds
+          requires:
+            - release
+          filters:
+            branches:
+              only:
+                - master
