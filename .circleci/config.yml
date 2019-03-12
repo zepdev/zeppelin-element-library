@@ -76,10 +76,14 @@ jobs:
   release:
     executor: node_10
     steps:
-      - checkout
-      - run:
-          name: release
-          command: yarn semantic-release || true
+      - checkout # check out the code in the project directory
+      - attach_workspace:
+          at: ~/project
+      - node/with-cache:
+          steps:
+            - run:
+                name: release
+                command: yarn semantic-release || true
 
   deploy:
     parameters:
