@@ -35,7 +35,9 @@ jobs:
           at: ~/project
       - node/with-cache:
           steps:
-            # TODO: add eslint report after linting has been added to the project
+            # TODO: add eslint report after
+            # linting has been added to the project
+            #
             # - run:
             #     name: Generate eslint report
             #     command: yarn eslint-sonarqube
@@ -106,12 +108,17 @@ jobs:
       - attach_workspace:
           at: ~/project
       # TODO: generate badges for project
-      # - run:
-      #     name: create and upload badges
-      #     command: |
-      #       mkdir badges
-      #       cd badges
-      #       curl -u $SONAR_LOGIN "http://sq.zepdev.net/api/project_badges/measure?project=zeppelin-element-library&metric={bugs,code_smells,coverage,duplicated_lines_density,ncloc,sqale_rating,alert_status,reliability_rating,security_rating,sqale_index,vulnerabilities}" -o "#1.svg"
+      - run:
+          name: create and upload badges
+          command: |
+            mkdir badges
+            cd badges
+            curl -u $SONAR_LOGIN \
+            "http://sq.zepdev.net/api/project_badges/measure?\
+            project=zeppelin-element-library\
+            &metric={bugs,code_smells,coverage,duplicated_lines_density,\
+            ncloc,sqale_rating,alert_status,reliability_rating,\
+            security_rating,sqale_index,vulnerabilities}" -o "#1.svg"
       - aws-s3/sync:
           from: bundle
           to: "s3://<< parameters.bucket >>/zel/js"
@@ -126,11 +133,10 @@ jobs:
           from: bundle/assets/fonts
           to: "s3://<< parameters.bucket >>/fonts"
           overwrite: true
-      # TODO: upload badges
-      # - aws-s3/sync:
-      #     from: badges
-      #     to: 's3://zds-badges/ZEL/'
-      #     overwrite: true
+      - aws-s3/sync:
+          from: badges
+          to: "s3://<< parameters.bucket >>/badges/zel"
+          overwrite: true
       - run:
           name: Invalidate CloudFront Distribution Cache
           command: |
