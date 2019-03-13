@@ -1,9 +1,7 @@
-# TODO: integrate npm sematic-release first!!
-
 version: 2.1
 orbs:
-  node: circleci/node@0.0.7
-  aws-cli: circleci/aws-cli@0.1.2
+  node: circleci/node@0.0.8
+  aws-cli: circleci/aws-cli@0.1.11
   aws-s3: circleci/aws-s3@1.0.4
 executors:
   node_10:
@@ -14,7 +12,7 @@ jobs:
   test:
     executor: node_10
     steps:
-      - checkout # check out the code in the project directory
+      - checkout  # check out the code in the project directory
       - attach_workspace:
           at: ~/project
       - node/with-cache:
@@ -29,24 +27,25 @@ jobs:
           root: .
           paths: coverage
 
-  # sonarqube:
-  #   executor: node_10
-  #   steps:
-  #     - checkout # check out the code in the project directory
-  #     - attach_workspace:
-  #         at: ~/project
-  #     - node/with-cache:
-  #         steps:
-  #           - run:
-  #               name: Generate eslint report
-  #               command: yarn eslint-sonarqube
-  #           - run:
-  #               name: Run sonar scanner
-  #               command: yarn sonar-scanner -Dsonar.login=$SONAR_LOGIN
+  sonarqube:
+    executor: node_10
+    steps:
+      - checkout  # check out the code in the project directory
+      - attach_workspace:
+          at: ~/project
+      - node/with-cache:
+          steps:
+            # TODO: add eslint report after linting has been added to the project
+            # - run:
+            #     name: Generate eslint report
+            #     command: yarn eslint-sonarqube
+            - run:
+                name: Run sonar scanner
+                command: yarn sonar-scanner -Dsonar.login=$SONAR_LOGIN
   build:
     executor: node_10
     steps:
-      - checkout # check out the code in the project directory
+      - checkout  # check out the code in the project directory
       - attach_workspace:
           at: ~/project
       - node/with-cache:
@@ -61,7 +60,7 @@ jobs:
   bundle:
     executor: node_10
     steps:
-      - checkout # check out the code in the project directory
+      - checkout  # check out the code in the project directory
       - attach_workspace:
           at: ~/project
       - node/with-cache:
@@ -76,7 +75,7 @@ jobs:
   release:
     executor: node_10
     steps:
-      - checkout # check out the code in the project directory
+      - checkout  # check out the code in the project directory
       - attach_workspace:
           at: ~/project
       - node/with-cache:
@@ -103,9 +102,10 @@ jobs:
     environment:
       AWS_REGION: << parameters.aws_region >>
     steps:
-      - checkout # check out the code in the project directory
+      - checkout  # check out the code in the project directory
       - attach_workspace:
           at: ~/project
+      # TODO: generate badges for project
       # - run:
       #     name: create and upload badges
       #     command: |
@@ -126,28 +126,32 @@ jobs:
           from: bundle/assets/fonts
           to: "s3://<< parameters.bucket >>/fonts"
           overwrite: true
+      # TODO: upload badges
       # - aws-s3/sync:
       #     from: badges
       #     to: 's3://zds-badges/ZEL/'
       #     overwrite: true
       - run:
           name: Invalidate CloudFront Distribution Cache
-          command: aws cloudfront create-invalidation --distribution-id << parameters.cloudfront_distribution >> --paths "/*"
+          command: |
+            aws cloudfront create-invalidation \
+            --distribution-id << parameters.cloudfront_distribution >> \
+            --paths "/*"
 
 workflows:
   version: 2
   test_build_bundle_release_deploy:
     jobs:
       - test
-      # - sonarqube:
-      #     context: zds
-      #     requires:
-      #       - test
-      #     filters:
-      #       branches:
-      #         only:
-      #           - development
-      #           - master
+      - sonarqube:
+          context: zds
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - development
+                - master
       - build:
           requires:
             - test
@@ -171,7 +175,7 @@ workflows:
               only:
                 - master
 
-      - deploy: # deployment step for live environment
+      - deploy:   # deployment step for live environment
           bucket: com.zeppelin.zds.assets
           aws_region: eu-central-1
           cloudfront_distribution: E3BEUB4XQDLXXN
