@@ -20,7 +20,8 @@
     "bundle": "rm -rf bundle && yarn bundle:js && yarn bundle:misc",
     "commit": "git-cz",
     "semantic-release": "semantic-release",
-    "publish:dev": "yarn publish --tag=developemt"
+    "publish:dev": "yarn publish --tag=development",
+    "sonar-scanner": "sonar-scanner"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,13 +42,6 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "bundle",
-          "npmPublish": false
-        }
-      ],
       "@semantic-release/github"
     ]
   },
@@ -85,7 +79,8 @@
     "rollup-plugin-json": "^3.1.0",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-uglify": "^6.0.2",
-    "semantic-release": "^15.13.3"
+    "semantic-release": "^15.13.3",
+    "sonarqube-scanner": "^2.4.0"
   },
   "files": [
     "bundle"
