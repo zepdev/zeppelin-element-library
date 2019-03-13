@@ -1,5 +1,3 @@
-# TODO: integrate npm sematic-release first!!
-
 version: 2.1
 orbs:
   node: circleci/node@0.0.7
