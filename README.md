@@ -40,8 +40,11 @@ const ZEL = require("zeppelin-element-library");
 
 ### Use provided Styles
 
+
 When using Webpack, you can include the provided styles into a JavaScript file.
+
 
 ```javascript
 import "zeppelin-element-library/bundle/zeppelin-element-library.css";
 ```
+
