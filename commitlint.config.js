@@ -4,10 +4,7 @@ module.exports = {
     "scope-case": [
       1,
       "always",
-      "upper-case",
-      "lower-case",
-      "pascal-case",
-      "start-case"
+      ["upper-case", "lower-case", "pascal-case", "start-case"]
     ],
     "subject-case": [1, "always", ["sentence-case", "lower-case", "start-case"]]
   }
