@@ -19,8 +19,7 @@
 [![SonarCube_security_rating](https://cdn-zel.zepdev.net/badges/zel/security_rating.svg)](https://cdn-zel.zepdev.net/badges/zel/security_rating.svg)
 [![SonarCube_sqale_index](https://cdn-zel.zepdev.net/badges/zel/sqale_index.svg)](https://cdn-zel.zepdev.net/badges/zel/sqale_index.svg)
 [![SonarCube_sqale_rating](https://cdn-zel.zepdev.net/badges/zel/sqale_rating.svg)](https://cdn-zel.zepdev.net/badges/zel/sqale_rating.svg)
-[![SonarCube_vulnerabilities](https://cdn-zel.zepdev.net/badges/zel/vulnerabilities.svg)](https://cdn-zel.zepdev.net/badges/zel/vulnerabilities.svg
-
+[![SonarCube_vulnerabilities](https://cdn-zel.zepdev.net/badges/zel/vulnerabilities.svg)](https://cdn-zel.zepdev.net/badges/zel/vulnerabilities.svg)
 </span>
 
 The Zeppelin Design System contains individual styles and components to build intuitive designs. These designs follow the same universal principles.
