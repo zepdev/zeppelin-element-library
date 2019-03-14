@@ -6,7 +6,7 @@
     background: transparent;
     outline: 0;
     text-align: left;
-    font-family: 'Roboto';
+    @include typo(0.875em, 'Roboto', none, 400, 1);
 
     // temporary values - TODO: delete/refactor
     color: map-get($colormap-base, grey-mid-dark);
