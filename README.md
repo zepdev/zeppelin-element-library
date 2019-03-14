@@ -8,7 +8,7 @@
 
 <span align="center">  
     
-[![CircleCI](https://circleci.com/gh/zepdev/zeppelin-element-library.svg?style=svg&circle-token=d4f1730edfe9173ba0e0fde81dc6a97c3ba467a9)](https://circleci.com/gh/zepdev/zeppelin-element-library)
+[![CircleCI](https://circleci.com/gh/zepdev/zeppelin-element-library.svg?style=svg&circle-token=8459cd0c2f3c88c2cfde73dc36634f2a4d21f982)](https://circleci.com/gh/zepdev/zeppelin-element-library)
 [![SonarCube_QualityGate](https://cdn-zel.zepdev.net/badges/zel/alert_status.svg)](https://cdn-zel.zepdev.net/badges/zel/alert_status.svg)
 [![SonarCube_bugs](https://cdn-zel.zepdev.net/badges/zel/bugs.svg)](https://cdn-zel.zepdev.net/badges/zel/bugs.svg)
 [![SonarCube_code_smells](https://cdn-zel.zepdev.net/badges/zel/code_smells.svg)](https://cdn-zel.zepdev.net/badges/zel/code_smells.svg)
