@@ -4,14 +4,15 @@
   $_text-transform: none,
   $_font-weight: 400,
   $_line-height: 1.5,
-  $_font-size-base: $global-font-size
+  $_font-size-base: $global-font-size,
+  $_margin: 0
 ) {
   font-family: $_font-family;
   font-size: em-calc($_font-size, $_font-size-base);
   font-weight: $_font-weight;
   line-height: $_line-height;
   text-transform: $_text-transform;
-  margin: 0;
+  margin: $_margin;
 }
 
 // create typo templates 'display sizes'

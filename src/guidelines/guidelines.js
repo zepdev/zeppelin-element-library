@@ -1,3 +1,5 @@
+//TODO: generate this JS from SCSS
+
 module.exports = {
   breakpoints: {
     xs: '36em' /* 576px */,

@@ -5,12 +5,10 @@
  */
 import Button from './elements/button/button.js';
 
-import { version } from '../package.json'; //FIXME: currently one behind -> automate version injection in prepublish process
-
 // TODO: initialize elements
 class ZEL {
-  constructor(__version) {
-    console.log(`ZEL v${__version} - built with ♥`);
+  constructor() {
+    console.log(`ZEL - built with ♥`);
     this.init();
   }
   init() {
@@ -27,4 +25,4 @@ class ZEL {
   }
 }
 
-export default new ZEL(version);
+export default new ZEL();
