@@ -42,7 +42,26 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
       "@semantic-release/github"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "package.json",
+          "package-lock.json",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
     ]
   },
   "browserslist": [
@@ -55,6 +74,7 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!src/index.js",
+      "!src/serviceWorker.js",
       "!src/guidelines/*"
     ]
   },
@@ -62,6 +82,8 @@
     "@babel/preset-env": "^7.3.4",
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/git": "^7.0.8",
     "babel-preset-es2015-rollup": "^3.0.0",
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
