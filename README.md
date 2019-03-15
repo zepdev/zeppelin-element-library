@@ -20,6 +20,10 @@
 [![SonarCube_sqale_index](https://cdn-zel.zepdev.net/badges/zel/sqale_index.svg)](https://cdn-zel.zepdev.net/badges/zel/sqale_index.svg)
 [![SonarCube_sqale_rating](https://cdn-zel.zepdev.net/badges/zel/sqale_rating.svg)](https://cdn-zel.zepdev.net/badges/zel/sqale_rating.svg)
 [![SonarCube_vulnerabilities](https://cdn-zel.zepdev.net/badges/zel/vulnerabilities.svg)](https://cdn-zel.zepdev.net/badges/zel/vulnerabilities.svg)
+[![Bundlephobia min zipped size](https://img.shields.io/bundlephobia/minzip/zeppelin-element-library.svg)](https://bundlephobia.com/result?p=zeppelin-element-library)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![semantic-release](https://img.shields.io/npm/v/zeppelin-element-library.svg)](https://www.npmjs.com/package/zeppelin-element-library)
+
 
 </span>
 
