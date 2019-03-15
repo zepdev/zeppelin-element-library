@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}

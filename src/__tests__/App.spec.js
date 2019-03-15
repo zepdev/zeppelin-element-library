@@ -8,4 +8,4 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-//TODO: TDD on initializing real elements in ZEL
+// TODO: TDD on initializing real elements in ZEL
