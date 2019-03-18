@@ -20,9 +20,13 @@
     "bundle": "rm -rf bundle && yarn bundle:js && yarn bundle:misc",
     "commit": "git-cz",
     "semantic-release": "semantic-release",
+    "prettier": "prettier src/**/*.js src/**/*.jsx",
     "publish:dev": "yarn publish --tag=development",
     "sonar-scanner": "sonar-scanner",
-    "lint": "eslint src/**/*.js src/**/*.jsx"
+    "lint:eslint": "eslint src/**/*.js src/**/*.jsx",
+    "lint:prettier": "yarn prettier --check",
+    "lint:sonarqube": "yarn lint:eslint -f json -o report.json",
+    "lint": "yarn lint:eslint && yarn lint:prettier"
   },
   "eslintConfig": {
     "extends": "react-app"
