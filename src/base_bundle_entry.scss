@@ -1,0 +1,27 @@
+//---------------------------------
+// GLOBAL
+//---------------------------------
+
+$include-typography: true !default;
+
+@import './style-basics/import_once';
+@import './style-basics/variables';
+@import './style-basics/utils';
+@import './assets/fontsets';
+@import './guidelines/colors';
+@import './guidelines/typography';
+@import './style-basics/globals';
+
+// find colors and typo in themes - additional themes have to have separate output
+@import './themes/theme-base';
+
+//---------------------------------
+// LIBRARY
+//
+// add scss files of all used
+// library elements here to make
+// sure compiled CSS is in right
+// order
+//---------------------------------
+
+@import './elements/button/button';

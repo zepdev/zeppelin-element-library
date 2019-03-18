@@ -2,16 +2,17 @@
 
 @mixin button {
   .#{$prefix}button {
+    $id: 'button-primary';
     border: 0;
     background: transparent;
     outline: 0;
     text-align: left;
-    @include typo(0.875em, 'Roboto', none, 400, 1);
+    @include typo(1.5em, 'Teko', none, 400, 1);
 
     // temporary values - TODO: delete/refactor
-    color: map-get($colormap-base, grey-mid-dark);
-    font-size: 0.875rem;
-    padding: 0.75rem;
+    color: map-get($theme-color-map, $id);
+    background-color: map-get($theme-background-color-map, $id);
+    padding: 1.125rem;
     //
   }
 

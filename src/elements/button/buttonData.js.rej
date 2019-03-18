@@ -1,0 +1,13 @@
+diff a/src/elements/button/buttonData.js b/src/elements/button/buttonData.js	(rejected hunks)
+@@ -1 +1 @@
+-import * as helpers from "../../helpers";
++import * as helpers from '../../helpers';
+@@ -5 +5 @@ const buttonData = {
+-    name: "text",
++    name: 'text',
+@@ -14 +14 @@ const buttonData = {
+-    name: "filled",
++    name: 'filled',
+@@ -25 +25 @@ const buttonData = {
+-    name: "contained",
++    name: 'contained',
