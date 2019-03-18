@@ -3,7 +3,7 @@
  *
  * import all relevant scripts here
  */
-import Button from './elements/button/button.js';
+import Button from './elements/button/button';
 
 // TODO: initialize elements
 class ZEL {
