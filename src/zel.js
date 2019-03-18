@@ -17,7 +17,7 @@ class ZEL {
   }
 
   // dummy for testing
-  getButtons() {
+  static getButtons() {
     const buttonElements = document.querySelectorAll(
       '[data-zep-type="button"]'
     );
