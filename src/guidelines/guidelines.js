@@ -1,4 +1,4 @@
-//TODO: generate this JS from SCSS
+// TODO: generate this JS from SCSS
 
 module.exports = {
   breakpoints: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ButtonPage from '../ButtonPage';
+import ButtonPage from '../ButtonPage.jsx';
 import Button from '../button';
 
 it('renders without crashing', () => {
@@ -14,7 +14,7 @@ it('button handles click', () => {
 
   const clickHandler = jest.spyOn(btn, 'clickHandler');
 
-  var clickEvent = new Event('click');
+  const clickEvent = new Event('click');
   btn.html.dispatchEvent(clickEvent);
 
   expect(clickHandler).toBeCalled();
