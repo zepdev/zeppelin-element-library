@@ -1,5 +1,6 @@
 {
   "extends": [
+    "eslint:recommended",
     "airbnb-base",
     "plugin:prettier/recommended",
     "plugin:react/recommended",
@@ -12,5 +13,18 @@
     "es6": true,
     "browser": true,
     "node": true
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "detect"
+    },
+    "propWrapperFunctions": [
+      "forbidExtraProps",
+      { "property": "freeze", "object": "Object" },
+      { "property": "myFavoriteWrapper" }
+    ],
+    "linkComponents": ["Hyperlink", { "name": "Link", "linkAttribute": "to" }]
   }
 }
