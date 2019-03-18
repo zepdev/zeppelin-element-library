@@ -13,7 +13,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage -u",
+    "test": "yarn lint && react-scripts test --coverage -u",
     "eject": "react-scripts eject",
     "bundle:js": "node rollup.build.js",
     "bundle:misc": "./bundlehandler.sh",

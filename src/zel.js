@@ -3,7 +3,7 @@
  *
  * import all relevant scripts here
  */
-import Button from './elements/button/button.js';
+import Button from './elements/button/button';
 
 // TODO: initialize elements
 class ZEL {
@@ -17,7 +17,7 @@ class ZEL {
   }
 
   // dummy for testing
-  getButtons() {
+  static getButtons() {
     const buttonElements = document.querySelectorAll(
       '[data-zep-type="button"]'
     );
