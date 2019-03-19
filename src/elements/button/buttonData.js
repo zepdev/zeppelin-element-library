@@ -1,33 +1,46 @@
 import * as helpers from '../../helpers';
 
 const buttonData = {
-  text: {
-    name: 'text',
-    js: `<button type="button" class="${helpers.classPrefix}button" ${
+  primary: {
+    name: 'primary',
+    js: `<button type="button" class="${helpers.classPrefix}button ${
+      helpers.classPrefix
+    }button--primary" ${
       helpers.htmlDataVarType
-    }="button">Text Button</button>`,
+    }="button">Primary Button</button>`,
     react: false,
     angular: false,
     vue: false
   },
-  filled: {
-    name: 'filled',
+  primary__disabled: {
+    name: 'primary__disabled',
     js: `<button type="button" class="${helpers.classPrefix}button ${
       helpers.classPrefix
-    }button__filled" ${
+    }button--primary ${helpers.classPrefix}button--primary__disabled" ${
       helpers.htmlDataVarType
-    }="button">Filled Button</button>`,
+    }="button">Primary Button</button>`,
     react: false,
     angular: false,
     vue: false
   },
-  contained: {
-    name: 'contained',
-    js: `<button type="button" class="${helpers.classPrefix}button ${
+  secondary: {
+    name: 'secondary',
+    js: `<a type="button" class="${helpers.classPrefix}button ${
       helpers.classPrefix
-    }button__contained" ${
+    }button--secondary" ${
       helpers.htmlDataVarType
-    }="button">Contained Button</button>`,
+    }="button">Secondary Button</a>`,
+    react: false,
+    angular: false,
+    vue: false
+  },
+  secondary__disabled: {
+    name: 'secondary__disabled',
+    js: `<a type="button" class="${helpers.classPrefix}button ${
+      helpers.classPrefix
+    }button--secondary ${helpers.classPrefix}button--secondary__disabled" ${
+      helpers.htmlDataVarType
+    }="button">Secondary Button</a>`,
     react: false,
     angular: false,
     vue: false

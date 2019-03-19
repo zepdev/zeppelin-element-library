@@ -16,7 +16,7 @@
 }
 
 // create typo templates 'display sizes'
-$typo-display-fontsize-list: (6rem, 5.5rem, 4.5rem, 3.5rem);
+$typo-display-fontsize-list: (3.5rem, 4.5rem, 5.5rem, 6rem);
 
 @for $i from 1 through (length($typo-display-fontsize-list)) {
   %typo-display-#{$i} {
@@ -31,14 +31,14 @@ $typo-display-fontsize-list: (6rem, 5.5rem, 4.5rem, 3.5rem);
 
 // create typo templates 'normal sizes'
 $typo-normal-fontsize-list: (
-  2.5rem,
-  2.25rem,
-  1.75rem,
-  1.5rem,
-  1.25rem,
-  1rem,
+  0.75rem,
   0.875rem,
-  0.75rem
+  1rem,
+  1.25rem,
+  1.5rem,
+  1.75rem,
+  2.25rem,
+  2.5rem
 );
 
 @for $i from 1 through (length($typo-normal-fontsize-list)) {
@@ -55,7 +55,7 @@ $typo-normal-fontsize-list: (
 }
 
 // create typo templates 'special sizes'
-$typo-special-fontsize-list: (1.5rem, 1rem, 0.875rem, 0.75rem);
+$typo-special-fontsize-list: (0.75rem, 0.875rem, 1rem, 1.5rem);
 
 @for $i from 1 through (length($typo-special-fontsize-list)) {
   %typo-special-#{$i} {
