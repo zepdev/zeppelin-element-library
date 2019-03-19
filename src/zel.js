@@ -1,9 +1,11 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable class-methods-use-this */
 /**
  * Entry Point for Bundle creation.
  *
  * import all relevant scripts here
  */
-import Button from './elements/button/button.js';
+import Button from './elements/button/button';
 
 // TODO: initialize elements
 class ZEL {
@@ -11,17 +13,21 @@ class ZEL {
     console.log(`ZEL - built with ♥`);
     this.init();
   }
+
   init() {
     this.getButtons();
   }
 
   // dummy for testing
   getButtons() {
-    let buttonElements = document.querySelectorAll('[data-zep-type="button"]');
-    for (let [i, elem] of buttonElements.entries()) {
-      new Button(elem, `button_${i}`);
+    const buttons = [];
+    const buttonElements = document.querySelectorAll(
+      '[data-zep-type="button"]'
+    );
+    for (const [i, elem] of buttonElements.entries()) {
+      buttons.push(new Button(elem, `button_${i}`));
     }
-    return buttonElements;
+    return buttons;
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import data from './buttonData';
-import ZEL from '../../zel.js';
+import ZEL from '../../zel';
 
 function ButtonPage() {
   useEffect(() => {
