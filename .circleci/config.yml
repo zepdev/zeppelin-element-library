@@ -35,15 +35,20 @@ jobs:
           at: ~/project
       - node/with-cache:
           steps:
-            # TODO: add eslint report after
-            # linting has been added to the project
-            #
-            # - run:
-            #     name: Generate eslint report
-            #     command: yarn eslint-sonarqube
+            - run:
+                name: Generate eslint report
+                command: yarn lint:sonarqube
+            - restore_cache:
+                keys:
+                  - sonar-scanner-{{ .Branch }}
+                  - sonar-scanner
             - run:
                 name: Run sonar scanner
                 command: yarn sonar-scanner -Dsonar.login=$SONAR_LOGIN
+            - save_cache:
+                key: sonar-scanner-{{ .Branch }}
+                paths:
+                  - /home/circleci/.sonar
   build:
     executor: node_10
     steps:
