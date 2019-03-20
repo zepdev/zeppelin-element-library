@@ -5,18 +5,18 @@ const buttonData = {
     name: 'primary',
     js: `<button type="button" class="${helpers.classPrefix}button ${
       helpers.classPrefix
-    }button--primary" ${
+    }button-primary" ${
       helpers.htmlDataVarType
     }="button">Primary Button</button>`,
     react: false,
     angular: false,
     vue: false
   },
-  primary__disabled: {
-    name: 'primary__disabled',
+  primary_disabled: {
+    name: 'primary-disabled',
     js: `<button type="button" class="${helpers.classPrefix}button ${
       helpers.classPrefix
-    }button--primary ${helpers.classPrefix}button--primary__disabled" ${
+    }button-primary ${helpers.classPrefix}button-primary--disabled" ${
       helpers.htmlDataVarType
     }="button">Primary Button</button>`,
     react: false,
@@ -27,18 +27,18 @@ const buttonData = {
     name: 'secondary',
     js: `<a type="button" class="${helpers.classPrefix}button ${
       helpers.classPrefix
-    }button--secondary" ${
+    }button-secondary" ${
       helpers.htmlDataVarType
     }="button">Secondary Button</a>`,
     react: false,
     angular: false,
     vue: false
   },
-  secondary__disabled: {
-    name: 'secondary__disabled',
+  secondary_disabled: {
+    name: 'secondary-disabled',
     js: `<a type="button" class="${helpers.classPrefix}button ${
       helpers.classPrefix
-    }button--secondary ${helpers.classPrefix}button--secondary__disabled" ${
+    }button-secondary ${helpers.classPrefix}button-secondary--disabled" ${
       helpers.htmlDataVarType
     }="button">Secondary Button</a>`,
     react: false,
