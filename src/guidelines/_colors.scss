@@ -1,4 +1,5 @@
 // COLORS
+
 $colormap-base: (
   indigo-blue: #27166f,
   cat-yellow: #f0b823,
@@ -15,6 +16,32 @@ $colormap-base: (
   warning: #f0ad4e,
   alert: #ff6562,
   info: #5bc0de
+);
+
+// additiona colors - currently not in zep color palette:
+// TODO: clarify usage or change for production
+$additional-gray-1: #c1c7c9;
+
+/* FIXME: don 't use additional color in production */
+$theme-color-map: (
+  button--primary: map-get($colormap-base, white),
+  button--primary__disabled: $additional-gray-1,
+  button--secondary: map-get($colormap-base, grey-dark),
+  button--secondary__hover: map-get($colormap-base, white),
+  button--secondary__disabled: $additional-gray-1
+);
+
+$theme-background-color-map: (
+  button--primary: map-get($colormap-base, indigo-blue),
+  button--primary__disabled: map-get($colormap-base, gray-lighter),
+  button--secondary: map-get($colormap-base, white),
+  button--secondary__hover: map-get($colormap-base, indigo-blue),
+  button--secondary__disabled: map-get($colormap-base, white)
+);
+
+$theme-border-color-map: (
+  button--secondary: map-get($colormap-base, indigo-blue),
+  button--secondary__disabled: map-get($colormap-base, gray-lighter)
 );
 
 //use darken 15% on hover colors

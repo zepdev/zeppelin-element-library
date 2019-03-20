@@ -6,7 +6,7 @@
   Zeppelin Element Library
 </h1>
 
-<span align="center">  
+<span align="center">
 
 [![CircleCI](https://circleci.com/gh/zepdev/zeppelin-element-library.svg?style=svg&circle-token=8459cd0c2f3c88c2cfde73dc36634f2a4d21f982)](https://circleci.com/gh/zepdev/zeppelin-element-library)
 [![SonarCube_QualityGate](https://cdn-zel.zepdev.net/badges/zel/alert_status.svg)](https://cdn-zel.zepdev.net/badges/zel/alert_status.svg)
@@ -20,10 +20,10 @@
 [![SonarCube_sqale_index](https://cdn-zel.zepdev.net/badges/zel/sqale_index.svg)](https://cdn-zel.zepdev.net/badges/zel/sqale_index.svg)
 [![SonarCube_sqale_rating](https://cdn-zel.zepdev.net/badges/zel/sqale_rating.svg)](https://cdn-zel.zepdev.net/badges/zel/sqale_rating.svg)
 [![SonarCube_vulnerabilities](https://cdn-zel.zepdev.net/badges/zel/vulnerabilities.svg)](https://cdn-zel.zepdev.net/badges/zel/vulnerabilities.svg)
-[![Bundlephobia min zipped size](https://img.shields.io/bundlephobia/minzip/zeppelin-element-library.svg)](https://bundlephobia.com/result?p=zeppelin-element-library)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![semantic-release](https://img.shields.io/npm/v/zeppelin-element-library.svg)](https://www.npmjs.com/package/zeppelin-element-library)
-
+[![Bundlephobia min zipped size](https://img.shields.io/bundlephobia/minzip/zeppelin-element-library.svg)](https://bundlephobia.com/result?p=zeppelin-element-library)
 
 </span>
 
@@ -53,9 +53,8 @@ Use either ESM or CommonJS to use the JavaScript
 
 Import the JavaScript as ECMAScript Module
 
-
 ```javascript
-import ZEL from "zeppelin-element-library";
+import ZEL from 'zeppelin-element-library';
 ```
 
 ### Require
@@ -63,19 +62,13 @@ import ZEL from "zeppelin-element-library";
 Require the JavaScript as CommonJS Module
 
 ```javascript
-const ZEL = require("zeppelin-element-library");
+const ZEL = require('zeppelin-element-library');
 ```
 
 ### Use provided Styles
 
-
 When using Webpack, you can include the provided styles into a JavaScript file.
 
-
 ```javascript
-import "zeppelin-element-library/bundle/zeppelin-element-library.css";
+import 'zeppelin-element-library/bundle/zeppelin-element-library.css';
 ```
-
-
-
-
