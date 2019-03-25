@@ -123,7 +123,8 @@ jobs:
             project=zeppelin-element-library\
             &metric={bugs,code_smells,coverage,duplicated_lines_density,\
             ncloc,sqale_rating,alert_status,reliability_rating,\
-            security_rating,sqale_index,vulnerabilities}" -o "#1.svg"
+            security_rating,sqale_index,vulnerabilities}" -o "#1.svg" \
+            --max-time 2 || true
       - aws-s3/sync:
           from: bundle
           to: "s3://<< parameters.bucket >>/zel/js"
