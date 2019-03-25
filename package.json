@@ -21,7 +21,7 @@
     "commit": "git-cz",
     "semantic-release": "semantic-release",
     "prettier": "prettier src/**/*.js src/**/*.jsx",
-    "publish:dev": "yarn publish --tag=development",
+    "publish:dev": "yarn publish --tag=latest",
     "sonar-scanner": "sonar-scanner",
     "lint:eslint": "eslint src/**/*.js src/**/*.jsx",
     "lint:prettier": "yarn prettier --check",
