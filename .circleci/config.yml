@@ -44,7 +44,7 @@ jobs:
                   - sonar-scanner
             - run:
                 name: Run sonar scanner
-                command: yarn sonar-scanner -Dsonar.login=$SONAR_LOGIN
+                command: yarn sonar-scanner -Dsonar.login=$SONAR_LOGIN || true
             - save_cache:
                 key: sonar-scanner-{{ .Branch }}
                 paths:
