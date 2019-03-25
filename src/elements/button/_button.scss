@@ -25,6 +25,7 @@
       background-color: $bg-color;
 
       &:hover,
+      &:focus,
       &.#{$prefix}button--primary__hover {
         background-color: lighten($bg-color, 10%);
       }
@@ -50,6 +51,7 @@
       border: solid 2px map-get($theme-border-color-map, $id);
 
       &:hover,
+      &:focus,
       &.#{$prefix}button--secondary__hover {
         color: map-get($theme-color-map, '#{$id}__hover');
         background-color: map-get($theme-background-color-map, '#{$id}__hover');
