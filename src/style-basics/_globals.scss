@@ -27,7 +27,7 @@ a {
  https://snook.ca/archives/html_and_css/hiding-content-for-accessibility 
 */
 
-.visually-hidden {
+.#{$prefix}visually-hidden {
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -35,9 +35,7 @@ a {
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
 
-  &a:focus,
-  &input:focus,
-  &button:focus {
+  &:focus {
     position: static;
     width: auto;
     height: auto;
