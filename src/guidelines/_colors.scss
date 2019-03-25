@@ -24,24 +24,24 @@ $additional-gray-1: #c1c7c9;
 
 /* FIXME: don 't use additional color in production */
 $theme-color-map: (
-  button--primary: map-get($colormap-base, white),
-  button--primary__disabled: $additional-gray-1,
-  button--secondary: map-get($colormap-base, grey-dark),
-  button--secondary__hover: map-get($colormap-base, white),
-  button--secondary__disabled: $additional-gray-1
+  button-primary: map-get($colormap-base, white),
+  button-primary--disabled: $additional-gray-1,
+  button-secondary: map-get($colormap-base, grey-dark),
+  button-secondary--hover: map-get($colormap-base, white),
+  button-secondary--disabled: $additional-gray-1
 );
 
 $theme-background-color-map: (
-  button--primary: map-get($colormap-base, indigo-blue),
-  button--primary__disabled: map-get($colormap-base, gray-lighter),
-  button--secondary: map-get($colormap-base, white),
-  button--secondary__hover: map-get($colormap-base, indigo-blue),
-  button--secondary__disabled: map-get($colormap-base, white)
+  button-primary: map-get($colormap-base, indigo-blue),
+  button-primary--disabled: map-get($colormap-base, gray-lighter),
+  button-secondary: map-get($colormap-base, white),
+  button-secondary--hover: map-get($colormap-base, indigo-blue),
+  button-secondary--disabled: map-get($colormap-base, white)
 );
 
 $theme-border-color-map: (
-  button--secondary: map-get($colormap-base, indigo-blue),
-  button--secondary__disabled: map-get($colormap-base, gray-lighter)
+  button-secondary: map-get($colormap-base, indigo-blue),
+  button-secondary--disabled: map-get($colormap-base, gray-lighter)
 );
 
 //use darken 15% on hover colors
@@ -49,13 +49,13 @@ $hover-example: darken(map-get($colormap-base, indigo-blue), 15%);
 
 // create dummy color classes
 @each $name, $value in $colormap-base {
-  .#{$prefix}color__#{$name} {
+  .#{$prefix}color--#{$name} {
     color: $value;
   }
-  .#{$prefix}background-color__#{$name} {
+  .#{$prefix}background-color--#{$name} {
     background-color: $value;
   }
-  .#{$prefix}border-color__#{$name} {
+  .#{$prefix}border-color--#{$name} {
     border-color: $value;
   }
 }
