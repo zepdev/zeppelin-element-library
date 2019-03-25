@@ -1,6 +1,6 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-    <img alt="Zeppelin" src="./src/assets/images/zep-logo-new.svg" width="200"/>
+    <img alt="Zeppelin" src="https://s3.eu-central-1.amazonaws.com/com.zeppelin.zds.assets/zel/ZEP_Logo_rgb_DINlang.png" width="200"/>
 </p>
 <h1 align="center">
   Zeppelin Element Library
