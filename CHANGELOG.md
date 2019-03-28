@@ -1,3 +1,19 @@
+# [0.3.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.2.4...v0.3.0) (2019-03-28)
+
+
+### Bug Fixes
+
+* **CDN:** changed assets path for font linking ([d7efbe1](https://github.com/zepdev/zeppelin-element-library/commit/d7efbe1))
+* **ci:** Fixed report scan. Added cache for sonar ([60a03ff](https://github.com/zepdev/zeppelin-element-library/commit/60a03ff))
+* **docs:** bug fix Zeppelin Logo on README.md is now visible ([98e71b1](https://github.com/zepdev/zeppelin-element-library/commit/98e71b1))
+* **styles:** fixed wrong BEM syntax on button and color classes ([4b0ffb2](https://github.com/zepdev/zeppelin-element-library/commit/4b0ffb2))
+
+
+### Features
+
+* **element:** added basic button element ([a1fae31](https://github.com/zepdev/zeppelin-element-library/commit/a1fae31))
+* **themes:** added theme JSON for usage with react ([08a8efe](https://github.com/zepdev/zeppelin-element-library/commit/08a8efe))
+
 ## [0.2.4](https://github.com/zepdev/zeppelin-element-library/compare/v0.2.3...v0.2.4) (2019-03-19)
 
 
