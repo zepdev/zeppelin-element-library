@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 export default class Button {
   constructor(__html, __id) {
     this._html = __html;
@@ -25,6 +26,6 @@ export default class Button {
   }
 
   clickHandler(e) {
-    console.log('click', this.id);
+    console.log('click', this.id, e);
   }
 }

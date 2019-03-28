@@ -4,6 +4,7 @@
 
 $include-typography: true !default;
 
+@import './style-basics/reset';
 @import './style-basics/import_once';
 @import './style-basics/variables';
 @import './style-basics/utils';
@@ -11,9 +12,6 @@ $include-typography: true !default;
 @import './guidelines/colors';
 @import './guidelines/typography';
 @import './style-basics/globals';
-
-// find colors and typo in themes - additional themes have to have separate output
-//@import "./themes/theme-base";
 
 //---------------------------------
 // LIBRARY

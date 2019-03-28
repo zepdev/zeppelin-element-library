@@ -1,23 +1,61 @@
-module.exports = {
-  text: {
-    name: 'text',
-    js: `<button type="button" class="zep-button" data-zep-type="button">Text Button</button>`,
+import * as helpers from '../../helpers';
+
+const buttonData = {
+  primary: {
+    name: 'primary',
+    js: `<button type="button" class="${helpers.classPrefix}button ${
+      helpers.classPrefix
+    }button-primary" ${
+      helpers.htmlDataVarType
+    }="button">Primary Button</button>`,
     react: false,
     angular: false,
     vue: false
   },
-  filled: {
-    name: 'filled',
-    js: `<button type="button" class="zep-button zep-button__filled" data-zep-type="button">Filled Button</button>`,
+  primary_disabled: {
+    name: 'primary_disabled',
+    js: `<button type="button" class="${helpers.classPrefix}button ${
+      helpers.classPrefix
+    }button-primary ${helpers.classPrefix}button-primary--disabled" ${
+      helpers.htmlDataVarType
+    }="button">Primary Button</button>`,
     react: false,
     angular: false,
     vue: false
   },
-  contained: {
-    name: 'contained',
-    js: `<button type="button" class="zep-button zep-button__contained" data-zep-type="button">Contained Button</button>`,
+  secondary: {
+    name: 'secondary',
+    js: `<a type="button" class="${helpers.classPrefix}button ${
+      helpers.classPrefix
+    }button-secondary" ${
+      helpers.htmlDataVarType
+    }="button">Secondary Button</a>`,
+    react: false,
+    angular: false,
+    vue: false
+  },
+  secondary_disabled: {
+    name: 'secondary_disabled',
+    js: `<a type="button" class="${helpers.classPrefix}button ${
+      helpers.classPrefix
+    }button-secondary ${helpers.classPrefix}button-secondary--disabled" ${
+      helpers.htmlDataVarType
+    }="button">Secondary Button</a>`,
+    react: false,
+    angular: false,
+    vue: false
+  },
+  full: {
+    name: 'full',
+    js: `<button type="button" class="${helpers.classPrefix}button ${
+      helpers.classPrefix
+    }button-primary ${helpers.classPrefix}button--full" ${
+      helpers.htmlDataVarType
+    }="button">Primary Button</button>`,
     react: false,
     angular: false,
     vue: false
   }
 };
+
+export default buttonData;

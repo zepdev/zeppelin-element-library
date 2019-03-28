@@ -1,21 +1,77 @@
-//just for testing
+//Button - base style
 
 @mixin button {
   .#{$prefix}button {
+    $height: 3rem;
+
+    box-sizing: border-box;
+    display: inline-block;
     border: 0;
     background: transparent;
     outline: 0;
-    text-align: left;
-    @include typo(0.875em, 'Roboto', none, 400, 1);
+    text-align: center;
+    cursor: pointer;
+    @include typo(1.5rem, 'Teko', uppercase, normal, $height);
 
-    // temporary values - TODO: delete/refactor
-    color: map-get($colormap-base, grey-mid-dark);
-    font-size: 0.875rem;
-    padding: 0.75rem;
-    //
+    height: $height;
+    padding: 0 1.125rem;
+
+    &.#{$prefix}button-primary {
+      $id: 'button-primary';
+
+      color: map-get($theme-color-map, $id);
+
+      $bg-color: map-get($theme-background-color-map, $id);
+      background-color: $bg-color;
+
+      &:hover,
+      &:focus,
+      &.#{$prefix}button-primary--hover {
+        background-color: lighten($bg-color, 10%);
+      }
+
+      &:disabled,
+      &.#{$prefix}button-primary--disabled {
+        color: map-get($theme-color-map, '#{$id}--disabled');
+        background-color: map-get(
+          $theme-background-color-map,
+          '#{$id}--disabled'
+        );
+      }
+    }
+
+    &.#{$prefix}button-secondary {
+      $id: 'button-secondary';
+
+      color: map-get($theme-color-map, $id);
+
+      $bg-color: map-get($theme-background-color-map, $id);
+      background-color: $bg-color;
+
+      border: solid 2px map-get($theme-border-color-map, $id);
+
+      &:hover,
+      &:focus,
+      &.#{$prefix}button-secondary--hover {
+        color: map-get($theme-color-map, '#{$id}--hover');
+        background-color: map-get($theme-background-color-map, '#{$id}--hover');
+        border-color: map-get($theme-background-color-map, '#{$id}--hover');
+      }
+
+      &:disabled,
+      &.#{$prefix}button-secondary--disabled {
+        color: map-get($theme-color-map, '#{$id}--disabled');
+        background-color: map-get(
+          $theme-background-color-map,
+          '#{$id}--disabled'
+        );
+        border-color: map-get($theme-border-color-map, '#{$id}--disabled');
+        cursor: not-allowed;
+      }
+    }
   }
 
-  .#{$prefix}button__full {
+  .#{$prefix}button--full {
     display: block;
     width: 100%;
   }

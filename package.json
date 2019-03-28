@@ -1,6 +1,6 @@
 {
   "name": "zeppelin-element-library",
-  "version": "0.2.4",
+  "version": "0.2.6-a6a510c",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
   "main": "bundle/zeppelin-element-library.cjs.js",
   "module": "bundle/zeppelin-element-library.esm.js",
@@ -21,7 +21,7 @@
     "commit": "git-cz",
     "semantic-release": "semantic-release",
     "prettier": "prettier src/**/*.js src/**/*.jsx",
-    "publish:dev": "yarn publish --tag=development",
+    "publish:dev": "yarn publish --tag=next",
     "sonar-scanner": "sonar-scanner",
     "lint:eslint": "eslint src/**/*.js src/**/*.jsx",
     "lint:prettier": "yarn prettier --check",
@@ -67,7 +67,7 @@
   "browserslist": [
     ">0.2%",
     "not dead",
-    "not ie <= 11",
+    "ie >= 9",
     "not op_mini all"
   ],
   "jest": {
@@ -79,7 +79,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-env": "^7.4.2",
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
     "@semantic-release/changelog": "^3.0.2",
@@ -91,7 +91,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jest": "^22.3.2",
+    "eslint-plugin-jest": "^22.4.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "husky": "^1.3.1",
@@ -100,12 +100,12 @@
     "node-sass": "^4.11.0",
     "node-sass-utils": "^1.1.2",
     "prettier": "^1.16.4",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
     "react-scripts": "^2.1.8",
-    "rollup": "^1.6.0",
+    "rollup": "^1.7.3",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-uglify": "^6.0.2",
     "semantic-release": "^15.13.3",
