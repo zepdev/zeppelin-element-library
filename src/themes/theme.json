@@ -239,9 +239,21 @@
         "hex": "#af0e0e",
         "rgb": "175/14/14",
         "hsb": null
+      },
+      "zlabBlue": {
+        "name": "zlab-blue",
+        "hex": "#00aeef",
+        "rgb": "0/174/239",
+        "hsb": null
       }
     },
     "gray": {
+      "black": {
+        "name": "black",
+        "hex": "#000000",
+        "rgb": "0/0/0",
+        "hsb": null
+      },
       "grayDark": {
         "name": "gray-dark",
         "hex": "#101111",
@@ -260,10 +272,22 @@
         "rgb": "70/74/76",
         "hsb": null
       },
+      "textGray": {
+        "name": "text-gray",
+        "hex": "#555f61",
+        "rgb": "85/95/97",
+        "hsb": null
+      },
       "grayLight": {
         "name": "gray-light",
         "hex": "#6f7c80",
         "rgb": "111/124/128",
+        "hsb": null
+      },
+      "disabled": {
+        "name": "disabled",
+        "hex": "#c1c7c9",
+        "rgb": "193/199/201",
         "hsb": null
       },
       "grayLighter": {
@@ -316,36 +340,112 @@
         "rgb": "91/192/222",
         "hsb": null
       }
+    },
+    "socialMedia": {
+      "xing": {
+        "name": "xing",
+        "hex": "#026466",
+        "rgb": "2/100/102",
+        "hsb": null
+      },
+      "facebook": {
+        "name": "facebook",
+        "hex": "#4267b2",
+        "rgb": "66/103/178",
+        "hsb": null
+      },
+      "twitter": {
+        "name": "twitter",
+        "hex": "#1da1f2",
+        "rgb": "29/161/242",
+        "hsb": null
+      },
+      "linkedin": {
+        "name": "linkedin",
+        "hex": "#0077b5",
+        "rgb": "0/119/181",
+        "hsb": null
+      },
+      "kununu": {
+        "name": "kununu",
+        "hex": "#99c613",
+        "rgb": "153/198/19",
+        "hsb": null
+      },
+      "youtube": {
+        "name": "youtube",
+        "hex": "#ff0000",
+        "rgb": "255/0/0",
+        "hsb": null
+      },
+      "googleplus": {
+        "name": "googleplus",
+        "hex": "#dd4b39",
+        "rgb": "221/75/57",
+        "hsb": null
+      }
     }
   },
   "spacing": {
-    "xxs": {
-      "px": 4,
-      "rem": 0.25
+    "component": {
+      "xxs": {
+        "px": 4,
+        "rem": 0.25
+      },
+      "xs": {
+        "px": 8,
+        "rem": 0.5
+      },
+      "s": {
+        "px": 12,
+        "rem": 0.75
+      },
+      "m": {
+        "px": 16,
+        "rem": 1
+      },
+      "l": {
+        "px": 24,
+        "rem": 1.5
+      },
+      "xl": {
+        "px": 32,
+        "rem": 2
+      },
+      "xxl": {
+        "px": 48,
+        "rem": 3
+      }
     },
-    "xs": {
-      "px": 8,
-      "rem": 0.5
-    },
-    "s": {
-      "px": 12,
-      "rem": 0.75
-    },
-    "m": {
-      "px": 16,
-      "rem": 1
-    },
-    "l": {
-      "px": 24,
-      "rem": 1.5
-    },
-    "xl": {
-      "px": 32,
-      "rem": 2
-    },
-    "xxl": {
-      "px": 48,
-      "rem": 3
+    "layout": {
+      "xxs": {
+        "px": 16,
+        "rem": 1
+      },
+      "xs": {
+        "px": 24,
+        "rem": 1.5
+      },
+      "s": {
+        "px": 32,
+        "rem": 2
+      },
+      "m": {
+        "px": 48,
+        "rem": 3
+      },
+      "l": {
+        "px": 64,
+        "rem": 4
+      },
+      "xl": {
+        "px": 96,
+        "rem": 6
+      },
+      "xxl": {
+        "px": 160,
+        "rem": 10
+      }
     }
   }
 }
