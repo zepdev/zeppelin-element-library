@@ -11,10 +11,13 @@
     outline: 0;
     text-align: center;
     cursor: pointer;
-    @include typo(1.5rem, 'Teko', uppercase, normal, $height);
+
+    @extend %typo-special-4;
+    line-height: $height; //line-height for button differs from %typo-special-4 line-height
 
     height: $height;
     padding: 0 1.125rem;
+    //padding: 1px 1.125rem 0; //polished version: text visually v-align middle
 
     &.#{$prefix}button-primary {
       $id: 'button-primary';
@@ -27,7 +30,7 @@
       &:hover,
       &:focus,
       &.#{$prefix}button-primary--hover {
-        background-color: lighten($bg-color, 10%);
+        background-color: map-get($theme-background-color-map, '#{$id}--hover');
       }
 
       &:disabled,
@@ -49,6 +52,8 @@
       background-color: $bg-color;
 
       border: solid 2px map-get($theme-border-color-map, $id);
+
+      line-height: calc(#{$height} - 4px); //take border-width into account
 
       &:hover,
       &:focus,
