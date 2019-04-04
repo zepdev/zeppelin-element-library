@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>IconsMiscActionAddCart</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M10,8 L12,8 L12,5 L15,5 L15,3 L12,3 L12,0 L10,0 L10,3 L7,3 L7,5 L10,5 L10,8 Z M6,17 C4.8954305,17 4,17.8954305 4,19 C4,20.1045695 4.8954305,21 6,21 C7.1045695,21 8,20.1045695 8,19 C8,17.8954305 7.1045695,17 6,17 L6,17 Z M16,17 C14.8954305,17 14,17.8954305 14,19 C14,20.1045695 14.8954305,21 16,21 C17.1045695,21 18,20.1045695 18,19 C18,17.8954305 17.1045695,17 16,17 L16,17 Z M6.17,13.75 L6.2,13.63 L7.1,12 L14.55,12 C15.3,12 15.96,11.59 16.3,10.97 L20.16,3.96 L18.42,3 L18.41,3 L17.31,5 L14.55,10 L7.53,10 L7.4,9.73 L5.16,5 L4.21,3 L3.27,1 L0,1 L0,3 L2,3 L5.6,10.59 L4.25,13.04 C4.09,13.32 4,13.65 4,14 C4,15.1045695 4.8954305,16 6,16 L18,16 L18,14 L6.42,14 C6.29,14 6.17,13.89 6.17,13.75 Z" id="path-1"></path>
+    </defs>
+    <g id="ZDS-icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IconsMiscActionAddCart">
+            <g id="ic_add_cart">
+                <g id="Icon-24px">
+                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    <g id="grayscale-/-black" transform="translate(2.000000, 1.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" fill="#000000" id="color-/-grayscale-/-black">
+                            <g transform="translate(-2.000000, -1.000000)">
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

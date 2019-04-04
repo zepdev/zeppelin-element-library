@@ -4,12 +4,12 @@
 mkdir -p bundle;
 mkdir -p bundle/themes;
 mkdir -p bundle/assets/fonts;
-
+mkdir -p bundle/assets/icons;
 
 #create target destination variable
 TARGET_FILE="bundle/zeppelin-element-library.css"
 
-# copy bundled css file from react app to bundle folder
+# copy build css file from react app to bundle folder
 find build/static/css -name \*.css -exec cp {} $TARGET_FILE \;
 
 # copy fonts into bundle folder
@@ -17,6 +17,12 @@ cp -r src/assets/fonts/* bundle/assets/fonts
 
 # copy theme folder into bundle folder
 cp -r src/themes/* bundle/themes
+
+# copy icons folder into bundle folder
+cp -r src/assets/icons/* bundle/assets/icons
+
+# copy icon font to bundle folder
+cp -r build/zepicons.* bundle/assets/fonts
 
 # delete sourceMapping comment line from css file
 sed -i.bak 's@/\*.*\*/@@g' $TARGET_FILE

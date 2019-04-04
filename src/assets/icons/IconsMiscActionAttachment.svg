@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>IconsMiscActionAttachment</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8.63636364,4.54545455 L8.63636364,15 C8.63636364,17.0083082 7.00830818,18.6363636 5,18.6363636 C2.99169182,18.6363636 1.36363636,17.0083082 1.36363636,15 L1.36363636,3.63636364 C1.36363636,2.38117102 2.38117102,1.36363636 3.63636364,1.36363636 C4.89155625,1.36363636 5.90909091,2.38117102 5.90909091,3.63636364 L5.90909091,13.1818182 C5.90909091,13.6838952 5.50207705,14.0909091 5,14.0909091 C4.49792295,14.0909091 4.09090909,13.6838952 4.09090909,13.1818182 L4.09090909,4.54545455 L2.72727273,4.54545455 L2.72727273,13.1818182 C2.72727273,14.4370108 3.74480739,15.4545455 5,15.4545455 C6.25519261,15.4545455 7.27272727,14.4370108 7.27272727,13.1818182 L7.27272727,3.63636364 C7.27272727,1.62805546 5.64467182,2.01858732e-16 3.63636364,0 C1.62805546,-1.00929366e-16 0,1.62805546 0,3.63636364 L0,15 C2.42230478e-15,17.7614237 2.23857625,20 5,20 C7.76142375,20 10,17.7614237 10,15 L10,4.54545455 L8.63636364,4.54545455 Z" id="path-1"></path>
+    </defs>
+    <g id="ZDS-icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IconsMiscActionAttachment">
+            <g id="ic_-attachment">
+                <g id="Icon-24px">
+                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    <g id="grayscale-/-black" transform="translate(7.000000, 2.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" fill="#000000" id="color-/-grayscale-/-black">
+                            <g transform="translate(-7.000000, -2.000000)">
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

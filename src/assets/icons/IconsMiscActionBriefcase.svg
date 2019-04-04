@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>IconsMiscActionBriefcase</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8,0 L12,0 C13.1045695,0 14,0.8954305 14,2 L14,4 L18,4 C19.1045695,4 20,4.8954305 20,6 L20,17 C20,18.1045695 19.1045695,19 18,19 L2,19 C0.89,19 0,18.1 0,17 L0,6 C0,4.89 0.89,4 2,4 L6,4 L6,2 C6,0.89 6.89,0 8,0 L8,0 Z M12,4 L12,2 L8,2 L8,4 L12,4 Z" id="path-1"></path>
+    </defs>
+    <g id="ZDS-icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IconsMiscActionBriefcase">
+            <g id="ic_briefcase">
+                <g id="Icon-24px">
+                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    <g id="grayscale-/-black" transform="translate(2.000000, 3.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" fill="#000000" id="color-/-grayscale-/-black">
+                            <g transform="translate(-2.000000, -3.000000)">
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

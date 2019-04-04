@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>IconsMiscActionAverage</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15.588,6.656 C15.85,7.39 16,8.177 16,9.001 C16,12.861 12.859,16.001 9,16.001 C7.43,16.001 5.989,15.471 4.823,14.592 L18,1.415 L16.586,0.001 L14.602,1.985 C13.064,0.75 11.122,0 9,0 C4.037,0 0,4.038 0,9.001 C0,10.388 0.325,11.697 0.887,12.871 L2.413,11.346 C2.15,10.612 2,9.824 2,9.001 C2,5.141 5.141,2 9,2 C10.57,2 12.011,2.531 13.176,3.411 L0,16.587 L1.414,18.001 L3.4,16.015 C4.938,17.251 6.879,18.001 9,18.001 C13.963,18.001 18,13.963 18,9.001 C18,7.614 17.676,6.305 17.113,5.131 L15.588,6.656 Z" id="path-1"></path>
+    </defs>
+    <g id="ZDS-icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IconsMiscActionAverage">
+            <g id="ic_average">
+                <g id="Icon-24px">
+                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    <g id="grayscale-/-black" transform="translate(3.000000, 3.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" fill="#000000" id="color-/-grayscale-/-black">
+                            <g transform="translate(-3.000000, -3.000000)">
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
