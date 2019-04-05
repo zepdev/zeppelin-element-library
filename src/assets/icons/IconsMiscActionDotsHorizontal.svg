@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>IconsMiscActionDotsHorizontal</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M12,2 C12,0.8954305 12.8954305,0 14,0 C15.1045695,0 16,0.8954305 16,2 C16,3.1045695 15.1045695,4 14,4 C12.8954305,4 12,3.1045695 12,2 L12,2 Z M6,2 C6,0.8954305 6.8954305,0 8,0 C9.1045695,0 10,0.8954305 10,2 C10,3.1045695 9.1045695,4 8,4 C6.8954305,4 6,3.1045695 6,2 L6,2 Z M0,2 C0,0.8954305 0.8954305,0 2,0 C3.1045695,0 4,0.8954305 4,2 C4,3.1045695 3.1045695,4 2,4 C0.8954305,4 0,3.1045695 0,2 Z" id="path-1"></path>
+    </defs>
+    <g id="ZDS-icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IconsMiscActionDotsHorizontal">
+            <g id="ic_dots_horizontal">
+                <g id="Icon-24px">
+                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    <g id="grayscale-/-black" transform="translate(4.000000, 10.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" fill="#000000" id="color-/-grayscale-/-black">
+                            <g transform="translate(-4.000000, -10.000000)">
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

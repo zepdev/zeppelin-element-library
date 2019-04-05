@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>IconsMiscActionUnfold</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M5,15.17 L1.83,12 L0.42,13.41 L5,18 L9.59,13.41 L8.17,12 L5,15.17 Z M5,2.83 L8.17,6 L9.58,4.59 L5,0 L0.41,4.59 L1.83,6 L5,2.83 Z" id="path-1"></path>
+    </defs>
+    <g id="ZDS-icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IconsMiscActionUnfold">
+            <g id="ic_unfold">
+                <g id="Icon-24px">
+                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    <g id="grayscale-/-black" transform="translate(7.000000, 3.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" fill="#000000" id="color-/-grayscale-/-black">
+                            <g transform="translate(-7.000000, -3.000000)">
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

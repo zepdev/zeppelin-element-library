@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>IconsMiscActionImage</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M9,7 L14.5,7 L9,1.5 L9,7 L9,7 Z M2,0 L10,0 L16,6 L16,18 C16,19.1045695 15.1045695,20 14,20 L2,20 C0.89,20 0,19.1 0,18 L0,2 C0,0.89 0.89,0 2,0 L2,0 Z M2,18 L11,18 L14,18 L14,10 L10,14 L8,12 L2,18 L2,18 Z M4,7 C2.8954305,7 2,7.8954305 2,9 C2,10.1045695 2.8954305,11 4,11 C5.1045695,11 6,10.1045695 6,9 C6,7.8954305 5.1045695,7 4,7 Z" id="path-1"></path>
+    </defs>
+    <g id="ZDS-icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IconsMiscActionImage">
+            <g id="ic_image">
+                <g id="Icon-24px">
+                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    <g id="grayscale-/-black" transform="translate(4.000000, 2.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" fill="#000000" id="color-/-grayscale-/-black">
+                            <g transform="translate(-4.000000, -2.000000)">
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

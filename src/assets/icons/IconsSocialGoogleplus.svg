@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>IconsSocialGoogleplus</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M22,6 L20,6 L20,4 L18,4 L18,6 L16,6 L16,8 L18,8 L18,10 L20,10 L20,8 L22,8 L22,6 Z M7,6 L7,8.4 L11,8.4 C10.8,9.4 9.8,11.4 7,11.4 C4.6,11.4 2.7,9.4 2.7,7 C2.7,4.6 4.6,2.6 7,2.6 C8.4,2.6 9.3,3.2 9.8,3.7 L11.7,1.9 C10.5,0.7 8.9,0 7,0 C3.1,0 0,3.1 0,7 C0,10.9 3.1,14 7,14 C11,14 13.7,11.2 13.7,7.2 C13.7,6.7 13.7,6.4 13.6,6 L7,6 Z" id="path-1"></path>
+    </defs>
+    <g id="ZDS-icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IconsSocialGoogleplus">
+            <g id="ic_googleplus">
+                <g id="Icon-24px">
+                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    <g id="grayscale-/-black" transform="translate(1.000000, 5.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" fill="#000000" id="color-/-grayscale-/-black">
+                            <g transform="translate(-1.000000, -5.000000)">
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>IconsMiscActionCalenderClock</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M12,12 L13.5,12 L13.5,14.82 L15.94,16.23 L15.19,17.53 L12,15.69 L12,12 L12,12 Z M16,7 L2,7 L2,18 L6.67,18 C6.24,17.09 6,16.07 6,15 C6,11.1340068 9.13400675,8 13,8 C14.07,8 15.09,8.24 16,8.67 L16,7 L16,7 Z M2,20 C0.89,20 0,19.1 0,18 L0,4 C0,2.89 0.89,2 2,2 L3,2 L3,0 L5,0 L5,2 L13,2 L13,0 L15,0 L15,2 L16,2 C17.1045695,2 18,2.8954305 18,4 L18,10.1 C19.24,11.36 20,13.09 20,15 C20,18.8659932 16.8659932,22 13,22 C11.09,22 9.36,21.24 8.1,20 L2,20 L2,20 Z M13,10.15 C10.321419,10.15 8.15,12.321419 8.15,15 C8.15,17.68 10.32,19.85 13,19.85 C14.2863,19.85 15.5199165,19.3390193 16.4294679,18.4294679 C17.3390193,17.5199165 17.85,16.2863 17.85,15 C17.85,12.32 15.68,10.15 13,10.15 Z" id="path-1"></path>
+    </defs>
+    <g id="ZDS-icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IconsMiscActionCalenderClock">
+            <g id="ic_calender_clock">
+                <g id="Icon-24px">
+                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    <g id="grayscale-/-black" transform="translate(2.000000, 1.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" fill="#000000" id="color-/-grayscale-/-black">
+                            <g transform="translate(-2.000000, -1.000000)">
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

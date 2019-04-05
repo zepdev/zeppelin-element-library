@@ -1,22 +1,22 @@
-const rollup = require("rollup");
-const babel = require("rollup-plugin-babel");
-const json = require("rollup-plugin-json");
-const resolve = require("rollup-plugin-node-resolve");
-const { uglify } = require("rollup-plugin-uglify");
-const path = require("path");
+const rollup = require('rollup');
+const babel = require('rollup-plugin-babel');
+const json = require('rollup-plugin-json');
+const resolve = require('rollup-plugin-node-resolve');
+const { uglify } = require('rollup-plugin-uglify');
+const path = require('path');
 
 const defaultPlugins = [
   resolve({
     browser: true
   }),
   babel({
-    exclude: "node_modules/**"
+    exclude: 'node_modules/**'
   }),
   json({
     // All JSON files will be parsed by default,
     // but you can also specifically include/exclude files
-    exclude: ["node_modules/**"],
-    //include: ["src/**"],
+    exclude: ['node_modules/**'],
+    // include: ["src/**"],
 
     // ignores indent and generates the smallest code
     compact: true // Default: false
@@ -24,13 +24,13 @@ const defaultPlugins = [
 ];
 
 const inputOptions = {
-  input: "./src/zel.js",
+  input: './src/zel.js',
   plugins: defaultPlugins
 };
 const outputOptions = {
-  file: path.resolve(__dirname, "bundle/zeppelin-element-library.js"),
-  format: "iife",
-  name: "ZEL"
+  file: path.resolve(__dirname, 'bundle/zeppelin-element-library.js'),
+  format: 'iife',
+  name: 'ZEL'
 };
 
 const options = [
@@ -47,19 +47,19 @@ const options = [
           module: true,
           main: true,
           browser: true,
-          extensions: [".js", ".json"],
-          jail: "/src/",
+          extensions: ['.js', '.json'],
+          jail: '/src/',
           modulesOnly: true
         }),
         babel({
-          exclude: "node_modules/**"
+          exclude: 'node_modules/**'
         })
       ]
     },
     output: {
       ...outputOptions,
-      format: "esm",
-      file: path.resolve(__dirname, "bundle/zeppelin-element-library.esm.js")
+      format: 'esm',
+      file: path.resolve(__dirname, 'bundle/zeppelin-element-library.esm.js')
     }
   },
 
@@ -68,8 +68,8 @@ const options = [
     input: inputOptions,
     output: {
       ...outputOptions,
-      format: "cjs",
-      file: path.resolve(__dirname, "bundle/zeppelin-element-library.cjs.js")
+      format: 'cjs',
+      file: path.resolve(__dirname, 'bundle/zeppelin-element-library.cjs.js')
     }
   },
 
@@ -78,8 +78,8 @@ const options = [
     input: inputOptions,
     output: {
       ...outputOptions,
-      format: "umd",
-      file: path.resolve(__dirname, "bundle/zeppelin-element-library.umd.js")
+      format: 'umd',
+      file: path.resolve(__dirname, 'bundle/zeppelin-element-library.umd.js')
     }
   },
 
@@ -88,7 +88,7 @@ const options = [
     input: { ...inputOptions, plugins: [...defaultPlugins, uglify({})] },
     output: {
       ...outputOptions,
-      file: path.resolve(__dirname, "bundle/zeppelin-element-library.min.js")
+      file: path.resolve(__dirname, 'bundle/zeppelin-element-library.min.js')
     }
   }
 ];
@@ -108,7 +108,7 @@ async function build(_inputOptions, _outputOptions) {
       //   fileName: string,              // the asset file name
       //   source: string | Buffer        // the asset source
       // }
-      console.log("Asset", chunkOrAsset);
+      // console.log('Asset', chunkOrAsset);
     } else {
       // For chunks, this contains
       // {
@@ -131,7 +131,7 @@ async function build(_inputOptions, _outputOptions) {
       //   },
       //   name: string                   // the name of this chunk as used in naming patterns
       // }
-      console.log("Chunk", chunkOrAsset.modules);
+      // console.log('Chunk', chunkOrAsset.modules);
     }
   }
 
@@ -139,7 +139,7 @@ async function build(_inputOptions, _outputOptions) {
   await bundle.write(_outputOptions);
 }
 
-for (let key in options) {
-  let value = options[key];
+for (const key in options) {
+  const value = options[key];
   build(value.input, value.output);
 }

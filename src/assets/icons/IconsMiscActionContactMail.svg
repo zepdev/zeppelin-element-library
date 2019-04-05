@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>IconsMiscActionContactMail</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M21,5 L21,4 L18,6 L15,4 L15,5 L18,7 M22,0 L2,0 C0.8954305,0 1.3527075e-16,0.8954305 0,2 L0,16 C1.3527075e-16,17.1045695 0.8954305,18 2,18 L22,18 C23.1045695,18 24,17.1045695 24,16 L24,2 C24,0.8954305 23.1045695,0 22,0 M8,3 C9.65685425,3 11,4.34314575 11,6 C11,7.65685425 9.65685425,9 8,9 C6.34314575,9 5,7.65685425 5,6 C5,4.34314575 6.34314575,3 8,3 M14,15 L2,15 L2,14 C2,12 6,10.9 8,10.9 C10,10.9 14,12 14,14 M22,9 L14,9 L14,3 L22,3" id="path-1"></path>
+    </defs>
+    <g id="ZDS-icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IconsMiscActionContactMail">
+            <g id="ic_contact_mail">
+                <g id="Icon-24px">
+                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    <g id="grayscale-/-black" transform="translate(0.000000, 3.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" fill="#000000" id="color-/-grayscale-/-black">
+                            <g transform="translate(0.000000, -3.000000)">
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

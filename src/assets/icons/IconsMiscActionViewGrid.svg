@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>IconsMiscActionViewGrid</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11.2941176,0 L11.2941176,5.53846154 L16,5.53846154 L16,0 L11.2941176,0 Z M5.64705882,5.53846154 L10.3529412,5.53846154 L10.3529412,0 L5.64705882,0 L5.64705882,5.53846154 Z M11.2941176,12 L16,12 L16,6.46153846 L11.2941176,6.46153846 L11.2941176,12 Z M5.64705882,12 L10.3529412,12 L10.3529412,6.46153846 L5.64705882,6.46153846 L5.64705882,12 Z M0,12 L4.70588235,12 L4.70588235,6.46153846 L0,6.46153846 L0,12 Z M0,5.53846154 L4.70588235,5.53846154 L4.70588235,0 L0,0 L0,5.53846154 Z" id="path-1"></path>
+    </defs>
+    <g id="ZDS-icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IconsMiscActionViewGrid">
+            <g id="ic_view_grid">
+                <g id="Icon-24px">
+                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    <g id="grayscale-/-black" transform="translate(4.000000, 6.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" fill="#000000" id="color-/-grayscale-/-black">
+                            <g transform="translate(-4.000000, -6.000000)">
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
