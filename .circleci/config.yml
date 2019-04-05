@@ -112,19 +112,6 @@ jobs:
       - checkout # check out the code in the project directory
       - attach_workspace:
           at: ~/project
-      # TODO: generate badges for project
-      - run:
-          name: create and upload badges
-          command: |
-            mkdir badges
-            cd badges
-            curl -u $SONAR_LOGIN \
-            "http://sq.zepdev.net/api/project_badges/measure?\
-            project=zeppelin-element-library\
-            &metric={bugs,code_smells,coverage,duplicated_lines_density,\
-            ncloc,sqale_rating,alert_status,reliability_rating,\
-            security_rating,sqale_index,vulnerabilities}" -o "#1.svg" \
-            --max-time 2 || true
       - aws-s3/sync:
           from: bundle
           to: 's3://<< parameters.bucket >>/zel/js'
@@ -138,10 +125,6 @@ jobs:
       - aws-s3/sync:
           from: bundle/assets/fonts
           to: 's3://<< parameters.bucket >>/zel/css/assets/fonts'
-          overwrite: true
-      - aws-s3/sync:
-          from: badges
-          to: 's3://<< parameters.bucket >>/badges/zel'
           overwrite: true
       - run:
           name: Invalidate CloudFront Distribution Cache
