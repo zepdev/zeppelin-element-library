@@ -8,7 +8,7 @@
   $_margin: 0
 ) {
   font-family: $_font-family;
-  font-size: em-calc($_font-size, $_font-size-base);
+  font-size: $_font-size;
   font-weight: $_font-weight;
   line-height: $_line-height;
   text-transform: $_text-transform;

@@ -5,9 +5,20 @@ const buttonData = {
     name: 'primary',
     js: `<button type="button" class="${helpers.classPrefix}button ${
       helpers.classPrefix
-    }button-primary" ${
-      helpers.htmlDataVarType
-    }="button">Primary Button</button>`,
+    }button-primary" ${helpers.htmlDataVarType}="button"><span class="${
+      helpers.classPrefix
+    }button__text">Primary Button</span></button>`,
+    react: false,
+    angular: false,
+    vue: false
+  },
+  primary2: {
+    name: 'primary2',
+    js: `<button type="button" class="${helpers.classPrefix}button ${
+      helpers.classPrefix
+    }button-primary" ${helpers.htmlDataVarType}="button"><span class="${
+      helpers.classPrefix
+    }button__text">I am the largest Primary Button ever! Really!</span></button>`,
     react: false,
     angular: false,
     vue: false
@@ -18,7 +29,9 @@ const buttonData = {
       helpers.classPrefix
     }button-primary ${helpers.classPrefix}button-primary--disabled" ${
       helpers.htmlDataVarType
-    }="button">Primary Button</button>`,
+    }="button"><span class="${
+      helpers.classPrefix
+    }button__text">Primary Button</span></button>`,
     react: false,
     angular: false,
     vue: false
@@ -27,9 +40,9 @@ const buttonData = {
     name: 'secondary',
     js: `<a type="button" class="${helpers.classPrefix}button ${
       helpers.classPrefix
-    }button-secondary" ${
-      helpers.htmlDataVarType
-    }="button">Secondary Button</a>`,
+    }button-secondary" ${helpers.htmlDataVarType}="button"><span class="${
+      helpers.classPrefix
+    }button__text">Secondary Button</span></a>`,
     react: false,
     angular: false,
     vue: false
@@ -40,7 +53,9 @@ const buttonData = {
       helpers.classPrefix
     }button-secondary ${helpers.classPrefix}button-secondary--disabled" ${
       helpers.htmlDataVarType
-    }="button">Secondary Button</a>`,
+    }="button"><span class="${
+      helpers.classPrefix
+    }button__text">Secondary Button</span></a>`,
     react: false,
     angular: false,
     vue: false
@@ -51,7 +66,9 @@ const buttonData = {
       helpers.classPrefix
     }button-primary ${helpers.classPrefix}button--full" ${
       helpers.htmlDataVarType
-    }="button">Primary Button</button>`,
+    }="button"><span class="${
+      helpers.classPrefix
+    }button__text">Primary Button</span></button>`,
     react: false,
     angular: false,
     vue: false

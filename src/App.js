@@ -6,18 +6,21 @@ import './base_bundle_entry.scss';
 function App() {
   const [content, setContent] = useState('welcome');
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      <h1
-        style={{
-          textAlign: 'center',
-          margin: 0,
-          padding: 30,
-          color: '#ffffff',
-          background: '#27166f '
-        }}
-      >
-        Zeppelin Element Library
-      </h1>
+    <div className="zep-grid">
+      <div className="zep-grid__item zep-grid__item--1-1">
+        <h1
+          style={{
+            textAlign: 'center',
+            margin: 0,
+            padding: 30,
+            color: '#ffffff',
+            background: '#27166f ',
+            width: '100%'
+          }}
+        >
+          Zeppelin Element Library
+        </h1>
+      </div>
       <div style={{ display: 'flex', flexGrow: 1 }}>
         <div
           style={{
