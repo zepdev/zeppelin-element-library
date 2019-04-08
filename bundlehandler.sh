@@ -21,10 +21,16 @@ cp -r src/themes/* bundle/themes
 # copy icons folder into bundle folder
 cp -r src/assets/icons/* bundle/assets/icons
 # for f in src/assets/icons/*; do cp -- "$f" "${bundle/assets/icons/}zepicons-$f" ; done
+cd bundle/assets/icons
+find . -name 'Icons*.svg' -type f -exec bash -c 'mv "$1" "${1/\/IconsLanguages//}"' -- {} \;
+find . -name 'Icons*.svg' -type f -exec bash -c 'mv "$1" "${1/\/IconsMiscAction//}"' -- {} \;
+find . -name 'Icons*.svg' -type f -exec bash -c 'mv "$1" "${1/\/IconsMiscNavigation//}"' -- {} \;
+find . -name 'Icons*.svg' -type f -exec bash -c 'mv "$1" "${1/\/IconsMiscIndicator//}"' -- {} \;
+find . -name 'Icons*.svg' -type f -exec bash -c 'mv "$1" "${1/\/IconsSbu//}"' -- {} \;
+find . -name 'Icons*.svg' -type f -exec bash -c 'mv "$1" "${1/\/IconsSocial//}"' -- {} \;
+for f in * ; do mv -- "$f" "Zepicons$f" ; done
 
-find . -name 'Icons*.svg' 
-#-type f -exec bash -c 'mv "$1" "${1/\/123_//}"' -- {} \;
-
+cd ../../../
 
 # copy icon font to bundle folder
 cp -r build/zepicons.* bundle/assets/fonts
