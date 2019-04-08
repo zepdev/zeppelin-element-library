@@ -20,9 +20,15 @@ cp -r src/themes/* bundle/themes
 
 # copy icons folder into bundle folder
 cp -r src/assets/icons/* bundle/assets/icons
+# for f in src/assets/icons/*; do cp -- "$f" "${bundle/assets/icons/}zepicons-$f" ; done
+
+find . -name 'Icons*.svg' 
+#-type f -exec bash -c 'mv "$1" "${1/\/123_//}"' -- {} \;
+
 
 # copy icon font to bundle folder
 cp -r build/zepicons.* bundle/assets/fonts
+
 
 # delete sourceMapping comment line from css file
 sed -i.bak 's@/\*.*\*/@@g' $TARGET_FILE
