@@ -6,40 +6,34 @@ import './base_bundle_entry.scss';
 function App() {
   const [content, setContent] = useState('welcome');
   return (
-    <div className="zep-grid">
-      <div className="zep-grid__item zep-grid__item--1-1">
-        <h1
-          style={{
-            textAlign: 'center',
-            margin: 0,
-            padding: 30,
-            color: '#ffffff',
-            background: '#27166f ',
-            width: '100%'
-          }}
-        >
-          Zeppelin Element Library
-        </h1>
+    <div>
+      <div>
+        <div>
+          <h1
+            style={{
+              textAlign: 'center',
+              margin: 0,
+              padding: 30,
+              color: '#ffffff',
+              background: '#27166f ',
+              width: '100%'
+            }}
+          >
+            Zeppelin Element Library
+          </h1>
+        </div>
       </div>
-      <div style={{ display: 'flex', flexGrow: 1 }}>
-        <div
-          style={{
-            borderRight: '1px solid black',
-            flexBasis: '25%',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            padding: 30
-          }}
-        >
+      <div className="zep-grid">
+        <div className="zep-grid__row">
           {Object.keys(elements).map((elem, i) => (
-            <button
-              key={`btn-${i}`}
-              className="zel-button"
-              onClick={() => setContent(elements[elem].name)}
-            >
-              {elements[elem].name}
-            </button>
+            <div key={`btn-${i}`} className="zep-grid__col zep-grid__col--3">
+              <button
+                className="zel-button zel-button-primary"
+                onClick={() => setContent(elements[elem].name)}
+              >
+                {elements[elem].name}
+              </button>
+            </div>
           ))}
         </div>
         <div style={{ flexGrow: 1, padding: 30 }}>
