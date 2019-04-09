@@ -3,6 +3,8 @@ import elements from './elements/elements';
 import ButtonPage from './elements/button/ButtonPage.jsx';
 import './base_bundle_entry.scss';
 
+require('./icons.font');
+
 function App() {
   const [content, setContent] = useState('welcome');
   return (
