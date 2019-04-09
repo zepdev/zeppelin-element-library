@@ -26,15 +26,14 @@ cd bundle/assets/icons
 for f in *.svg
 do
     newFileName=$(echo $f | \
-     awk '{gsub(/IconsLanguages/, "")};1' | \
-     awk '{gsub(/IconsMiscAction/, "")};1' | \
-     awk '{gsub(/IconsMiscNavigation/, "")};1' | \
-     awk '{gsub(/IconsMiscIndicator/, "")};1' | \
-     awk '{gsub(/IconsSbu/, "")};1' | \
-     awk '{gsub(/IconsSocial/, "")};1' | \
+     awk '{gsub(/IconsLanguages/, "zepicons")};1' | \
+     awk '{gsub(/IconsMiscAction/, "zepicons")};1' | \
+     awk '{gsub(/IconsMiscNavigation/, "zepicons")};1' | \
+     awk '{gsub(/IconsMiscIndicator/, "zepicons")};1' | \
+     awk '{gsub(/IconsSbu/, "zepicons")};1' | \
+     awk '{gsub(/IconsSocial/, "zepicons")};1' | \
      awk '{gsub(/[A-Z]/, "-&")};1' | \
      awk '{ print tolower($0) }')
-    mv $f "zepicons$newFileName"
 done
 
 # move back to main folder
@@ -58,6 +57,7 @@ rm $TARGET_FILE.bak
 
 # change fonts path in css files
 sed -i.bak 's@/static/media/@assets/fonts/@g' $TARGET_FILE
+sed -i.bak 's@/zepicons@assets/fonts/zepicons@g' $TARGET_FILE
 rm $TARGET_FILE.bak
 
 # gzip files
