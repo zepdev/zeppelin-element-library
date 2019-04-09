@@ -13,7 +13,7 @@ TARGET_FILE="bundle/zeppelin-element-library.css"
 find build/static/css -name \*.css -exec cp {} $TARGET_FILE \;
 
 # copy fonts into bundle folder
-cp -r src/assets/fonts/* bundle/assets/fonts 
+cp -r src/assets/fonts/* bundle/assets/fonts
 
 # copy theme folder into bundle folder
 cp -r src/themes/* bundle/themes
@@ -21,8 +21,28 @@ cp -r src/themes/* bundle/themes
 # copy icons folder into bundle folder
 cp -r src/assets/icons/* bundle/assets/icons
 
+# rename icons 
+cd bundle/assets/icons
+for f in *.svg
+do
+    newFileName=$(echo $f | \
+     awk '{gsub(/IconsLanguages/, "")};1' | \
+     awk '{gsub(/IconsMiscAction/, "")};1' | \
+     awk '{gsub(/IconsMiscNavigation/, "")};1' | \
+     awk '{gsub(/IconsMiscIndicator/, "")};1' | \
+     awk '{gsub(/IconsSbu/, "")};1' | \
+     awk '{gsub(/IconsSocial/, "")};1' | \
+     awk '{gsub(/[A-Z]/, "-&")};1' | \
+     awk '{ print tolower($0) }')
+    mv $f "zepicons$newFileName"
+done
+
+# move back to main folder
+cd ../../../
+
 # copy icon font to bundle folder
 cp -r build/zepicons.* bundle/assets/fonts
+
 
 # delete sourceMapping comment line from css file
 sed -i.bak 's@/\*.*\*/@@g' $TARGET_FILE
@@ -30,9 +50,9 @@ rm $TARGET_FILE.bak
 
 # delete hash from font name in css file
 for font in eot woff woff2 ttf svg
-do 
+do
     sed -i.bak 's/\(\.\)\(.[^\.]*\)\(\.'$font'\)/\3/g' $TARGET_FILE
-    
+
 done
 rm $TARGET_FILE.bak
 
