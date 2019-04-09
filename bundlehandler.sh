@@ -18,9 +18,9 @@ cp -r src/assets/fonts/* bundle/assets/fonts
 # copy theme folder into bundle folder
 cp -r src/themes/* bundle/themes
 
-# copy icons folder into bundle folder
+# copy icons folder into bundle folder and rename icons
 cp -r src/assets/icons/* bundle/assets/icons
-# for f in src/assets/icons/*; do cp -- "$f" "${bundle/assets/icons/}zepicons-$f" ; done
+
 cd bundle/assets/icons
 find . -name 'Icons*.svg' -type f -exec bash -c 'mv "$1" "${1/\/IconsLanguages//}"' -- {} \;
 find . -name 'Icons*.svg' -type f -exec bash -c 'mv "$1" "${1/\/IconsMiscAction//}"' -- {} \;
@@ -28,8 +28,13 @@ find . -name 'Icons*.svg' -type f -exec bash -c 'mv "$1" "${1/\/IconsMiscNavigat
 find . -name 'Icons*.svg' -type f -exec bash -c 'mv "$1" "${1/\/IconsMiscIndicator//}"' -- {} \;
 find . -name 'Icons*.svg' -type f -exec bash -c 'mv "$1" "${1/\/IconsSbu//}"' -- {} \;
 find . -name 'Icons*.svg' -type f -exec bash -c 'mv "$1" "${1/\/IconsSocial//}"' -- {} \;
-for f in * ; do mv -- "$f" "Zepicons$f" ; done
+for f in *.svg
+do
+    myVar=$(echo $f | awk '{gsub(/[A-Z]/, "-&")};1' | awk '{ print tolower($0) }')
+    mv $f "zepicons$myVar"
+done
 
+# move back to main folder
 cd ../../../
 
 # copy icon font to bundle folder
