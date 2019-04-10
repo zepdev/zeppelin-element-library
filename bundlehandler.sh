@@ -48,14 +48,6 @@ cp -r build/zepicons.* bundle/assets/fonts
 sed -i.bak 's@/\*.*\*/@@g' $TARGET_FILE
 rm $TARGET_FILE.bak
 
-# delete hash from font name in css file
-for font in eot woff woff2 ttf svg
-do
-    sed -i.bak 's/\(\.\)\(.[^\.]*\)\(\.'$font'\)/\3/g' $TARGET_FILE
-
-done
-rm $TARGET_FILE.bak
-
 # change fonts path in css files
 sed -i.bak 's@/static/media/@assets/fonts/@g' $TARGET_FILE
 sed -i.bak 's@/zepicons@assets/fonts/zepicons@g' $TARGET_FILE
