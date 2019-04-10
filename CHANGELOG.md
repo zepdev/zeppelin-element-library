@@ -1,3 +1,10 @@
+## [0.3.6](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.5...v0.3.6) (2019-04-10)
+
+
+### Bug Fixes
+
+* **Circle:** Changed regex and added missing filter ([f5fe5df](https://github.com/zepdev/zeppelin-element-library/commit/f5fe5df))
+
 ## [0.3.5](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.4...v0.3.5) (2019-04-10)
 
 
