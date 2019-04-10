@@ -161,6 +161,8 @@ workflows:
             branches:
               only:
                 - master
+            tags:
+              only: /.*/
 
       - deploy: # deployment step for live environment
           bucket: com.zeppelin.zds.assets
