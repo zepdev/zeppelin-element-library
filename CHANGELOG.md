@@ -1,3 +1,17 @@
+# [0.4.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.6...v0.4.0) (2019-04-10)
+
+
+### Bug Fixes
+
+* **bundle-script:** Removed shell hash removal ([198962c](https://github.com/zepdev/zeppelin-element-library/commit/198962c))
+* **Circle:** Added missing filters to the other jobs ([2d82fa0](https://github.com/zepdev/zeppelin-element-library/commit/2d82fa0))
+* **Circle:** Added tags filter because of transient dependency ([3dfba30](https://github.com/zepdev/zeppelin-element-library/commit/3dfba30))
+
+
+### Features
+
+* **tag:** new element added: tag ([3e52fd4](https://github.com/zepdev/zeppelin-element-library/commit/3e52fd4))
+
 ## [0.3.6](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.5...v0.3.6) (2019-04-10)
 
 
