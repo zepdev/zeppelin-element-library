@@ -1,3 +1,10 @@
+## [0.3.5](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.4...v0.3.5) (2019-04-10)
+
+
+### Bug Fixes
+
+* **Circle:** Added missing filters to the other jobs ([028d4d1](https://github.com/zepdev/zeppelin-element-library/commit/028d4d1))
+
 ## [0.3.4](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.3...v0.3.4) (2019-04-10)
 
 
