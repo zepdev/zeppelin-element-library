@@ -114,17 +114,17 @@ jobs:
           at: ~/project
       - aws-s3/sync:
           from: bundle
-          to: 's3://<< parameters.bucket >>/zel/js'
+          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/js'
           arguments: --exclude "*" --include "*.js" --include "*.js.gz"
           overwrite: true
       - aws-s3/sync:
           from: bundle
-          to: 's3://<< parameters.bucket >>/zel/css'
+          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css'
           arguments: --exclude "*" --include "*.css" --include "*.css.gz"
           overwrite: true
       - aws-s3/sync:
           from: bundle/assets/fonts
-          to: 's3://<< parameters.bucket >>/zel/css/assets/fonts'
+          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/fonts'
           overwrite: true
       - run:
           name: Invalidate CloudFront Distribution Cache
@@ -153,22 +153,15 @@ workflows:
       - bundle:
           requires:
             - build
-      - hold:
-          type: approval
-          requires:
-            - bundle
-          filters:
-            branches:
-              only:
-                - master
       - release:
           context: zds
           requires:
-            - hold
+            - bundle
           filters:
+            tags:
+              only: /^v.*/
             branches:
-              only:
-                - master
+              ignore: /.*/
 
       - deploy: # deployment step for live environment
           bucket: com.zeppelin.zds.assets
@@ -178,6 +171,7 @@ workflows:
           requires:
             - release
           filters:
+            tags:
+              only: /^v.*/
             branches:
-              only:
-                - master
+              ignore: /.*/

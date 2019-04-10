@@ -30,7 +30,10 @@ const inputOptions = {
 const outputOptions = {
   file: path.resolve(__dirname, 'bundle/zeppelin-element-library.js'),
   format: 'iife',
-  name: 'ZEL'
+  name: 'ZEL',
+  banner: `/* zeppelin-element-library version ${
+    process.env.npm_package_version
+  } */`
 };
 
 const options = [
