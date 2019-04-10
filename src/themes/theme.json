@@ -247,6 +247,14 @@
         "hsb": null
       }
     },
+    "hover": {
+      "catYellow": {
+        "name": "cat-yellow-hover",
+        "hex": "#fae6b2",
+        "rgb": null,
+        "hsb": null
+      }
+    },
     "gray": {
       "black": {
         "name": "black",
