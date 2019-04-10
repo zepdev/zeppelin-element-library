@@ -158,10 +158,9 @@ workflows:
           requires:
             - bundle
           filters:
-            tags:
-              only: /^v.*/
             branches:
-              ignore: /.*/
+              only:
+                - master
 
       - deploy: # deployment step for live environment
           bucket: com.zeppelin.zds.assets
