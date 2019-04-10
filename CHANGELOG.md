@@ -1,3 +1,11 @@
+## [0.3.2](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.1...v0.3.2) (2019-04-10)
+
+
+### Bug Fixes
+
+* **package.json:** Added missing semantic release config ([c188ef3](https://github.com/zepdev/zeppelin-element-library/commit/c188ef3))
+* **semantic:** Reenable semantic release for every commit on master ([b65898d](https://github.com/zepdev/zeppelin-element-library/commit/b65898d))
+
 # [0.3.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.2.4...v0.3.0) (2019-03-28)
 
 
