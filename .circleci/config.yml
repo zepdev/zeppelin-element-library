@@ -137,7 +137,11 @@ workflows:
   version: 2
   test_build_bundle_release_deploy:
     jobs:
-      - test
+      - test:
+          filters:
+            tags:
+              only: /^v.*/
+
       - sonarqube:
           context: zds
           requires:
@@ -148,19 +152,22 @@ workflows:
                 - development
                 - master
             tags:
-              only: /v.*/
+              only: /^v.*/
+
       - build:
           requires:
             - test
           filters:
             tags:
-              only: /v.*/
+              only: /^v.*/
+
       - bundle:
           requires:
             - build
           filters:
             tags:
-              only: /v.*/
+              only: /^v.*/
+
       - release:
           context: zds
           requires:
@@ -170,7 +177,7 @@ workflows:
               only:
                 - master
             tags:
-              only: /v.*/
+              only: /^v.*/
 
       - deploy: # deployment step for live environment
           bucket: com.zeppelin.zds.assets
