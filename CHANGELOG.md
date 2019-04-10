@@ -1,3 +1,10 @@
+## [0.3.3](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.2...v0.3.3) (2019-04-10)
+
+
+### Bug Fixes
+
+* **docs:** Fixed the documentation for the release process ([e9e933f](https://github.com/zepdev/zeppelin-element-library/commit/e9e933f))
+
 ## [0.3.2](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.1...v0.3.2) (2019-04-10)
 
 
