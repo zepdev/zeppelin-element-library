@@ -1,3 +1,10 @@
+## [0.3.4](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.3...v0.3.4) (2019-04-10)
+
+
+### Bug Fixes
+
+* **Circle:** Added tags filter because of transient dependency ([6ed52c2](https://github.com/zepdev/zeppelin-element-library/commit/6ed52c2))
+
 ## [0.3.3](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.2...v0.3.3) (2019-04-10)
 
 
