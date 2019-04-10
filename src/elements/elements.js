@@ -6,5 +6,9 @@ module.exports = {
   tabs: {
     name: 'tabs',
     isReady: false
+  },
+  tag: {
+    name: 'tag',
+    isReady: true
   }
 };

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import elements from './elements/elements';
 import ButtonPage from './elements/button/ButtonPage.jsx';
+import TagPage from './elements/tag/TagPage.jsx';
 import './base_bundle_entry.scss';
-
-require('./icons.font');
+// import './icons.font';
 
 function App() {
   const [content, setContent] = useState('welcome');
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <h1
         style={{
           textAlign: 'center',
@@ -47,6 +47,7 @@ function App() {
           )}
           {content === 'button' && <ButtonPage />}
           {content === 'tabs' && <p>This element is not ready</p>}
+          {content === 'tag' && <TagPage />}
         </div>
       </div>
     </div>
