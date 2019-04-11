@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.0...v0.4.1) (2019-04-11)
+
+
+### Bug Fixes
+
+* **npm:** Updated to react-scripts to minimum dependency ([1311e73](https://github.com/zepdev/zeppelin-element-library/commit/1311e73))
+
 # [0.4.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.6...v0.4.0) (2019-04-10)
 
 
