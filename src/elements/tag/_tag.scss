@@ -13,7 +13,9 @@
     &.#{$prefix}tag--hover {
       background-color: get('colors.hover.catYellow.hex');
     }
-    img {
+    img,
+    i,
+    svg {
       width: 12px;
       height: 12px;
       color: get('colors.primary.catYellow.hex');
