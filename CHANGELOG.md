@@ -1,3 +1,10 @@
+## [0.4.5](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.4...v0.4.5) (2019-04-12)
+
+
+### Bug Fixes
+
+* **bundler:** remove double zepicon naming ([b763376](https://github.com/zepdev/zeppelin-element-library/commit/b763376))
+
 ## [0.4.4](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.3...v0.4.4) (2019-04-12)
 
 
