@@ -1,3 +1,11 @@
+## [0.4.4](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.3...v0.4.4) (2019-04-12)
+
+
+### Bug Fixes
+
+* **a11y:** added sr-only for icons ([2d1a58f](https://github.com/zepdev/zeppelin-element-library/commit/2d1a58f))
+* **rename icons for build:** rename icons for build ([15893ac](https://github.com/zepdev/zeppelin-element-library/commit/15893ac))
+
 ## [0.4.3](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.2...v0.4.3) (2019-04-12)
 
 
