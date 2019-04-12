@@ -1,13 +1,13 @@
 import React from 'react';
-import closeIcon from '../../assets/icons/zepicons-close.svg';
+import closeIcon from '../../assets/icons/iconsMiscActionClose.svg';
 
 function Tag() {
   return (
     <div>
-      <div role="button" className="zep-tag">
-        <span>Tag</span>
+      <span role="button" className="zep-tag">
+        Tag
         <img src={closeIcon} alt="close" />
-      </div>
+      </span>
     </div>
   );
 }

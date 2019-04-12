@@ -24,24 +24,25 @@ function App() {
         <div
           style={{
             borderRight: '1px solid black',
-            flexBasis: '25%',
-            height: '100%',
+            flexBasis: '10%',
+            height: 1000,
             display: 'flex',
             flexDirection: 'column',
-            padding: 30
+            padding: 45,
+            alignItems: 'flex-start'
           }}
         >
           {Object.keys(elements).map((elem, i) => (
             <button
               key={`btn-${i}`}
-              className="zel-button"
+              className="zep-button"
               onClick={() => setContent(elements[elem].name)}
             >
               {elements[elem].name}
             </button>
           ))}
         </div>
-        <div style={{ flexGrow: 1, padding: 30 }}>
+        <div style={{ flexGrow: 1, padding: 45 }}>
           {content === 'welcome' && (
             <p>Welcome to the Zeppelin Element Library</p>
           )}
