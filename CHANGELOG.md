@@ -1,3 +1,12 @@
+## [0.4.3](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.2...v0.4.3) (2019-04-12)
+
+
+### Bug Fixes
+
+* **bundler:** changed icon naming ([b0ecf3e](https://github.com/zepdev/zeppelin-element-library/commit/b0ecf3e))
+* **bundler:** fix icon naming in bundler ([05d14e7](https://github.com/zepdev/zeppelin-element-library/commit/05d14e7))
+* **icons:** new icons svg for development use ([1328bfb](https://github.com/zepdev/zeppelin-element-library/commit/1328bfb))
+
 ## [0.4.2](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.1...v0.4.2) (2019-04-12)
 
 
