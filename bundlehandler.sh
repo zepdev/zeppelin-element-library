@@ -27,15 +27,15 @@ cd bundle/assets/icons
 for f in *.svg
 do
     newFileName=$(echo $f | \
-     awk '{gsub(/iconsLanguages/, "zepicons")};1' | \
-     awk '{gsub(/iconsMiscAction/, "zepicons")};1' | \
-     awk '{gsub(/iconsMiscNavigation/, "zepicons")};1' | \
-     awk '{gsub(/iconsMiscIndicator/, "zepicons")};1' | \
-     awk '{gsub(/iconsSbu/, "zepicons")};1' | \
-     awk '{gsub(/iconsSocial/, "zepicons")};1' | \
+     awk '{gsub(/iconsLanguages/, "")};1' | \
+     awk '{gsub(/iconsMiscAction/, "")};1' | \
+     awk '{gsub(/iconsMiscNavigation/, "")};1' | \
+     awk '{gsub(/iconsMiscIndicator/, "")};1' | \
+     awk '{gsub(/iconsSbu/, "")};1' | \
+     awk '{gsub(/iconsSocial/, "")};1' | \
      awk '{gsub(/[A-Z]/, "-&")};1' | \
      awk '{ print tolower($0) }')
-     mv $f "$newFileName"
+     mv $f "zepicons$newFileName"
 done
 
 # move back to main folder
