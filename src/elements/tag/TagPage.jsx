@@ -1,5 +1,5 @@
 import React from 'react';
-import closeIcon from '../../assets/icons/iconsMiscActionClose.svg';
+import closeIcon from '../../assets/icons/zepicons-close.svg';
 
 function Tag() {
   return (
