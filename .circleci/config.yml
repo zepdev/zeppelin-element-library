@@ -126,6 +126,10 @@ jobs:
           from: bundle/assets/fonts
           to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/fonts'
           overwrite: true
+      - aws-s3/sync:
+          from: bundle/assets/dist
+          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/dist'
+          overwrite: true
       - run:
           name: Invalidate CloudFront Distribution Cache
           command: |
