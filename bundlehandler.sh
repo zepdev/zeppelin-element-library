@@ -5,6 +5,7 @@ mkdir -p bundle;
 mkdir -p bundle/themes;
 mkdir -p bundle/assets/fonts;
 mkdir -p bundle/assets/icons;
+mkdir -p bundle/assets/dist;
 
 #create target destination variable
 TARGET_FILE="bundle/zeppelin-element-library.css"
@@ -21,6 +22,9 @@ cp -r src/themes/* bundle/themes
 
 # copy icons folder into bundle folder
 cp -r src/assets/icons/* bundle/assets/icons
+
+# copy sketch file into bundle folder
+cp -r src/assets/sketches/zds-library.sketch bundle/assets/dist
 
 # rename icons
 cd bundle/assets/icons
@@ -64,3 +68,10 @@ mv tmpfile $TARGET_FILE
 
 # gzip files
 for file in bundle/*.min.js bundle/*.css; do gzip -k -f $file; done
+
+# zip icons
+cd bundle/assets/icons
+zip -r -q zepicons.zip .
+mv zepicons.zip ../dist
+
+cd ../../..
