@@ -39,7 +39,8 @@ do
      awk '{gsub(/iconsSocial/, "")};1' | \
      awk '{gsub(/[A-Z]/, "-&")};1' | \
      awk '{ print tolower($0) }')
-     mv $f "zepicons$newFileName"
+#     mv $f "zepicons$newFileName" ONLY USE IF CHANGING FILE NAMES THE FIRST TIME
+     mv $f $newFileName
 done
 
 # move back to main folder
