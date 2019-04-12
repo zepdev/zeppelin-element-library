@@ -1,3 +1,10 @@
+## [0.4.2](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.1...v0.4.2) (2019-04-12)
+
+
+### Bug Fixes
+
+* **icons:** add back in icons ([7d2302e](https://github.com/zepdev/zeppelin-element-library/commit/7d2302e))
+
 ## [0.4.1](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.0...v0.4.1) (2019-04-11)
 
 
