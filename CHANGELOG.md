@@ -101,7 +101,7 @@
 
 * **core:** removed hashes from bundled fonts ([6c19626](https://github.com/zepdev/zeppelin-element-library/commit/6c19626))
 
-# 1.0.0 (2019-03-15)
+# 0.2.2 (2019-03-15)
 
 
 ### Bug Fixes
