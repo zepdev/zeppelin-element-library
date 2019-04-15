@@ -1,84 +1,96 @@
-//Button - base style
+// Button
 
 @mixin button {
-  .#{$prefix}button {
-    $height: 3rem;
+  $height: 3rem;
 
+  .#{$prefix}button {
     box-sizing: border-box;
     display: inline-block;
     border: 0;
     background: transparent;
     outline: 0;
     text-align: center;
+    vertical-align: top;
     cursor: pointer;
 
-    @extend %typo-special-4;
-    line-height: $height; //line-height for button differs from %typo-special-4 line-height
+    min-height: $height;
+    padding: 0.25rem 1.125rem 0;
+    //padding: 1px 1.125rem 0; // polished version: text visually v-align middle
+  }
 
-    height: $height;
-    padding: 0 1.125rem;
-    //padding: 1px 1.125rem 0; //polished version: text visually v-align middle
+  .#{$prefix}button-primary {
+    $id: 'button-primary';
+    $bg-color: map-get($theme-background-color-map, $id);
 
-    &.#{$prefix}button-primary {
-      $id: 'button-primary';
+    color: map-get($theme-color-map, $id);
+    background-color: $bg-color;
 
-      color: map-get($theme-color-map, $id);
-
-      $bg-color: map-get($theme-background-color-map, $id);
-      background-color: $bg-color;
-
-      &:hover,
-      &:focus,
-      &.#{$prefix}button-primary--hover {
-        background-color: map-get($theme-background-color-map, '#{$id}--hover');
-      }
-
-      &:disabled,
-      &.#{$prefix}button-primary--disabled {
-        color: map-get($theme-color-map, '#{$id}--disabled');
-        background-color: map-get(
-          $theme-background-color-map,
-          '#{$id}--disabled'
-        );
-      }
+    &:hover,
+    &:focus,
+    &.#{$prefix}button-primary--hover {
+      background-color: map-get($theme-background-color-map, '#{$id}--hover');
     }
 
-    &.#{$prefix}button-secondary {
-      $id: 'button-secondary';
-
-      color: map-get($theme-color-map, $id);
-
-      $bg-color: map-get($theme-background-color-map, $id);
-      background-color: $bg-color;
-
-      border: solid 2px map-get($theme-border-color-map, $id);
-
-      line-height: calc(#{$height} - 4px); //take border-width into account
-
-      &:hover,
-      &:focus,
-      &.#{$prefix}button-secondary--hover {
-        color: map-get($theme-color-map, '#{$id}--hover');
-        background-color: map-get($theme-background-color-map, '#{$id}--hover');
-        border-color: map-get($theme-background-color-map, '#{$id}--hover');
-      }
-
-      &:disabled,
-      &.#{$prefix}button-secondary--disabled {
-        color: map-get($theme-color-map, '#{$id}--disabled');
-        background-color: map-get(
-          $theme-background-color-map,
-          '#{$id}--disabled'
-        );
-        border-color: map-get($theme-border-color-map, '#{$id}--disabled');
-        cursor: not-allowed;
-      }
+    &:disabled,
+    &.#{$prefix}button-primary--disabled {
+      color: map-get($theme-color-map, '#{$id}--disabled');
+      background-color: map-get(
+        $theme-background-color-map,
+        '#{$id}--disabled'
+      );
+      cursor: not-allowed;
     }
+  }
+
+  .#{$prefix}button-secondary {
+    $id: 'button-secondary';
+    $bg-color: map-get($theme-background-color-map, $id);
+
+    color: map-get($theme-color-map, $id);
+    background-color: $bg-color;
+    border: solid 0.125rem map-get($theme-border-color-map, $id);
+    //line-height: calc(#{$height} - 4px); // take border-width into account
+    padding-top: 0.375rem;
+
+    &:hover,
+    &:focus,
+    &.#{$prefix}button-secondary--hover {
+      color: map-get($theme-color-map, '#{$id}--hover');
+      background-color: map-get($theme-background-color-map, '#{$id}--hover');
+      border-color: map-get($theme-background-color-map, '#{$id}--hover');
+    }
+
+    &:disabled,
+    &.#{$prefix}button-secondary--disabled {
+      color: map-get($theme-color-map, '#{$id}--disabled');
+      background-color: map-get(
+        $theme-background-color-map,
+        '#{$id}--disabled'
+      );
+      border-color: map-get($theme-border-color-map, '#{$id}--disabled');
+      cursor: not-allowed;
+    }
+    /* Test
+    @include breakpoint--max(xs) {
+      background: pink;
+    }
+    @include breakpoint--min(xs) {
+      background: lime;
+    }
+    @include breakpoint--custom-min(700px) {
+      background: rgb(62, 216, 255);
+    }
+    */
   }
 
   .#{$prefix}button--full {
     display: block;
     width: 100%;
+  }
+
+  .#{$prefix}button__text {
+    @extend %typo-special-4;
+    display: inline-block;
   }
 }
 

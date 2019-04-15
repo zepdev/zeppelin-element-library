@@ -1,0 +1,88 @@
+// values: colums, margin, gutter
+$grid-values-map: (
+  xs: (
+    6,
+    32px,
+    32px
+  ),
+  s: (
+    6,
+    48px,
+    32px
+  ),
+  m: (
+    8,
+    64px,
+    32px
+  ),
+  l: (
+    12,
+    64px,
+    32px
+  ),
+  xl: (
+    12,
+    auto,
+    32px
+  )
+);
+
+.#{$prefix}grid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  $h-margin: 24px;
+  margin-left: $h-margin;
+  margin-right: $h-margin;
+
+  // get grid max screen with from style-basics/_breakpoints.scss
+  max-width: map-get($min-screensize-map, l);
+
+  // set horizontal margin of grid container
+  @each $screensize, $valuelist in $grid-values-map {
+    @include breakpoint--min(#{$screensize}) {
+      $margin: nth($valuelist, 2);
+      margin-left: $margin;
+      margin-right: $margin;
+    }
+  }
+}
+
+.#{$prefix}grid--no-h-margin {
+  $h-margin: 0;
+  margin-left: $h-margin;
+  margin-right: $h-margin;
+}
+
+.#{$prefix}grid__row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 1px red solid;
+}
+
+.#{$prefix}grid__col {
+  flex-shrink: 1;
+  border: 1px green solid;
+}
+
+$max-cols: 12;
+$min-cols: 4;
+
+// set col width
+@for $i from 1 through $max-cols {
+  .#{$prefix}grid__col--#{$i} {
+    $cols: $min-cols;
+    width: calc(100% / #{$max-cols} * #{$i});
+
+    // set width of grid col for each breakpoint
+    //TODO: calculate 12-grid values to lower grid options...
+    @each $screensize, $valuelist in $grid-values-map {
+      @include breakpoint--min(#{$screensize}) {
+        $cols: nth($valuelist, 1);
+        width: calc(100% / #{$max-cols} * #{$i});
+      }
+    }
+  }
+}

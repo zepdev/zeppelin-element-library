@@ -8,9 +8,11 @@ $include-typography: true !default;
 @import './style-basics/import_once';
 @import './style-basics/variables';
 @import './style-basics/utils';
+@import './style-basics/breakpoints';
 @import './assets/fontsets';
 @import './guidelines/colors';
 @import './guidelines/typography';
+@import './guidelines/grid';
 @import './style-basics/globals';
 
 //---------------------------------
