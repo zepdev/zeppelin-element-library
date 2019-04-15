@@ -1,3 +1,39 @@
+## [0.3.6](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.5...v0.3.6) (2019-04-10)
+
+
+### Bug Fixes
+
+* **Circle:** Changed regex and added missing filter ([f5fe5df](https://github.com/zepdev/zeppelin-element-library/commit/f5fe5df))
+
+## [0.3.5](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.4...v0.3.5) (2019-04-10)
+
+
+### Bug Fixes
+
+* **Circle:** Added missing filters to the other jobs ([028d4d1](https://github.com/zepdev/zeppelin-element-library/commit/028d4d1))
+
+## [0.3.4](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.3...v0.3.4) (2019-04-10)
+
+
+### Bug Fixes
+
+* **Circle:** Added tags filter because of transient dependency ([6ed52c2](https://github.com/zepdev/zeppelin-element-library/commit/6ed52c2))
+
+## [0.3.3](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.2...v0.3.3) (2019-04-10)
+
+
+### Bug Fixes
+
+* **docs:** Fixed the documentation for the release process ([e9e933f](https://github.com/zepdev/zeppelin-element-library/commit/e9e933f))
+
+## [0.3.2](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.1...v0.3.2) (2019-04-10)
+
+
+### Bug Fixes
+
+* **package.json:** Added missing semantic release config ([c188ef3](https://github.com/zepdev/zeppelin-element-library/commit/c188ef3))
+* **semantic:** Reenable semantic release for every commit on master ([b65898d](https://github.com/zepdev/zeppelin-element-library/commit/b65898d))
+
 # [0.3.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.2.4...v0.3.0) (2019-03-28)
 
 
@@ -28,7 +64,7 @@
 
 * **core:** removed hashes from bundled fonts ([6c19626](https://github.com/zepdev/zeppelin-element-library/commit/6c19626))
 
-# 1.0.0 (2019-03-15)
+# 0.2.2 (2019-03-15)
 
 
 ### Bug Fixes

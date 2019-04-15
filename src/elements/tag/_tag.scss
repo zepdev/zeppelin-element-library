@@ -1,0 +1,31 @@
+//Tag - base style
+
+@mixin tag {
+  .#{$prefix}tag {
+    box-sizing: border-box;
+    display: inline-block;
+    border: 2px solid get('colors.primary.catYellow.hex');
+    padding: 0.625rem;
+    background-color: get('colors.gray.white.hex');
+    color: get('colors.gray.black.hex');
+    &:hover,
+    &:focus,
+    &.#{$prefix}tag--hover {
+      background-color: get('colors.hover.catYellow.hex');
+    }
+    img,
+    i,
+    svg {
+      width: 12px;
+      height: 12px;
+      color: get('colors.primary.catYellow.hex');
+      margin-left: 0.625rem;
+      float: right;
+      cursor: pointer;
+    }
+  }
+}
+
+@include exports('tag') {
+  @include tag;
+}

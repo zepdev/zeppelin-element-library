@@ -112,36 +112,23 @@ jobs:
       - checkout # check out the code in the project directory
       - attach_workspace:
           at: ~/project
-      # TODO: generate badges for project
-      - run:
-          name: create and upload badges
-          command: |
-            mkdir badges
-            cd badges
-            curl -u $SONAR_LOGIN \
-            "http://sq.zepdev.net/api/project_badges/measure?\
-            project=zeppelin-element-library\
-            &metric={bugs,code_smells,coverage,duplicated_lines_density,\
-            ncloc,sqale_rating,alert_status,reliability_rating,\
-            security_rating,sqale_index,vulnerabilities}" -o "#1.svg" \
-            --max-time 2 || true
       - aws-s3/sync:
           from: bundle
-          to: 's3://<< parameters.bucket >>/zel/js'
+          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/js'
           arguments: --exclude "*" --include "*.js" --include "*.js.gz"
           overwrite: true
       - aws-s3/sync:
           from: bundle
-          to: 's3://<< parameters.bucket >>/zel/css'
+          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css'
           arguments: --exclude "*" --include "*.css" --include "*.css.gz"
           overwrite: true
       - aws-s3/sync:
           from: bundle/assets/fonts
-          to: 's3://<< parameters.bucket >>/zel/css/assets/fonts'
+          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/fonts'
           overwrite: true
       - aws-s3/sync:
-          from: badges
-          to: 's3://<< parameters.bucket >>/badges/zel'
+          from: bundle/assets/dist
+          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/dist'
           overwrite: true
       - run:
           name: Invalidate CloudFront Distribution Cache
@@ -154,7 +141,11 @@ workflows:
   version: 2
   test_build_bundle_release_deploy:
     jobs:
-      - test
+      - test:
+          filters:
+            tags:
+              only: /^v.*/
+
       - sonarqube:
           context: zds
           requires:
@@ -164,28 +155,33 @@ workflows:
               only:
                 - development
                 - master
+            tags:
+              only: /^v.*/
+
       - build:
           requires:
             - test
+          filters:
+            tags:
+              only: /^v.*/
+
       - bundle:
           requires:
             - build
-      - hold:
-          type: approval
+          filters:
+            tags:
+              only: /^v.*/
+
+      - release:
+          context: zds
           requires:
             - bundle
           filters:
             branches:
               only:
                 - master
-      - release:
-          context: zds
-          requires:
-            - hold
-          filters:
-            branches:
-              only:
-                - master
+            tags:
+              only: /^v.*/
 
       - deploy: # deployment step for live environment
           bucket: com.zeppelin.zds.assets
@@ -195,6 +191,7 @@ workflows:
           requires:
             - release
           filters:
+            tags:
+              only: /^v.*/
             branches:
-              only:
-                - master
+              ignore: /.*/
