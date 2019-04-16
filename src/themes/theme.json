@@ -247,10 +247,22 @@
         "hsb": null
       }
     },
-    "hover": {
-      "catYellow": {
-        "name": "cat-yellow-hover",
+    "secondary": {
+      "catYellowLightest": {
+        "name": "cat-yellow-lightest",
         "hex": "#fae6b2",
+        "rgb": null,
+        "hsb": null
+      },
+      "catYellowLighter": {
+        "name": "cat-yellow-lighter",
+        "hex": "#f3c753",
+        "rgb": null,
+        "hsb": null
+      },
+      "indigoBlueLighter": {
+        "name": "indigo-blue-lighter",
+        "hex": "#361e9a",
         "rgb": null,
         "hsb": null
       }
@@ -346,6 +358,30 @@
         "name": "info",
         "hex": "#5bc0de",
         "rgb": "91/192/222",
+        "hsb": null
+      },
+      "alertLighter": {
+        "name": "alert-lighter",
+        "hex": "#ffe2e2",
+        "rgb": null,
+        "hsb": null
+      },
+      "warningLighter": {
+        "name": "warning-lighter",
+        "hex": "#fcf8e3",
+        "rgb": null,
+        "hsb": null
+      },
+      "successLighter": {
+        "name": "success-lighter",
+        "hex": "#dff0d8",
+        "rgb": null,
+        "hsb": null
+      },
+      "infoLighter": {
+        "name": "info",
+        "hex": "##d9edf7",
+        "rgb": null,
         "hsb": null
       }
     },
