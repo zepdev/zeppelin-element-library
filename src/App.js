@@ -8,38 +8,34 @@ import './icons.font';
 function App() {
   const [content, setContent] = useState('welcome');
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <h1
-        style={{
-          textAlign: 'center',
-          margin: 0,
-          padding: 30,
-          color: '#ffffff',
-          background: '#27166f '
-        }}
-      >
-        Zeppelin Element Library
-      </h1>
-      <div style={{ display: 'flex', flexGrow: 1 }}>
-        <div
-          style={{
-            borderRight: '1px solid black',
-            flexBasis: '10%',
-            height: 1000,
-            display: 'flex',
-            flexDirection: 'column',
-            padding: 45,
-            alignItems: 'flex-start'
-          }}
-        >
+    <div>
+      <div>
+        <div>
+          <h1
+            style={{
+              textAlign: 'center',
+              margin: 0,
+              padding: 30,
+              color: '#ffffff',
+              background: '#27166f ',
+              width: '100%'
+            }}
+          >
+            Zeppelin Element Library
+          </h1>
+        </div>
+      </div>
+      <div className="zep-grid">
+        <div className="zep-grid__row">
           {Object.keys(elements).map((elem, i) => (
-            <button
-              key={`btn-${i}`}
-              className="zep-button"
-              onClick={() => setContent(elements[elem].name)}
-            >
-              {elements[elem].name}
-            </button>
+            <div key={`btn-${i}`} className="zep-grid__col zep-grid__col--3">
+              <button
+                className="zel-button zel-button-primary"
+                onClick={() => setContent(elements[elem].name)}
+              >
+                {elements[elem].name}
+              </button>
+            </div>
           ))}
         </div>
         <div style={{ flexGrow: 1, padding: 45 }}>

@@ -1,0 +1,35 @@
+$min-screensize-map: (
+  xs: 576,
+  s: 768,
+  m: 992,
+  l: 1200,
+  xl: 1680,
+  xxl: 1920
+);
+
+@mixin breakpoint--min($size) {
+  @if map-has-key($min-screensize-map, $size) {
+    @media screen and (min-width: #{map-get($min-screensize-map, $size)}px) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint--max($size) {
+  @if map-has-key($min-screensize-map, $size) {
+    @media screen and (max-width: #{map-get($min-screensize-map, $size) - 1}px) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint--custom-min($custom-size-with-unit) {
+  @media screen and (min-width: $custom-size-with-unit) {
+    @content;
+  }
+}
+@mixin breakpoint--custom-max($custom-size-with-unit) {
+  @media screen and (max-width: $custom-size-with-unit) {
+    @content;
+  }
+}

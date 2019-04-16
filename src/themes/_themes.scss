@@ -1,0 +1,56 @@
+$themes: (
+  zeppelin: (
+    primary: get('colors.primary.indigoBlue.hex'),
+    hover: get('colors.secondary.indigoBlueLighter.hex'),
+    secondary: get('colors.primary.indigoBlue.hex'),
+    buttonText: get('colors.gray.white.hex'),
+    buttonTextSecondaryHover: get('colors.gray.white.hex'),
+    buttonBorderSecondaryHover: get('colors.primary.indigoBlue.hex')
+  ),
+  cat: (
+    primary: get('colors.primary.catYellow.hex'),
+    hover: get('colors.secondary.catYellowLighter.hex'),
+    secondary: get('colors.secondary.catYellowLightest.hex'),
+    buttonText: get('colors.gray.black.hex'),
+    buttonTextSecondaryHover: get('colors.gray.black.hex'),
+    buttonBorderSecondaryHover: get('colors.primary.catYellow.hex')
+  ),
+  rental: (
+    primary: get('colors.primary.rentalRed.hex'),
+    hover: get('colors.primary.catYellow.hex'),
+    secondary: get('colors.secondary.catYellowLightest.hex'),
+    buttonText: get('colors.gray.white.hex'),
+    buttonTextSecondaryHover: get('colors.gray.black.hex'),
+    buttonBorderSecondaryHover: get('colors.primary.catYellow.hex'),
+  ),
+  // zlab: (
+  //   primary: get('colors.primary.zlabBlue.hex'),
+  //   hover: get('colors.secondary.zlabBlue.hex'),
+  //   secondary: get('colors.secondary.zlabBlue.hex'),
+  //   buttonText: get('colors.gray.black.hex')
+  // )
+);
+
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value
+          )
+        ) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

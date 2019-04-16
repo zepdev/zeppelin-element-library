@@ -1,4 +1,6 @@
 /* eslint-disable no-underscore-dangle */
+
+/* TODO: delete this button javascript */
 export default class Button {
   constructor(__html, __id) {
     this._html = __html;
@@ -7,7 +9,6 @@ export default class Button {
   }
 
   init() {
-    console.log(`Button.init() - ${this.id}`);
     this.html.addEventListener(
       'click',
       e => {

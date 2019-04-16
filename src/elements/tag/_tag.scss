@@ -11,7 +11,7 @@
     &:hover,
     &:focus,
     &.#{$prefix}tag--hover {
-      background-color: get('colors.hover.catYellow.hex');
+      background-color: get('colors.secondary.catYellowLighter.hex');
     }
     img,
     i,
