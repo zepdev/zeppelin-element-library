@@ -3,7 +3,7 @@ import elements from './elements/elements';
 import ButtonPage from './elements/button/ButtonPage.jsx';
 import TagPage from './elements/tag/TagPage.jsx';
 import './base_bundle_entry.scss';
-import './icons.font';
+// import './icons.font';
 
 function App() {
   const [content, setContent] = useState('welcome');
@@ -36,7 +36,7 @@ function App() {
                 {elements[elem].name}
               </button>
             </div>
-         ))}
+          ))}
         </div>
         <div style={{ flexGrow: 1, padding: 45 }}>
           {content === 'welcome' && (
