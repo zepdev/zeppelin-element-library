@@ -9,7 +9,6 @@ export default class Button {
   }
 
   init() {
-    console.log(`Button.init() - ${this.id}`);
     this.html.addEventListener(
       'click',
       e => {

@@ -1,74 +1,123 @@
 import * as helpers from '../../helpers';
 
 const buttonData = {
-  primary: {
-    name: 'primary',
-    js: `<button type="button" class="${helpers.classPrefix}button ${
+  zeppelinPrimary: {
+    name: 'zeppelin primary',
+    js: `<div class="theme-zeppelin" style="margin-bottom: 10px;"><button type="button" class="${
       helpers.classPrefix
-    }button-primary" ${helpers.htmlDataVarType}="button"><span class="${
+    }button ${helpers.classPrefix}button-primary" ${
+      helpers.htmlDataVarType
+    }="button"><span class="${
       helpers.classPrefix
-    }button__text">Primary Button</span></button>`,
+    }button__text">Zeppelin Primary</span></button></div>`,
     react: false,
     angular: false,
     vue: false
   },
-  primary2: {
-    name: 'primary2',
-    js: `<button type="button" class="${helpers.classPrefix}button ${
+  zeppelinSecondary: {
+    name: 'secondary',
+    js: `<div class="theme-zeppelin" style="margin-bottom: 10px;"><a type="button" class="${
       helpers.classPrefix
-    }button-primary" ${helpers.htmlDataVarType}="button"><span class="${
+    }button ${helpers.classPrefix}button-secondary" ${
+      helpers.htmlDataVarType
+    }="button"><span class="${
       helpers.classPrefix
-    }button__text">I am the largest Primary Button ever! Really!</span></button>`,
+    }button__text">Zeppelin Secondary</span></a></div>`,
+    react: false,
+    angular: false,
+    vue: false
+  },
+  catPrimary: {
+    name: 'cat primary',
+    js: `<div class="theme-cat" style="margin-bottom: 10px;"><button type="button" class="${
+      helpers.classPrefix
+    }button ${helpers.classPrefix}button-primary" ${
+      helpers.htmlDataVarType
+    }="button"><span class="${
+      helpers.classPrefix
+    }button__text">Cat Primary</span></button></div>`,
+    react: false,
+    angular: false,
+    vue: false
+  },
+  catSecondary: {
+    name: 'secondary',
+    js: `<div class="theme-cat" style="margin-bottom: 10px;"><a type="button" class="${
+      helpers.classPrefix
+    }button ${helpers.classPrefix}button-secondary" ${
+      helpers.htmlDataVarType
+    }="button"><span class="${
+      helpers.classPrefix
+    }button__text">Cat Secondary</span></a></div>`,
+    react: false,
+    angular: false,
+    vue: false
+  },
+  rentalPrimary: {
+    name: 'zeppelin primary',
+    js: `<div class="theme-rental" style="margin-bottom: 10px;"><button type="button" class="${
+      helpers.classPrefix
+    }button ${helpers.classPrefix}button-primary" ${
+      helpers.htmlDataVarType
+    }="button"><span class="${
+      helpers.classPrefix
+    }button__text">Rental Primary</span></button></div>`,
+    react: false,
+    angular: false,
+    vue: false
+  },
+  rentalSecondary: {
+    name: 'secondary',
+    js: `<div class="theme-rental" style="margin-bottom: 10px;"><a type="button" class="${
+      helpers.classPrefix
+    }button ${helpers.classPrefix}button-secondary" ${
+      helpers.htmlDataVarType
+    }="button"><span class="${
+      helpers.classPrefix
+    }button__text">Rental Secondary</span></a></div>`,
     react: false,
     angular: false,
     vue: false
   },
   primary_disabled: {
     name: 'primary_disabled',
-    js: `<button type="button" class="${helpers.classPrefix}button ${
+    js: `<div style="margin-bottom: 10px;"><button type="button" class="${
       helpers.classPrefix
-    }button-primary ${helpers.classPrefix}button-primary--disabled" ${
+    }button ${helpers.classPrefix}button-primary ${
+      helpers.classPrefix
+    }button-primary--disabled" ${
       helpers.htmlDataVarType
     }="button"><span class="${
       helpers.classPrefix
-    }button__text">Primary Button</span></button>`,
-    react: false,
-    angular: false,
-    vue: false
-  },
-  secondary: {
-    name: 'secondary',
-    js: `<a type="button" class="${helpers.classPrefix}button ${
-      helpers.classPrefix
-    }button-secondary" ${helpers.htmlDataVarType}="button"><span class="${
-      helpers.classPrefix
-    }button__text">Secondary Button</span></a>`,
+    }button__text">Primary Disabled</span></button></div>`,
     react: false,
     angular: false,
     vue: false
   },
   secondary_disabled: {
     name: 'secondary_disabled',
-    js: `<a type="button" class="${helpers.classPrefix}button ${
+    js: `<div style="margin-bottom: 10px;"><a type="button" class="${
       helpers.classPrefix
-    }button-secondary ${helpers.classPrefix}button-secondary--disabled" ${
+    }button ${helpers.classPrefix}button-secondary ${
+      helpers.classPrefix
+    }button-secondary--disabled" ${
       helpers.htmlDataVarType
     }="button"><span class="${
       helpers.classPrefix
-    }button__text">Secondary Button</span></a>`,
+    }button__text">Secondary Disabled</span></a></div>`,
     react: false,
     angular: false,
     vue: false
   },
   full: {
     name: 'full',
-    js: `<button type="button" class="${helpers.classPrefix}button ${
+    js: `<div class="theme-zeppelin"><button type="button" class="${
       helpers.classPrefix
-    }button-primary ${helpers.classPrefix}button--full" ${
-      helpers.htmlDataVarType
-    }="button"><span class="${
+    }button ${helpers.classPrefix}button-primary ${
       helpers.classPrefix
-    }button__text">Primary Button</span></button>`,
+    }button--full" ${helpers.htmlDataVarType}="button"><span class="${
+      helpers.classPrefix
+    }button__text">Full Width Button</span></button></div>`,
     react: false,
     angular: false,
     vue: false
