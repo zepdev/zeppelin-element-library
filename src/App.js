@@ -36,7 +36,7 @@ function App() {
                 {elements[elem].name}
               </button>
             </div>
-         ))}
+          ))}
         </div>
         <div style={{ flexGrow: 1, padding: 45 }}>
           {content === 'welcome' && (

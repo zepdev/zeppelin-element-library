@@ -12,75 +12,57 @@
     text-align: center;
     vertical-align: top;
     cursor: pointer;
-
     min-height: $height;
     padding: 0.25rem 1.125rem 0;
     //padding: 1px 1.125rem 0; // polished version: text visually v-align middle
   }
-
   .#{$prefix}button-primary {
-    $id: 'button-primary';
-    $bg-color: map-get($theme-background-color-map, $id);
+    //$id: 'button-primary';
 
-    color: map-get($theme-color-map, $id);
-    background-color: $bg-color;
+    @include themify($themes) {
+      color: themed('buttonText');
+      background-color: themed('primary');
 
-    &:hover,
-    &:focus,
-    &.#{$prefix}button-primary--hover {
-      background-color: map-get($theme-background-color-map, '#{$id}--hover');
+      &:hover,
+      &:focus,
+      &.#{$prefix}button-primary--hover {
+        background-color: themed('hover');
+      }
     }
 
     &:disabled,
     &.#{$prefix}button-primary--disabled {
-      color: map-get($theme-color-map, '#{$id}--disabled');
-      background-color: map-get(
-        $theme-background-color-map,
-        '#{$id}--disabled'
-      );
+      color: get('colors.gray.disabled.hex');
+      background-color: get('colors.gray.grayLighter.hex');
       cursor: not-allowed;
     }
   }
 
   .#{$prefix}button-secondary {
     $id: 'button-secondary';
-    $bg-color: map-get($theme-background-color-map, $id);
+    color: get('colors.gray.black.hex');
+    background-color: get('colors.gray.white.hex');
+    border: 2px solid;
 
-    color: map-get($theme-color-map, $id);
-    background-color: $bg-color;
-    border: solid 0.125rem map-get($theme-border-color-map, $id);
-    //line-height: calc(#{$height} - 4px); // take border-width into account
-    padding-top: 0.375rem;
+    @include themify($themes) {
+      border-color: themed('primary');
+      padding-top: 0.375rem;
+      &:hover,
+      &:focus,
+      &.#{$prefix}button-secondary--hover {
+        background-color: themed('secondary');
+        border-color: themed('buttonBorderSecondaryHover');
+        color: themed('buttonTextSecondaryHover');
+      }
+    }
+  }
 
-    &:hover,
-    &:focus,
-    &.#{$prefix}button-secondary--hover {
-      color: map-get($theme-color-map, '#{$id}--hover');
-      background-color: map-get($theme-background-color-map, '#{$id}--hover');
-      border-color: map-get($theme-background-color-map, '#{$id}--hover');
-    }
-
-    &:disabled,
-    &.#{$prefix}button-secondary--disabled {
-      color: map-get($theme-color-map, '#{$id}--disabled');
-      background-color: map-get(
-        $theme-background-color-map,
-        '#{$id}--disabled'
-      );
-      border-color: map-get($theme-border-color-map, '#{$id}--disabled');
-      cursor: not-allowed;
-    }
-    /* Test
-    @include breakpoint--max(xs) {
-      background: pink;
-    }
-    @include breakpoint--min(xs) {
-      background: lime;
-    }
-    @include breakpoint--custom-min(700px) {
-      background: rgb(62, 216, 255);
-    }
-    */
+  &:disabled,
+  &.#{$prefix}button-secondary--disabled {
+    color: get('colors.gray.grayLighter.hex');
+    background-color: get('colors.gray.white.hex');
+    border-color: get('colors.gray.grayLighter.hex');
+    cursor: not-allowed;
   }
 
   .#{$prefix}button--full {
