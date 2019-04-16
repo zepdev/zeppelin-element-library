@@ -1,4 +1,4 @@
-// this grid should be only implemented on full browser with elements!
+// this grid should be only implemented on full browser width elements!
 
 // values: colums, margin, gutter
 $grid-values-map: (
@@ -29,6 +29,7 @@ $grid-values-map: (
   )
 );
 
+$gutter: 24px;
 $h-margin: 24px;
 $max-h-margin: 64px;
 
@@ -46,7 +47,7 @@ $max-h-margin: 64px;
       margin-left: $margin;
       margin-right: $margin;
 
-      // !! this grid should be only implemented on full browser with elements!
+      // !! this grid should be only implemented on full browser width elements!
       @if $margin == auto {
         min-width: calc(
           #{map-get($min-screensize-map, $screensize)}px -
@@ -63,11 +64,13 @@ $max-h-margin: 64px;
   // get grid max screen with from style-basics/_breakpoints.scss
   max-width: #{map-get($min-screensize-map, xl)}px;
 
+  border: 1px solid blue;
+
   &:after,
   &:before {
     content: '';
-    display: block;
-    clear: left;
+    clear: both;
+    display: table;
   }
 }
 
@@ -78,29 +81,40 @@ $max-h-margin: 64px;
 }
 
 .#{$prefix}grid__row {
+  padding: 0;
+  margin: 0;
   display: block;
   position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: red;
+
+  @each $screensize, $valuelist in $grid-values-map {
+    @include breakpoint--min(#{$screensize}) {
+      $gutter: nth($valuelist, 3);
+      $half-gutter: $gutter / 2;
+
+      // use negative margin to clear gutter on the first/left and last/right elements
+      margin-left: -#{$half-gutter};
+      margin-right: -#{$half-gutter};
+    }
+  }
 
   &:after,
   &:before {
     content: '';
-    display: block;
-    clear: left;
+    display: table;
+    clear: both;
   }
 }
 
 .#{$prefix}grid__col {
-  // float is only for non flexbox browsers and overwritten by flexbox in modern browsers
+  // float is only for non flexbox browsers and overwritten by flex properties in modern browsers
   position: relative;
   display: block;
   float: left;
   flex-shrink: 1;
-  background-color: lime;
-  border: 1px solid red;
+  border: 1px green solid;
 }
 
 $max-cols: 12;
@@ -108,7 +122,7 @@ $min-cols: 4;
 
 // set col width
 @for $i from 1 through $max-cols {
-  .#{$prefix}grid__col--#{$i} {
+  .#{$prefix}grid__col--#{$i}-#{$max-cols} {
     $cols: $min-cols;
 
     // -1px = floor calculated percentages workaround for IE9+
@@ -118,12 +132,26 @@ $min-cols: 4;
       width: calc(100% / #{$cols} * #{$i});
     }
 
+    // use col padding as gutter
+    padding: 0 ($gutter / 2);
+
     @each $screensize, $valuelist in $grid-values-map {
       @include breakpoint--min(#{$screensize}) {
         $cols: nth($valuelist, 1);
 
+        // gutter changes with breakpoint
+        $gutter: nth($valuelist, 3);
+
+        $current-cols: $i;
+        @if $current-cols > $cols {
+          $current-cols: $cols;
+        }
+
         // -1px = floor calculated percentages workaround for IE9+
-        width: calc((100% - 1px) / #{$cols} * #{$i});
+        width: calc((100% - 1px) / #{$cols} * #{$current-cols});
+
+        // use col padding as gutter
+        padding: 0 ($gutter / 2);
 
         @supports (display: flex) {
           width: calc(100% / #{$cols} * #{$i});
