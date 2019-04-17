@@ -3,7 +3,7 @@ import elements from './elements/elements';
 import ButtonPage from './elements/button/ButtonPage.jsx';
 import TagPage from './elements/tag/TagPage.jsx';
 import './base_bundle_entry.scss';
-//import './icons.font';
+// import './icons.font';
 
 function App() {
   const [content, setContent] = useState('welcome');
@@ -28,7 +28,7 @@ function App() {
       <div className="zep-grid">
         <div className="zep-grid__row">
           <div
-            className="zep-grid__col zep-grid__col--3-12"
+            className="zep-grid__col zep-grid__col--3-12 zep-grid__col--xs-1-6 zep-grid__col--xxs-4-4"
             style={{ paddingTop: 45 }}
           >
             {Object.keys(elements).map((elem, i) => (

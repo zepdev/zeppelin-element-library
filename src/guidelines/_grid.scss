@@ -19,7 +19,8 @@ $grid-values-map: (
   ),
   l: (
     12,
-    64px,
+    //64
+      auto,
     32px
   ),
   xl: (
@@ -28,6 +29,9 @@ $grid-values-map: (
     32px
   )
 );
+
+$grid-values-map-length: length($grid-values-map);
+$grid-max-width: #{map-get($min-screensize-map, l)}px;
 
 $gutter: 24px;
 $h-margin: 24px;
@@ -42,27 +46,53 @@ $max-h-margin: 64px;
 
   // set horizontal margin of grid container
   @each $screensize, $valuelist in $grid-values-map {
-    @include breakpoint--min(#{$screensize}) {
-      $margin: nth($valuelist, 2);
-      margin-left: $margin;
-      margin-right: $margin;
+    $index: index(($grid-values-map), ($screensize $valuelist));
 
-      // !! this grid should be only implemented on full browser width elements!
-      @if $margin == auto {
-        min-width: calc(
-          #{map-get($min-screensize-map, $screensize)}px -
-            (#{$max-h-margin} * 2)
-        );
-      } @else {
-        min-width: calc(
-          #{map-get($min-screensize-map, $screensize)}px - (#{$margin} * 2)
-        );
+    z-index: $index;
+
+    @if $index < $grid-values-map-length {
+      $iterator-next: nth($grid-values-map, $index + 1);
+      $next-screen-size: nth($iterator-next, 1);
+
+      @include breakpoint--min-max(#{$screensize}, #{$next-screen-size}) {
+        $margin: nth($valuelist, 2);
+
+        margin-left: $margin;
+        margin-right: $margin;
+
+        // TODO: Fix margin between screensize 1200 and 1328 !!!
+
+        // !! this grid should be only implemented on full browser width elements!
+        @if $margin == auto {
+          min-width: calc(#{$grid-max-width} - (#{$max-h-margin} * 2));
+        } @else {
+          min-width: calc(
+            #{map-get($min-screensize-map, $screensize)}px - (#{$margin} * 2)
+          );
+        }
+      }
+      // bigger than xl
+    } @else {
+      @include breakpoint--min(#{$screensize}) {
+        $margin: nth($valuelist, 2);
+
+        margin-left: $margin;
+        margin-right: $margin;
+
+        // !! this grid should be only implemented on full browser width elements!
+        @if $margin == auto {
+          min-width: calc(#{$grid-max-width} - (#{$max-h-margin} * 2));
+        } @else {
+          min-width: calc(
+            #{map-get($min-screensize-map, $screensize)}px - (#{$margin} * 2)
+          );
+        }
       }
     }
   }
 
   // get grid max screen with from style-basics/_breakpoints.scss
-  max-width: #{map-get($min-screensize-map, xl)}px;
+  max-width: $grid-max-width;
 
   border: 1px solid blue;
 
@@ -136,26 +166,115 @@ $min-cols: 4;
     padding: 0 ($gutter / 2);
 
     @each $screensize, $valuelist in $grid-values-map {
-      @include breakpoint--min(#{$screensize}) {
-        $cols: nth($valuelist, 1);
+      $index: index(($grid-values-map), ($screensize $valuelist));
 
-        // gutter changes with breakpoint
-        $gutter: nth($valuelist, 3);
+      z-index: $index;
 
-        $current-cols: $i;
-        @if $current-cols > $cols {
-          $current-cols: $cols;
+      @if $index < $grid-values-map-length {
+        $iterator-next: nth($grid-values-map, $index + 1);
+        $next-screen-size: nth($iterator-next, 1);
+
+        @include breakpoint--min-max(#{$screensize}, #{$next-screen-size}) {
+          $cols: nth($valuelist, 1);
+
+          // gutter changes with breakpoint
+          $gutter: nth($valuelist, 3);
+
+          $current-cols: $i;
+          @if $current-cols > $cols {
+            $current-cols: $cols;
+          }
+
+          // -1px = floor calculated percentages workaround for IE9+
+          width: calc((100% - 1px) / #{$cols} * #{$current-cols});
+
+          // use col padding as gutter
+          padding: 0 ($gutter / 2);
+
+          @supports (display: flex) {
+            width: calc(100% / #{$cols} * #{$i});
+          }
         }
+      }
+      // bigger than xl
+      @else {
+        @include breakpoint--min(#{$screensize}) {
+          $cols: nth($valuelist, 1);
 
-        // -1px = floor calculated percentages workaround for IE9+
-        width: calc((100% - 1px) / #{$cols} * #{$current-cols});
+          // gutter changes with breakpoint
+          $gutter: nth($valuelist, 3);
 
-        // use col padding as gutter
-        padding: 0 ($gutter / 2);
+          $current-cols: $i;
+          @if $current-cols > $cols {
+            $current-cols: $cols;
+          }
 
-        @supports (display: flex) {
-          width: calc(100% / #{$cols} * #{$i});
+          // -1px = floor calculated percentages workaround for IE9+
+          width: calc((100% - 1px) / #{$cols} * #{$current-cols});
+
+          // use col padding as gutter
+          padding: 0 ($gutter / 2);
+
+          @supports (display: flex) {
+            width: calc(100% / #{$cols} * #{$i});
+          }
         }
+      }
+    }
+  }
+}
+
+// reverse map for specifity reasons
+$grid-values-reverse-map: mapReverse($grid-values-map);
+
+// set cols for xl, l, m, s, xs
+@each $screensize, $valuelist in $grid-values-reverse-map {
+  $index: index(($grid-values-reverse-map), ($screensize $valuelist));
+
+  @if $grid-values-map-length < $index {
+    $iterator-next: nth($grid-values-reverse-map, $index + 1);
+    $next-screen-size: nth($iterator-next, 1);
+
+    $cols: nth($valuelist, 1);
+    $gutter: nth($valuelist, 3);
+
+    @for $i from 1 through $cols {
+      .#{$prefix}grid__col--#{$screensize}-#{$i}-#{$cols} {
+        @include breakpoint--min-max(#{$next-screen-size}, #{$screensize}) {
+          $current-cols: $i;
+          // -1px = floor calculated percentages workaround for IE9+
+          width: calc((100% - 1px) / #{$cols} * #{$current-cols});
+          // use col padding as gutter
+          padding: 0 ($gutter / 2);
+
+          @supports (display: flex) {
+            width: calc(100% / #{$cols} * #{$i});
+          }
+        }
+      }
+    }
+  }
+}
+
+// set cols for xxs
+$max-cols: 4;
+$min-cols: 4;
+$gutter: 24px;
+
+@for $i from 1 through $max-cols {
+  .#{$prefix}grid__col--xxs-#{$i}-#{$max-cols} {
+    $cols: $min-cols;
+
+    // difference here is use of breakpoint--max() instead of breakpoint--min()
+    @include breakpoint--max(xs) {
+      $current-cols: $i;
+      // -1px = floor calculated percentages workaround for IE9+
+      width: calc((100% - 1px) / #{$cols} * #{$current-cols});
+      // use col padding as gutter
+      padding: 0 ($gutter / 2);
+
+      @supports (display: flex) {
+        width: calc(100% / #{$cols} * #{$i});
       }
     }
   }

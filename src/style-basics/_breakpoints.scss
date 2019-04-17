@@ -12,6 +12,9 @@ $min-screensize-map: (
     @media screen and (min-width: #{map-get($min-screensize-map, $size)}px) {
       @content;
     }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$size}`. "
+        + "Please make sure it is defined in `$min-screensize-map`.";
   }
 }
 
@@ -20,6 +23,23 @@ $min-screensize-map: (
     @media screen and (max-width: #{map-get($min-screensize-map, $size) - 1}px) {
       @content;
     }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$size}`. "
+        + "Please make sure it is defined in `$min-screensize-map`.";
+  }
+}
+
+@mixin breakpoint--min-max($min-size, $max-size) {
+  @if map-has-key($min-screensize-map, $min-size)
+    &&
+    map-has-key($min-screensize-map, $max-size)
+  {
+    @media screen and (min-width: #{map-get($min-screensize-map, $min-size)}px) and (max-width: #{map-get($min-screensize-map, $max-size) - 1}px) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$min-size}` or `#{$max-size}`. "
+        + "Please make sure it is defined in `$min-screensize-map`.";
   }
 }
 
@@ -30,6 +50,15 @@ $min-screensize-map: (
 }
 @mixin breakpoint--custom-max($custom-size-with-unit) {
   @media screen and (max-width: $custom-size-with-unit) {
+    @content;
+  }
+}
+
+@mixin breakpoint--custom-min-max(
+  $custom-min-size-with-unit,
+  $custom-max-size-with-unit
+) {
+  @media screen and (min-width: $custom-size-with-unit) and (max-width: $custom-size-with-unit) {
     @content;
   }
 }
