@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import elements from './elements/elements';
 import ButtonPage from './elements/button/ButtonPage.jsx';
 import TagPage from './elements/tag/TagPage.jsx';
+import CheckboxPage from './elements/checkbox/CheckboxPage.jsx';
 import './base_bundle_entry.scss';
-//import './icons.font';
+// import './icons.font';
 
 function App() {
   const [content, setContent] = useState('welcome');
@@ -54,6 +55,8 @@ function App() {
             {content === 'button' && <ButtonPage />}
             {content === 'tabs' && <p>This element is not ready</p>}
             {content === 'tag' && <TagPage />}
+            {content === 'checkbox' && <CheckboxPage />}
+            <CheckboxPage />
           </div>
         </div>
       </div>
