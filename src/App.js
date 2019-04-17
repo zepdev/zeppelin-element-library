@@ -3,7 +3,7 @@ import elements from './elements/elements';
 import ButtonPage from './elements/button/ButtonPage.jsx';
 import TagPage from './elements/tag/TagPage.jsx';
 import './base_bundle_entry.scss';
-import './icons.font';
+//import './icons.font';
 
 function App() {
   const [content, setContent] = useState('welcome');
@@ -27,24 +27,34 @@ function App() {
       </div>
       <div className="zep-grid">
         <div className="zep-grid__row">
-          {Object.keys(elements).map((elem, i) => (
-            <div key={`btn-${i}`} className="zep-grid__col zep-grid__col--3">
-              <button
-                className="zel-button zel-button-primary"
-                onClick={() => setContent(elements[elem].name)}
-              >
-                {elements[elem].name}
-              </button>
-            </div>
-          ))}
-        </div>
-        <div style={{ flexGrow: 1, padding: 45 }}>
-          {content === 'welcome' && (
-            <p>Welcome to the Zeppelin Element Library</p>
-          )}
-          {content === 'button' && <ButtonPage />}
-          {content === 'tabs' && <p>This element is not ready</p>}
-          {content === 'tag' && <TagPage />}
+          <div
+            className="zep-grid__col zep-grid__col--3-12"
+            style={{ paddingTop: 45 }}
+          >
+            {Object.keys(elements).map((elem, i) => (
+              <div key={`btn-${i}`}>
+                <button
+                  className="zep-button zep-button-primary zep-button--full"
+                  onClick={() => setContent(elements[elem].name)}
+                >
+                  <span className="zep-button__text">
+                    {elements[elem].name}
+                  </span>
+                </button>
+              </div>
+            ))}
+          </div>
+          <div
+            className="zep-grid__col zep-grid__col--9-12"
+            style={{ paddingTop: 45 }}
+          >
+            {content === 'welcome' && (
+              <p>Welcome to the Zeppelin Element Library</p>
+            )}
+            {content === 'button' && <ButtonPage />}
+            {content === 'tabs' && <p>This element is not ready</p>}
+            {content === 'tag' && <TagPage />}
+          </div>
         </div>
       </div>
     </div>
