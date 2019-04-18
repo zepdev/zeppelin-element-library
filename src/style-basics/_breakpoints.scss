@@ -30,8 +30,7 @@ $min-screensize-map: (
 }
 
 @mixin breakpoint--min-max($min-size, $max-size) {
-  @if map-has-key($min-screensize-map, $min-size)
-    &&
+  @if map-has-key($min-screensize-map, $min-size) and
     map-has-key($min-screensize-map, $max-size)
   {
     @media screen and (min-width: #{map-get($min-screensize-map, $min-size)}px) and (max-width: #{map-get($min-screensize-map, $max-size) - 1}px) {
