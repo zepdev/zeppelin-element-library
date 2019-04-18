@@ -10,5 +10,9 @@ module.exports = {
   tag: {
     name: 'tag',
     isReady: true
+  },
+  numberInput: {
+    name: 'numberInput',
+    isReady: true
   }
 };
