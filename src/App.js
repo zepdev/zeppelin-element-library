@@ -56,6 +56,19 @@ function App() {
             {content === 'tag' && <TagPage />}
           </div>
         </div>
+        <div className="zep-grid__row--cards">
+          <div
+            className="zep-grid__col--cards zep-grid__col--cards-2-3"
+            style={{ paddingTop: 45 }}
+          >
+            {content === 'welcome' && (
+              <p>Welcome to the Zeppelin Element Library</p>
+            )}
+            {content === 'button' && <ButtonPage />}
+            {content === 'tabs' && <p>This element is not ready</p>}
+            {content === 'tag' && <TagPage />}
+          </div>
+        </div>
       </div>
     </div>
   );
