@@ -6,11 +6,9 @@ function NumberInput() {
   return (
     <>
       <button className="zep-button zep-button__number-input">
-        {/* <span className="zep-button__text"> */}
         <img src={minusIcon} alt="minus" />
-        {/* </span> */}
       </button>
-      <input type="text" className="zep-input__number" value="1" />
+      <input type="text" className="zep-input__number" defaultValue="1" />
       <button className="zep-button zep-button__number-input">
         <img src={plusIcon} alt="plus" />
       </button>
