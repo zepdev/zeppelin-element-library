@@ -1,50 +1,83 @@
-//Checkbox - base style
-
 @mixin checkbox {
+  $lineHeight: 2.125rem;
+  $fontSize: 36px;
+  // strip the units (expecting a px value, but remove so we've just got an int)
+  $baseFont: ($fontSize) / ($fontSize * 0 + 1);
+  // ensure our base is a rem val
+  $base: ($lineHeight) / ($lineHeight * 0 + 1) * 1rem;
+  // get our borderwidth in rems
+  $borderWidth: (2 / (2 * 0 + 1) / $baseFont) * 1rem;
+  $boxSize: $base/1.7;
   .#{$prefix}checkbox {
-    position: relative;
-    display: block;
-    margin-bottom: 0.5rem;
-    border: 2px solid get('colors.gray.gray-dark.hex');
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-  }
-
-  .#{$prefix}checkbox.disabled .#{$prefix}-checkbox--label {
-    color: get('colors.gray.gray.hex');
-    cursor: not-allowed;
-  }
-
-  .#{$prefix}checkbox--label {
-    @include themify($themes) {
-      //color: themed('primary');
-      color: 'orange';
-      padding-left: 12px;
-      margin-bottom: 0;
+    .#{$prefix}checkbox__label {
       cursor: pointer;
+      line-height: $base;
+      position: relative;
+      display: inline-block;
+      padding-left: $base;
+      font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont,
+        Segoe UI, Open Sans, Helvetica Neue, Arial, sans-serif;
+      margin-bottom: 0;
+      &:before,
+      &:after {
+        box-sizing: border-box;
+        line-height: $base;
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: $base/4.75;
+        left: 0;
+        width: $boxSize;
+        height: $boxSize;
+        border-radius: 0;
+      }
+      &:before {
+        cursor: pointer;
+        width: ($boxSize) + $borderWidth * 2;
+        height: ($boxSize) + $borderWidth * 2;
+        margin: -$borderWidth;
+        border: 2px solid get('colors.gray.gray.hex');
+        border-radius: 0;
+      }
     }
-  }
 
-  .#{$prefix}checkbox--input {
-    position: absolute;
-    margin-top: 0.25rem;
-    margin-left: -1.25rem;
-  }
-
-  .#{$prefix}checkbox--input:only-child {
-    position: static;
-  }
-
-  .#{$prefix}checkbox--inline {
-    display: inline-block;
-  }
-
-  .#{$prefix}checkbox--inline .#{$prefix}checkbox--label {
-    vertical-align: middle;
-  }
-
-  .#{$prefix}checkbox--inline + .#{$prefix}checkbox--inline {
-    margin-left: 0.75rem;
+    /* hide the input element */
+    .#{$prefix}checkbox__input {
+      opacity: 0;
+      &:disabled + .#{$prefix}checkbox__label:before {
+        cursor: not-allowed;
+        background: get('colors.gray.grayLighter.hex');
+        border: 2px solid get('colors.gray.gray.hex');
+      }
+      &:disabled + .#{$prefix}checkbox__label {
+        cursor: not-allowed;
+      }
+      &:checked + .#{$prefix}checkbox__label:before {
+        font-family: zepicons;
+        content: '\f112';
+        //content: '\2713';
+        display: inline-block;
+        background: get('colors.gray.white.hex');
+        line-height: $boxSize + $borderWidth;
+        font-size: 18px;
+        text-align: center;
+        transform: scale(1);
+        @include themify($themes) {
+          color: themed('primary');
+        }
+      }
+      &:checked:focus + .#{$prefix}checkbox__label:before {
+        @include themify($themes) {
+          box-shadow: 0 0 5px 1px themed('primary');
+          background: get('colors.gray.white.hex');
+        }
+      }
+      &:active + .#{$prefix}checkbox__label:before {
+        @include themify($themes) {
+          background: themed('hover');
+        }
+      }
+    }
   }
 }
 

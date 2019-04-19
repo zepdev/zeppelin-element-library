@@ -4,6 +4,7 @@ import ButtonPage from './elements/button/ButtonPage.jsx';
 import TagPage from './elements/tag/TagPage.jsx';
 import CheckboxPage from './elements/checkbox/CheckboxPage.jsx';
 import './base_bundle_entry.scss';
+import './zeppelin-element-library.css';
 // import './icons.font';
 
 function App() {
