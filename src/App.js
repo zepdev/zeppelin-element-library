@@ -33,7 +33,7 @@ function App() {
       <div className="zep-grid">
         <div className="zep-grid__row">
           <div
-            className="zep-grid__col zep-grid__col--3-12"
+            className="zep-grid__col zep-grid__col--3-12 zep-grid__col--xs-1-6 zep-grid__col--xxs-4-4"
             style={{ paddingTop: 45 }}
           >
             {Object.keys(elements).map((elem, i) => (
@@ -61,6 +61,19 @@ function App() {
             {content === 'tag' && <TagPage />}
             {content === 'input' && <InputPage />}
             {content === 'numberInput' && <NumberInputPage />}
+          </div>
+        </div>
+        <div className="zep-grid__row--cards">
+          <div
+            className="zep-grid__col--cards zep-grid__col--cards-2-3"
+            style={{ paddingTop: 45 }}
+          >
+            {content === 'welcome' && (
+              <p>Welcome to the Zeppelin Element Library</p>
+            )}
+            {content === 'button' && <ButtonPage />}
+            {content === 'tabs' && <p>This element is not ready</p>}
+            {content === 'tag' && <TagPage />}
           </div>
         </div>
       </div>

@@ -8,10 +8,9 @@ function ButtonPage() {
   });
 
   return (
-    <div className="zep-grid__row">
+    <div>
       {Object.keys(data).map((elem, idx) => (
         <span
-          className="zep-grid__col zep-grid__col--12-12"
           dangerouslySetInnerHTML={{ __html: data[elem].js }}
           key={`button${idx}`}
         />
