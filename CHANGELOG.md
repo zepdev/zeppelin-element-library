@@ -1,3 +1,68 @@
+# [0.5.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.5...v0.5.0) (2019-04-16)
+
+
+### Bug Fixes
+
+* **icons:** uncomment out file to all fonts to be bundled ([977fa65](https://github.com/zepdev/zeppelin-element-library/commit/977fa65))
+
+
+### Features
+
+* **grid:** started grid, added breakpoints ([d844f1a](https://github.com/zepdev/zeppelin-element-library/commit/d844f1a))
+* **theme:** allows for new themes, zeppelin, cat and rental ([4bb94bb](https://github.com/zepdev/zeppelin-element-library/commit/4bb94bb))
+
+## [0.4.5](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.4...v0.4.5) (2019-04-12)
+
+
+### Bug Fixes
+
+* **bundler:** remove double zepicon naming ([b763376](https://github.com/zepdev/zeppelin-element-library/commit/b763376))
+
+## [0.4.4](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.3...v0.4.4) (2019-04-12)
+
+
+### Bug Fixes
+
+* **a11y:** added sr-only for icons ([2d1a58f](https://github.com/zepdev/zeppelin-element-library/commit/2d1a58f))
+* **rename icons for build:** rename icons for build ([15893ac](https://github.com/zepdev/zeppelin-element-library/commit/15893ac))
+
+## [0.4.3](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.2...v0.4.3) (2019-04-12)
+
+
+### Bug Fixes
+
+* **bundler:** changed icon naming ([b0ecf3e](https://github.com/zepdev/zeppelin-element-library/commit/b0ecf3e))
+* **bundler:** fix icon naming in bundler ([05d14e7](https://github.com/zepdev/zeppelin-element-library/commit/05d14e7))
+* **icons:** new icons svg for development use ([1328bfb](https://github.com/zepdev/zeppelin-element-library/commit/1328bfb))
+
+## [0.4.2](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.1...v0.4.2) (2019-04-12)
+
+
+### Bug Fixes
+
+* **icons:** add back in icons ([7d2302e](https://github.com/zepdev/zeppelin-element-library/commit/7d2302e))
+
+## [0.4.1](https://github.com/zepdev/zeppelin-element-library/compare/v0.4.0...v0.4.1) (2019-04-11)
+
+
+### Bug Fixes
+
+* **npm:** Updated to react-scripts to minimum dependency ([1311e73](https://github.com/zepdev/zeppelin-element-library/commit/1311e73))
+
+# [0.4.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.6...v0.4.0) (2019-04-10)
+
+
+### Bug Fixes
+
+* **bundle-script:** Removed shell hash removal ([198962c](https://github.com/zepdev/zeppelin-element-library/commit/198962c))
+* **Circle:** Added missing filters to the other jobs ([2d82fa0](https://github.com/zepdev/zeppelin-element-library/commit/2d82fa0))
+* **Circle:** Added tags filter because of transient dependency ([3dfba30](https://github.com/zepdev/zeppelin-element-library/commit/3dfba30))
+
+
+### Features
+
+* **tag:** new element added: tag ([3e52fd4](https://github.com/zepdev/zeppelin-element-library/commit/3e52fd4))
+
 ## [0.3.6](https://github.com/zepdev/zeppelin-element-library/compare/v0.3.5...v0.3.6) (2019-04-10)
 
 
