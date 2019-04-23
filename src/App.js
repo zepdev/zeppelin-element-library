@@ -5,7 +5,10 @@ import TagPage from './elements/tag/TagPage.jsx';
 import InputPage from './elements/input/InputPage.jsx';
 import NumberInputPage from './elements/numberinput/NumberInputPage.jsx';
 import './base_bundle_entry.scss';
-//import './icons.font';
+// import './icons.font';
+/* TODO: remove this import, the css itself and the icont font files,
+after the files are extracted in a separate repo/npm package */
+import './zeppelin-element-library.css';
 
 function App() {
   const [content, setContent] = useState('welcome');
