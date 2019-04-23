@@ -8,14 +8,14 @@ function ButtonPage() {
   });
 
   return (
-    <>
+    <div>
       {Object.keys(data).map((elem, idx) => (
         <span
           dangerouslySetInnerHTML={{ __html: data[elem].js }}
           key={`button${idx}`}
         />
       ))}
-    </>
+    </div>
   );
 }
 

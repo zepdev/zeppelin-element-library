@@ -10,5 +10,16 @@ module.exports = {
   tag: {
     name: 'tag',
     isReady: true
+  },
+  checkbox: {
+    name: 'checkbox'
+  },
+  input: {
+    name: 'input',
+    isReady: true
+  },
+  numberInput: {
+    name: 'numberInput',
+    isReady: true
   }
 };
