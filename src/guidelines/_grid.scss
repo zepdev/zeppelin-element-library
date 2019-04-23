@@ -109,18 +109,20 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
         );
       }
 
-      // use screensize + margin for transition to margin: auto
-      $next-margin: auto;
-      @include breakpoint--custom-min(
-        map-get($min-screensize-map, $screensize) + $margin + $margin
-      ) {
-        @include grid-min-width-and-margin(
-          $next-margin,
-          $grid-max-width,
-          $max-grid-h-margin,
-          $min-screensize-map,
-          $screensize
-        );
+      @if $margin != auto {
+        // use screensize + margin for transition to margin: auto
+        $next-margin: auto;
+        @include breakpoint--custom-min(
+          map-get($min-screensize-map, $screensize) + $margin + $margin
+        ) {
+          @include grid-min-width-and-margin(
+            $next-margin,
+            $grid-max-width,
+            $max-grid-h-margin,
+            $min-screensize-map,
+            $screensize
+          );
+        }
       }
     }
   }
@@ -186,7 +188,12 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
 @for $i from 1 through $grid-max-cols {
   .#{$prefix}grid__col--#{$i}-#{$grid-max-cols} {
     $cols: $grid-min-cols;
-    @include grid-breakpoint-content($i, $cols, $grid-gutter);
+
+    $current-cols: $i;
+    @if $current-cols > $cols {
+      $current-cols: $cols;
+    }
+    @include grid-breakpoint-content($current-cols, $cols, $grid-gutter);
 
     // change col with and grid-gutter on different breakpoints
     @each $screensize, $valuelist in $grid-values-map {
