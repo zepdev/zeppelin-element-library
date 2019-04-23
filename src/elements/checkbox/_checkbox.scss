@@ -59,7 +59,7 @@
         display: inline-block;
         background: get('colors.gray.white.hex');
         line-height: $boxSize + $borderWidth;
-        font-size: 18px;
+        font-size: 1.125rem;
         text-align: center;
         transform: scale(1);
         @include themify($themes) {

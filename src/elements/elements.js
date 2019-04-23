@@ -12,7 +12,14 @@ module.exports = {
     isReady: true
   },
   checkbox: {
-    name: 'checkbox',
+    name: 'checkbox'
+  },
+  input: {
+    name: 'input',
+    isReady: true
+  },
+  numberInput: {
+    name: 'numberInput',
     isReady: true
   }
 };

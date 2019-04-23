@@ -3,9 +3,13 @@ import elements from './elements/elements';
 import ButtonPage from './elements/button/ButtonPage.jsx';
 import TagPage from './elements/tag/TagPage.jsx';
 import CheckboxPage from './elements/checkbox/CheckboxPage.jsx';
+import InputPage from './elements/input/InputPage.jsx';
+import NumberInputPage from './elements/numberinput/NumberInputPage.jsx';
 import './base_bundle_entry.scss';
-import './zeppelin-element-library.css';
-// import './icons.font';
+import './icons.font';
+/* TODO: remove this import, the css itself and the icont font files,
+after the files are extracted in a separate repo/npm package */
+import './zeppelin-icons.css';
 
 function App() {
   const [content, setContent] = useState('welcome');
@@ -57,7 +61,8 @@ function App() {
             {content === 'tabs' && <p>This element is not ready</p>}
             {content === 'tag' && <TagPage />}
             {content === 'checkbox' && <CheckboxPage />}
-            <CheckboxPage />
+            {content === 'input' && <InputPage />}
+            {content === 'numberInput' && <NumberInputPage />}
           </div>
         </div>
       </div>
