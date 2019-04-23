@@ -8,7 +8,7 @@ import './base_bundle_entry.scss';
 import './icons.font';
 /* TODO: remove this import, the css itself and the icont font files,
 after the files are extracted in a separate repo/npm package */
-import './zeppelin-element-library.css';
+import './zeppelin-icons.css';
 
 function App() {
   const [content, setContent] = useState('welcome');

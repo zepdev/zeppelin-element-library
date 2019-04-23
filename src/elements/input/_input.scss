@@ -14,7 +14,6 @@
   }
 
   .#{$prefix}input--number {
-    @extend %typo-special-3;
     width: 3rem;
     height: 3rem;
     margin-left: 0.125rem;
