@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import elements from './elements/elements';
 import ButtonPage from './elements/button/ButtonPage.jsx';
 import TagPage from './elements/tag/TagPage.jsx';
+import InputPage from './elements/input/InputPage.jsx';
 import NumberInputPage from './elements/numberinput/NumberInputPage.jsx';
 import './base_bundle_entry.scss';
 //import './icons.font';
@@ -55,6 +56,7 @@ function App() {
             {content === 'button' && <ButtonPage />}
             {content === 'tabs' && <p>This element is not ready</p>}
             {content === 'tag' && <TagPage />}
+            {content === 'input' && <InputPage />}
             {content === 'numberInput' && <NumberInputPage />}
           </div>
         </div>

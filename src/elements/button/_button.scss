@@ -65,8 +65,11 @@
     cursor: not-allowed;
   }
 
-  &.#{$prefix}button__number-input {
+  &.#{$prefix}button--number-input {
     background-color: get('colors.gray.grayLighter.hex');
+    padding: 0;
+    width: 3rem;
+    height: 3rem;
   }
 
   .#{$prefix}button--full {
