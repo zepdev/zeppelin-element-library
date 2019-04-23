@@ -213,123 +213,126 @@
 .zepicons-minus:before {
   content: '\f142';
 }
-.zepicons-next-page:before {
+.zepicons-navigation-dropdown:before {
   content: '\f143';
 }
-.zepicons-open-in-new:before {
+.zepicons-next-page:before {
   content: '\f144';
 }
-.zepicons-phone:before {
+.zepicons-open-in-new:before {
   content: '\f145';
 }
-.zepicons-plus:before {
+.zepicons-phone:before {
   content: '\f146';
 }
-.zepicons-previous-page:before {
+.zepicons-plus:before {
   content: '\f147';
 }
-.zepicons-print:before {
+.zepicons-previous-page:before {
   content: '\f148';
 }
-.zepicons-ps-ps:before {
+.zepicons-print:before {
   content: '\f149';
 }
-.zepicons-ps-service:before {
+.zepicons-ps-ps:before {
   content: '\f14a';
 }
-.zepicons-ps-used:before {
+.zepicons-ps-service:before {
   content: '\f14b';
 }
-.zepicons-reload:before {
+.zepicons-ps-used:before {
   content: '\f14c';
 }
-.zepicons-rental-infrastructure:before {
+.zepicons-reload:before {
   content: '\f14d';
 }
-.zepicons-rental-logistics:before {
+.zepicons-rental-infrastructure:before {
   content: '\f14e';
 }
-.zepicons-rental-rent:before {
+.zepicons-rental-logistics:before {
   content: '\f14f';
 }
-.zepicons-ru:before {
+.zepicons-rental-rent:before {
   content: '\f150';
 }
-.zepicons-sa:before {
+.zepicons-ru:before {
   content: '\f151';
 }
-.zepicons-search:before {
+.zepicons-sa:before {
   content: '\f152';
 }
-.zepicons-settings:before {
+.zepicons-search:before {
   content: '\f153';
 }
-.zepicons-sg:before {
+.zepicons-settings:before {
   content: '\f154';
 }
-.zepicons-share:before {
+.zepicons-sg:before {
   content: '\f155';
 }
-.zepicons-show:before {
+.zepicons-share:before {
   content: '\f156';
 }
-.zepicons-solutions:before {
+.zepicons-show:before {
   content: '\f157';
 }
-.zepicons-sort:before {
+.zepicons-solutions:before {
   content: '\f158';
 }
-.zepicons-star:before {
+.zepicons-sort:before {
   content: '\f159';
 }
-.zepicons-systems-aviation:before {
+.zepicons-star:before {
   content: '\f15a';
 }
-.zepicons-systems-products:before {
+.zepicons-systems-aviation:before {
   content: '\f15b';
 }
-.zepicons-systems-service:before {
+.zepicons-systems-products:before {
   content: '\f15c';
 }
-.zepicons-systems-systems:before {
+.zepicons-systems-service:before {
   content: '\f15d';
 }
-.zepicons-timer:before {
+.zepicons-systems-systems:before {
   content: '\f15e';
 }
-.zepicons-twitter:before {
+.zepicons-timer:before {
   content: '\f15f';
 }
-.zepicons-unfold:before {
+.zepicons-twitter:before {
   content: '\f160';
 }
-.zepicons-upload:before {
+.zepicons-unfold:before {
   content: '\f161';
 }
-.zepicons-user-edit:before {
+.zepicons-upload:before {
   content: '\f162';
 }
-.zepicons-user:before {
+.zepicons-user-edit:before {
   content: '\f163';
 }
-.zepicons-users:before {
+.zepicons-user:before {
   content: '\f164';
 }
-.zepicons-view-grid:before {
+.zepicons-users:before {
   content: '\f165';
 }
-.zepicons-warning:before {
+.zepicons-view-grid:before {
   content: '\f166';
 }
-.zepicons-xing:before {
+.zepicons-warning:before {
   content: '\f167';
 }
-.zepicons-youtube:before {
+.zepicons-xing:before {
   content: '\f168';
 }
-.zepicons-zoom-in:before {
+.zepicons-youtube:before {
   content: '\f169';
 }
-.zepicons-zoom-out:before {
+.zepicons-zoom-in:before {
   content: '\f16a';
+}
+.zepicons-zoom-out:before {
+  content: '\f16b';
 }
