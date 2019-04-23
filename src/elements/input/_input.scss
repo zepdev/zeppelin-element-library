@@ -1,0 +1,34 @@
+//Tag - base style
+
+@mixin input {
+  .#{$prefix}input {
+    @extend %typo-normal-3;
+    border: solid 2px get('colors.gray.grayLighter.hex');
+    background-color: get('colors.gray.white.hex');
+    padding-left: 1.25rem;
+    padding-top: 0.25rem;
+
+    &:focus {
+      outline: 2px solid get('colors.primary.catYellow.hex');
+    }
+  }
+
+  .#{$prefix}input--number {
+    width: 3rem;
+    height: 3rem;
+    margin-left: 0.125rem;
+    margin-right: 0.125rem;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .#{$prefix}input__icon--number {
+    width: 1.375rem;
+    height: 1.375rem;
+    cursor: pointer;
+  }
+}
+
+@include exports('input') {
+  @include input;
+}
