@@ -46,17 +46,12 @@ done
 # move back to main folder
 cd ../../../
 
-# copy icon font to bundle folder
-cp -r build/zepicons.* bundle/assets/fonts
-
-
 # delete sourceMapping comment line from css file
 sed -i.bak 's@/\*.*\*/@@g' $TARGET_FILE
 rm $TARGET_FILE.bak
 
 # change fonts path in css files
 sed -i.bak 's@/static/media/@assets/fonts/@g' $TARGET_FILE
-sed -i.bak 's@/zepicons@assets/fonts/zepicons@g' $TARGET_FILE
 rm $TARGET_FILE.bak
 
 if [[ -z "${CIRCLE_TAG}" ]]; then
