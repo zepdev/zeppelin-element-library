@@ -1,6 +1,6 @@
 {
   "name": "zeppelin-element-library",
-  "version": "0.6.0",
+  "version": "0.6.2-4719c8f",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
   "main": "bundle/zeppelin-element-library.cjs.js",
   "module": "bundle/zeppelin-element-library.esm.js",
