@@ -31,23 +31,23 @@
     }
     &:disabled,
     &.#{$prefix}button-primary--disabled {
-      color: get('colors.gray.disabled.hex');
-      background-color: get('colors.gray.grayLighter.hex');
+      color: map-get($colormap-base, disabled);
+      background-color: map-get($colormap-base, gray-lighter);
       cursor: not-allowed;
 
       &:hover,
       &:focus,
       &.#{$prefix}button-primary--hover {
-        color: get('colors.gray.disabled.hex');
-        background-color: get('colors.gray.grayLighter.hex');
+        color: map-get($colormap-base, disabled);
+        background-color: map-get($colormap-base, gray-lighter);
       }
     }
   }
 
   .#{$prefix}button-secondary {
     $id: 'button-secondary';
-    color: get('colors.gray.black.hex');
-    background-color: get('colors.gray.white.hex');
+    color: map-get($colormap-base, black);
+    background-color: map-get($colormap-base, white);
     border: 2px solid;
 
     @include themify($themes) {
@@ -64,23 +64,23 @@
 
     &:disabled,
     &.#{$prefix}button-secondary--disabled {
-      color: get('colors.gray.grayLighter.hex');
-      background-color: get('colors.gray.white.hex');
-      border-color: get('colors.gray.grayLighter.hex');
+      color: map-get($colormap-base, gray-lighter);
+      background-color: map-get($colormap-base, white);
+      border-color: map-get($colormap-base, gray-lighter);
       cursor: not-allowed;
 
       &:hover,
       &:focus,
       &.#{$prefix}button-secondary--hover {
-        color: get('colors.gray.grayLighter.hex');
-        background-color: get('colors.gray.white.hex');
-        border-color: get('colors.gray.grayLighter.hex');
+        color: map-get($colormap-base, gray-lighter);
+        background-color: map-get($colormap-base, white);
+        border-color: map-get($colormap-base, gray-lighter);
       }
     }
   }
 
   .#{$prefix}button--number-input {
-    background-color: get('colors.gray.grayLighter.hex');
+    background-color: map-get($colormap-base, gray-lighter);
     padding: 0;
     width: 3rem;
     height: 3rem;

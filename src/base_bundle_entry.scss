@@ -9,7 +9,7 @@ $include-typography: true !default;
 @import './style-basics/variables';
 @import './style-basics/utils';
 @import './style-basics/breakpoints';
-//@import './guidelines/colors';
+@import './guidelines/colors';
 @import './themes/themes';
 @import './assets/fontsets';
 @import './guidelines/typography';

@@ -36,7 +36,7 @@
         width: ($boxSize) + $borderWidth * 2;
         height: ($boxSize) + $borderWidth * 2;
         margin: -$borderWidth;
-        border: 2px solid get('colors.gray.gray.hex');
+        border: 2px solid map-get($colormap-base, gray);
         border-radius: 0;
       }
     }
@@ -46,8 +46,8 @@
       opacity: 0;
       &:disabled + .#{$prefix}checkbox__label:before {
         cursor: not-allowed;
-        background: get('colors.gray.grayLighter.hex');
-        border: 2px solid get('colors.gray.gray.hex');
+        background: map-get($colormap-base, gray-lighter);
+        border: 2px solid map-get($colormap-base, gray);
       }
       &:disabled + .#{$prefix}checkbox__label {
         cursor: not-allowed;
@@ -57,7 +57,7 @@
         content: '\f112';
         //content: '\2713';
         display: inline-block;
-        background: get('colors.gray.white.hex');
+        background: map-get($colormap-base, white);
         line-height: $boxSize + $borderWidth;
         font-size: 1.125rem;
         text-align: center;
@@ -69,7 +69,7 @@
       &:checked:focus + .#{$prefix}checkbox__label:before {
         @include themify($themes) {
           box-shadow: 0 0 5px 1px themed('primary');
-          background: get('colors.gray.white.hex');
+          background: map-get($colormap-base, white);
         }
       }
       &:active + .#{$prefix}checkbox__label:before {

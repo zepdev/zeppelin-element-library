@@ -4,21 +4,21 @@
   .#{$prefix}tag {
     box-sizing: border-box;
     display: inline-block;
-    border: 2px solid get('colors.primary.catYellow.hex');
+    border: 2px solid map-get($colormap-base, cat-yellow);
     padding: 0.625rem;
-    background-color: get('colors.gray.white.hex');
-    color: get('colors.gray.black.hex');
+    background-color: map-get($colormap-base, white);
+    color: map-get($colormap-base, black);
     &:hover,
     &:focus,
     &.#{$prefix}tag--hover {
-      background-color: get('colors.secondary.catYellowLightest.hex');
+      background-color: map-get($colormap-base, cat-yellow-lightest);
     }
     img,
     i,
     svg {
       width: 12px;
       height: 12px;
-      color: get('colors.primary.catYellow.hex');
+      color: map-get($colormap-base, cat-yellow);
       margin-left: 0.625rem;
       float: right;
       cursor: pointer;
