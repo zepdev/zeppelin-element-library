@@ -21,5 +21,9 @@ module.exports = {
   numberInput: {
     name: 'numberInput',
     isReady: true
+  },
+  list: {
+    name: 'List',
+    isReady: true
   }
 };
