@@ -1,0 +1,31 @@
+//List - base style
+
+@mixin list {
+  // Attribute List
+  .#{$prefix}list-attribute__item {
+    @extend %typo-normal-4;
+    color: get('colors.gray.grayDark.hex');
+  }
+  .#{$prefix}list-attribute__label {
+    @extend %typo-normal-1;
+    color: get('colors.gray.grayLight.hex');
+    text-transform: uppercase;
+    padding-right: 4rem;
+  }
+
+  //Bullet List
+  .#{$prefix}list-bullet {
+    @extend %typo-normal-3;
+    color: get('colors.gray.textGray.hex');
+    list-style: square;
+    margin-left: 1rem;
+  }
+
+  .#{$prefix}list-bullet__item {
+    padding: 0.25rem 0;
+  }
+}
+
+@include exports('list') {
+  @include list;
+}

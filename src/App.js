@@ -5,6 +5,7 @@ import TagPage from './elements/tag/TagPage.jsx';
 import CheckboxPage from './elements/checkbox/CheckboxPage.jsx';
 import InputPage from './elements/input/InputPage.jsx';
 import NumberInputPage from './elements/numberinput/NumberInputPage.jsx';
+import ListPage from './elements/list/ListPage.jsx';
 import './base_bundle_entry.scss';
 
 /* TODO: remove this import, the css itself and the icont font files,
@@ -56,7 +57,8 @@ function App() {
             style={{ paddingTop: 45 }}
           >
             {content === 'welcome' && (
-              <p>Welcome to the Zeppelin Element Library</p>
+              // <p>Welcome to the Zeppelin Element Library</p>
+              <ListPage />
             )}
             {content === 'button' && <ButtonPage />}
             {content === 'tabs' && <p>This element is not ready</p>}
@@ -64,6 +66,7 @@ function App() {
             {content === 'checkbox' && <CheckboxPage />}
             {content === 'input' && <InputPage />}
             {content === 'numberInput' && <NumberInputPage />}
+            {content === 'list' && <ListPage />}
           </div>
         </div>
         <div className="zep-grid__row--cards">

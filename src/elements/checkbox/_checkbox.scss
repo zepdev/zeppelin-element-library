@@ -11,6 +11,7 @@
   .#{$prefix}checkbox {
     .#{$prefix}checkbox__label {
       cursor: pointer;
+      color: map-get($colormap-base, gray-dark);
       line-height: $base;
       position: relative;
       display: inline-block;
@@ -36,7 +37,7 @@
         width: ($boxSize) + $borderWidth * 2;
         height: ($boxSize) + $borderWidth * 2;
         margin: -$borderWidth;
-        border: 2px solid map-get($colormap-base, gray);
+        border: 2px solid map-get($colormap-base, gray-dark);
         border-radius: 0;
       }
     }
@@ -44,37 +45,37 @@
     /* hide the input element */
     .#{$prefix}checkbox__input {
       opacity: 0;
-      &:disabled + .#{$prefix}checkbox__label:before {
-        cursor: not-allowed;
-        background: map-get($colormap-base, gray-lighter);
-        border: 2px solid map-get($colormap-base, gray);
-      }
       &:disabled + .#{$prefix}checkbox__label {
         cursor: not-allowed;
+        color: map-get($colormap-base, text-gray);
       }
-      &:checked + .#{$prefix}checkbox__label:before {
-        font-family: zepicons;
-        content: '\f112';
-        //content: '\2713';
-        display: inline-block;
-        background: map-get($colormap-base, white);
-        line-height: $boxSize + $borderWidth;
-        font-size: 1.125rem;
-        text-align: center;
-        transform: scale(1);
-        @include themify($themes) {
+
+      &:disabled + .#{$prefix}checkbox__label:before {
+        border: 2px solid map-get($colormap-base, gray-light);
+      }
+
+      @include themify($themes) {
+        &:checked + .#{$prefix}checkbox__label:before {
+          font-family: zepicons;
+          content: '\f112';
+          display: inline-block;
+          background: map-get($colormap-base, white);
+          line-height: $boxSize + $borderWidth;
+          font-size: 1.125rem;
+          text-align: center;
+          transform: scale(1);
+
           color: themed('primary');
         }
-      }
-      &:checked:focus + .#{$prefix}checkbox__label:before {
-        @include themify($themes) {
+        &:checked:focus + .#{$prefix}checkbox__label:before {
           box-shadow: 0 0 5px 1px themed('primary');
           background: map-get($colormap-base, white);
         }
-      }
-      &:active + .#{$prefix}checkbox__label:before {
-        @include themify($themes) {
+        &:active + .#{$prefix}checkbox__label:before {
           background: themed('hover');
+        }
+        &:disabled:active + .#{$prefix}checkbox__label:before {
+          background: map-get($colormap-base, white);
         }
       }
     }
