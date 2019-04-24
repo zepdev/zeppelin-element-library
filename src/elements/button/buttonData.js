@@ -42,13 +42,13 @@ const buttonData = {
   },
   catSecondary: {
     name: 'secondary',
-    js: `<div class="theme-cat" style="margin-bottom: 10px;"><a type="button" class="${
+    js: `<div class="theme-cat" style="margin-bottom: 10px;"><button class="${
       helpers.classPrefix
     }button ${helpers.classPrefix}button-secondary" ${
       helpers.htmlDataVarType
     }="button"><span class="${
       helpers.classPrefix
-    }button__text">Cat Secondary</span></a></div>`,
+    }button__text">Cat Secondary</span></button></div>`,
     react: false,
     angular: false,
     vue: false
