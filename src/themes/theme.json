@@ -260,6 +260,12 @@
         "rgb": null,
         "hsb": null
       },
+      "catYellowDarker": {
+        "name": "cat-yellow-lighter",
+        "hex": "#f0b823",
+        "rgb": null,
+        "hsb": null
+      },
       "indigoBlueLighter": {
         "name": "indigo-blue-lighter",
         "hex": "#361e9a",
@@ -379,8 +385,8 @@
         "hsb": null
       },
       "infoLighter": {
-        "name": "info",
-        "hex": "##d9edf7",
+        "name": "info-lighter",
+        "hex": "#d9edf7",
         "rgb": null,
         "hsb": null
       }

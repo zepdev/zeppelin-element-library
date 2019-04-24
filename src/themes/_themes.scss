@@ -1,33 +1,33 @@
 $themes: (
   zeppelin: (
-    primary: get('colors.primary.indigoBlue.hex'),
-    hover: get('colors.secondary.indigoBlueLighter.hex'),
-    secondary: get('colors.primary.indigoBlue.hex'),
-    buttonText: get('colors.gray.white.hex'),
-    buttonTextSecondaryHover: get('colors.gray.white.hex'),
-    buttonBorderSecondaryHover: get('colors.primary.indigoBlue.hex')
+    primary: map-get($colormap-base, indigo-blue), 
+    hover: map-get($colormap-base, indigo-blue-lighter), 
+    secondary: map-get($colormap-base, indigo-blue),
+    buttonText: map-get($colormap-base, white), 
+    buttonTextSecondaryHover: map-get($colormap-base, white),
+    buttonBorderSecondaryHover: map-get($colormap-base, indigo-blue),
   ),
   cat: (
-    primary: get('colors.primary.catYellow.hex'),
-    hover: get('colors.secondary.catYellowLighter.hex'),
-    secondary: get('colors.secondary.catYellowLightest.hex'),
-    buttonText: get('colors.gray.black.hex'),
-    buttonTextSecondaryHover: get('colors.gray.black.hex'),
-    buttonBorderSecondaryHover: get('colors.primary.catYellow.hex')
+    primary: map-get($colormap-base, cat-yellow),
+    hover: map-get($colormap-base, cat-yellow-lighter),
+    secondary: map-get($colormap-base, cat-yellow-lightest),
+    buttonText: map-get($colormap-base, black),
+    buttonTextSecondaryHover: map-get($colormap-base, black),
+    buttonBorderSecondaryHover: map-get($colormap-base, cat-yellow),
   ),
   rental: (
-    primary: get('colors.primary.rentalRed.hex'),
-    hover: get('colors.primary.catYellow.hex'),
-    secondary: get('colors.secondary.catYellowLightest.hex'),
-    buttonText: get('colors.gray.white.hex'),
-    buttonTextSecondaryHover: get('colors.gray.black.hex'),
-    buttonBorderSecondaryHover: get('colors.primary.catYellow.hex'),
+    primary: map-get($colormap-base, rental-red),
+    hover: map-get($colormap-base, cat-yellow),
+    secondary: map-get($colormap-base, cat-yellow-lightest),
+    buttonText: map-get($colormap-base, white),
+    buttonTextSecondaryHover: map-get($colormap-base, black),
+    buttonBorderSecondaryHover: map-get($colormap-base, cat-yellow)
   ),
   // zlab: (
-  //   primary: get('colors.primary.zlabBlue.hex'),
-  //   hover: get('colors.secondary.zlabBlue.hex'),
-  //   secondary: get('colors.secondary.zlabBlue.hex'),
-  //   buttonText: get('colors.gray.black.hex')
+  //   primary: map-get($colormap-base, zlab-blue),
+  //   hover: map-get($colormap-base, zlab-blue),
+  //   secondary: map-get($colormap-base, zlab-blue),
+  //   buttonText: map-get($colormap-base, black)
   // )
 );
 
