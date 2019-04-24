@@ -29,12 +29,18 @@
         background-color: themed('hover');
       }
     }
-
     &:disabled,
     &.#{$prefix}button-primary--disabled {
       color: get('colors.gray.disabled.hex');
       background-color: get('colors.gray.grayLighter.hex');
       cursor: not-allowed;
+
+      &:hover,
+      &:focus,
+      &.#{$prefix}button-primary--hover {
+        color: get('colors.gray.disabled.hex');
+        background-color: get('colors.gray.grayLighter.hex');
+      }
     }
   }
 
@@ -55,17 +61,25 @@
         color: themed('buttonTextSecondaryHover');
       }
     }
+
+    &:disabled,
+    &.#{$prefix}button-secondary--disabled {
+      color: get('colors.gray.grayLighter.hex');
+      background-color: get('colors.gray.white.hex');
+      border-color: get('colors.gray.grayLighter.hex');
+      cursor: not-allowed;
+
+      &:hover,
+      &:focus,
+      &.#{$prefix}button-secondary--hover {
+        color: get('colors.gray.grayLighter.hex');
+        background-color: get('colors.gray.white.hex');
+        border-color: get('colors.gray.grayLighter.hex');
+      }
+    }
   }
 
-  &:disabled,
-  &.#{$prefix}button-secondary--disabled {
-    color: get('colors.gray.grayLighter.hex');
-    background-color: get('colors.gray.white.hex');
-    border-color: get('colors.gray.grayLighter.hex');
-    cursor: not-allowed;
-  }
-
-  &.#{$prefix}button--number-input {
+  .#{$prefix}button--number-input {
     background-color: get('colors.gray.grayLighter.hex');
     padding: 0;
     width: 3rem;
