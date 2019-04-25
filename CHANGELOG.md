@@ -1,3 +1,18 @@
+# [0.7.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.6.0...v0.7.0) (2019-04-25)
+
+
+### Bug Fixes
+
+* **checkbox:** fixed disable colors ([2c72c6e](https://github.com/zepdev/zeppelin-element-library/commit/2c72c6e))
+* **style:** fixed button disabled styles ([0af8cb5](https://github.com/zepdev/zeppelin-element-library/commit/0af8cb5))
+* **style:** fixed iconfont path issues in ([54c5443](https://github.com/zepdev/zeppelin-element-library/commit/54c5443))
+* **theme:** Mapped theme.json color objects to sass color maps ([0852bcf](https://github.com/zepdev/zeppelin-element-library/commit/0852bcf))
+
+
+### Features
+
+* **list:** Attribute and Buttet List Items ([430d30c](https://github.com/zepdev/zeppelin-element-library/commit/430d30c))
+
 # [0.6.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.5.0...v0.6.0) (2019-04-23)
 
 
