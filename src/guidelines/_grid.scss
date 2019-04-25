@@ -58,6 +58,7 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   $min-screensize-map,
   $screensize
 ) {
+  /*
   @if $margin == auto {
     min-width: calc(#{$grid-max-width} - (#{$max-grid-h-margin} * 2));
   } @else {
@@ -65,17 +66,24 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
       #{map-get($min-screensize-map, $screensize)}px - (#{$margin} * 2)
     );
   }
+  */
 
-  margin-left: $margin;
-  margin-right: $margin;
+  //margin-left: $margin;
+  //margin-right: $margin;
+  padding-left: $margin;
+  padding-right: $margin;
 }
 
 .#{$prefix}grid {
+  box-sizing: content-box;
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-left: $grid-h-margin;
-  margin-right: $grid-h-margin;
+
+  padding-left: $grid-h-margin;
+  padding-right: $grid-h-margin;
+  margin-left: auto;
+  margin-right: auto;
 
   // set horizontal margin and width of grid container
   @each $screensize, $valuelist in $grid-values-map {
@@ -147,8 +155,14 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
 }
 
 .#{$prefix}grid__row {
+  $half-grid-gutter: $grid-gutter / 2;
+  // use negative margin to clear grid-gutter
+  margin-left: -#{$half-grid-gutter};
+  margin-right: -#{$half-grid-gutter};
+
+  align-items: stretch;
+
   padding: 0;
-  margin: 0;
   display: block;
   position: relative;
   display: flex;
@@ -175,6 +189,19 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   }
 }
 
+.#{$prefix}grid__row--align-items-flex-start {
+  align-items: flex-start;
+}
+.#{$prefix}grid__row--align-items-flex-end {
+  align-items: flex-end;
+}
+.#{$prefix}grid__row--align-items-center {
+  align-items: center;
+}
+.#{$prefix}grid__row--align-items-baseline {
+  align-items: baseline;
+}
+
 .#{$prefix}grid__col {
   // float is only for non flexbox browsers and overwritten by flex properties in modern browsers
   position: relative;
@@ -182,6 +209,22 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   float: left;
   flex-shrink: 1;
   border: 1px green solid;
+}
+
+.#{$prefix}grid__col--align-self-flex-start {
+  align-self: flex-start;
+}
+.#{$prefix}grid__col--align-self-flex-end {
+  align-self: flex-end;
+}
+.#{$prefix}grid__col--align-self-center {
+  align-self: center;
+}
+.#{$prefix}grid__col--align-self-baseline {
+  align-self: baseline;
+}
+.#{$prefix}grid__col--align-self-stretch {
+  align-self: stretch;
 }
 
 // set col width for 12 col layout
