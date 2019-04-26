@@ -135,8 +135,7 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
 
   // get grid max screen with from style-basics/_breakpoints.scss
   max-width: $grid-max-width;
-
-  border: 1px solid blue;
+  // border: 1px solid blue;
 
   &:after,
   &:before {
@@ -213,7 +212,7 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   display: block;
   float: left;
   flex-shrink: 1;
-  border: 1px green solid;
+  // border: 1px green solid;
   width: 100%;
 }
 
