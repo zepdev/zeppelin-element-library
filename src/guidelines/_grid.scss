@@ -148,6 +148,13 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   }
 }
 
+.#{$prefix}grid--valign-center {
+  justify-content: center;
+}
+.#{$prefix}grid--valign-bottom {
+  justify-content: flex-end;
+}
+
 .#{$prefix}grid--no-h-margin {
   $grid-h-margin: 0;
   margin-left: $grid-h-margin;
