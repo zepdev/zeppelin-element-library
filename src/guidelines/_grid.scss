@@ -1,5 +1,15 @@
 // this grid should be only implemented on full browser width elements!
 
+//
+// breakpoints:
+// xxs: max. 575px
+// xs: min. 576px
+// s: min. 768px
+// m: min. 992px
+// l: min. 1200px
+// xl: min. 1680px
+// xxl: min. 1920px
+
 // values: colums, margin, grid-gutter
 $grid-values-map: (
   xs: (
@@ -58,18 +68,6 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   $min-screensize-map,
   $screensize
 ) {
-  /*
-  @if $margin == auto {
-    min-width: calc(#{$grid-max-width} - (#{$max-grid-h-margin} * 2));
-  } @else {
-    min-width: calc(
-      #{map-get($min-screensize-map, $screensize)}px - (#{$margin} * 2)
-    );
-  }
-  */
-
-  //margin-left: $margin;
-  //margin-right: $margin;
   padding-left: $margin;
   padding-right: $margin;
 }
@@ -216,6 +214,7 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   float: left;
   flex-shrink: 1;
   border: 1px green solid;
+  width: 100%;
 }
 
 .#{$prefix}grid__col--align-self-flex-start {
@@ -234,88 +233,6 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   align-self: stretch;
 }
 
-// set col width for 12 col layout
-@for $i from 1 through $grid-max-cols {
-  .#{$prefix}grid__col--#{$i}-#{$grid-max-cols} {
-    $cols: $grid-min-cols;
-
-    $current-cols: $i;
-    @if $current-cols > $cols {
-      $current-cols: $cols;
-    }
-    @include grid-breakpoint-content($current-cols, $cols, $grid-gutter);
-
-    // change col with and grid-gutter on different breakpoints
-    @each $screensize, $valuelist in $grid-values-map {
-      $index: index(($grid-values-map), ($screensize $valuelist));
-
-      // get next element from grid-values-map for max-with on breakpoint media query.
-      @if $index < $grid-values-map-length {
-        $iterator-next: nth($grid-values-map, $index + 1);
-        $next-screen-size: nth($iterator-next, 1);
-
-        @include breakpoint--min-max(#{$screensize}, #{$next-screen-size}) {
-          $cols: nth($valuelist, 1);
-          // grid-gutter changes with breakpoint
-          $grid-gutter: nth($valuelist, 3);
-
-          $current-cols: $i;
-          @if $current-cols > $cols {
-            $current-cols: $cols;
-          }
-          @include grid-breakpoint-content($current-cols, $cols, $grid-gutter);
-        }
-      }
-      // bigger than xl - breakpoint uses just min-width in media query
-      @else {
-        @include breakpoint--min(#{$screensize}) {
-          $cols: nth($valuelist, 1);
-          $grid-gutter: nth($valuelist, 3);
-
-          @include grid-breakpoint-content($i, $cols, $grid-gutter);
-        }
-      }
-    }
-  }
-}
-
-// reverse map for specifity reasons
-$grid-values-reverse-map: mapReverse($grid-values-map);
-// @debug $grid-values-reverse-map;
-
-// set cols for xl, l, m, s, xs
-@each $screensize, $valuelist in $grid-values-reverse-map {
-  $index: index(($grid-values-reverse-map), ($screensize $valuelist));
-  $cols: nth($valuelist, 1);
-  $grid-gutter: nth($valuelist, 3);
-
-  // get next screen size from reversed map as long as a next element in map exists
-  @if $grid-values-map-length > $index {
-    $iterator-next: nth($grid-values-reverse-map, $index + 1);
-    $next-screen-size: nth($iterator-next, 1);
-
-    @for $i from 1 through $cols {
-      .#{$prefix}grid__col--#{$screensize}-#{$i}-#{$cols} {
-        @include breakpoint--min-max(#{$next-screen-size}, #{$screensize}) {
-          @include grid-breakpoint-content($i, $cols, $grid-gutter);
-        }
-      }
-    }
-    // get last screen size for media query to display smallest variant
-  } @else {
-    $iterator-next: nth($grid-values-reverse-map, $index - 1);
-    $last-screen-size: nth($iterator-next, 1);
-
-    @for $i from 1 through $cols {
-      .#{$prefix}grid__col--#{$screensize}-#{$i}-#{$cols} {
-        @include breakpoint--min-max(#{$screensize}, #{$last-screen-size}) {
-          @include grid-breakpoint-content($i, $cols, $grid-gutter);
-        }
-      }
-    }
-  }
-}
-
 // set cols for xxs
 $grid-max-cols: 4;
 $grid-min-cols: 4;
@@ -328,6 +245,20 @@ $grid-gutter: 24px;
     // difference here is use of breakpoint--max() instead of breakpoint--min()
     @include breakpoint--max(xs) {
       @include grid-breakpoint-content($i, $cols, $grid-gutter);
+    }
+  }
+}
+
+// set cols for xs - xl
+@each $screensize, $valuelist in $grid-values-map {
+  $cols: nth($valuelist, 1);
+  $grid-gutter: nth($valuelist, 3);
+
+  @for $i from 1 through $cols {
+    .#{$prefix}grid__col--#{$screensize}-#{$i}-#{$cols} {
+      @include breakpoint--min(#{$screensize}) {
+        @include grid-breakpoint-content($i, $cols, $grid-gutter);
+      }
     }
   }
 }
