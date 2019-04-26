@@ -3,13 +3,12 @@ import React from 'react';
 function List() {
   return (
     <>
-      <ul className="zep-list-bullet" style={{ marginBottom: 30 }}>
-        <li className="zep-list-bullet__item">Bullet List Item</li>
+      <ul className="zep-list" style={{ marginBottom: 30 }}>
+        <li className="zep-list__item">Bullet List Item</li>
       </ul>
-      <ul>
-        <li className="zep-list-attribute__item">
-          <span className="zep-list-attribute__label">label</span>Attribute List
-          Item
+      <ul className="zep-list">
+        <li className="zep-list__item zep-list__item--attribute">
+          <span className="zep-list__label">label</span>Attribute List Item
         </li>
       </ul>
     </>
