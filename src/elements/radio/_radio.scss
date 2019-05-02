@@ -1,0 +1,64 @@
+//Radio - base style
+
+@mixin radio {
+  .#{$prefix}radio {
+    @extend %typo-normal-3;
+    display: block;
+    position: relative;
+    padding-left: 34px;
+    min-height: 1.5;
+    cursor: pointer;
+    user-select: none;
+    color: map-get($colormap-base, grey-dark);
+  }
+
+  .#{$prefix}radio .#{$prefix}radio__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .#{$prefix}radio__indicator {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: map-get($colormap-base, white);
+    border: 2px solid map-get($colormap-base, gray-dark);
+    border-radius: 50%;
+  }
+
+  .#{$prefix}radio:hover .#{$prefix}radio__input ~ .#{$prefix}radio__indicator {
+    @include themify($themes) {
+      box-shadow: 0 0 5px 1px themed('primary');
+    }
+  }
+
+  .#{$prefix}radio__indicator:after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+
+  .#{$prefix}radio
+    .#{$prefix}radio__input:checked
+    ~ .#{$prefix}radio__indicator:after {
+    display: block;
+  }
+
+  .#{$prefix}radio .#{$prefix}radio__indicator:after {
+    top: 4px;
+    left: 4.1px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    @include themify($themes) {
+      background: themed('primary');
+    }
+  }
+}
+
+@include exports('radio') {
+  @include radio;
+}

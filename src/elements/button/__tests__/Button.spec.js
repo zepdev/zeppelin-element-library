@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ButtonPage from '../ButtonPage.jsx';
+import ButtonPage from '../ButtonPage';
 import Button from '../button';
 
 it('renders without crashing', () => {
