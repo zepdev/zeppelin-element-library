@@ -51,14 +51,10 @@ $grid-values-map-length: length($grid-values-map);
 $grid-max-width: #{map-get($min-screensize-map, l)}px;
 
 @mixin grid-breakpoint-content($current-cols, $cols, $grid-gutter) {
-  // -1px = floor calculated percentages workaround for IE9+
+  // -1px = floor calculated percentages workaround for IE9+ / Safari
   width: calc((100% - 1px) / #{$cols} * #{$current-cols});
   // use col padding as grid-gutter
   padding: 0 ($grid-gutter / 2);
-
-  @supports (display: flex) {
-    width: calc(100% / #{$cols} * #{$current-cols});
-  }
 }
 
 @mixin grid-min-width-and-margin(
