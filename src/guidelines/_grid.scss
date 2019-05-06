@@ -11,31 +11,42 @@
 // xxl: min. 1920px
 
 // values: colums, margin, grid-gutter
+// TODO: Fix castToSass() columns output as number
 $grid-values-map: (
   xs: (
     6,
-    32px,
-    32px
+    get('grid.xs.margin'),
+    // 32px,
+      get('grid.xs.gutter'),
+    // 32px
   ),
   s: (
     6,
-    48px,
-    32px
+    get('grid.s.margin'),
+    // 48px,
+      get('grid.s.gutter'),
+    // 32px
   ),
   m: (
     8,
-    64px,
-    32px
+    get('grid.m.margin'),
+    // 64px,
+      get('grid.m.gutter'),
+    // 32px
   ),
   l: (
     12,
-    64px,
-    32px
+    get('grid.l.margin'),
+    // 64px,
+      get('grid.l.gutter'),
+    // 32px
   ),
   xl: (
     12,
-    auto,
-    32px
+    get('grid.xl.margin'),
+    // auto,
+      get('grid.xl.gutter'),
+    // 32px
   )
 );
 
@@ -51,14 +62,10 @@ $grid-values-map-length: length($grid-values-map);
 $grid-max-width: #{map-get($min-screensize-map, l)}px;
 
 @mixin grid-breakpoint-content($current-cols, $cols, $grid-gutter) {
-  // -1px = floor calculated percentages workaround for IE9+
+  // -1px = floor calculated percentages workaround for IE9+ / Safari
   width: calc((100% - 1px) / #{$cols} * #{$current-cols});
   // use col padding as grid-gutter
   padding: 0 ($grid-gutter / 2);
-
-  @supports (display: flex) {
-    width: calc(100% / #{$cols} * #{$current-cols});
-  }
 }
 
 @mixin grid-min-width-and-margin(
