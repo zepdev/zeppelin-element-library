@@ -81,32 +81,50 @@ function ButtonPage() {
         </div>
         <p>Icon</p>
         <div className="theme-cat" style={{ marginBottom: 15 }}>
-          <button type="button" className="zep-button zep-button-primary">
+          <button
+            type="button"
+            className="zep-button zep-button-primary zep-button-icon"
+          >
             <CopyIcon className="zep-button__icon" />
           </button>
         </div>
         <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
-          <button type="button" className="zep-button zep-button-primary">
+          <button
+            type="button"
+            className="zep-button zep-button-primary zep-button-icon"
+          >
             <CopyIcon className="zep-button__icon" />
           </button>
         </div>
         <div className="theme-rental" style={{ marginBottom: 15 }}>
-          <button type="button" className="zep-button zep-button-primary">
+          <button
+            type="button"
+            className="zep-button zep-button-primary zep-button-icon"
+          >
             <CopyIcon className="zep-button__icon" />
           </button>
         </div>
         <div className="theme-cat" style={{ marginBottom: 15 }}>
-          <button type="button" className="zep-button zep-button-secondary">
+          <button
+            type="button"
+            className="zep-button zep-button-secondary zep-button-icon"
+          >
             <CopyIcon className="zep-button__icon" />
           </button>
         </div>
         <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
-          <button type="button" className="zep-button zep-button-secondary">
+          <button
+            type="button"
+            className="zep-button zep-button-secondary zep-button-icon"
+          >
             <CopyIcon className="zep-button__icon" />
           </button>
         </div>
         <div className="theme-rental" style={{ marginBottom: 15 }}>
-          <button type="button" className="zep-button zep-button-secondary">
+          <button
+            type="button"
+            className="zep-button zep-button-secondary zep-button-icon"
+          >
             <CopyIcon className="zep-button__icon" />
           </button>
         </div>

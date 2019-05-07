@@ -10,7 +10,7 @@
     text-align: center;
     vertical-align: top;
     cursor: pointer;
-    height: 3rem;
+    min-height: 3rem;
     padding: 0;
   }
   .#{$prefix}button-primary {
@@ -107,6 +107,10 @@
     }
   }
 
+  .#{$prefix}button-icon {
+    min-width: 3rem;
+  }
+
   .#{$prefix}button__text {
     @extend %typo-special-4;
     display: inline-block;
@@ -116,7 +120,6 @@
   .#{$prefix}button__icon {
     height: 1.375rem;
     width: 1.375rem;
-    margin: 0.8125rem;
   }
 
   .#{$prefix}button__text--tertiary {
@@ -137,7 +140,7 @@
   }
 
   .#{$prefix}button--small {
-    height: 2.5rem;
+    min-height: 2.5rem;
     .#{$prefix}button__text {
       @extend %typo-special-3;
       display: inline-block;
