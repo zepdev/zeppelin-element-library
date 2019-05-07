@@ -40,14 +40,12 @@
   }
 
   .#{$prefix}button-secondary {
-    $id: 'button-secondary';
     color: map-get($colormap-base, black);
     background-color: map-get($colormap-base, white);
     border: 2px solid;
 
     @include themify($themes) {
       border-color: themed('primary');
-      // padding-top: 0.375rem;
       &:hover,
       &:focus,
       &.#{$prefix}button-secondary--hover {
