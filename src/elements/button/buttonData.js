@@ -122,14 +122,6 @@ const buttonData = {
     angular: false,
     vue: false
   }
-  // icon: {
-  //   name: 'icon',
-  //   js: `<div class="theme-zeppelin" style="margin-bottom: 15px"><button type="button" class="zep-button zep-button-primary"><svg class="zepicons zepicons-account zep-button__icon"><use xlink:href="#zepicons-account"></use></svg><span class="zep-button__text">Icon Button</span></button></div>`
-  // },
-  // textIcon: {
-  //   name: 'buttonWithIcon',
-  //   js: `<div class="theme-zeppelin" style="margin-bottom: 15px"><button class="zep-button zep-button-primary zep-button-icon"><svg class="zepicons zepicons-account zep-button__icon"><use xlink:href="#zepicons-account"></use></svg></button></div>`
-  // }
 };
 
 export default buttonData;

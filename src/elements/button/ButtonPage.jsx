@@ -1,71 +1,113 @@
-import React, { useEffect } from 'react';
-import data from './buttonData';
-import ZEL from '../../zel';
+import React from 'react';
 import CopyIcon from './CopyIcon';
 
 function ButtonPage() {
-  useEffect(() => {
-    ZEL.getButtons();
-  });
-
   return (
     <div>
       <>
-        {Object.keys(data).map((elem, idx) => (
-          <span
-            dangerouslySetInnerHTML={{ __html: data[elem].js }}
-            key={`button${idx}`}
-          />
-        ))}
+        <p>Primary - Large</p>
         <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
-          <button
-            type="button"
-            className="zep-button zep-button-primary zep-button-icon"
-          >
-            <CopyIcon className="zep-iconbutton__icon" />
-            <span className="zep-button-icon__text">Icon button</span>
-          </button>
-        </div>
-        <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
-          <button
-            type="button"
-            className="zep-button zep-button-primary zep-iconbutton"
-          >
-            <CopyIcon className="zep-iconbutton__icon" />
+          <button type="button" className="zep-button zep-button-primary">
+            <span className="zep-button__text">Normal button</span>
           </button>
         </div>
         <div className="theme-cat" style={{ marginBottom: 15 }}>
+          <button type="button" className="zep-button zep-button-primary">
+            <span className="zep-button__text">Normal button</span>
+          </button>
+        </div>
+        <div className="theme-rental" style={{ marginBottom: 15 }}>
+          <button type="button" className="zep-button zep-button-primary">
+            <span className="zep-button__text">Normal button</span>
+          </button>
+        </div>
+        <p>Other</p>
+        <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
           <button
             type="button"
-            className="zep-button zep-button-primary zep-button-icon"
+            className="zep-button zep-button-primary zep-button--small"
           >
-            <CopyIcon className="zep-iconbutton__icon" />
-            <span className="zep-button-icon__text">Icon button</span>
+            <span className="zep-button__text">SMALL button</span>
+          </button>
+        </div>
+        <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
+          <button
+            type="button"
+            className="zep-button zep-button-primary zep-button-full"
+          >
+            <span className="zep-button__text">Full Width button</span>
+          </button>
+        </div>
+        <p>Secondary</p>
+        <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
+          <button type="button" className="zep-button zep-button-secondary">
+            <span className="zep-button__text">Normal button</span>
           </button>
         </div>
         <div className="theme-cat" style={{ marginBottom: 15 }}>
-          <button
-            type="button"
-            className="zep-button zep-button-primary zep-iconbutton"
-          >
-            <CopyIcon className="zep-iconbutton__icon" />
+          <button type="button" className="zep-button zep-button-secondary">
+            <span className="zep-button__text">Normal button</span>
           </button>
         </div>
         <div className="theme-rental" style={{ marginBottom: 15 }}>
-          <button
-            type="button"
-            className="zep-button zep-button-primary zep-button-icon"
-          >
-            <CopyIcon className="zep-iconbutton__icon" />
-            <span className="zep-button-icon__text">Icon button</span>
+          <button type="button" className="zep-button zep-button-secondary">
+            <span className="zep-button__text">Normal button</span>
+          </button>
+        </div>
+        <p>Tertiary</p>
+        <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
+          <button type="button" className="zep-button zep-button-tertiary">
+            <CopyIcon className="zep-button__icon zep-button__icon--tertiary" />
+            <span className="zep-button__text zep-button__text--tertiary">
+              Icon button
+            </span>
+          </button>
+        </div>
+        <div className="theme-cat" style={{ marginBottom: 15 }}>
+          <button type="button" className="zep-button zep-button-tertiary">
+            <CopyIcon className="zep-button__icon zep-button__icon--tertiary" />
+            <span className="zep-button__text zep-button__text--tertiary">
+              Icon button
+            </span>
           </button>
         </div>
         <div className="theme-rental" style={{ marginBottom: 15 }}>
-          <button
-            type="button"
-            className="zep-button zep-button-primary zep-iconbutton"
-          >
-            <CopyIcon className="zep-iconbutton__icon" />
+          <button type="button" className="zep-button zep-button-tertiary">
+            <CopyIcon className="zep-button__icon zep-button__icon--tertiary" />
+            <span className="zep-button__text zep-button__text--tertiary">
+              Icon button
+            </span>
+          </button>
+        </div>
+        <p>Icon</p>
+        <div className="theme-cat" style={{ marginBottom: 15 }}>
+          <button type="button" className="zep-button zep-button-primary">
+            <CopyIcon className="zep-button__icon" />
+          </button>
+        </div>
+        <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
+          <button type="button" className="zep-button zep-button-primary">
+            <CopyIcon className="zep-button__icon" />
+          </button>
+        </div>
+        <div className="theme-rental" style={{ marginBottom: 15 }}>
+          <button type="button" className="zep-button zep-button-primary">
+            <CopyIcon className="zep-button__icon" />
+          </button>
+        </div>
+        <div className="theme-cat" style={{ marginBottom: 15 }}>
+          <button type="button" className="zep-button zep-button-secondary">
+            <CopyIcon className="zep-button__icon" />
+          </button>
+        </div>
+        <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
+          <button type="button" className="zep-button zep-button-secondary">
+            <CopyIcon className="zep-button__icon" />
+          </button>
+        </div>
+        <div className="theme-rental" style={{ marginBottom: 15 }}>
+          <button type="button" className="zep-button zep-button-secondary">
+            <CopyIcon className="zep-button__icon" />
           </button>
         </div>
       </>
