@@ -94,7 +94,7 @@
   }
 
   .#{$prefix}button__text {
-    @extend %typo-special-4;
+    @include typeset('special', 4); //@extend %typo-special-4;
     display: inline-block;
   }
 }
