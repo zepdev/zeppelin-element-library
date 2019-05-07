@@ -15,15 +15,15 @@ jobs:
       - checkout # check out the code in the project directory
       - attach_workspace:
           at: ~/project
-      - run:
-          name: Yarn
-          command: yarn
-      - run:
-          name: Yarn install
-          command: yarn install
-      - run:
-          name: Run all tests
-          command: yarn test
+      - node/with-cache:
+          cache-version: v2
+          steps:
+            - run:
+                name: Yarn install
+                command: yarngit ad
+            - run:
+                name: Run all tests
+                command: yarn test
       - persist_to_workspace:
           root: .
           paths: coverage
