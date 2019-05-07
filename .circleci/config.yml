@@ -15,14 +15,12 @@ jobs:
       - checkout # check out the code in the project directory
       - attach_workspace:
           at: ~/project
-      - node:
-          steps:
-            - run:
-                name: Yarn install
-                command: yarn install
-            - run:
-                name: Run all tests
-                command: yarn test
+      - run:
+          name: Yarn install
+          command: yarn install
+      - run:
+          name: Run all tests
+          command: yarn test
       - persist_to_workspace:
           root: .
           paths: coverage
