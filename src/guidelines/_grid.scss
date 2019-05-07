@@ -184,7 +184,8 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   // clear grid-gutter on the first/left and last/right elements
   @each $screensize, $valuelist in $grid-values-map {
     @include breakpoint--min(#{$screensize}) {
-      $grid-gutter: nth($valuelist, 3);
+      // TODO: get grid-gutter from map if castToSass problem is fixed
+      $grid-gutter: 32px; //nth($valuelist, 3);
       $half-grid-gutter: $grid-gutter / 2;
 
       // use negative margin to clear grid-gutter
