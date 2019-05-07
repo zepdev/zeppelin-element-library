@@ -15,8 +15,7 @@ jobs:
       - checkout # check out the code in the project directory
       - attach_workspace:
           at: ~/project
-      - node/with-cache:
-          cache-version: v2
+      - node:
           steps:
             - run:
                 name: Yarn install
