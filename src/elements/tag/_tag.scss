@@ -4,24 +4,28 @@
   .#{$prefix}tag {
     box-sizing: border-box;
     display: inline-block;
-    border: 2px solid map-get($colormap-base, cat-yellow);
     padding: 0.625rem;
     background-color: map-get($colormap-base, white);
     color: map-get($colormap-base, black);
-    &:hover,
-    &:focus,
-    &.#{$prefix}tag--hover {
-      background-color: map-get($colormap-base, cat-yellow-lightest);
+    @include themify($themes) {
+      border: 2px solid themed('primary');
+      &:hover,
+      &:focus,
+      &.#{$prefix}tag--hover {
+        background-color: themed('tagHover');
+      }
     }
     img,
     i,
     svg {
       width: 12px;
       height: 12px;
-      color: map-get($colormap-base, cat-yellow);
       margin-left: 0.625rem;
       float: right;
       cursor: pointer;
+      @include themify($themes) {
+        color: themed('primary');
+      }
     }
   }
 }
