@@ -23,7 +23,11 @@ module.exports = {
     isReady: true
   },
   list: {
-    name: 'List',
+    name: 'list',
+    isReady: true
+  },
+  radio: {
+    name: 'radio',
     isReady: true
   }
 };

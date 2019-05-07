@@ -1,31 +1,53 @@
 // this grid should be only implemented on full browser width elements!
 
+//
+// breakpoints:
+// xxs: max. 575px
+// xs: min. 576px
+// s: min. 768px
+// m: min. 992px
+// l: min. 1200px
+// xl: min. 1680px
+// xxl: min. 1920px
+
 // values: colums, margin, grid-gutter
+// TODO: Fix castToSass() columns output as number
+// grid gutter is currently not used from map.
 $grid-values-map: (
   xs: (
     6,
-    32px,
-    32px
+    get('grid.xs.margin'),
+    // 32px,
+      get('grid.xs.gutter'),
+    // 32px
   ),
   s: (
     6,
-    48px,
-    32px
+    get('grid.s.margin'),
+    // 48px,
+      get('grid.s.gutter'),
+    // 32px
   ),
   m: (
     8,
-    64px,
-    32px
+    get('grid.m.margin'),
+    // 64px,
+      get('grid.m.gutter'),
+    // 32px
   ),
   l: (
     12,
-    64px,
-    32px
+    get('grid.l.margin'),
+    // 64px,
+      get('grid.l.gutter'),
+    // 32px
   ),
   xl: (
     12,
-    auto,
-    32px
+    get('grid.xl.margin'),
+    // auto,
+      get('grid.xl.gutter'),
+    // 32px
   )
 );
 
@@ -41,14 +63,10 @@ $grid-values-map-length: length($grid-values-map);
 $grid-max-width: #{map-get($min-screensize-map, l)}px;
 
 @mixin grid-breakpoint-content($current-cols, $cols, $grid-gutter) {
-  // -1px = floor calculated percentages workaround for IE9+
+  // -1px = floor calculated percentages workaround for IE9+ / Safari
   width: calc((100% - 1px) / #{$cols} * #{$current-cols});
   // use col padding as grid-gutter
   padding: 0 ($grid-gutter / 2);
-
-  @supports (display: flex) {
-    width: calc(100% / #{$cols} * #{$current-cols});
-  }
 }
 
 @mixin grid-min-width-and-margin(
@@ -58,24 +76,20 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   $min-screensize-map,
   $screensize
 ) {
-  @if $margin == auto {
-    min-width: calc(#{$grid-max-width} - (#{$max-grid-h-margin} * 2));
-  } @else {
-    min-width: calc(
-      #{map-get($min-screensize-map, $screensize)}px - (#{$margin} * 2)
-    );
-  }
-
-  margin-left: $margin;
-  margin-right: $margin;
+  padding-left: $margin;
+  padding-right: $margin;
 }
 
 .#{$prefix}grid {
+  box-sizing: content-box;
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-left: $grid-h-margin;
-  margin-right: $grid-h-margin;
+
+  padding-left: $grid-h-margin;
+  padding-right: $grid-h-margin;
+  margin-left: auto;
+  margin-right: auto;
 
   // set horizontal margin and width of grid container
   @each $screensize, $valuelist in $grid-values-map {
@@ -129,8 +143,7 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
 
   // get grid max screen with from style-basics/_breakpoints.scss
   max-width: $grid-max-width;
-
-  border: 1px solid blue;
+  // border: 1px solid blue;
 
   &:after,
   &:before {
@@ -140,6 +153,13 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   }
 }
 
+.#{$prefix}grid--valign-center {
+  justify-content: center;
+}
+.#{$prefix}grid--valign-bottom {
+  justify-content: flex-end;
+}
+
 .#{$prefix}grid--no-h-margin {
   $grid-h-margin: 0;
   margin-left: $grid-h-margin;
@@ -147,8 +167,14 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
 }
 
 .#{$prefix}grid__row {
+  $half-grid-gutter: $grid-gutter / 2;
+  // use negative margin to clear grid-gutter
+  margin-left: -#{$half-grid-gutter};
+  margin-right: -#{$half-grid-gutter};
+
+  align-items: stretch;
+
   padding: 0;
-  margin: 0;
   display: block;
   position: relative;
   display: flex;
@@ -158,7 +184,8 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   // clear grid-gutter on the first/left and last/right elements
   @each $screensize, $valuelist in $grid-values-map {
     @include breakpoint--min(#{$screensize}) {
-      $grid-gutter: nth($valuelist, 3);
+      // TODO: get grid-gutter from map if castToSass problem is fixed
+      $grid-gutter: 32px; //nth($valuelist, 3);
       $half-grid-gutter: $grid-gutter / 2;
 
       // use negative margin to clear grid-gutter
@@ -175,95 +202,43 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   }
 }
 
+.#{$prefix}grid__row--align-items-flex-start {
+  align-items: flex-start;
+}
+.#{$prefix}grid__row--align-items-flex-end {
+  align-items: flex-end;
+}
+.#{$prefix}grid__row--align-items-center {
+  align-items: center;
+}
+.#{$prefix}grid__row--align-items-baseline {
+  align-items: baseline;
+}
+
 .#{$prefix}grid__col {
   // float is only for non flexbox browsers and overwritten by flex properties in modern browsers
   position: relative;
   display: block;
   float: left;
   flex-shrink: 1;
-  border: 1px green solid;
+  // border: 1px green solid;
+  width: 100%;
 }
 
-// set col width for 12 col layout
-@for $i from 1 through $grid-max-cols {
-  .#{$prefix}grid__col--#{$i}-#{$grid-max-cols} {
-    $cols: $grid-min-cols;
-
-    $current-cols: $i;
-    @if $current-cols > $cols {
-      $current-cols: $cols;
-    }
-    @include grid-breakpoint-content($current-cols, $cols, $grid-gutter);
-
-    // change col with and grid-gutter on different breakpoints
-    @each $screensize, $valuelist in $grid-values-map {
-      $index: index(($grid-values-map), ($screensize $valuelist));
-
-      // get next element from grid-values-map for max-with on breakpoint media query.
-      @if $index < $grid-values-map-length {
-        $iterator-next: nth($grid-values-map, $index + 1);
-        $next-screen-size: nth($iterator-next, 1);
-
-        @include breakpoint--min-max(#{$screensize}, #{$next-screen-size}) {
-          $cols: nth($valuelist, 1);
-          // grid-gutter changes with breakpoint
-          $grid-gutter: nth($valuelist, 3);
-
-          $current-cols: $i;
-          @if $current-cols > $cols {
-            $current-cols: $cols;
-          }
-          @include grid-breakpoint-content($current-cols, $cols, $grid-gutter);
-        }
-      }
-      // bigger than xl - breakpoint uses just min-width in media query
-      @else {
-        @include breakpoint--min(#{$screensize}) {
-          $cols: nth($valuelist, 1);
-          $grid-gutter: nth($valuelist, 3);
-
-          @include grid-breakpoint-content($i, $cols, $grid-gutter);
-        }
-      }
-    }
-  }
+.#{$prefix}grid__col--align-self-flex-start {
+  align-self: flex-start;
 }
-
-// reverse map for specifity reasons
-$grid-values-reverse-map: mapReverse($grid-values-map);
-// @debug $grid-values-reverse-map;
-
-// set cols for xl, l, m, s, xs
-@each $screensize, $valuelist in $grid-values-reverse-map {
-  $index: index(($grid-values-reverse-map), ($screensize $valuelist));
-  $cols: nth($valuelist, 1);
-  $grid-gutter: nth($valuelist, 3);
-
-  // get next screen size from reversed map as long as a next element in map exists
-  @if $grid-values-map-length > $index {
-    $iterator-next: nth($grid-values-reverse-map, $index + 1);
-    $next-screen-size: nth($iterator-next, 1);
-
-    @for $i from 1 through $cols {
-      .#{$prefix}grid__col--#{$screensize}-#{$i}-#{$cols} {
-        @include breakpoint--min-max(#{$next-screen-size}, #{$screensize}) {
-          @include grid-breakpoint-content($i, $cols, $grid-gutter);
-        }
-      }
-    }
-    // get last screen size for media query to display smallest variant
-  } @else {
-    $iterator-next: nth($grid-values-reverse-map, $index - 1);
-    $last-screen-size: nth($iterator-next, 1);
-
-    @for $i from 1 through $cols {
-      .#{$prefix}grid__col--#{$screensize}-#{$i}-#{$cols} {
-        @include breakpoint--min-max(#{$screensize}, #{$last-screen-size}) {
-          @include grid-breakpoint-content($i, $cols, $grid-gutter);
-        }
-      }
-    }
-  }
+.#{$prefix}grid__col--align-self-flex-end {
+  align-self: flex-end;
+}
+.#{$prefix}grid__col--align-self-center {
+  align-self: center;
+}
+.#{$prefix}grid__col--align-self-baseline {
+  align-self: baseline;
+}
+.#{$prefix}grid__col--align-self-stretch {
+  align-self: stretch;
 }
 
 // set cols for xxs
@@ -278,6 +253,21 @@ $grid-gutter: 24px;
     // difference here is use of breakpoint--max() instead of breakpoint--min()
     @include breakpoint--max(xs) {
       @include grid-breakpoint-content($i, $cols, $grid-gutter);
+    }
+  }
+}
+
+// set cols for xs - xl
+@each $screensize, $valuelist in $grid-values-map {
+  $cols: nth($valuelist, 1);
+  // TODO: get grid-gutter from map if castToSass problem is fixed
+  $grid-gutter: 32px; //nth($valuelist, 3);
+
+  @for $i from 1 through $cols {
+    .#{$prefix}grid__col--#{$screensize}-#{$i}-#{$cols} {
+      @include breakpoint--min(#{$screensize}) {
+        @include grid-breakpoint-content($i, $cols, $grid-gutter);
+      }
     }
   }
 }

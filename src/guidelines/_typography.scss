@@ -69,3 +69,33 @@ $typo-special-fontsize-list: (0.75rem, 0.875rem, 1rem, 1.5rem);
     @extend %typo-special-#{$i};
   }
 }
+
+/// @param {String} $type - display / normal / special
+/// @param {int} $id - typeset id (gets the correct fontsize from list)
+///
+@mixin typeset($type, $id) {
+  $type-map: (
+    'display': $typo-display-fontsize-list,
+    'normal': $typo-normal-fontsize-list,
+    'special': $typo-special-fontsize-list
+  );
+  $list: map-get($type-map, $type);
+  $list-length: length($list);
+  @if is-int($id) and $id <= $list-length {
+    $_font-size: nth($list, $id);
+    $_font-family: if(
+      $type == 'display',
+      'Teko',
+      if(
+        $type == 'special',
+        if(strip-unit($_font-size) < 1, 'Roboto', 'Teko'),
+        if(strip-unit($_font-size) <= 1, 'Roboto', 'Teko')
+      )
+    );
+    $_text-transform: if($type == 'special', uppercase, none);
+
+    @include typo($_font-size, $_font-family, $_text-transform);
+  } @else {
+    @error "Sorry, but #{$id} is not a valid value for $id, max-value is #{$list-length}";
+  }
+}

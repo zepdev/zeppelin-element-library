@@ -1,0 +1,64 @@
+//Radio - base style
+
+@mixin radio {
+  .#{$prefix}radio {
+    @include typeset('normal', 3);
+    display: block;
+    position: relative;
+    padding-left: 2.125rem;
+    min-height: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    color: map-get($colormap-base, grey-dark);
+  }
+
+  .#{$prefix}radio .#{$prefix}radio__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .#{$prefix}radio__indicator {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    height: 1.375rem;
+    width: 1.375rem;
+    background-color: map-get($colormap-base, white);
+    border: 2px solid map-get($colormap-base, gray-dark);
+    border-radius: 50%;
+  }
+
+  .#{$prefix}radio:hover .#{$prefix}radio__input ~ .#{$prefix}radio__indicator {
+    @include themify($themes) {
+      box-shadow: 0 0 5px 1px themed('primary');
+    }
+  }
+
+  .#{$prefix}radio__indicator:after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+
+  .#{$prefix}radio
+    .#{$prefix}radio__input:checked
+    ~ .#{$prefix}radio__indicator:after {
+    display: block;
+  }
+
+  .#{$prefix}radio .#{$prefix}radio__indicator:after {
+    top: 0.25rem;
+    left: 0.25625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+    @include themify($themes) {
+      background: themed('primary');
+    }
+  }
+}
+
+@include exports('radio') {
+  @include radio;
+}

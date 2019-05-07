@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ListPage from '../ListPage';
+import RadioPage from '../RadioPage';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<ListPage />, div);
+  ReactDOM.render(<RadioPage />, div);
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NumberInputPage from '../NumberInputPage.jsx';
+import NumberInputPage from '../NumberInputPage';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

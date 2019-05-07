@@ -64,7 +64,6 @@
           font-size: 1.125rem;
           text-align: center;
           transform: scale(1);
-
           color: themed('primary');
         }
         &:checked:focus + .#{$prefix}checkbox__label:before {

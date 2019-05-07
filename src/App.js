@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import elements from './elements/elements';
-import ButtonPage from './elements/button/ButtonPage.jsx';
-import TagPage from './elements/tag/TagPage.jsx';
-import CheckboxPage from './elements/checkbox/CheckboxPage.jsx';
-import InputPage from './elements/input/InputPage.jsx';
-import NumberInputPage from './elements/numberinput/NumberInputPage.jsx';
-import ListPage from './elements/list/ListPage.jsx';
+import ButtonPage from './elements/button/ButtonPage';
+import TagPage from './elements/tag/TagPage';
+import CheckboxPage from './elements/checkbox/CheckboxPage';
+import InputPage from './elements/input/InputPage';
+import NumberInputPage from './elements/numberinput/NumberInputPage';
+import ListPage from './elements/list/ListPage';
+import RadioPage from './elements/radio/RadioPage';
 import './base_bundle_entry.scss';
 
 /* TODO: remove this import, the css itself and the icont font files,
@@ -53,25 +54,7 @@ function App() {
             ))}
           </div>
           <div
-            className="zep-grid__col zep-grid__col--9-12"
-            style={{ paddingTop: 45 }}
-          >
-            {content === 'welcome' && (
-              // <p>Welcome to the Zeppelin Element Library</p>
-              <ListPage />
-            )}
-            {content === 'button' && <ButtonPage />}
-            {content === 'tabs' && <p>This element is not ready</p>}
-            {content === 'tag' && <TagPage />}
-            {content === 'checkbox' && <CheckboxPage />}
-            {content === 'input' && <InputPage />}
-            {content === 'numberInput' && <NumberInputPage />}
-            {content === 'list' && <ListPage />}
-          </div>
-        </div>
-        <div className="zep-grid__row--cards">
-          <div
-            className="zep-grid__col--cards zep-grid__col--cards-2-3"
+            className="zep-grid__col zep-grid__col--xs-5-6"
             style={{ paddingTop: 45 }}
           >
             {content === 'welcome' && (
@@ -80,6 +63,11 @@ function App() {
             {content === 'button' && <ButtonPage />}
             {content === 'tabs' && <p>This element is not ready</p>}
             {content === 'tag' && <TagPage />}
+            {content === 'checkbox' && <CheckboxPage />}
+            {content === 'input' && <InputPage />}
+            {content === 'numberInput' && <NumberInputPage />}
+            {content === 'list' && <ListPage />}
+            {content === 'radio' && <RadioPage />}
           </div>
         </div>
       </div>

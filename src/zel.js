@@ -22,7 +22,7 @@ class ZEL {
     this.getButtons();
   }
 
-  // dummy for testing
+  //dummy for testing
   getButtons() {
     const buttons = [];
     const buttonElements = document.querySelectorAll(
