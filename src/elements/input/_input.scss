@@ -2,7 +2,7 @@
 
 @mixin input {
   .#{$prefix}input {
-    @extend %typo-normal-3;
+    @include typeset('normal', 3);
     border: solid 2px map-get($colormap-base, gray-lighter);
     background-color: map-get($colormap-base, white);
     padding-left: 1.25rem;

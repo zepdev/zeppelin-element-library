@@ -6,9 +6,9 @@
     display: inline-block;
     border: 0;
     background: transparent;
-    outline: 0;
     text-align: center;
     vertical-align: top;
+    outline: 0;
     cursor: pointer;
     min-height: 3rem;
     padding: 0;
@@ -22,6 +22,7 @@
       &:focus,
       &.#{$prefix}button-primary--hover {
         background-color: themed('hover');
+        box-shadow: 0 0 5px 1px themed('primary');
       }
     }
     &:disabled,
@@ -96,9 +97,7 @@
     &:disabled,
     &.#{$prefix}button-secondary--disabled {
       color: map-get($colormap-base, gray-lighter);
-
       cursor: not-allowed;
-
       &:hover,
       &:focus,
       &.#{$prefix}button-tertiary--hover {
@@ -112,7 +111,7 @@
   }
 
   .#{$prefix}button__text {
-    @include typeset('special', 4); //@extend %typo-special-4;
+    @include typeset('special', 4);
     display: inline-block;
     padding: 0.25rem 1.125rem 0;
   }
@@ -123,7 +122,7 @@
   }
 
   .#{$prefix}button__text--tertiary {
-    @extend %typo-normal-4;
+    @include typeset('normal', 4);
     color: map-get($colormap-base, text-gray);
     padding: 0 0 0 0.4375rem;
     vertical-align: middle; // for ie
@@ -142,7 +141,7 @@
   .#{$prefix}button--small {
     min-height: 2.5rem;
     .#{$prefix}button__text {
-      @extend %typo-special-3;
+      @include typeset('special', 3);
       display: inline-block;
       padding: 0.25rem 1.125rem 0;
     }

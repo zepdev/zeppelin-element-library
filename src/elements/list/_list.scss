@@ -2,7 +2,7 @@
 
 @mixin list {
   .#{$prefix}list {
-    @extend %typo-normal-3;
+    @include typeset('normal', 3);
     color: get('colors.gray.textGray.hex');
     margin-left: 1rem;
   }
@@ -15,13 +15,13 @@
 
   // Attribute List
   .#{$prefix}list__item--attribute {
-    @extend %typo-normal-4;
+    @include typeset('normal', 4);
     color: get('colors.gray.grayDark.hex');
     list-style-type: none;
     margin-left: -1rem;
   }
   .#{$prefix}list__label {
-    @extend %typo-normal-1;
+    @include typeset('normal', 1);
     color: get('colors.gray.grayLight.hex');
     text-transform: uppercase;
     padding-right: 4rem;

@@ -20,7 +20,10 @@ jobs:
           steps:
             - run:
                 name: Yarn install
-                command: yarn install
+                command: yarn
+            - run:
+                name: Yarn install
+                command: npm install
             - run:
                 name: Run all tests
                 command: yarn test
