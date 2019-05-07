@@ -1,11 +1,12 @@
 $themes: (
   zeppelin: (
-    primary: map-get($colormap-base, indigo-blue), 
-    hover: map-get($colormap-base, indigo-blue-lighter), 
+    primary: map-get($colormap-base, indigo-blue),
+    hover: map-get($colormap-base, indigo-blue-lighter),
     secondary: map-get($colormap-base, indigo-blue),
-    buttonText: map-get($colormap-base, white), 
+    buttonText: map-get($colormap-base, white),
     buttonTextSecondaryHover: map-get($colormap-base, white),
     buttonBorderSecondaryHover: map-get($colormap-base, indigo-blue),
+    tagHover: map-get($colormap-base, indigo-blue-lighter)
   ),
   cat: (
     primary: map-get($colormap-base, cat-yellow),
@@ -14,6 +15,7 @@ $themes: (
     buttonText: map-get($colormap-base, black),
     buttonTextSecondaryHover: map-get($colormap-base, black),
     buttonBorderSecondaryHover: map-get($colormap-base, cat-yellow),
+    tagHover: map-get($colormap-base, cat-yellow-lightest)
   ),
   rental: (
     primary: map-get($colormap-base, rental-red),
@@ -21,14 +23,9 @@ $themes: (
     secondary: map-get($colormap-base, cat-yellow-lightest),
     buttonText: map-get($colormap-base, white),
     buttonTextSecondaryHover: map-get($colormap-base, black),
-    buttonBorderSecondaryHover: map-get($colormap-base, cat-yellow)
-  ),
-  // zlab: (
-  //   primary: map-get($colormap-base, zlab-blue),
-  //   hover: map-get($colormap-base, zlab-blue),
-  //   secondary: map-get($colormap-base, zlab-blue),
-  //   buttonText: map-get($colormap-base, black)
-  // )
+    buttonBorderSecondaryHover: map-get($colormap-base, cat-yellow),
+    tagHover: map-get($colormap-base, cat-yellow-lightest)
+  )
 );
 
 @mixin themify($themes: $themes) {
