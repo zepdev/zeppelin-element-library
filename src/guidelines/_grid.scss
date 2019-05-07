@@ -12,6 +12,7 @@
 
 // values: colums, margin, grid-gutter
 // TODO: Fix castToSass() columns output as number
+// grid gutter is currently not used from map.
 $grid-values-map: (
   xs: (
     6,
@@ -183,7 +184,8 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   // clear grid-gutter on the first/left and last/right elements
   @each $screensize, $valuelist in $grid-values-map {
     @include breakpoint--min(#{$screensize}) {
-      $grid-gutter: nth($valuelist, 3);
+      // TODO: get grid-gutter from map if castToSass problem is fixed
+      $grid-gutter: 32px; //nth($valuelist, 3);
       $half-grid-gutter: $grid-gutter / 2;
 
       // use negative margin to clear grid-gutter
@@ -258,7 +260,8 @@ $grid-gutter: 24px;
 // set cols for xs - xl
 @each $screensize, $valuelist in $grid-values-map {
   $cols: nth($valuelist, 1);
-  $grid-gutter: nth($valuelist, 3);
+  // TODO: get grid-gutter from map if castToSass problem is fixed
+  $grid-gutter: 32px; //nth($valuelist, 3);
 
   @for $i from 1 through $cols {
     .#{$prefix}grid__col--#{$screensize}-#{$i}-#{$cols} {

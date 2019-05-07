@@ -1,6 +1,6 @@
 {
   "name": "zeppelin-element-library",
-  "version": "0.7.0",
+  "version": "0.7.6",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
   "main": "bundle/zeppelin-element-library.cjs.js",
   "module": "bundle/zeppelin-element-library.esm.js",
@@ -21,6 +21,7 @@
     "commit": "git-cz",
     "semantic-release": "semantic-release",
     "prettier": "prettier src/**/*.js src/**/*.jsx",
+    "publish:check": "semantic-release --branch development --no-ci --dry-run",
     "publish:dev": "yarn publish --tag=next",
     "sonar-scanner": "sonar-scanner",
     "lint:eslint": "eslint src/**/*.js src/**/*.jsx",
