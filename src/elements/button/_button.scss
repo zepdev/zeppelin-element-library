@@ -79,6 +79,32 @@
     }
   }
 
+  .#{$prefix}button-icon {
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .#{$prefix}button-icon__text {
+    @extend %typo-normal-4;
+    padding-left: 0.4375rem;
+  }
+
+  .#{$prefix}button-icon__icon {
+    // padding-top: 9px;
+  }
+
+  .#{$prefix}iconbutton {
+    height: 48px;
+    width: 48px;
+    padding: 0;
+  }
+
+  .#{$prefix}iconbutton__icon {
+    height: 22px;
+    width: 22px;
+  }
+
   .#{$prefix}button--number-input {
     background-color: map-get($colormap-base, gray-lighter);
     padding: 0;

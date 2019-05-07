@@ -1,0 +1,540 @@
+.zepicons {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url(sprite.svg);
+}
+.zepicons-account {
+  width: 32px;
+  height: 32px;
+  background-position: 0 0;
+}
+.zepicons-add-cart {
+  width: 32px;
+  height: 32px;
+  background-position: -48px 0;
+}
+.zepicons-add-solution {
+  width: 32px;
+  height: 32px;
+  background-position: -96px 0;
+}
+.zepicons-attachment {
+  width: 32px;
+  height: 32px;
+  background-position: -144px 0;
+}
+.zepicons-average {
+  width: 32px;
+  height: 32px;
+  background-position: -192px 0;
+}
+.zepicons-bell {
+  width: 32px;
+  height: 32px;
+  background-position: -240px 0;
+}
+.zepicons-bookmark {
+  width: 32px;
+  height: 32px;
+  background-position: -288px 0;
+}
+.zepicons-br {
+  width: 32px;
+  height: 32px;
+  background-position: -336px 0;
+}
+.zepicons-briefcase {
+  width: 32px;
+  height: 32px;
+  background-position: -384px 0;
+}
+.zepicons-calendar-clock {
+  width: 32px;
+  height: 32px;
+  background-position: -432px 0;
+}
+.zepicons-calendar-range {
+  width: 32px;
+  height: 32px;
+  background-position: -480px 0;
+}
+.zepicons-camera {
+  width: 32px;
+  height: 32px;
+  background-position: -528px 0;
+}
+.zepicons-cart {
+  width: 32px;
+  height: 32px;
+  background-position: -576px 0;
+}
+.zepicons-cat-new {
+  width: 32px;
+  height: 32px;
+  background-position: -624px 0;
+}
+.zepicons-cat-service {
+  width: 32px;
+  height: 32px;
+  background-position: -672px 0;
+}
+.zepicons-cat-used {
+  width: 32px;
+  height: 32px;
+  background-position: -720px 0;
+}
+.zepicons-chat {
+  width: 32px;
+  height: 32px;
+  background-position: 0 -48px;
+}
+.zepicons-check {
+  width: 32px;
+  height: 32px;
+  background-position: -48px -48px;
+}
+.zepicons-chevron-down {
+  width: 32px;
+  height: 32px;
+  background-position: -96px -48px;
+}
+.zepicons-chevron-left {
+  width: 32px;
+  height: 32px;
+  background-position: -144px -48px;
+}
+.zepicons-chevron-right {
+  width: 32px;
+  height: 32px;
+  background-position: -192px -48px;
+}
+.zepicons-chevron-up {
+  width: 32px;
+  height: 32px;
+  background-position: -240px -48px;
+}
+.zepicons-clock {
+  width: 32px;
+  height: 32px;
+  background-position: -288px -48px;
+}
+.zepicons-close {
+  width: 32px;
+  height: 32px;
+  background-position: -336px -48px;
+}
+.zepicons-compare {
+  width: 32px;
+  height: 32px;
+  background-position: -384px -48px;
+}
+.zepicons-contact-mail {
+  width: 32px;
+  height: 32px;
+  background-position: -432px -48px;
+}
+.zepicons-contacts {
+  width: 32px;
+  height: 32px;
+  background-position: -480px -48px;
+}
+.zepicons-copy {
+  width: 32px;
+  height: 32px;
+  background-position: -528px -48px;
+}
+.zepicons-crosshair {
+  width: 32px;
+  height: 32px;
+  background-position: -576px -48px;
+}
+.zepicons-delete {
+  width: 32px;
+  height: 32px;
+  background-position: -624px -48px;
+}
+.zepicons-direction {
+  width: 32px;
+  height: 32px;
+  background-position: -672px -48px;
+}
+.zepicons-dots-horizontal {
+  width: 32px;
+  height: 32px;
+  background-position: -720px -48px;
+}
+.zepicons-dots-vertical {
+  width: 32px;
+  height: 32px;
+  background-position: 0 -96px;
+}
+.zepicons-download {
+  width: 32px;
+  height: 32px;
+  background-position: -48px -96px;
+}
+.zepicons-dropdown {
+  width: 32px;
+  height: 32px;
+  background-position: -96px -96px;
+}
+.zepicons-edit {
+  width: 32px;
+  height: 32px;
+  background-position: -144px -96px;
+}
+.zepicons-email {
+  width: 32px;
+  height: 32px;
+  background-position: -192px -96px;
+}
+.zepicons-expand {
+  width: 32px;
+  height: 32px;
+  background-position: -240px -96px;
+}
+.zepicons-facebook {
+  width: 32px;
+  height: 32px;
+  background-position: -288px -96px;
+}
+.zepicons-file-document {
+  width: 32px;
+  height: 32px;
+  background-position: -336px -96px;
+}
+.zepicons-file {
+  width: 32px;
+  height: 32px;
+  background-position: -384px -96px;
+}
+.zepicons-filter {
+  width: 32px;
+  height: 32px;
+  background-position: -432px -96px;
+}
+.zepicons-flag {
+  width: 32px;
+  height: 32px;
+  background-position: -480px -96px;
+}
+.zepicons-gb {
+  width: 32px;
+  height: 32px;
+  background-position: -528px -96px;
+}
+.zepicons-ger {
+  width: 32px;
+  height: 32px;
+  background-position: -576px -96px;
+}
+.zepicons-global {
+  width: 32px;
+  height: 32px;
+  background-position: -624px -96px;
+}
+.zepicons-googleplus {
+  width: 32px;
+  height: 32px;
+  background-position: -672px -96px;
+}
+.zepicons-headset {
+  width: 32px;
+  height: 32px;
+  background-position: -720px -96px;
+}
+.zepicons-help {
+  width: 32px;
+  height: 32px;
+  background-position: 0 -144px;
+}
+.zepicons-hide {
+  width: 32px;
+  height: 32px;
+  background-position: -48px -144px;
+}
+.zepicons-home {
+  width: 32px;
+  height: 32px;
+  background-position: -96px -144px;
+}
+.zepicons-image-album {
+  width: 32px;
+  height: 32px;
+  background-position: -144px -144px;
+}
+.zepicons-image {
+  width: 32px;
+  height: 32px;
+  background-position: -192px -144px;
+}
+.zepicons-in {
+  width: 32px;
+  height: 32px;
+  background-position: -240px -144px;
+}
+.zepicons-info {
+  width: 32px;
+  height: 32px;
+  background-position: -288px -144px;
+}
+.zepicons-instagram {
+  width: 32px;
+  height: 32px;
+  background-position: -336px -144px;
+}
+.zepicons-it {
+  width: 32px;
+  height: 32px;
+  background-position: -384px -144px;
+}
+.zepicons-kununu {
+  width: 32px;
+  height: 32px;
+  background-position: -432px -144px;
+}
+.zepicons-link {
+  width: 32px;
+  height: 32px;
+  background-position: -480px -144px;
+}
+.zepicons-linkedin {
+  width: 32px;
+  height: 32px;
+  background-position: -528px -144px;
+}
+.zepicons-list-plus {
+  width: 32px;
+  height: 32px;
+  background-position: -576px -144px;
+}
+.zepicons-logout {
+  width: 32px;
+  height: 32px;
+  background-position: -624px -144px;
+}
+.zepicons-map-marker {
+  width: 32px;
+  height: 32px;
+  background-position: -672px -144px;
+}
+.zepicons-map {
+  width: 32px;
+  height: 32px;
+  background-position: -720px -144px;
+}
+.zepicons-menu {
+  width: 32px;
+  height: 32px;
+  background-position: 0 -192px;
+}
+.zepicons-minus {
+  width: 32px;
+  height: 32px;
+  background-position: -48px -192px;
+}
+.zepicons-navigation-dropdown {
+  width: 32px;
+  height: 32px;
+  background-position: -96px -192px;
+}
+.zepicons-next-page {
+  width: 32px;
+  height: 32px;
+  background-position: -144px -192px;
+}
+.zepicons-open-in-new {
+  width: 32px;
+  height: 32px;
+  background-position: -192px -192px;
+}
+.zepicons-phone {
+  width: 32px;
+  height: 32px;
+  background-position: -240px -192px;
+}
+.zepicons-plus {
+  width: 32px;
+  height: 32px;
+  background-position: -288px -192px;
+}
+.zepicons-previous-page {
+  width: 32px;
+  height: 32px;
+  background-position: -336px -192px;
+}
+.zepicons-print {
+  width: 32px;
+  height: 32px;
+  background-position: -384px -192px;
+}
+.zepicons-ps-ps {
+  width: 32px;
+  height: 32px;
+  background-position: -432px -192px;
+}
+.zepicons-ps-service {
+  width: 32px;
+  height: 32px;
+  background-position: -480px -192px;
+}
+.zepicons-ps-used {
+  width: 32px;
+  height: 32px;
+  background-position: -528px -192px;
+}
+.zepicons-reload {
+  width: 32px;
+  height: 32px;
+  background-position: -576px -192px;
+}
+.zepicons-rental-infrastructure {
+  width: 32px;
+  height: 32px;
+  background-position: -624px -192px;
+}
+.zepicons-rental-logistics {
+  width: 32px;
+  height: 32px;
+  background-position: -672px -192px;
+}
+.zepicons-rental-rent {
+  width: 32px;
+  height: 32px;
+  background-position: -720px -192px;
+}
+.zepicons-ru {
+  width: 32px;
+  height: 32px;
+  background-position: 0 -240px;
+}
+.zepicons-sa {
+  width: 32px;
+  height: 32px;
+  background-position: -48px -240px;
+}
+.zepicons-search {
+  width: 32px;
+  height: 32px;
+  background-position: -96px -240px;
+}
+.zepicons-settings {
+  width: 32px;
+  height: 32px;
+  background-position: -144px -240px;
+}
+.zepicons-sg {
+  width: 32px;
+  height: 32px;
+  background-position: -192px -240px;
+}
+.zepicons-share {
+  width: 32px;
+  height: 32px;
+  background-position: -240px -240px;
+}
+.zepicons-show {
+  width: 32px;
+  height: 32px;
+  background-position: -288px -240px;
+}
+.zepicons-solutions {
+  width: 32px;
+  height: 32px;
+  background-position: -336px -240px;
+}
+.zepicons-sort {
+  width: 32px;
+  height: 32px;
+  background-position: -384px -240px;
+}
+.zepicons-star {
+  width: 32px;
+  height: 32px;
+  background-position: -432px -240px;
+}
+.zepicons-systems-aviation {
+  width: 32px;
+  height: 32px;
+  background-position: -480px -240px;
+}
+.zepicons-systems-products {
+  width: 32px;
+  height: 32px;
+  background-position: -528px -240px;
+}
+.zepicons-systems-service {
+  width: 32px;
+  height: 32px;
+  background-position: -576px -240px;
+}
+.zepicons-systems-systems {
+  width: 32px;
+  height: 32px;
+  background-position: -624px -240px;
+}
+.zepicons-timer {
+  width: 32px;
+  height: 32px;
+  background-position: -672px -240px;
+}
+.zepicons-twitter {
+  width: 32px;
+  height: 32px;
+  background-position: -720px -240px;
+}
+.zepicons-unfold {
+  width: 32px;
+  height: 32px;
+  background-position: 0 -288px;
+}
+.zepicons-upload {
+  width: 32px;
+  height: 32px;
+  background-position: -48px -288px;
+}
+.zepicons-user-edit {
+  width: 32px;
+  height: 32px;
+  background-position: -96px -288px;
+}
+.zepicons-user {
+  width: 32px;
+  height: 32px;
+  background-position: -144px -288px;
+}
+.zepicons-users {
+  width: 32px;
+  height: 32px;
+  background-position: -192px -288px;
+}
+.zepicons-view-grid {
+  width: 32px;
+  height: 32px;
+  background-position: -240px -288px;
+}
+.zepicons-warning {
+  width: 32px;
+  height: 32px;
+  background-position: -288px -288px;
+}
+.zepicons-xing {
+  width: 32px;
+  height: 32px;
+  background-position: -336px -288px;
+}
+.zepicons-youtube {
+  width: 32px;
+  height: 32px;
+  background-position: -384px -288px;
+}
+.zepicons-zoom-in {
+  width: 32px;
+  height: 32px;
+  background-position: -432px -288px;
+}
+.zepicons-zoom-out {
+  width: 32px;
+  height: 32px;
+  background-position: -480px -288px;
+}

@@ -8,7 +8,8 @@ import NumberInputPage from './elements/numberinput/NumberInputPage';
 import ListPage from './elements/list/ListPage';
 import RadioPage from './elements/radio/RadioPage';
 import './base_bundle_entry.scss';
-
+import './assets/svgsprites/svgxuse.min.js';
+import './assets/svgsprites/sprite/sprite.css';
 /* TODO: remove this import, the css itself and the icont font files,
 after the files are extracted in a separate repo/npm package */
 // import './icons.font';
@@ -58,7 +59,8 @@ function App() {
             style={{ paddingTop: 45 }}
           >
             {content === 'welcome' && (
-              <p>Welcome to the Zeppelin Element Library</p>
+              // <p>Welcome to the Zeppelin Element Library</p>
+              <ButtonPage />
             )}
             {content === 'button' && <ButtonPage />}
             {content === 'tabs' && <p>This element is not ready</p>}
