@@ -18,7 +18,7 @@ function Input() {
             <input
               type="text"
               className="zep-input"
-              placeholder={'Input ' + theme.name}
+              placeholder={'Placeholder'}
               id={'input-' + theme.key}
             />
             <label

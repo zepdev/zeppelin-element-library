@@ -3,6 +3,8 @@
 @mixin input {
   .#{$prefix}input {
     @extend %typo-normal-3;
+    width: 100%;
+    height: 3rem;
     border: solid 2px map-get($colormap-base, gray-lighter);
     background-color: map-get($colormap-base, white);
     padding-left: 1.25rem;
@@ -44,24 +46,29 @@
     left: 0;
   }
 
-  .#{$prefix}input:placeholder-shown + label {
+  .#{$prefix}input:placeholder-shown + .#{$prefix}form-container__label {
     cursor: text;
     max-width: 66.66%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     transform-origin: left bottom;
-    transform: translate(0, 0.8rem) scale(1.5);
+    transform: translate(0, 1.2rem) scale(1.5);
     color: map-get($colormap-base, gray-light);
   }
 
-  input:not(:placeholder-shown) + label,
-  input:focus + label {
+  .#{$prefix}input:not(:placeholder-shown) + .#{$prefix}form-container__label,
+  .#{$prefix}input:focus + .#{$prefix}form-container__label {
     transform: translate(0, -0.5rem) scale(1);
     cursor: pointer;
   }
-  label,
-  input {
+
+  // .#{$prefix}input:not(:focus) + .#{$prefix}form-container__label {
+  //   width: 66.6%;
+  // }
+
+  .#{$prefix}input,
+  .#{$prefix}form-container__label {
     transition: all 0.2s;
     touch-action: manipulation;
   }
