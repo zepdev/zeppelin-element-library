@@ -15,18 +15,18 @@ function Input() {
             style={{ marginBottom: 15 }}
             key={key}
           >
-            <label
-              className="zep-form-container__label"
-              htmlFor={'input-' + theme.key}
-            >
-              Input {theme.name}
-            </label>
             <input
               type="text"
               className="zep-input"
               placeholder={'Input ' + theme.name}
               id={'input-' + theme.key}
             />
+            <label
+              className="zep-form-container__label"
+              htmlFor={'input-' + theme.key}
+            >
+              Input {theme.name}
+            </label>
           </div>
         );
       })}
