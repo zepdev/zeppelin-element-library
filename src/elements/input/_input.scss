@@ -9,7 +9,6 @@
     background-color: map-get($colormap-base, white);
     padding-left: 1.25rem;
     padding-top: 0.25rem;
-
     @include themify($themes) {
       &:focus {
         outline: 2px solid themed('primary');

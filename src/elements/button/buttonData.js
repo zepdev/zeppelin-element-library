@@ -111,7 +111,7 @@ const buttonData = {
   },
   full: {
     name: 'full',
-    js: `<div class="theme-zeppelin"><button type="button" class="${
+    js: `<div class="theme-zeppelin" style="margin-bottom: 15px"><button type="button" class="${
       helpers.classPrefix
     }button ${helpers.classPrefix}button-primary ${
       helpers.classPrefix
