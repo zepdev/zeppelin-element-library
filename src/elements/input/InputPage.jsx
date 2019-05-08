@@ -11,7 +11,7 @@ function Input() {
       {themes.map((theme, key) => {
         return (
           <div
-            className={'theme-' + theme.key + ' zep-form-container'}
+            className={`theme-${theme.key} zep-form-container`}
             style={{ marginBottom: 15 }}
             key={key}
           >
@@ -19,13 +19,13 @@ function Input() {
               type="text"
               className="zep-input"
               placeholder={'Placeholder'}
-              id={'input-' + theme.key}
+              id={`input-${theme.key}`}
             />
             <label
               className="zep-form-container__label"
-              htmlFor={'input-' + theme.key}
+              htmlFor={`input-${theme.key}`}
             >
-              Input {theme.name}
+              {`Input ${theme.name}`}
             </label>
           </div>
         );
