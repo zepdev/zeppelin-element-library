@@ -30,12 +30,14 @@
       color: map-get($colormap-base, disabled);
       background-color: map-get($colormap-base, gray-lighter);
       cursor: not-allowed;
+      outline: 0;
 
       &:hover,
       &:focus,
       &.#{$prefix}button-primary--hover {
         color: map-get($colormap-base, disabled);
         background-color: map-get($colormap-base, gray-lighter);
+        outline: 0;
       }
     }
   }
@@ -62,6 +64,7 @@
       background-color: map-get($colormap-base, white);
       border-color: map-get($colormap-base, gray-lighter);
       cursor: not-allowed;
+      outline: 0;
 
       &:hover,
       &:focus,
@@ -69,6 +72,7 @@
         color: map-get($colormap-base, gray-lighter);
         background-color: map-get($colormap-base, white);
         border-color: map-get($colormap-base, gray-lighter);
+        outline: 0;
       }
     }
   }
@@ -97,11 +101,13 @@
     &:disabled,
     &.#{$prefix}button-secondary--disabled {
       color: map-get($colormap-base, gray-lighter);
+      outline: 0;
       cursor: not-allowed;
       &:hover,
       &:focus,
       &.#{$prefix}button-tertiary--hover {
         color: map-get($colormap-base, gray-lighter);
+        outline: 0;
       }
     }
   }
