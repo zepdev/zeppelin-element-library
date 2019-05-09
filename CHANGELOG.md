@@ -1,3 +1,42 @@
+# [0.8.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.7.0...v0.8.0) (2019-05-07)
+
+
+### Bug Fixes
+
+* **button:** change typo on tertiary button ([3dba948](https://github.com/zepdev/zeppelin-element-library/commit/3dba948))
+* **button:** focus boxshadow added ([927f2c0](https://github.com/zepdev/zeppelin-element-library/commit/927f2c0))
+* **button:** height fixed changed to min-height ([8f7c221](https://github.com/zepdev/zeppelin-element-library/commit/8f7c221))
+* **circle ci:** change yarn ([de2a1f9](https://github.com/zepdev/zeppelin-element-library/commit/de2a1f9))
+* **circle ci:** force yarn ([64f9791](https://github.com/zepdev/zeppelin-element-library/commit/64f9791))
+* **circle ci:** new yarn cache ([ae3c3a0](https://github.com/zepdev/zeppelin-element-library/commit/ae3c3a0))
+* **circle ci:** remove cache ([670f31b](https://github.com/zepdev/zeppelin-element-library/commit/670f31b))
+* **circle ci:** test ([d03fedc](https://github.com/zepdev/zeppelin-element-library/commit/d03fedc))
+* **circle ci:** try npm ([4317635](https://github.com/zepdev/zeppelin-element-library/commit/4317635))
+* **circle ci:** typo ([c3ec9fd](https://github.com/zepdev/zeppelin-element-library/commit/c3ec9fd))
+* **circle ci:** yarn ([2334b24](https://github.com/zepdev/zeppelin-element-library/commit/2334b24))
+* **circleci:** changed cache to v2 ([8d8a4ae](https://github.com/zepdev/zeppelin-element-library/commit/8d8a4ae))
+* **circleci:** remove cache ([2b899c4](https://github.com/zepdev/zeppelin-element-library/commit/2b899c4))
+* **circleci:** remove node modules cache ([76d52a8](https://github.com/zepdev/zeppelin-element-library/commit/76d52a8))
+* **circleci:** removed yarn.lock as test, updated circleci/node ([bd5b174](https://github.com/zepdev/zeppelin-element-library/commit/bd5b174))
+* **grid:** changed margins, paddings, added flexbox alignment options ([90f8680](https://github.com/zepdev/zeppelin-element-library/commit/90f8680))
+* **grid:** edited breakpoint dependencies ([6168123](https://github.com/zepdev/zeppelin-element-library/commit/6168123))
+* **grid:** fixed grid column padding ([b83e0e8](https://github.com/zepdev/zeppelin-element-library/commit/b83e0e8))
+* **grid:** fixed grid column padding ([168ac13](https://github.com/zepdev/zeppelin-element-library/commit/168ac13))
+* **grid:** fixed percentage width render issue on cols ([98aec79](https://github.com/zepdev/zeppelin-element-library/commit/98aec79))
+* **package.json:** update react ([1632371](https://github.com/zepdev/zeppelin-element-library/commit/1632371))
+* **package.json:** updated packages ([071b33a](https://github.com/zepdev/zeppelin-element-library/commit/071b33a))
+* **typo:** created mixin for typeset ([f3932cc](https://github.com/zepdev/zeppelin-element-library/commit/f3932cc))
+* **typo:** new mixin extended to all elements ([c07ffb5](https://github.com/zepdev/zeppelin-element-library/commit/c07ffb5))
+* **typo mixin:** fixed if statements ([b956861](https://github.com/zepdev/zeppelin-element-library/commit/b956861))
+* **yarn.lock:** new ([4dbb8e6](https://github.com/zepdev/zeppelin-element-library/commit/4dbb8e6))
+
+
+### Features
+
+* **grid:** added vertical align options ([953e5fe](https://github.com/zepdev/zeppelin-element-library/commit/953e5fe))
+* **icon button:** icon button styles added ([7f20905](https://github.com/zepdev/zeppelin-element-library/commit/7f20905))
+* **radio:** radio button added ([2bcc566](https://github.com/zepdev/zeppelin-element-library/commit/2bcc566))
+
 # [0.7.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.6.0...v0.7.0) (2019-04-25)
 
 
