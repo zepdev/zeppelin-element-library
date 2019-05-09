@@ -16,14 +16,11 @@ jobs:
       - attach_workspace:
           at: ~/project
       - node/with-cache:
-          cache-version: v2
+          cache-version: v3
           steps:
             - run:
                 name: Yarn install
                 command: yarn
-            - run:
-                name: Yarn install
-                command: npm install
             - run:
                 name: Run all tests
                 command: yarn test
