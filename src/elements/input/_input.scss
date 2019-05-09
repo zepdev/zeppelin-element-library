@@ -3,13 +3,16 @@
 @mixin input {
   .#{$prefix}input {
     @include typeset('normal', 3);
+    width: 100%;
+    height: 3rem;
     border: solid 2px map-get($colormap-base, gray-lighter);
     background-color: map-get($colormap-base, white);
     padding-left: 1.25rem;
     padding-top: 0.25rem;
-
-    &:focus {
-      outline: 2px solid map-get($colormap-base, cat-yellow);
+    @include themify($themes) {
+      &:focus {
+        outline: 2px solid themed('primary');
+      }
     }
   }
 
@@ -26,6 +29,46 @@
     width: 1.375rem;
     height: 1.375rem;
     cursor: pointer;
+  }
+
+  .#{$prefix}form-container {
+    position: relative;
+  }
+
+  .#{$prefix}form-container__label {
+    @include typeset('normal', 1);
+    position: absolute;
+    display: inline-block;
+    background-color: white;
+    margin: 0 0.5625rem;
+    padding: 0 0.5625rem;
+    left: 0;
+    top: -0.5rem;
+  }
+
+  .#{$prefix}input:placeholder-shown + .#{$prefix}form-container__label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left bottom;
+    top: 1.2rem;
+    transform: scale(1.5);
+    color: map-get($colormap-base, gray-light);
+  }
+
+  .#{$prefix}input:not(:placeholder-shown) + .#{$prefix}form-container__label,
+  .#{$prefix}input:focus + .#{$prefix}form-container__label {
+    top: -0.5rem;
+    transform: scale(1);
+    cursor: pointer;
+  }
+
+  .#{$prefix}input,
+  .#{$prefix}form-container__label {
+    transition: all 0.2s;
+    touch-action: manipulation;
   }
 }
 
