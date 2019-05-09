@@ -36,7 +36,8 @@
   }
 
   .#{$prefix}form-container__label {
-    @extend %typo-normal-1;
+    //@extend %typo-normal-1;
+    @include typeset('normal', 1);
     position: absolute;
     display: inline-block;
     background-color: white;
