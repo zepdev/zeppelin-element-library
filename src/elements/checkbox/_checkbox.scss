@@ -56,8 +56,7 @@
 
       @include themify($themes) {
         &:checked + .#{$prefix}checkbox__label:before {
-          font-family: zepicons;
-          content: '\f112';
+          content: '\2713';
           display: inline-block;
           background: map-get($colormap-base, white);
           line-height: $boxSize + $borderWidth;

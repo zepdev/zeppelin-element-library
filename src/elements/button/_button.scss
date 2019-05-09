@@ -13,6 +13,13 @@
     min-height: 3rem;
     padding: 0;
   }
+
+  .#{$prefix}button-icon {
+    background-color: map-get($colormap-base, gray-lighter);
+    color: map-get($colormap-base, text-gray);
+    width: 3rem;
+  }
+
   .#{$prefix}button-primary {
     @include themify($themes) {
       color: themed('buttonText');
@@ -112,10 +119,6 @@
     }
   }
 
-  .#{$prefix}button-icon {
-    width: 3rem;
-  }
-
   .#{$prefix}button__text {
     @include typeset('special', 4);
     display: inline-block;
@@ -151,16 +154,6 @@
       display: inline-block;
       padding: 0.25rem 1.125rem 0;
     }
-  }
-
-  // Input
-  .#{$prefix}button--number-input {
-    background-color: map-get($colormap-base, gray-lighter);
-    padding: 0;
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.375rem;
-    line-height: 1;
   }
 }
 
