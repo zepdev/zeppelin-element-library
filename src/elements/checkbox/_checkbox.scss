@@ -8,6 +8,7 @@
   // get our borderwidth in rems
   $borderWidth: (2 / (2 * 0 + 1) / $baseFont) * 1rem;
   $boxSize: $base/1.7;
+
   .#{$prefix}checkbox {
     .#{$prefix}checkbox__label {
       cursor: pointer;
@@ -28,6 +29,8 @@
         position: absolute;
         top: $base/4.75;
         left: 0;
+        right: 0;
+        bottom: 0;
         width: $boxSize;
         height: $boxSize;
         border-radius: 0;
@@ -57,9 +60,14 @@
       @include themify($themes) {
         &:checked + .#{$prefix}checkbox__label:before {
           content: '\2713';
+          position: absolute;
+          top: $base/4.75;
+          left: 0;
+          right: 0;
+          bottom: 0;
           display: inline-block;
           background: map-get($colormap-base, white);
-          line-height: $boxSize + $borderWidth;
+          line-height: 1; //$boxSize + $borderWidth;
           font-size: 1.125rem;
           text-align: center;
           transform: scale(1);
