@@ -24,7 +24,7 @@ function TablePage() {
               ))}
             </tr>
           </thead>
-          <tbody className="">
+          <tbody>
             {[1, 2].map(elem => (
               <tr
                 className={
