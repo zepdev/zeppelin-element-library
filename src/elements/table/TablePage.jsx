@@ -28,7 +28,9 @@ function TablePage() {
             {[1, 2].map(elem => (
               <tr
                 className={
-                  elem === 1 ? 'zep-table-row__white' : 'zep-table-row__grey'
+                  elem === 1
+                    ? 'zep-table__row zep-table__row--white'
+                    : 'zep-table__row zep-table__row--grey'
                 }
                 key={`row${elem}`}
               >
