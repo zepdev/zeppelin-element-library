@@ -38,7 +38,6 @@ function TablePage() {
                   idx === 0 ? (
                     <th
                       className="zep-table__cell"
-                      a
                       key={`cell${idx}`}
                       scope="row"
                     >
