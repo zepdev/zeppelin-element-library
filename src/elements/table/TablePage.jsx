@@ -37,7 +37,7 @@ function TablePage() {
                 {[1, 2, 3].map((item, idx) =>
                   idx === 0 ? (
                     <th
-                      className="zep-table-row--cell"
+                      className="zep-table__cell"
                       a
                       key={`cell${idx}`}
                       scope="row"
