@@ -12,7 +12,7 @@ function TablePage() {
         >
           <caption className="zep-visually-hidden">{`table ${elem}`}</caption>
           <thead className="">
-            <tr className="zep-table-header">
+            <tr className="zep-table__row zep-table__row--header">
               {[1, 2, 3].map(elem => (
                 <th
                   scope="col"
