@@ -5,38 +5,34 @@
     width: 100%;
   }
 
-  .#{$prefix}table-header {
-    @include typeset('normal', 2);
+  .#{$prefix}table__row {
+    @include typeset('normal', 3);
+    color: map-get($colormap-base, grey-mid-dark);
+  }
+
+  .#{$prefix}table__row--grey {
     background-color: map-get($colormap-base, gray-mid);
   }
 
-  .#{$prefix}table-header--cell {
+  .#{$prefix}table__row--white {
+    background-color: map-get($colormap-base, white);
+  }
+
+  .#{$prefix}table__cell {
     padding: 0.75rem 1.5rem;
-    font-weight: bold;
     text-align: left;
+  }
+
+  .#{$prefix}table__cell--header {
+    @include typeset('normal', 2);
+    background-color: map-get($colormap-base, gray-mid);
+    font-weight: bold;
     @include themify($themes) {
       border-bottom: 1px solid themed('primary');
     }
   }
 
-  .#{$prefix}table-row__grey {
-    @include typeset('normal', 3);
-    color: map-get($colormap-base, grey-mid-dark);
-    background-color: map-get($colormap-base, gray-mid);
-  }
-
-  .#{$prefix}table-row__white {
-    @include typeset('normal', 3);
-    color: map-get($colormap-base, gray-mid-dark);
-    background-color: map-get($colormap-base, white);
-  }
-
-  .#{$prefix}table-row--cell {
-    padding: 0.75rem 1.5rem;
-    text-align: left;
-  }
-
-  .#{$prefix}table-row--cell__number {
+  .#{$prefix}table__cell--right {
     text-align: right;
   }
 }
