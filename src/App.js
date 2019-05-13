@@ -7,6 +7,7 @@ import InputPage from './elements/input/InputPage';
 import NumberInputPage from './elements/numberinput/NumberInputPage';
 import ListPage from './elements/list/ListPage';
 import RadioPage from './elements/radio/RadioPage';
+import TablePage from './elements/table/TablePage';
 import './base_bundle_entry.scss';
 import './svgxuse.min.js'; // ie fallback for sprites
 
@@ -54,7 +55,8 @@ function App() {
             style={{ paddingTop: 45 }}
           >
             {content === 'welcome' && (
-              <p>Welcome to the Zeppelin Element Library</p>
+              // <p>Welcome to the Zeppelin Element Library</p>
+              <TablePage />
             )}
             {content === 'button' && <ButtonPage />}
             {content === 'tabs' && <p>This element is not ready</p>}
@@ -64,6 +66,7 @@ function App() {
             {content === 'numberInput' && <NumberInputPage />}
             {content === 'list' && <ListPage />}
             {content === 'radio' && <RadioPage />}
+            {content === 'table' && <TablePage />}
           </div>
         </div>
       </div>

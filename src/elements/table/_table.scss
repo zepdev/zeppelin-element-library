@@ -1,0 +1,36 @@
+//Table - base style
+
+@mixin table {
+  .#{$prefix}table-header {
+    @include typeset('normal', 2);
+    background-color: map-get($colormap-base, grey-mid);
+  }
+
+  .#{$prefix}table-header--cell {
+    padding: 12px 24px;
+    font-weight: bold;
+    @include themify($themes) {
+      border-bottom: 1px solid themed('primary');
+    }
+  }
+
+  .#{$prefix}table-row__grey {
+    @include typeset('normal', 3);
+    color: map-get($colormap-base, grey-mid-dark);
+    background-color: map-get($colormap-base, grey-mid);
+  }
+
+  .#{$prefix}table-row__white {
+    @include typeset('normal', 3);
+    color: map-get($colormap-base, grey-mid-dark);
+    background-color: map-get($colormap-base, white);
+  }
+
+  .#{$prefix}table-row--cell {
+    padding: 12px 24px;
+  }
+}
+
+@include exports('table') {
+  @include table;
+}
