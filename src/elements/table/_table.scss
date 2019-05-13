@@ -7,10 +7,10 @@
 
   .#{$prefix}table__row {
     @include typeset('normal', 3);
-    color: map-get($colormap-base, grey-mid-dark);
+    color: map-get($colormap-base, gray-mid-dark);
   }
 
-  .#{$prefix}table__row--grey {
+  .#{$prefix}table__row--gray {
     background-color: map-get($colormap-base, gray-mid);
   }
 

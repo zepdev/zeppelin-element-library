@@ -11,7 +11,7 @@ function TablePage() {
           style={{ marginBottom: 30 }}
         >
           <caption className="zep-visually-hidden">{`table ${elem}`}</caption>
-          <thead className="">
+          <thead>
             <tr className="zep-table__row zep-table__row--header">
               {[1, 2, 3].map(elem => (
                 <th
@@ -24,13 +24,13 @@ function TablePage() {
               ))}
             </tr>
           </thead>
-          <tbody className="">
+          <tbody>
             {[1, 2].map(elem => (
               <tr
                 className={
                   elem === 1
                     ? 'zep-table__row zep-table__row--white'
-                    : 'zep-table__row zep-table__row--grey'
+                    : 'zep-table__row zep-table__row--gray'
                 }
                 key={`row${elem}`}
               >
@@ -38,7 +38,6 @@ function TablePage() {
                   idx === 0 ? (
                     <th
                       className="zep-table__cell"
-                      a
                       key={`cell${idx}`}
                       scope="row"
                     >
