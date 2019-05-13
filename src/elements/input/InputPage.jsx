@@ -1,31 +1,27 @@
 import React from 'react';
 
 function Input() {
-  var themes = [
-    { key: 'zeppelin', name: 'Zeppelin' },
-    { key: 'cat', name: 'CAT' },
-    { key: 'rental', name: 'Rental' }
-  ];
+  const themes = ['zeppelin', 'cat', 'rental'];
   return (
     <>
-      {themes.map((theme, key) => {
+      {themes.map(elem => {
         return (
           <div
-            className={`theme-${theme.key} zep-form-container`}
+            className={`theme-${elem} zep-form-container`}
             style={{ marginBottom: 15 }}
-            key={key}
+            key={elem}
           >
             <input
               type="text"
               className="zep-input"
               placeholder={'Placeholder'}
-              id={`input-${theme.key}`}
+              id={`input-${elem}`}
             />
             <label
               className="zep-form-container__label"
-              htmlFor={`input-${theme.key}`}
+              htmlFor={`input-${elem}`}
             >
-              {`Input ${theme.name}`}
+              Input {elem}
             </label>
           </div>
         );
