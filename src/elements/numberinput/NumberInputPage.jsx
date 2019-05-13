@@ -6,7 +6,11 @@ function NumberInput() {
   return (
     <>
       {themes.map(elem => (
-        <div className={`theme-${elem}`} style={{ marginBottom: 15 }}>
+        <div
+          className={`theme-${elem}`}
+          style={{ marginBottom: 15 }}
+          key={elem}
+        >
           <button className="zep-button zep-button-icon">
             <Icon icon="zepicons-minus" className="zep-button__icon" />
           </button>

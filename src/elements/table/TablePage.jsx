@@ -6,50 +6,51 @@ function TablePage() {
     <>
       {themes.map(elem => (
         <table
-          className={`theme-${elem}`}
+          className={`theme-${elem} zep-table`}
           key={elem}
-          style={{ marginBottom: 15 }}
+          style={{ marginBottom: 30 }}
         >
           <caption className="zep-visually-hidden">{`table ${elem}`}</caption>
           <thead className="">
-            <tr className="table-header">
+            <tr className="zep-table-header">
               {[1, 2, 3].map(elem => (
                 <th
                   scope="col"
-                  className="table-header--cell"
+                  className="zep-table-header--cell"
                   key={`col${elem}`}
                 >
                   Header {elem}
                 </th>
               ))}
             </tr>
-            <tbody className="">
-              {[1, 2].map(elem => (
-                <tr
-                  className={
-                    elem === 1 ? 'table-row__white' : 'table-row__grey'
-                  }
-                  key={`row${elem}`}
-                >
-                  {[1, 2, 3].map((item, idx) =>
-                    idx === 0 ? (
-                      <th
-                        className="table-row--cell"
-                        key={`cell${idx}`}
-                        scope="row"
-                      >
-                        Cell {item}
-                      </th>
-                    ) : (
-                      <td className="table-row--cell" key={`cell${idx}`}>
-                        Cell {item}
-                      </td>
-                    )
-                  )}
-                </tr>
-              ))}
-            </tbody>
           </thead>
+          <tbody className="">
+            {[1, 2].map(elem => (
+              <tr
+                className={
+                  elem === 1 ? 'zep-table-row__white' : 'zep-table-row__grey'
+                }
+                key={`row${elem}`}
+              >
+                {[1, 2, 3].map((item, idx) =>
+                  idx === 0 ? (
+                    <th
+                      className="zep-table-row--cell"
+                      a
+                      key={`cell${idx}`}
+                      scope="row"
+                    >
+                      Cell {item}
+                    </th>
+                  ) : (
+                    <td className="zep-table-row--cell" key={`cell${idx}`}>
+                      Cell {item}
+                    </td>
+                  )
+                )}
+              </tr>
+            ))}
+          </tbody>
         </table>
       ))}
     </>
