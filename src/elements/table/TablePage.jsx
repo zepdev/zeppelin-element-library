@@ -16,7 +16,7 @@ function TablePage() {
               {[1, 2, 3].map(elem => (
                 <th
                   scope="col"
-                  className="zep-table-header--cell"
+                  className="zep-table__cell zep-table__cell--header"
                   key={`col${elem}`}
                 >
                   Header {elem}
