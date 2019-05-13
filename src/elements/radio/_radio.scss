@@ -9,7 +9,7 @@
     min-height: 1.5rem;
     cursor: pointer;
     user-select: none;
-    color: map-get($colormap-base, grey-dark);
+    color: map-get($colormap-base, gray-dark);
   }
 
   .#{$prefix}radio .#{$prefix}radio__input {

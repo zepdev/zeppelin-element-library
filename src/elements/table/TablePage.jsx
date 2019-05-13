@@ -11,7 +11,7 @@ function TablePage() {
           style={{ marginBottom: 30 }}
         >
           <caption className="zep-visually-hidden">{`table ${elem}`}</caption>
-          <thead className="">
+          <thead>
             <tr className="zep-table__row zep-table__row--header">
               {[1, 2, 3].map(elem => (
                 <th
@@ -30,7 +30,7 @@ function TablePage() {
                 className={
                   elem === 1
                     ? 'zep-table__row zep-table__row--white'
-                    : 'zep-table__row zep-table__row--grey'
+                    : 'zep-table__row zep-table__row--gray'
                 }
                 key={`row${elem}`}
               >
