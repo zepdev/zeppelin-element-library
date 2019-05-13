@@ -45,7 +45,7 @@ function TablePage() {
                       Cell {item}
                     </th>
                   ) : (
-                    <td className="zep-table-row--cell" key={`cell${idx}`}>
+                    <td className="zep-table__cell" key={`cell${idx}`}>
                       Cell {item}
                     </td>
                   )
