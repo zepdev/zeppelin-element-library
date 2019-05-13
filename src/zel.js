@@ -1,12 +1,8 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable class-methods-use-this */
-
 /**
  * Entry Point for Bundle creation.
  *
  * import all relevant scripts here
  */
-import Button from './elements/button/button';
 
 // TODO: initialize elements
 import * as helpers from './helpers';
@@ -15,23 +11,34 @@ class ZEL {
   constructor() {
     // eslint-disable-next-line no-console
     console.log(`ZEL - built with ♥`);
-    this.init();
+    this._jsElementList = [];
   }
 
   init() {
-    this.getButtons();
+    this._getJsElementsFromDOM();
+  }
+
+  refresh() {
+    this._getJsElementsFromDOM();
   }
 
   //dummy for testing
-  getButtons() {
-    const buttons = [];
-    const buttonElements = document.querySelectorAll(
-      `[${helpers.htmlDataVarType}="button"]`
+  _getJsElementsFromDOM() {
+    this._jsElementList = document.querySelectorAll(
+      `[${helpers.htmlDataVarType}]`
     );
-    for (const [i, elem] of buttonElements.entries()) {
-      buttons.push(new Button(elem, `button_${i}`));
+  }
+
+  getElements(type) {
+    if (type) {
+      type = helpers.formatZepType(type);
     }
-    return buttons;
+    this._jsElementList.length === 0 && this.refresh();
+    //this._jsElementList.map();
+  }
+
+  get jsElementList() {
+    return this._jsElementList;
   }
 }
 
