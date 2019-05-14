@@ -3,8 +3,7 @@ module.exports = {
     name: 'button'
   },
   tabs: {
-    name: 'tabs',
-    isReady: false
+    name: 'tabs'
   },
   tag: {
     name: 'tag'
