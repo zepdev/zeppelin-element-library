@@ -26,5 +26,8 @@ module.exports = {
   },
   table: {
     name: 'table'
+  },
+  search: {
+    name: 'search'
   }
 };

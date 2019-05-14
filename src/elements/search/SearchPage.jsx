@@ -1,6 +1,7 @@
 import React from 'react';
+import Icon from '../icon/Icon';
 
-function Input() {
+function SearchPage() {
   const themes = ['zeppelin', 'cat', 'rental'];
   return (
     <>
@@ -12,15 +13,13 @@ function Input() {
         >
           <input
             type="text"
-            className="zep-input"
-            placeholder={'Placeholder'}
-            id={`input-${elem}`}
+            className="zep-search"
+            placeholder="Search"
+            id={`search-${elem}`}
           />
-          <label
-            className="zep-form-container__label"
-            htmlFor={`input-${elem}`}
-          >
-            Input {elem}
+          <Icon icon="zepicons-search" className="zep-search__icon" />
+          <label className="zep-visually-hidden" htmlFor={`search-${elem}`}>
+            Search {elem}
           </label>
         </div>
       ))}
@@ -28,4 +27,4 @@ function Input() {
   );
 }
 
-export default Input;
+export default SearchPage;
