@@ -21,6 +21,7 @@
   .#{$prefix}table__cell {
     padding: 0.75rem 1.5rem;
     text-align: left;
+    vertical-align: middle;
   }
 
   .#{$prefix}table__cell--header {
