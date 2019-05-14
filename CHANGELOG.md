@@ -1,3 +1,22 @@
+# [0.9.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.8.0...v0.9.0) (2019-05-09)
+
+
+### Bug Fixes
+
+* **button:** fixed width of icon button ([76d2936](https://github.com/zepdev/zeppelin-element-library/commit/76d2936))
+* **button:** remove outline from disabled button ([721af59](https://github.com/zepdev/zeppelin-element-library/commit/721af59))
+* **circle:** remove npm install from config ([901558d](https://github.com/zepdev/zeppelin-element-library/commit/901558d))
+* **input:** floating labels ([2f7c368](https://github.com/zepdev/zeppelin-element-library/commit/2f7c368))
+* **input:** IE9 compatibility fix ([a81ac48](https://github.com/zepdev/zeppelin-element-library/commit/a81ac48))
+* **input:** Move to es2015 template declaration ([2baabb3](https://github.com/zepdev/zeppelin-element-library/commit/2baabb3))
+* **input:** WIP: floating labels ([670cc1d](https://github.com/zepdev/zeppelin-element-library/commit/670cc1d))
+
+
+### Features
+
+* **input:** Finalize input and label ([cf0214d](https://github.com/zepdev/zeppelin-element-library/commit/cf0214d))
+* **tag, input:** all color variations addded for themes ([cde03e4](https://github.com/zepdev/zeppelin-element-library/commit/cde03e4))
+
 # [0.8.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.7.0...v0.8.0) (2019-05-07)
 
 
