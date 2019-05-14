@@ -22,29 +22,30 @@ cp -r src/themes/* bundle/themes
 
 # copy icons folder into bundle folder
 cp -r src/assets/icons/* bundle/assets/icons
+cp -r src/svgxuse.min.js bundle/assets/icons
 
 # copy sketch file into bundle folder
 cp -r src/assets/sketches/zds-library.sketch bundle/assets/dist
 
 # rename icons
-cd bundle/assets/icons
-for f in *.svg
-do
-    newFileName=$(echo $f | \
-     awk '{gsub(/iconsLanguages/, "")};1' | \
-     awk '{gsub(/iconsMiscAction/, "")};1' | \
-     awk '{gsub(/iconsMiscNavigation/, "")};1' | \
-     awk '{gsub(/iconsMiscIndicator/, "")};1' | \
-     awk '{gsub(/iconsSbu/, "")};1' | \
-     awk '{gsub(/iconsSocial/, "")};1' | \
-     awk '{gsub(/[A-Z]/, "-&")};1' | \
-     awk '{ print tolower($0) }')
-#     mv $f "zepicons$newFileName" ONLY USE IF CHANGING FILE NAMES THE FIRST TIME
-     mv $f $newFileName
-done
+# cd bundle/assets/icons
+# for f in *.svg
+# do
+#     newFileName=$(echo $f | \
+#      awk '{gsub(/iconsLanguages/, "")};1' | \
+#      awk '{gsub(/iconsMiscAction/, "")};1' | \
+#      awk '{gsub(/iconsMiscNavigation/, "")};1' | \
+#      awk '{gsub(/iconsMiscIndicator/, "")};1' | \
+#      awk '{gsub(/iconsSbu/, "")};1' | \
+#      awk '{gsub(/iconsSocial/, "")};1' | \
+#      awk '{gsub(/[A-Z]/, "-&")};1' | \
+#      awk '{ print tolower($0) }')
+# #     mv $f "zepicons$newFileName" ONLY USE IF CHANGING FILE NAMES THE FIRST TIME
+#      mv $f $newFileName
+# done
 
-# move back to main folder
-cd ../../../
+# # move back to main folder
+# cd ../../../
 
 # delete sourceMapping comment line from css file
 sed -i.bak 's@/\*.*\*/@@g' $TARGET_FILE

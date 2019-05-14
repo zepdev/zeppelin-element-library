@@ -7,12 +7,9 @@ import InputPage from './elements/input/InputPage';
 import NumberInputPage from './elements/numberinput/NumberInputPage';
 import ListPage from './elements/list/ListPage';
 import RadioPage from './elements/radio/RadioPage';
+import TablePage from './elements/table/TablePage';
 import './base_bundle_entry.scss';
-
-/* TODO: remove this import, the css itself and the icont font files,
-after the files are extracted in a separate repo/npm package */
-// import './icons.font';
-import './zeppelin-icons.css';
+import './svgxuse.min.js'; // ie fallback for sprites
 
 function App() {
   const [content, setContent] = useState('welcome');
@@ -68,6 +65,7 @@ function App() {
             {content === 'numberInput' && <NumberInputPage />}
             {content === 'list' && <ListPage />}
             {content === 'radio' && <RadioPage />}
+            {content === 'table' && <TablePage />}
           </div>
         </div>
       </div>
