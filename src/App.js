@@ -42,7 +42,7 @@ function App() {
               <div key={`btn-${i}`}>
                 <button
                   className="zep-button zep-button-primary zep-button--full"
-                  onClick={() => setContent(elements[elem].name)}
+                  onClick={() => setContent(elem)}
                 >
                   <span className="zep-button__text">
                     {elements[elem].name}
