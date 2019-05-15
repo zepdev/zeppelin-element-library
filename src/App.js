@@ -52,7 +52,7 @@ function App() {
           </div>
           <div
             className="zep-grid__col zep-grid__col--xs-5-6"
-            style={{ paddingTop: 45 }}
+            style={{ paddingTop: 45, paddingBottom: 75 }}
           >
             {content === 'welcome' && (
               <p>Welcome to the Zeppelin Element Library</p>

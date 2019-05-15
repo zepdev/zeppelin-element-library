@@ -79,6 +79,59 @@ function ButtonPage() {
           </button>
         </div>
       ))}
+      <p>Disabled</p>
+      <div className="theme-zeppelin">
+        <div style={{ marginBottom: 15 }}>
+          <button className="zep-button zep-button-primary" disabled>
+            <span className="zep-button__text">Normal button</span>
+          </button>
+        </div>
+        <div style={{ marginBottom: 15 }}>
+          <button
+            className="zep-button zep-button-primary zep-button--full"
+            disabled
+          >
+            <span className="zep-button__text">Full Width button</span>
+          </button>
+        </div>
+        <div style={{ marginBottom: 15 }}>
+          <button
+            className="zep-button zep-button-primary zep-button--small"
+            disabled
+          >
+            <span className="zep-button__text">SMALL button</span>
+          </button>
+        </div>
+        <div style={{ marginBottom: 15 }}>
+          <button className="zep-button zep-button-secondary" disabled>
+            <span className="zep-button__text">Normal button</span>
+          </button>
+        </div>
+        <div style={{ marginBottom: 15 }}>
+          <button className="zep-button zep-button-tertiary" disabled>
+            <CopyIcon className="zep-button__icon zep-button__icon--tertiary" />
+            <span className="zep-button__text zep-button__text--tertiary">
+              Icon button
+            </span>
+          </button>
+        </div>
+        <div style={{ marginBottom: 15 }}>
+          <button
+            className="zep-button zep-button-primary zep-button-icon"
+            disabled
+          >
+            <Icon icon="zepicons-copy" className="zep-button__icon" />
+          </button>
+        </div>
+        <div style={{ marginBottom: 15 }}>
+          <button
+            className="zep-button zep-button-secondary zep-button-icon"
+            disabled
+          >
+            <CopyIcon className="zep-button__icon" />
+          </button>
+        </div>
+      </div>
     </>
   );
 }
