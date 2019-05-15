@@ -24,6 +24,73 @@ var ZEL = (function () {
     return Constructor;
   }
 
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+  }
+
+  function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+      return o.__proto__ || Object.getPrototypeOf(o);
+    };
+    return _getPrototypeOf(o);
+  }
+
+  function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+      o.__proto__ = p;
+      return o;
+    };
+
+    return _setPrototypeOf(o, p);
+  }
+
+  function _assertThisInitialized(self) {
+    if (self === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return self;
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (call && (typeof call === "object" || typeof call === "function")) {
+      return call;
+    }
+
+    return _assertThisInitialized(self);
+  }
+
+  function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+  }
+
+  function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) {
+      for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+      return arr2;
+    }
+  }
+
+  function _iterableToArray(iter) {
+    if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+  }
+
+  function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance");
+  }
+
   var classPrefix = "zep-";
   var htmlDataVarType = "data-".concat(classPrefix, "type");
   var formatZepType = function formatZepType(type) {
@@ -32,6 +99,102 @@ var ZEL = (function () {
     }).join('');
   };
 
+  var Element =
+  /*#__PURE__*/
+  function () {
+    function Element(htmlElem) {
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      _classCallCheck(this, Element);
+
+      this.options = options;
+      this.htmlElem = htmlElem;
+
+      if (this.htmlElem.dataset.zepInit === 'false') {
+        return;
+      }
+
+      this.init();
+    }
+
+    _createClass(Element, [{
+      key: "init",
+      value: function init() {
+        console.log("construct() ".concat(this.htmlElem));
+      }
+    }]);
+
+    return Element;
+  }();
+
+  var NumberInput =
+  /*#__PURE__*/
+  function (_Element) {
+    _inherits(NumberInput, _Element);
+
+    function NumberInput(htmlElem, options) {
+      var _this;
+
+      _classCallCheck(this, NumberInput);
+
+      _this = _possibleConstructorReturn(this, _getPrototypeOf(NumberInput).call(this, htmlElem, options));
+      _this.name = 'test';
+      return _this;
+    }
+
+    _createClass(NumberInput, [{
+      key: "init",
+      value: function init() {
+        console.log("NumberInput.construct() ".concat(this.htmlElem));
+      }
+    }]);
+
+    return NumberInput;
+  }(Element);
+
+  var classes = {
+    NumberInput: NumberInput
+  };
+
+  var DynamicClass = function DynamicClass(className, opts) {
+    _classCallCheck(this, DynamicClass);
+
+    return new classes[className](opts);
+  };
+
+  var EventBus =
+  /*#__PURE__*/
+  function () {
+    // create a fake element
+    function EventBus() {
+      _classCallCheck(this, EventBus);
+
+      this.bus = document.createElement('eventbus');
+    }
+
+    _createClass(EventBus, [{
+      key: "addEventListener",
+      value: function addEventListener(event, callback) {
+        this.bus.addEventListener(event, callback);
+      }
+    }, {
+      key: "removeEventListener",
+      value: function removeEventListener(event, callback) {
+        this.bus.removeEventListener(event, callback);
+      }
+    }, {
+      key: "dispatchEvent",
+      value: function dispatchEvent(event) {
+        var detail = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        this.bus.dispatchEvent(new CustomEvent(event, {
+          detail: detail
+        }));
+      }
+    }]);
+
+    return EventBus;
+  }();
+
   var ZEL =
   /*#__PURE__*/
   function () {
@@ -39,41 +202,87 @@ var ZEL = (function () {
       _classCallCheck(this, ZEL);
 
       // eslint-disable-next-line no-console
-      console.log("ZEL - built with \u2665");
-      this._jsElementList = [];
+      console.log("ZEL - built with \u2665"); // create global event bus instance
+
+      window.eventBus = new EventBus(); // array for unparsed elements from DOM
+
+      this.jsElementList = []; // object for parsed elements split by zep-type
+
+      this.elementsObject = {};
     }
 
     _createClass(ZEL, [{
       key: "init",
       value: function init() {
-        this._getJsElementsFromDOM();
-      }
+        this.refresh();
+        this.createInstances(this.elementsObject);
+      } // update jsElementList and elementsObject
+
     }, {
       key: "refresh",
       value: function refresh() {
-        this._getJsElementsFromDOM();
-      } //dummy for testing
+        this.jsElementList = document.querySelectorAll("[".concat(htmlDataVarType, "]"));
+        this.elementsObject = this.getParsedElementsObject(this.jsElementList);
+      } //parse element list and return an object with arrays of elements split by type
 
     }, {
-      key: "_getJsElementsFromDOM",
-      value: function _getJsElementsFromDOM() {
-        this._jsElementList = document.querySelectorAll("[".concat(htmlDataVarType, "]"));
-      }
+      key: "getParsedElementsObject",
+      value: function getParsedElementsObject(elementList) {
+        var tempTypeList = [];
+        var tempElements = {};
+        console.log("getParsedElementsObject() typeof elementList: ".concat(elementList, " "));
+
+        _toConsumableArray(elementList).forEach(function (elem) {
+          console.log("elem: ".concat(elem, " / elem.dataset ").concat(elem.dataset));
+          var type = formatZepType(elem.getAttribute('data-zep-type'));
+          console.log("type: ".concat(type));
+
+          if (tempTypeList.indexOf(type) === -1) {
+            tempElements[type] = [];
+          }
+
+          tempElements[type].push(elem);
+        });
+
+        return tempElements;
+      } // create js class instances of available elements
+
     }, {
-      key: "getElements",
-      value: function getElements(type) {
-        if (type) {
-          console.log("type pre ".concat(type));
-          type = formatZepType(type);
-          console.log("type post ".concat(type));
+      key: "createInstances",
+      value: function createInstances(elementsObject) {
+        console.log('createInstances');
+
+        for (var type in elementsObject) {
+          var elements = elementsObject[type];
+          var _iteratorNormalCompletion = true;
+          var _didIteratorError = false;
+          var _iteratorError = undefined;
+
+          try {
+            for (var _iterator = elements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+              var element = _step.value;
+
+              try {
+                new DynamicClass(type, element);
+              } catch (err) {
+                console.warn("Element ".concat(type, " could not be instantiated \n").concat(err));
+              }
+            }
+          } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion && _iterator.return != null) {
+                _iterator.return();
+              }
+            } finally {
+              if (_didIteratorError) {
+                throw _iteratorError;
+              }
+            }
+          }
         }
-
-        this._jsElementList.length === 0 && this.refresh(); //this._jsElementList.map();
-      }
-    }, {
-      key: "jsElementList",
-      get: function get() {
-        return this._jsElementList;
       }
     }]);
 
