@@ -17,59 +17,94 @@ class ZEL {
     // create global event bus instance
     window.eventBus = new EventBus();
 
-    // array for unparsed elements from DOM
-    this.jsElementList = [];
-
-    // object for parsed elements split by zep-type
-    this.elementsObject = {};
+    // array with the elements and html nodes
+    this.elements = [];
   }
 
   init() {
-    this.refresh();
-    this.createInstances(this.elementsObject);
+    try {
+      this.setElements();
+
+      if (this.getElements().length > 0) {
+        this.createInstances();
+      }
+    } catch (err) {
+      console.warn('Error while initializing ZEL');
+      return false;
+    }
+
+    return true;
   }
 
   // update jsElementList and elementsObject
   refresh() {
-    this.jsElementList = document.querySelectorAll(
-      `[${helpers.htmlDataVarType}]`
-    );
-    this.elementsObject = this.getParsedElementsObject(this.jsElementList);
+    throw new Error('not implemented');
+  }
+
+  getElements() {
+    return this.elements;
   }
 
   //parse element list and return an object with arrays of elements split by type
-  getParsedElementsObject(elementList) {
-    let tempTypeList = [];
-    let tempElements = {};
-
-    console.log(
-      `getParsedElementsObject() typeof elementList: ${elementList} `
+  setElements() {
+    let jsElementList = document.querySelectorAll(
+      `[${helpers.htmlDataVarType}]`
     );
 
-    [...elementList].forEach(elem => {
+    let tempTypeList = [];
+    let tempElements = [];
+
+    console.log(
+      `getParsedElementsObject() typeof elementList: ${jsElementList} `
+    );
+
+    [...jsElementList].forEach(elem => {
       console.log(`elem: ${elem} / elem.dataset ${elem.dataset}`);
       let type = helpers.formatZepType(elem.getAttribute('data-zep-type'));
       console.log(`type: ${type}`);
       if (tempTypeList.indexOf(type) === -1) {
         tempElements[type] = [];
       }
-      tempElements[type].push(elem);
+
+      let newElement = {
+        type: type,
+        htmlNode: elem,
+        innerHTML: elem.innerHTML,
+        jsInstance: null,
+        initialized: false
+      };
+
+      tempElements.push(newElement);
     });
 
-    return tempElements;
+    this.elements = tempElements;
   }
 
   // create js class instances of available elements
-  createInstances(elementsObject) {
+  createInstances() {
     console.log('createInstances');
-    for (let type in elementsObject) {
-      let elements = elementsObject[type];
-      for (let element of elements) {
-        try {
-          new DynamicClass(type, element);
-        } catch (err) {
-          console.warn(`Element ${type} could not be instantiated \n${err}`);
-        }
+    let elements = this.getElements();
+
+    for (let element of elements) {
+      if (!element.htmlNode.hasAttribute('data-zep-init')) {
+        continue;
+      }
+
+      let initAttribute = element.htmlNode.getAttribute('data-zep-init');
+
+      if (initAttribute === 'false') {
+        continue;
+      }
+
+      try {
+        let newObject = new DynamicClass(element.type, element.htmlNode);
+
+        element.jsInstance = newObject;
+        element.initialized = true;
+      } catch (err) {
+        console.warn(
+          `Element ${element.type} could not be instantiated \n${err}`
+        );
       }
     }
   }

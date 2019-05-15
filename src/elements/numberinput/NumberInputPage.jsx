@@ -11,7 +11,7 @@ function NumberInput() {
           className={`theme-${elem}`}
           style={{ marginBottom: 15 }}
           data-zep-type="number-input"
-          data-zep-init="false"
+          data-zep-init="true"
           data-zep-min="0"
           data-zep-max="10"
           data-zep-step="2"

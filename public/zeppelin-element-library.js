@@ -204,35 +204,48 @@ var ZEL = (function () {
       // eslint-disable-next-line no-console
       console.log("ZEL - built with \u2665"); // create global event bus instance
 
-      window.eventBus = new EventBus(); // array for unparsed elements from DOM
+      window.eventBus = new EventBus(); // array with the elements and html nodes
 
-      this.jsElementList = []; // object for parsed elements split by zep-type
-
-      this.elementsObject = {};
+      this.elements = [];
     }
 
     _createClass(ZEL, [{
       key: "init",
       value: function init() {
-        this.refresh();
-        this.createInstances(this.elementsObject);
+        try {
+          this.setElements();
+
+          if (this.getElements().length > 0) {
+            this.createInstances();
+          }
+        } catch (err) {
+          console.warn('Error while initializing ZEL');
+          return false;
+        }
+
+        return true;
       } // update jsElementList and elementsObject
 
     }, {
       key: "refresh",
       value: function refresh() {
-        this.jsElementList = document.querySelectorAll("[".concat(htmlDataVarType, "]"));
-        this.elementsObject = this.getParsedElementsObject(this.jsElementList);
+        throw new Error('not implemented');
+      }
+    }, {
+      key: "getElements",
+      value: function getElements() {
+        return this.elements;
       } //parse element list and return an object with arrays of elements split by type
 
     }, {
-      key: "getParsedElementsObject",
-      value: function getParsedElementsObject(elementList) {
+      key: "setElements",
+      value: function setElements() {
+        var jsElementList = document.querySelectorAll("[".concat(htmlDataVarType, "]"));
         var tempTypeList = [];
-        var tempElements = {};
-        console.log("getParsedElementsObject() typeof elementList: ".concat(elementList, " "));
+        var tempElements = [];
+        console.log("getParsedElementsObject() typeof elementList: ".concat(jsElementList, " "));
 
-        _toConsumableArray(elementList).forEach(function (elem) {
+        _toConsumableArray(jsElementList).forEach(function (elem) {
           console.log("elem: ".concat(elem, " / elem.dataset ").concat(elem.dataset));
           var type = formatZepType(elem.getAttribute('data-zep-type'));
           console.log("type: ".concat(type));
@@ -241,45 +254,61 @@ var ZEL = (function () {
             tempElements[type] = [];
           }
 
-          tempElements[type].push(elem);
+          var newElement = {
+            type: type,
+            htmlNode: elem,
+            innerHTML: elem.innerHTML,
+            jsInstance: null,
+            initialized: false
+          };
+          tempElements.push(newElement);
         });
 
-        return tempElements;
+        this.elements = tempElements;
       } // create js class instances of available elements
 
     }, {
       key: "createInstances",
-      value: function createInstances(elementsObject) {
+      value: function createInstances() {
         console.log('createInstances');
+        var elements = this.getElements();
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
 
-        for (var type in elementsObject) {
-          var elements = elementsObject[type];
-          var _iteratorNormalCompletion = true;
-          var _didIteratorError = false;
-          var _iteratorError = undefined;
+        try {
+          for (var _iterator = elements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var element = _step.value;
 
-          try {
-            for (var _iterator = elements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-              var element = _step.value;
-
-              try {
-                new DynamicClass(type, element);
-              } catch (err) {
-                console.warn("Element ".concat(type, " could not be instantiated \n").concat(err));
-              }
+            if (!element.htmlNode.hasAttribute('data-zep-init')) {
+              continue;
             }
-          } catch (err) {
-            _didIteratorError = true;
-            _iteratorError = err;
-          } finally {
+
+            var initAttribute = element.htmlNode.getAttribute('data-zep-init');
+
+            if (initAttribute === 'false') {
+              continue;
+            }
+
             try {
-              if (!_iteratorNormalCompletion && _iterator.return != null) {
-                _iterator.return();
-              }
-            } finally {
-              if (_didIteratorError) {
-                throw _iteratorError;
-              }
+              var newObject = new DynamicClass(element.type, element.htmlNode);
+              element.jsInstance = newObject;
+              element.initialized = true;
+            } catch (err) {
+              console.warn("Element ".concat(element.type, " could not be instantiated \n").concat(err));
+            }
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return != null) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
             }
           }
         }
