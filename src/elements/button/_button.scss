@@ -13,6 +13,13 @@
     min-height: 3rem;
     padding: 0;
   }
+
+  .#{$prefix}button-icon {
+    background-color: map-get($colormap-base, gray-lighter);
+    color: map-get($colormap-base, text-gray);
+    width: 3rem;
+  }
+
   .#{$prefix}button-primary {
     @include themify($themes) {
       color: themed('buttonText');
@@ -38,6 +45,7 @@
         color: map-get($colormap-base, disabled);
         background-color: map-get($colormap-base, gray-lighter);
         outline: 0;
+        box-shadow: none;
       }
     }
   }
@@ -73,6 +81,7 @@
         background-color: map-get($colormap-base, white);
         border-color: map-get($colormap-base, gray-lighter);
         outline: 0;
+        box-shadow: none;
       }
     }
   }
@@ -95,7 +104,7 @@
     &:hover .#{$prefix}button__text--tertiary,
     &:focus .#{$prefix}button__text--tertiary,
     &.#{$prefix}button-tertiary--hover .#{$prefix}button__text--tertiary {
-      color: map-get($colormap-base, black);
+      color: map-get($colormap-base, gray-dark);
     }
 
     &:disabled,
@@ -105,15 +114,13 @@
       cursor: not-allowed;
       &:hover,
       &:focus,
-      &.#{$prefix}button-tertiary--hover {
+      &.#{$prefix}button-tertiary--hover,
+      .#{$prefix}button__text--tertiary {
         color: map-get($colormap-base, gray-lighter);
         outline: 0;
+        box-shadow: none;
       }
     }
-  }
-
-  .#{$prefix}button-icon {
-    width: 3rem;
   }
 
   .#{$prefix}button__text {
@@ -151,16 +158,6 @@
       display: inline-block;
       padding: 0.25rem 1.125rem 0;
     }
-  }
-
-  // Input
-  .#{$prefix}button--number-input {
-    background-color: map-get($colormap-base, gray-lighter);
-    padding: 0;
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.375rem;
-    line-height: 1;
   }
 }
 

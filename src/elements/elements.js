@@ -1,33 +1,35 @@
 module.exports = {
   button: {
-    name: 'button',
-    isReady: true
+    name: 'button'
   },
   tabs: {
-    name: 'tabs',
-    isReady: false
+    name: 'tabs'
   },
   tag: {
-    name: 'tag',
-    isReady: true
+    name: 'tag'
   },
   checkbox: {
     name: 'checkbox'
   },
   input: {
-    name: 'input',
-    isReady: true
+    name: 'input'
   },
   numberInput: {
-    name: 'numberInput',
-    isReady: true
+    name: 'number input'
   },
   list: {
-    name: 'list',
-    isReady: true
+    name: 'list'
   },
   radio: {
-    name: 'radio',
-    isReady: true
+    name: 'radio'
+  },
+  table: {
+    name: 'table'
+  },
+  search: {
+    name: 'search'
+  },
+  select: {
+    name: 'select'
   }
 };

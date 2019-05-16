@@ -7,12 +7,11 @@ import InputPage from './elements/input/InputPage';
 import NumberInputPage from './elements/numberinput/NumberInputPage';
 import ListPage from './elements/list/ListPage';
 import RadioPage from './elements/radio/RadioPage';
+import TablePage from './elements/table/TablePage';
+import SearchPage from './elements/search/SearchPage';
+import SelectPage from './elements/select/SelectPage';
 import './base_bundle_entry.scss';
-
-/* TODO: remove this import, the css itself and the icont font files,
-after the files are extracted in a separate repo/npm package */
-// import './icons.font';
-import './zeppelin-icons.css';
+import './svgxuse.min.js'; // ie fallback for sprites
 
 function App() {
   const [content, setContent] = useState('welcome');
@@ -44,7 +43,7 @@ function App() {
               <div key={`btn-${i}`}>
                 <button
                   className="zep-button zep-button-primary zep-button--full"
-                  onClick={() => setContent(elements[elem].name)}
+                  onClick={() => setContent(elem)}
                 >
                   <span className="zep-button__text">
                     {elements[elem].name}
@@ -55,10 +54,11 @@ function App() {
           </div>
           <div
             className="zep-grid__col zep-grid__col--xs-5-6"
-            style={{ paddingTop: 45 }}
+            style={{ paddingTop: 45, paddingBottom: 75 }}
           >
             {content === 'welcome' && (
-              <p>Welcome to the Zeppelin Element Library</p>
+              // <p>Welcome to the Zeppelin Element Library</p>
+              <SelectPage />
             )}
             {content === 'button' && <ButtonPage />}
             {content === 'tabs' && <p>This element is not ready</p>}
@@ -68,6 +68,9 @@ function App() {
             {content === 'numberInput' && <NumberInputPage />}
             {content === 'list' && <ListPage />}
             {content === 'radio' && <RadioPage />}
+            {content === 'table' && <TablePage />}
+            {content === 'search' && <SearchPage />}
+            {content === 'select' && <SelectPage />}
           </div>
         </div>
       </div>

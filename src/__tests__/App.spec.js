@@ -7,5 +7,3 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
-
-// TODO: TDD on initializing real elements in ZEL
