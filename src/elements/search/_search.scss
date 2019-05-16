@@ -9,11 +9,15 @@
     background-color: map-get($colormap-base, white);
     padding-left: 1.25rem;
     padding-top: 0.25rem;
+    border-bottom: 3px solid;
+    border-bottom-color: map-get($colormap-base, disabled);
     @include themify($themes) {
-      border-bottom: 3px solid themed('primary');
       &:focus {
-        box-shadow: 0 0 5px 1px themed('primary');
+        border-bottom-color: themed('primary');
         outline: none;
+      }
+      &:focus + .#{$prefix}search__icon {
+        color: themed('primary');
       }
     }
   }
@@ -24,9 +28,7 @@
     right: 0;
     width: 24px;
     height: 24px;
-    @include themify($themes) {
-      color: themed('primary');
-    }
+    color: map-get($colormap-base, gray-light);
   }
 }
 
