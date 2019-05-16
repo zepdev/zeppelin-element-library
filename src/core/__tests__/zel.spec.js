@@ -69,6 +69,18 @@ describe('library initialization', () => {
     expect(elements[0].jsInstance !== null).toBeTruthy();
   });
 
+  test('on a site with ONE element with the wrong or unknown zep-type no JS instance is created', () => {
+    document.body.innerHTML = '<div data-zep-type="something"></div>';
+
+    let spyConsoleWarn = jest.spyOn(global.console, 'warn');
+    ZEL.init();
+
+    expect(spyConsoleWarn).toHaveBeenCalledTimes(1);
+    expect(ZEL.getElements()[0].jsInstance === null).toBeTruthy();
+
+    spyConsoleWarn.mockRestore();
+  });
+
   test('should throw an error by intialization', () => {
     ZEL.setElements = jest.fn().mockImplementation(() => {
       throw new Error('test error');
