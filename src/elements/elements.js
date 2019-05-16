@@ -28,5 +28,8 @@ module.exports = {
   },
   search: {
     name: 'search'
+  },
+  select: {
+    name: 'select'
   }
 };
