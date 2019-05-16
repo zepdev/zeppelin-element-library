@@ -22,16 +22,16 @@ class ZEL {
   }
 
   init() {
-    try {
-      this.setElements();
+    // try {
+    this.setElements();
 
-      if (this.getElements().length > 0) {
-        this.createInstances();
-      }
-    } catch (err) {
-      console.warn('Error while initializing ZEL');
-      return false;
+    if (this.getElements().length > 0) {
+      this.createInstances();
     }
+    // } catch (err) {
+    //   console.warn('Error while initializing ZEL');
+    //   return false;
+    // }
 
     return true;
   }
@@ -86,11 +86,9 @@ class ZEL {
     let elements = this.getElements();
 
     for (let element of elements) {
-      if (!element.htmlNode.hasAttribute('data-zep-init')) {
-        continue;
-      }
-
-      let initAttribute = element.htmlNode.getAttribute('data-zep-init');
+      let initAttribute = element.htmlNode.hasAttribute('data-zep-init')
+        ? element.htmlNode.getAttribute('data-zep-init')
+        : null;
 
       if (initAttribute === 'false') {
         continue;

@@ -18,7 +18,8 @@ describe('library initialization', () => {
     spyCreateInstances.mockRestore();
   });
 
-  const mockElement = '<div data-zep-type="number"><p>Mock Element</p></div>';
+  const mockElement =
+    '<div data-zep-type="number-input"><p>Mock Element</p></div>';
 
   test('on a site with ONE element the element list has one member', () => {
     document.body.innerHTML = mockElement;
@@ -48,8 +49,39 @@ describe('library initialization', () => {
 
   test('on a site with ONE element with init attribute false no JS instances is created', () => {
     document.body.innerHTML =
-      '<div data-zep-type="number" data-zep-init="false"></div>';
+      '<div data-zep-type="number-input" data-zep-init="false"></div>';
 
     ZEL.init();
+
+    let elements = ZEL.getElements();
+
+    expect(elements[0].jsInstance === null).toBeTruthy();
+  });
+
+  test('on a site with ONE element with init attribute other then false a JS instance is created', () => {
+    document.body.innerHTML =
+      '<div data-zep-type="number-input" data-zep-init="mock-value"></div>';
+
+    ZEL.init();
+
+    let elements = ZEL.getElements();
+
+    expect(elements[0].jsInstance !== null).toBeTruthy();
+  });
+
+  test('should throw an error by intialization', () => {
+    ZEL.setElements = jest.fn().mockImplementation(() => {
+      throw new Error('test error');
+    });
+
+    expect(() => ZEL.init()).toThrow();
+
+    ZEL.setElements.mockRestore();
+  });
+
+  test('refresh works', () => {
+    ZEL.init();
+    // do something in the DOM
+    ZEL.refresh();
   });
 });
