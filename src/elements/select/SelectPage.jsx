@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/role-has-required-aria-props */
 import React from 'react';
 import Icon from '../icon/Icon';
 
@@ -43,7 +44,7 @@ function SelectPage() {
                   id="exp_elem_A"
                   role="option"
                   tabIndex="0"
-                  className="zep-select__list__item"
+                  className="zep-select__listitem"
                 >
                   option A
                 </li>
@@ -51,7 +52,7 @@ function SelectPage() {
                   id="exp_elem_B"
                   role="option"
                   tabIndex="-1"
-                  className="zep-select__list__item"
+                  className="zep-select__listitem"
                 >
                   option B
                 </li>
