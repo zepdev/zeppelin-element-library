@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from '../icon/Icon';
 
-function NumberInput() {
+function NumberInputPage() {
   const theme = ['zeppelin', 'cat', 'rental'];
   return (
     <>
@@ -33,4 +33,4 @@ function NumberInput() {
   );
 }
 
-export default NumberInput;
+export default NumberInputPage;

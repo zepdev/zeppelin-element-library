@@ -22,16 +22,11 @@ class ZEL {
   }
 
   init() {
-    // try {
     this.setElements();
 
     if (this.getElements().length > 0) {
       this.createInstances();
     }
-    // } catch (err) {
-    //   console.warn('Error while initializing ZEL');
-    //   return false;
-    // }
 
     return true;
   }
@@ -54,14 +49,8 @@ class ZEL {
     let tempTypeList = [];
     let tempElements = [];
 
-    console.log(
-      `getParsedElementsObject() typeof elementList: ${jsElementList} `
-    );
-
     [...jsElementList].forEach(elem => {
-      console.log(`elem: ${elem} / elem.dataset ${elem.dataset}`);
       let type = helpers.formatZepType(elem.getAttribute('data-zep-type'));
-      console.log(`type: ${type}`);
       if (tempTypeList.indexOf(type) === -1) {
         tempElements[type] = [];
       }
@@ -82,7 +71,6 @@ class ZEL {
 
   // create js class instances of available elements
   createInstances() {
-    console.log('createInstances');
     let elements = this.getElements();
 
     for (let element of elements) {

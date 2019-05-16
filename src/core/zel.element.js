@@ -3,10 +3,6 @@ export default class Element {
     this.options = options;
     this.htmlElem = htmlElem;
 
-    if (this.htmlElem.dataset.zepInit === 'false') {
-      return;
-    }
-
     this.init();
   }
 

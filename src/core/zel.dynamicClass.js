@@ -1,4 +1,4 @@
-import NumberInput from '../elements/numberinput/numberinput';
+import NumberInput from '../elements/numberinput/zel.numberinput';
 
 // Proxy Class for dynamic element instantiation
 const classes = {

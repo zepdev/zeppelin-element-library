@@ -5,11 +5,11 @@ export default class EventBus {
   }
 
   addEventListener(event, callback) {
-    this.bus.addEventListener(event, callback);
+    this.bus.addEventListener(event, callback, false);
   }
 
   removeEventListener(event, callback) {
-    this.bus.removeEventListener(event, callback);
+    this.bus.removeEventListener(event, callback, false);
   }
 
   dispatchEvent(event, detail = {}) {
