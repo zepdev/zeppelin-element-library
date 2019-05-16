@@ -7,13 +7,13 @@ function SearchPage() {
     <>
       {themes.map(elem => (
         <div
-          className={`theme-${elem} zep-form-container`}
+          className={`theme-${elem} zep-search`}
           style={{ marginBottom: 15 }}
           key={elem}
         >
           <input
             type="text"
-            className="zep-search"
+            className="zep-search__input"
             placeholder="Search"
             id={`search-${elem}`}
           />

@@ -2,6 +2,10 @@
 
 @mixin search {
   .#{$prefix}search {
+    position: relative;
+  }
+
+  .#{$prefix}search__input {
     @include typeset('normal', 3);
     width: 100%;
     height: 3rem;
