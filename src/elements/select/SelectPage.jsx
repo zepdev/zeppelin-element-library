@@ -1,53 +1,59 @@
 import React from 'react';
 import Icon from '../icon/Icon';
 
+// take javascript example from https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/listbox/listbox-collapsible.htmla
+
 function SelectPage() {
   const themes = ['zeppelin', 'cat', 'rental'];
   return (
     <>
-      <p>With select</p>
+      <p style={{ marginBottom: 45 }}>With List</p>
       {themes.map(elem => (
         <div
-          className={`theme-${elem} zep-form-container`}
+          className={`theme-${elem}`}
           style={{ marginBottom: 15 }}
           key={elem}
         >
-          <select className="zep-select">
-            <option value="a">option A</option>
-            <option value="b">option B</option>
-            <option value="c">option C</option>
-          </select>
-        </div>
-      ))}
-      <p>With List</p>
-      {themes.map(elem => (
-        <div
-          className={`theme-${elem} zep-form-container listbox-area`}
-          style={{ marginBottom: 15 }}
-          key={elem}
-        >
-          <div class="left-area">
-            <span id="exp_elem">Choose an element:</span>
+          <div className="zep-select">
+            <label id="exp_elem" className="zep-select__label">
+              Label
+            </label>
             <div id="exp_wrapper">
               <button
                 aria-haspopup="listbox"
                 aria-labelledby="exp_elem exp_button"
                 id="exp_button"
+                className="zep-select__button"
               >
-                Neptunium
+                Select One
+                <Icon
+                  className="zep-select__icon"
+                  icon="zepicons-navigation-dropdown"
+                />
               </button>
               <ul
                 id="exp_elem_list"
-                tabindex="-1"
+                tabIndex="-1"
                 role="listbox"
                 aria-labelledby="exp_elem"
-                class="hidden"
+                className="zep-select__list"
+                //className="zep-visually-hidden"
               >
-                <li id="exp_elem_Np" role="option">
-                  Neptunium
+                <li
+                  id="exp_elem_A"
+                  role="option"
+                  tabIndex="0"
+                  className="zep-select__list__item"
+                >
+                  option A
                 </li>
-                <li id="exp_elem_Pu" role="option">
-                  Plutonium
+                <li
+                  id="exp_elem_B"
+                  role="option"
+                  tabIndex="-1"
+                  className="zep-select__list__item"
+                >
+                  option B
                 </li>
               </ul>
             </div>
