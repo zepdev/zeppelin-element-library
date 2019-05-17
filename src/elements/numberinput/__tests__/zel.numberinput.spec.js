@@ -2,7 +2,7 @@ import NumberInput from '../zel.numberinput.js';
 
 describe('standard element constructor', () => {
   const mockElementBase = `<div class="theme-rental" data-zep-type="number-input" data-zep-init="true" data-zep-min="0" data-zep-max="10"
-    data-zep-step="2" style="margin-bottom: 15px;">
+    data-zep-step="2" style="margin-bottom: 15px;" id="numberInput">
         <button class="zep-button zep-button-icon">
             <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="zep-button__icon"
                 fill="currentColor">
@@ -20,9 +20,10 @@ describe('standard element constructor', () => {
 
   test('constructor is succesfully called and properties are set.', () => {
     let mockElement = mockElementBase;
-
     document.body.innerHTML = mockElement;
-    let instance = new NumberInput(mockElement);
+
+    let htmlElement = document.querySelector('#numberInput');
+    let instance = new NumberInput(htmlElement);
 
     expect(instance.steps === 2).toBeTruthy();
     expect(instance.minimum === 0).toBeTruthy();

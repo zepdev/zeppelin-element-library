@@ -71,6 +71,36 @@ var ZEL = (function () {
     return _assertThisInitialized(self);
   }
 
+  function _superPropBase(object, property) {
+    while (!Object.prototype.hasOwnProperty.call(object, property)) {
+      object = _getPrototypeOf(object);
+      if (object === null) break;
+    }
+
+    return object;
+  }
+
+  function _get(target, property, receiver) {
+    if (typeof Reflect !== "undefined" && Reflect.get) {
+      _get = Reflect.get;
+    } else {
+      _get = function _get(target, property, receiver) {
+        var base = _superPropBase(target, property);
+
+        if (!base) return;
+        var desc = Object.getOwnPropertyDescriptor(base, property);
+
+        if (desc.get) {
+          return desc.get.call(receiver);
+        }
+
+        return desc.value;
+      };
+    }
+
+    return _get(target, property, receiver || target);
+  }
+
   function _toConsumableArray(arr) {
     return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
   }
@@ -109,11 +139,6 @@ var ZEL = (function () {
 
       this.options = options;
       this.htmlElem = htmlElem;
-
-      if (this.htmlElem.dataset.zepInit === 'false') {
-        return;
-      }
-
       this.init();
     }
 
@@ -138,14 +163,26 @@ var ZEL = (function () {
       _classCallCheck(this, NumberInput);
 
       _this = _possibleConstructorReturn(this, _getPrototypeOf(NumberInput).call(this, htmlElem, options));
-      _this.name = 'test';
+      _this.name = 'NumberInputInstance';
       return _this;
-    }
+    } //TODO: fix inheritance problem this.htmlElem
+
 
     _createClass(NumberInput, [{
       key: "init",
       value: function init() {
-        console.log("NumberInput.construct() ".concat(this.htmlElem));
+        console.log("this.htmlElem ".concat(this.htmlElem));
+
+        _get(_getPrototypeOf(NumberInput.prototype), "init", this).call(this);
+
+        console.log("instance.htmlElem ".concat(Object.keys(this).map(function (n) {
+          return n;
+        })));
+        this.inputHtml = this.htmlElem.querySelector('input');
+        this.steps = this.htmlElem.hasAttribute('data-zep-step') ? parseInt(this.htmlElem.getAttribute('data-zep-step'), 10) : 1;
+        this.minimum = this.htmlElem.hasAttribute('data-zep-min') ? parseInt(this.htmlElem.getAttribute('data-zep-min'), 10) : 0;
+        this.maximum = this.htmlElem.hasAttribute('data-zep-max') ? parseInt(this.htmlElem.getAttribute('data-zep-max'), 10) : null;
+        this.currentNumber = this.inputHtml.value ? parseInt(this.inputHtml.value, 10) : 1;
       }
     }]);
 
@@ -175,12 +212,12 @@ var ZEL = (function () {
     _createClass(EventBus, [{
       key: "addEventListener",
       value: function addEventListener(event, callback) {
-        this.bus.addEventListener(event, callback);
+        this.bus.addEventListener(event, callback, false);
       }
     }, {
       key: "removeEventListener",
       value: function removeEventListener(event, callback) {
-        this.bus.removeEventListener(event, callback);
+        this.bus.removeEventListener(event, callback, false);
       }
     }, {
       key: "dispatchEvent",
@@ -212,15 +249,10 @@ var ZEL = (function () {
     _createClass(ZEL, [{
       key: "init",
       value: function init() {
-        try {
-          this.setElements();
+        this.setElements();
 
-          if (this.getElements().length > 0) {
-            this.createInstances();
-          }
-        } catch (err) {
-          console.warn('Error while initializing ZEL');
-          return false;
+        if (this.getElements().length > 0) {
+          this.createInstances();
         }
 
         return true;
@@ -243,12 +275,9 @@ var ZEL = (function () {
         var jsElementList = document.querySelectorAll("[".concat(htmlDataVarType, "]"));
         var tempTypeList = [];
         var tempElements = [];
-        console.log("getParsedElementsObject() typeof elementList: ".concat(jsElementList, " "));
 
         _toConsumableArray(jsElementList).forEach(function (elem) {
-          console.log("elem: ".concat(elem, " / elem.dataset ").concat(elem.dataset));
           var type = formatZepType(elem.getAttribute('data-zep-type'));
-          console.log("type: ".concat(type));
 
           if (tempTypeList.indexOf(type) === -1) {
             tempElements[type] = [];
@@ -270,7 +299,6 @@ var ZEL = (function () {
     }, {
       key: "createInstances",
       value: function createInstances() {
-        console.log('createInstances');
         var elements = this.getElements();
         var _iteratorNormalCompletion = true;
         var _didIteratorError = false;
@@ -279,12 +307,7 @@ var ZEL = (function () {
         try {
           for (var _iterator = elements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
             var element = _step.value;
-
-            if (!element.htmlNode.hasAttribute('data-zep-init')) {
-              continue;
-            }
-
-            var initAttribute = element.htmlNode.getAttribute('data-zep-init');
+            var initAttribute = element.htmlNode.hasAttribute('data-zep-init') ? element.htmlNode.getAttribute('data-zep-init') : null;
 
             if (initAttribute === 'false') {
               continue;
