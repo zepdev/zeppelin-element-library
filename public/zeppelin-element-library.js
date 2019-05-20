@@ -49,7 +49,12 @@ var ZEL = (function () {
     var _proto = Element.prototype;
 
     _proto.init = function init() {
-      console.log("construct() ".concat(this.htmlElem));
+      this.addListeners();
+      return true;
+    };
+
+    _proto.addListeners = function addListeners() {
+      throw new Error('should not be called from parent!');
     };
 
     return Element;
@@ -64,7 +69,6 @@ var ZEL = (function () {
       var _this;
 
       _this = _Element.call(this, htmlElem, options) || this;
-      console.log("htmlElem", htmlElem, "options", options);
       _this.name = 'NumberInputInstance';
       return _this;
     } //TODO: fix inheritance problem this.htmlElem
@@ -73,8 +77,6 @@ var ZEL = (function () {
     var _proto = NumberInput.prototype;
 
     _proto.init = function init() {
-      _Element.prototype.init.call(this);
-
       this.buttonMinus = this.htmlElem.querySelector('button[data-zep-option="minus"]');
 
       if (!this.buttonMinus) {
@@ -92,11 +94,11 @@ var ZEL = (function () {
       this.minimum = this.htmlElem.hasAttribute('data-zep-min') ? parseInt(this.htmlElem.getAttribute('data-zep-min'), 10) : 0;
       this.maximum = this.htmlElem.hasAttribute('data-zep-max') ? parseInt(this.htmlElem.getAttribute('data-zep-max'), 10) : null;
       this.currentNumber = this.inputHtml.value ? parseInt(this.inputHtml.value, 10) : 1;
-      this.addListeners();
+
+      _Element.prototype.init.call(this);
     };
 
     _proto.addListeners = function addListeners() {
-      console.log('addListeners');
       this.buttonMinusListener = this.clickHandler.bind(this);
       this.buttonMinus.addEventListener('click', this.buttonMinusListener, false);
       this.buttonPlusListener = this.clickHandler.bind(this);
@@ -213,7 +215,8 @@ var ZEL = (function () {
     ;
 
     _proto.refresh = function refresh() {
-      throw new Error('not implemented');
+      this.elements = [];
+      this.init();
     };
 
     _proto.getElements = function getElements() {

@@ -8,8 +8,6 @@ export default class NumberInput extends Element {
 
   //TODO: fix inheritance problem this.htmlElem
   init() {
-    super.init();
-
     this.buttonMinus = this.htmlElem.querySelector(
       'button[data-zep-option="minus"]'
     );
@@ -39,11 +37,10 @@ export default class NumberInput extends Element {
       ? parseInt(this.inputHtml.value, 10)
       : 1;
 
-    this.addListeners();
+    super.init();
   }
 
   addListeners() {
-    console.log('addListeners');
     this.buttonMinusListener = this.clickHandler.bind(this);
     this.buttonMinus.addEventListener('click', this.buttonMinusListener, false);
 

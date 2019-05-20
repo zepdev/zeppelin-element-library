@@ -7,6 +7,11 @@ export default class Element {
   }
 
   init() {
-    console.log(`construct() ${this.htmlElem}`);
+    this.addListeners();
+    return true;
+  }
+
+  addListeners() {
+    throw new Error('should not be called from parent!');
   }
 }
