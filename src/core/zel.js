@@ -77,8 +77,6 @@ class ZEL {
       let initAttribute = element.htmlNode.hasAttribute('data-zep-init')
         ? element.htmlNode.getAttribute('data-zep-init')
         : null;
-
-      console.log(`initAttribute ${initAttribute}`);
       if (initAttribute === 'false') {
         continue;
       }
@@ -88,7 +86,6 @@ class ZEL {
 
         element.jsInstance = newObject;
         element.initialized = true;
-        console.log(`Element ${element.type} was instantiated`);
       } catch (err) {
         console.warn(
           `Element ${element.type} could not be instantiated \n${err}`
