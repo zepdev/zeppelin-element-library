@@ -33,7 +33,8 @@ class ZEL {
 
   // update jsElementList and elementsObject
   refresh() {
-    throw new Error('not implemented');
+    this.elements = [];
+    this.init();
   }
 
   getElements() {
