@@ -54,18 +54,32 @@ describe('library initialization', () => {
     ZEL.init();
 
     let elements = ZEL.getElements();
-
     expect(elements[0].jsInstance === null).toBeTruthy();
   });
 
   test('on a site with ONE element with init attribute other then false a JS instance is created', () => {
-    document.body.innerHTML =
-      '<div data-zep-type="number-input" data-zep-init="mock-value"></div>';
+    document.body.innerHTML = `<div class="theme-rental" data-zep-type="number-input" data-zep-init="mock-test" data-zep-min="0" data-zep-max="10"
+    data-zep-step="2" style="margin-bottom: 15px;" id="numberInput">
+        <button class="zep-button zep-button-icon">
+            <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="zep-button__icon"
+                fill="currentColor">
+                <use xlink:href="#zepicons-minus"></use>
+            </svg>
+        </button>
+        <input type="text" class="zep-input zep-input--number" value="1">
+        <button class="zep-button zep-button-icon">
+            <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24" class="zep-button__icon" fill="currentColor">
+                <use xlink:href="#zepicons-plus"></use>
+            </svg>
+        </button>
+    </div>`;
 
     ZEL.init();
 
     let elements = ZEL.getElements();
 
+    console.log(`elements[0].jsInstance ${elements[0].jsInstance}`);
     expect(elements[0].jsInstance !== null).toBeTruthy();
   });
 

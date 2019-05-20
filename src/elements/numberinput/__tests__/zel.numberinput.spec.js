@@ -18,7 +18,7 @@ describe('standard element constructor', () => {
         </button>
     </div>`;
 
-  test('constructor is succesfully called and properties are set.', () => {
+  test('constructor is succesfully called and properties are set in init function.', () => {
     let mockElement = mockElementBase;
     document.body.innerHTML = mockElement;
 
@@ -29,10 +29,9 @@ describe('standard element constructor', () => {
     expect(instance.minimum === 0).toBeTruthy();
     expect(instance.maximum === 10).toBeTruthy();
     expect(instance.currentNumber === 1).toBeTruthy();
-  });
-
-  test('Instance is initiated', () => {
-    throw new Error('not implemented');
+    expect(
+      instance.inputHtml === document.querySelector('input[type="text"]')
+    ).toBeTruthy();
   });
 
   test('Minus button decreases current number property by defined steps', () => {
