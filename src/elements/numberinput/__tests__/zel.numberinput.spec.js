@@ -1,4 +1,5 @@
 import NumberInput from '../zel.numberinput.js';
+import { fireEvent } from 'dom-testing-library';
 
 describe('standard element constructor', () => {
   const mockElementBase = `<div class="theme-rental" data-zep-type="number-input" data-zep-init="true" data-zep-min="0" data-zep-max="10"
@@ -18,13 +19,19 @@ describe('standard element constructor', () => {
         </button>
     </div>`;
 
-  test('constructor is succesfully called and properties are set in init function.', () => {
+  let instance = null;
+
+  beforeEach(() => {
+    // Clears the database and adds some testing data.
+    // Jest will wait for this promise to resolve before running tests.
     let mockElement = mockElementBase;
     document.body.innerHTML = mockElement;
 
     let htmlElement = document.querySelector('#numberInput');
-    let instance = new NumberInput(htmlElement);
+    instance = new NumberInput(htmlElement);
+  });
 
+  test('constructor is succesfully called and properties are set in init function.', () => {
     expect(
       instance.inputHtml === document.querySelector('input[type="text"]')
     ).toBeTruthy();
@@ -35,12 +42,6 @@ describe('standard element constructor', () => {
   });
 
   test('element has minus and plus button', () => {
-    let mockElement = mockElementBase;
-    document.body.innerHTML = mockElement;
-
-    let htmlElement = document.querySelector('#numberInput');
-    let instance = new NumberInput(htmlElement);
-
     expect(
       instance.buttonMinus ===
         document.querySelector('button[data-zep-option="minus"]')
@@ -52,32 +53,61 @@ describe('standard element constructor', () => {
   });
 
   test('Minus button decreases current number property by defined steps', () => {
-    let mockElement = mockElementBase;
-    document.body.innerHTML = mockElement;
-
-    let htmlElement = document.querySelector('#numberInput');
-    let instance = new NumberInput(htmlElement);
-
     instance.currentNumber = 4;
 
-    instance.buttonMinus.simulate('click');
+    fireEvent.click(instance.buttonMinus);
 
     expect(instance.currentNumber === 2).toBeTruthy();
   });
 
   test("Minus button doesn't decrease current number property below defined minimum", () => {
-    throw new Error('not implemented');
+    instance.currentNumber = instance.minimum + 1;
+    instance.steps = 2;
+    fireEvent.click(instance.buttonMinus);
+
+    expect(instance.currentNumber).toBe(instance.minimum);
   });
 
   test('Plus button increases current number property by defined steps', () => {
-    throw new Error('not implemented');
+    instance.currentNumber = 1;
+    instance.steps = 2;
+
+    fireEvent.click(instance.buttonPlus);
+
+    expect(instance.currentNumber).toBe(3);
   });
 
   test("Plus button doesn't increase current number property beyond defined maximum", () => {
-    throw new Error('not implemented');
+    instance.currentNumber = instance.maximum - 1;
+    instance.steps = 2;
+    fireEvent.click(instance.buttonPlus);
+
+    expect(instance.currentNumber).toBe(instance.maximum);
   });
 
   test('Current number property changes by direct input field entry', () => {
-    throw new Error('not implemented');
+    fireEvent.change(instance.inputHtml, { target: { value: '10' } });
+
+    expect(instance.currentNumber).toBe(10);
+  });
+
+  test("Current number property doesn't change on illegal input", () => {
+    instance.currentNumber = 1;
+    fireEvent.change(instance.inputHtml, { target: { value: '1' } });
+
+    fireEvent.change(instance.inputHtml, { target: { value: 'a' } });
+
+    expect(instance.currentNumber).toBe(1);
+  });
+
+  test('Functionality is gone after removeListeners is called', () => {
+    instance.currentNumber = 1;
+    fireEvent.change(instance.inputHtml, { target: { value: '1' } });
+
+    instance.removeListeners();
+
+    fireEvent.click(instance.buttonPlus);
+
+    expect(instance.currentNumber).toBe(1);
   });
 });

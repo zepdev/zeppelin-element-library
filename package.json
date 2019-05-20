@@ -88,6 +88,7 @@
     "@semantic-release/git": "^7.0.8",
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
+    "dom-testing-library": "^4.1.0",
     "husky": "^2.2.0",
     "lint-staged": "^8.1.6",
     "mdx": "^0.3.1",

@@ -171,18 +171,81 @@ var ZEL = (function () {
     _createClass(NumberInput, [{
       key: "init",
       value: function init() {
-        console.log("this.htmlElem ".concat(this.htmlElem));
-
         _get(_getPrototypeOf(NumberInput.prototype), "init", this).call(this);
 
-        console.log("instance.htmlElem ".concat(Object.keys(this).map(function (n) {
-          return n;
-        })));
+        this.buttonMinus = this.htmlElem.querySelector('button[data-zep-option="minus"]');
+
+        if (!this.buttonMinus) {
+          this.buttonMinus = this.htmlElem.querySelectorAll('button')[0];
+        }
+
+        this.buttonPlus = this.htmlElem.querySelector('button[data-zep-option="plus"]');
+
+        if (!this.buttonPlus) {
+          this.buttonPlus = this.htmlElem.querySelectorAll('button')[1];
+        }
+
         this.inputHtml = this.htmlElem.querySelector('input');
         this.steps = this.htmlElem.hasAttribute('data-zep-step') ? parseInt(this.htmlElem.getAttribute('data-zep-step'), 10) : 1;
         this.minimum = this.htmlElem.hasAttribute('data-zep-min') ? parseInt(this.htmlElem.getAttribute('data-zep-min'), 10) : 0;
         this.maximum = this.htmlElem.hasAttribute('data-zep-max') ? parseInt(this.htmlElem.getAttribute('data-zep-max'), 10) : null;
         this.currentNumber = this.inputHtml.value ? parseInt(this.inputHtml.value, 10) : 1;
+        this.addListeners();
+      }
+    }, {
+      key: "addListeners",
+      value: function addListeners() {
+        this.buttonMinus.addEventListener('click', this.clickHandler.bind(this), false);
+        this.buttonPlusListener = this.clickHandler.bind(this);
+        this.buttonPlus.addEventListener('click', this.buttonPlusListener, false);
+        this.inputHtml.addEventListener('change', this.changeInputHandler.bind(this), false);
+      }
+    }, {
+      key: "removeListeners",
+      value: function removeListeners() {
+        console.log('we are removeing listeners!!!!!!!!');
+        this.buttonMinus.removeEventListener('click', this.clickHandler.bind(this), false);
+        this.buttonPlus.removeEventListener('click', this.buttonPlusListener, false);
+        this.inputHtml.removeEventListener('change', this.changeInputHandler.bind(this), false);
+      }
+    }, {
+      key: "clickHandler",
+      value: function clickHandler(e) {
+        var btn = e.currentTarget;
+
+        if (btn === this.buttonMinus) {
+          this.currentNumber = this.checkRange(this.currentNumber - this.steps, this.minimum);
+        }
+
+        if (btn === this.buttonPlus) {
+          this.currentNumber = this.checkRange(this.currentNumber + this.steps, this.maximum);
+        }
+
+        this.inputHtml.value = this.currentNumber;
+      }
+    }, {
+      key: "changeInputHandler",
+      value: function changeInputHandler() {
+        var newNumber = parseInt(this.inputHtml.value, 10);
+
+        if (!isNaN(newNumber)) {
+          this.currentNumber = this.checkRange(newNumber, this.currentNumber);
+        } else {
+          console.warn('Only integers allowed');
+        }
+      }
+    }, {
+      key: "checkRange",
+      value: function checkRange(newValue, fallback) {
+        if (newValue < this.minimum) {
+          return fallback;
+        }
+
+        if (newValue > this.maximum) {
+          return fallback;
+        }
+
+        return newValue;
       }
     }]);
 
