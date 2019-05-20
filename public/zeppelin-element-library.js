@@ -195,18 +195,20 @@ var ZEL = (function () {
     }, {
       key: "addListeners",
       value: function addListeners() {
-        this.buttonMinus.addEventListener('click', this.clickHandler.bind(this), false);
+        console.log('addListeners');
+        this.buttonMinusListener = this.clickHandler.bind(this);
+        this.buttonMinus.addEventListener('click', this.buttonMinusListener, false);
         this.buttonPlusListener = this.clickHandler.bind(this);
         this.buttonPlus.addEventListener('click', this.buttonPlusListener, false);
-        this.inputHtml.addEventListener('change', this.changeInputHandler.bind(this), false);
+        this.inputListener = this.changeInputHandler.bind(this);
+        this.inputHtml.addEventListener('change', this.inputListener, false);
       }
     }, {
       key: "removeListeners",
       value: function removeListeners() {
-        console.log('we are removeing listeners!!!!!!!!');
-        this.buttonMinus.removeEventListener('click', this.clickHandler.bind(this), false);
+        this.buttonMinus.removeEventListener('click', this.buttonMinusListener, false);
         this.buttonPlus.removeEventListener('click', this.buttonPlusListener, false);
-        this.inputHtml.removeEventListener('change', this.changeInputHandler.bind(this), false);
+        this.inputHtml.removeEventListener('change', this.inputListener, false);
       }
     }, {
       key: "clickHandler",
@@ -230,6 +232,7 @@ var ZEL = (function () {
 
         if (!isNaN(newNumber)) {
           this.currentNumber = this.checkRange(newNumber, this.currentNumber);
+          this.inputHtml.value = this.currentNumber;
         } else {
           console.warn('Only integers allowed');
         }

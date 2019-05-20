@@ -43,6 +43,7 @@ export default class NumberInput extends Element {
   }
 
   addListeners() {
+    console.log('addListeners');
     this.buttonMinusListener = this.clickHandler.bind(this);
     this.buttonMinus.addEventListener('click', this.buttonMinusListener, false);
 
@@ -50,7 +51,6 @@ export default class NumberInput extends Element {
     this.buttonPlus.addEventListener('click', this.buttonPlusListener, false);
 
     this.inputListener = this.changeInputHandler.bind(this);
-
     this.inputHtml.addEventListener('change', this.inputListener, false);
   }
 
@@ -95,6 +95,7 @@ export default class NumberInput extends Element {
 
     if (!isNaN(newNumber)) {
       this.currentNumber = this.checkRange(newNumber, this.currentNumber);
+      this.inputHtml.value = this.currentNumber;
     } else {
       console.warn('Only integers allowed');
     }
