@@ -2,6 +2,11 @@
   .#{$prefix}numberinput {
     > * {
       vertical-align: middle;
+
+      &.#{$prefix}button-icon {
+        display: inline-block;
+        vertical-align: middle;
+      }
     }
   }
 }
