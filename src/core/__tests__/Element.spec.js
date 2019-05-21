@@ -1,4 +1,4 @@
-import Element from '../zel.element.js';
+import Element from '../Element.js';
 
 describe('standard element constructor', () => {
   test('constructor is succesfully called', () => {

@@ -5,7 +5,7 @@ function CheckboxPage() {
   return (
     <>
       {themes.map(elem => (
-        <div className={`theme-${elem}`}>
+        <div key={`theme-${elem}`} className={`theme-${elem}`}>
           <div className="zep-checkbox">
             <input
               className="zep-checkbox__input"

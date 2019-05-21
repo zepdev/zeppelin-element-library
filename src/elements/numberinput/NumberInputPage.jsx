@@ -8,7 +8,7 @@ function NumberInputPage() {
       {theme.map(elem => (
         <div
           key={`key-${elem}`}
-          className={`theme-${elem}`}
+          className={`theme-${elem} zep-numberinput`}
           style={{ marginBottom: 15 }}
           data-zep-type="number-input"
           data-zep-init="true"
