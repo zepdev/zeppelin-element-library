@@ -177,9 +177,12 @@ $grid-max-width: #{map-get($min-screensize-map, l)}px;
   padding: 0;
   display: block;
   position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+
+  @supports (display: flex) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
   // clear grid-gutter on the first/left and last/right elements
   @each $screensize, $valuelist in $grid-values-map {
