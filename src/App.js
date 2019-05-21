@@ -57,8 +57,7 @@ function App() {
             style={{ paddingTop: 45, paddingBottom: 75 }}
           >
             {content === 'welcome' && (
-              // <p>Welcome to the Zeppelin Element Library</p>
-              <SelectPage />
+              <p>Welcome to the Zeppelin Element Library</p>
             )}
             {content === 'button' && <ButtonPage />}
             {content === 'tabs' && <p>This element is not ready</p>}
