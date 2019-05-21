@@ -1,9 +1,6 @@
-import EventBus from '../zel.eventbus';
+import EventBus from '../Eventbus';
 describe('event bus interface', () => {
   test('event listener is sucessfully registered', () => {
-    const mockElement =
-      '<div data-zep-type="number-input"><p>Mock Element</p></div>';
-
     let spyConsoleLog = jest.spyOn(global.console, 'log');
 
     window.eventBus = new EventBus();
@@ -19,9 +16,6 @@ describe('event bus interface', () => {
   });
 
   test('event listener is sucessfully removed', () => {
-    const mockElement =
-      '<div data-zep-type="number-input"><p>Mock Element</p></div>';
-
     let spyConsoleLog = jest.spyOn(global.console, 'log');
 
     let eventFunction = e => {

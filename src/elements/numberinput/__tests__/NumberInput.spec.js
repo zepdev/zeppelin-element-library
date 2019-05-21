@@ -1,4 +1,4 @@
-import NumberInput from '../zel.numberinput.js';
+import NumberInput from '../NumberInput.js';
 import { fireEvent } from 'dom-testing-library';
 
 describe('standard element constructor', () => {

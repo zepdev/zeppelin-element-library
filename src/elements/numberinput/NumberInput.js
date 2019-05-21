@@ -1,4 +1,4 @@
-import Element from '../../core/zel.element';
+import Element from '../../core/Element';
 
 export default class NumberInput extends Element {
   constructor(htmlElem, options) {

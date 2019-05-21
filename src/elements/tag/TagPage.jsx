@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from '../icon/Icon';
 
-function Tag() {
+function TagPage() {
   return (
     <>
       <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
@@ -26,4 +26,4 @@ function Tag() {
   );
 }
 
-export default Tag;
+export default TagPage;

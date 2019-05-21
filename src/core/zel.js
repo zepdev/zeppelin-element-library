@@ -1,13 +1,6 @@
-/**
- * Entry Point for Bundle creation.
- *
- * import all relevant scripts here
- */
-
-// TODO: initialize elements
 import * as helpers from './zel.helpers';
-import DynamicClass from './zel.dynamicClass';
-import EventBus from './zel.eventbus';
+import DynamicClass from './DynamicClass';
+import EventBus from './EventBus';
 
 class ZEL {
   constructor() {
