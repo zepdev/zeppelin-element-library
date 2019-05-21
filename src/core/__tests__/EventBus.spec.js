@@ -1,4 +1,4 @@
-import EventBus from '../Eventbus';
+import EventBus from '../EventBus';
 describe('event bus interface', () => {
   test('event listener is sucessfully registered', () => {
     let spyConsoleLog = jest.spyOn(global.console, 'log');
