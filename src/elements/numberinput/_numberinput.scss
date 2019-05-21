@@ -1,0 +1,11 @@
+@mixin numberinput {
+  .#{$prefix}numberinput {
+    > * {
+      vertical-align: middle;
+    }
+  }
+}
+
+@include exports('numberinput') {
+  @include numberinput;
+}
