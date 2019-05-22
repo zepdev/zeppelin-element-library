@@ -22,7 +22,6 @@ cp -r src/themes/* bundle/themes
 
 # copy icons folder into bundle folder
 cp -r src/assets/icons/* bundle/assets/icons
-cp -r src/svgxuse.min.js bundle/assets/icons
 
 # copy sketch file into bundle folder
 cp -r src/assets/sketches/zds-library.sketch bundle/assets/dist
@@ -68,8 +67,13 @@ mv tmpfile $TARGET_FILE
 for file in bundle/*.min.js bundle/*.css; do gzip -k -f $file; done
 
 # zip icons
-cd bundle/assets/icons
+cd bundle/assets/icons/SVG
 zip -r -q zepicons.zip .
-mv zepicons.zip ../dist
+mv zepicons.zip ../../dist
+
+# zip sprite
+cd bundle/assets/icons/sprite
+zip -r -q zepsprite.zip .
+mv zepspritez.zip ../../dist
 
 cd ../../..
