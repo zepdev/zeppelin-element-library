@@ -11,6 +11,7 @@ const defaultPlugins = [
   }),
   babel({
     exclude: 'node_modules/**'
+    // externalHelpers: true
   }),
   json({
     // All JSON files will be parsed by default,
@@ -24,7 +25,7 @@ const defaultPlugins = [
 ];
 
 const inputOptions = {
-  input: './src/zel.js',
+  input: './src/core/zel.js',
   plugins: defaultPlugins
 };
 const outputOptions = {

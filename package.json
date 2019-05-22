@@ -1,6 +1,6 @@
 {
   "name": "zeppelin-element-library",
-  "version": "0.9.3",
+  "version": "0.10.1",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
   "main": "bundle/zeppelin-element-library.cjs.js",
   "module": "bundle/zeppelin-element-library.esm.js",
@@ -76,17 +76,21 @@
       "src/**/*.{js,jsx}",
       "!src/index.js",
       "!src/serviceWorker.js",
-      "!src/guidelines/*"
+      "!src/guidelines/*",
+      "!src/*.min.js/"
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-transform-classes": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/git": "^7.0.8",
-    "babel-preset-es2015-rollup": "^3.0.0",
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
+    "dom-testing-library": "^4.1.0",
     "husky": "^2.2.0",
     "lint-staged": "^8.1.6",
     "mdx": "^0.3.1",

@@ -73,3 +73,16 @@ When using Webpack, you can include the provided styles into a JavaScript file.
 ```javascript
 import 'zeppelin-element-library/bundle/zeppelin-element-library.css';
 ```
+
+### Initialize Script
+
+To get the JavaScript running, initialize ZEL after the DOM has loaded.
+Place the following script at the bottom of your body element.
+
+```javascript
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    ZEL.init();
+  });
+</script>
+```
