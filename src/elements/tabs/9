@@ -1,6 +1,6 @@
 // Tabs - base style
 
-// this does NOT SUPPORT IE(
+// this does NOT SUPPORT IE9
 
 @mixin tabs {
   .#{$prefix}tabs {
