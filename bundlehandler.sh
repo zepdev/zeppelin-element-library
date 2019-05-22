@@ -68,8 +68,13 @@ mv tmpfile $TARGET_FILE
 for file in bundle/*.min.js bundle/*.css; do gzip -k -f $file; done
 
 # zip icons
-cd bundle/assets/icons
+cd bundle/assets/icons/SVG
 zip -r -q zepicons.zip .
 mv zepicons.zip ../dist
+
+# zip sprite file
+cd bundle/assets/icons/sprite
+zip -r -q zepiconsSprite.zip .
+mv zepiconsSprite.zip ../dist
 
 cd ../../..
