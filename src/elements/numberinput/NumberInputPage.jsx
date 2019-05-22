@@ -1,15 +1,20 @@
 import React from 'react';
 import Icon from '../icon/Icon';
 
-function NumberInput() {
-  const themes = ['zeppelin', 'cat', 'rental'];
+function NumberInputPage() {
+  const theme = ['zeppelin', 'cat', 'rental'];
   return (
     <>
-      {themes.map(elem => (
+      {theme.map(elem => (
         <div
-          className={`theme-${elem}`}
+          key={`key-${elem}`}
+          className={`theme-${elem} zep-numberinput`}
           style={{ marginBottom: 15 }}
-          key={elem}
+          data-zep-type="number-input"
+          data-zep-init="true"
+          data-zep-min="0"
+          data-zep-max="10"
+          data-zep-step="2"
         >
           <button className="zep-button zep-button-icon">
             <Icon icon="zepicons-minus" className="zep-button__icon" />
@@ -28,4 +33,4 @@ function NumberInput() {
   );
 }
 
-export default NumberInput;
+export default NumberInputPage;

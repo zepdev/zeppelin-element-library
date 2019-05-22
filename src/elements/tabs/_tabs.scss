@@ -1,0 +1,40 @@
+// Tabs - base style
+
+@mixin tabs {
+  .#{$prefix}tabs {
+    width: 100%;
+    display: flex;
+  }
+
+  .#{$prefix}tab {
+    @include typeset('normal', 5);
+    color: map-get($colormap-base, gray-light);
+    padding: 1.5rem;
+    text-transform: capitalize;
+    border-bottom: 3px solid transparent;
+    @include themify($themes) {
+      &:hover {
+        color: map-get($colormap-base, gray-dark);
+        border-bottom: 3px solid themed('primary');
+      }
+    }
+  }
+
+  .#{$prefix}tab--small {
+    @include typeset('normal', 5);
+    color: map-get($colormap-base, gray-light);
+    padding: 1.5rem;
+    text-transform: capitalize;
+    border-bottom: 3px solid transparent;
+    @include themify($themes) {
+      &:hover {
+        color: map-get($colormap-base, gray-dark);
+        border-bottom: 3px solid themed('primary');
+      }
+    }
+  }
+}
+
+@include exports('tabs') {
+  @include tabs;
+}

@@ -2,6 +2,7 @@
 
 @mixin button {
   .#{$prefix}button {
+    position: relative;
     box-sizing: border-box;
     display: inline-block;
     border: 0;
@@ -18,6 +19,9 @@
     background-color: map-get($colormap-base, gray-lighter);
     color: map-get($colormap-base, text-gray);
     width: 3rem;
+    height: 3rem;
+    display: table-cell;
+    vertical-align: middle;
   }
 
   .#{$prefix}button-primary {
@@ -88,9 +92,6 @@
 
   .#{$prefix}button-tertiary {
     background-color: map-get($colormap-base, white);
-    display: inline-block;
-    display: flex;
-    align-items: center;
     color: map-get($colormap-base, text-gray);
 
     @include themify($themes) {
@@ -129,6 +130,25 @@
     padding: 0.25rem 1.125rem 0;
   }
 
+  // fixes v-align differences between <a> and <button>
+  a.#{$prefix}button {
+    > .#{$prefix}button__text {
+      padding-top: 0.5rem;
+    }
+
+    &.#{$prefix}button-secondary {
+      > .#{$prefix}button__text {
+        padding-top: calc(0.5rem - 2px);
+      }
+    }
+
+    &.#{$prefix}button--small {
+      > .#{$prefix}button__text {
+        padding-top: 0.6rem;
+      }
+    }
+  }
+
   .#{$prefix}button__icon {
     height: 1.375rem;
     width: 1.375rem;
@@ -137,13 +157,18 @@
   .#{$prefix}button__text--tertiary {
     @include typeset('normal', 4);
     color: map-get($colormap-base, text-gray);
-    padding: 0 0 0 0.4375rem;
-    vertical-align: middle; // for ie
+    padding: 0.25rem 0 0 0.4375rem;
+    display: inline-block;
+    margin-left: 1.375rem;
+    vertical-align: middle;
+    text-align: left;
   }
 
   .#{$prefix}button__icon--tertiary {
-    margin: 0;
-    vertical-align: middle; // for ie
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .#{$prefix}button--full {
