@@ -32,4 +32,5 @@ function NumberInputPage() {
     </>
   );
 }
+
 export default NumberInputPage;
