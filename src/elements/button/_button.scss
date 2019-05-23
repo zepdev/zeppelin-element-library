@@ -59,11 +59,12 @@
     outline: none;
     cursor: pointer;
     // split border props for IE9
-    border-top: none;
     border-left: none;
     border-right: none;
     border-bottom-width: 3px;
+    border-top-width: 3px;
     border-bottom-style: solid;
+    border-top-style: solid;
     border-color: transparent;
     //
     @include themify($themes) {
@@ -72,7 +73,7 @@
       &.#{$prefix}pagination--selected {
         color: map-get($colormap-base, gray-dark);
         background-color: map-get($colormap-base, gray-lighter);
-        border-color: themed('primary');
+        border-bottom-color: themed('primary');
       }
     }
   }
