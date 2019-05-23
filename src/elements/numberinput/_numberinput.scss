@@ -1,11 +1,11 @@
 @mixin numberinput {
+  // this is only to support ie9
   .#{$prefix}numberinput {
     > * {
       vertical-align: middle;
 
       &.#{$prefix}button-icon {
         display: inline-block;
-        vertical-align: middle;
       }
     }
   }

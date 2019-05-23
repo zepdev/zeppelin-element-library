@@ -1,0 +1,63 @@
+// Tabs - base style
+
+// this does NOT SUPPORT IE(
+
+@mixin tabs {
+  .#{$prefix}tabs {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+  }
+
+  .#{$prefix}tabs__item {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .#{$prefix}tab {
+    @include typeset('normal', 5);
+    color: map-get($colormap-base, gray-light);
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    // split border props for IE9
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-color: transparent;
+    //
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    @include themify($themes) {
+      &:hover,
+      &:focus,
+      &.#{$prefix}tab--selected {
+        color: map-get($colormap-base, gray-dark);
+        border-color: themed('primary');
+      }
+    }
+
+    > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .#{$prefix}tab--small {
+    @include typeset('normal', 4);
+    text-transform: capitalize;
+  }
+
+  .#{$prefix}tab__icon {
+    padding-right: 10px;
+  }
+}
+
+@include exports('tabs') {
+  @include tabs;
+}
