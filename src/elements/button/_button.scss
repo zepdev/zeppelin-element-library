@@ -16,12 +16,66 @@
   }
 
   .#{$prefix}button-icon {
-    background-color: map-get($colormap-base, gray-lighter);
-    color: map-get($colormap-base, text-gray);
+    background-color: map-get($colormap-base, white);
+    border: 2px solid transparent;
+    color: map-get($colormap-base, gray-light);
     width: 3rem;
     height: 3rem;
     display: table-cell;
     vertical-align: middle;
+    &:hover,
+    &:focus {
+      background-color: map-get($colormap-base, gray-lighter);
+      color: map-get($colormap-base, gray-dark);
+    }
+    &:disabled {
+      color: map-get($colormap-base, disabled);
+      background-color: map-get($colormap-base, gray-lighter);
+      cursor: not-allowed;
+      outline: 0;
+      &:hover,
+      &:focus {
+        color: map-get($colormap-base, disabled);
+        background-color: map-get($colormap-base, gray-lighter);
+        outline: 0;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .#{$prefix}button-icon--pagination {
+    margin-right: 1px;
+  }
+
+  .#{$prefix}button-pagination {
+    @include typeset('normal', 4);
+    background-color: map-get($colormap-base, white);
+    color: map-get($colormap-base, gray-light);
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1px;
+    display: table-cell;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    // split border props for IE9
+    border-left: none;
+    border-right: none;
+    border-bottom-width: 3px;
+    border-top-width: 3px;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-color: transparent;
+    //
+    @include themify($themes) {
+      &:hover,
+      &:focus,
+      &.#{$prefix}pagination--selected {
+        color: map-get($colormap-base, gray-dark);
+        background-color: map-get($colormap-base, gray-lighter);
+        border-bottom-color: themed('primary');
+      }
+    }
   }
 
   .#{$prefix}button-primary {

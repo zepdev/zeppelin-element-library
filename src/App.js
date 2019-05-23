@@ -11,6 +11,8 @@ import TablePage from './elements/table/TablePage';
 import SearchPage from './elements/search/SearchPage';
 import SelectPage from './elements/select/SelectPage';
 import TabsPage from './elements/tabs/TabsPage';
+import NotificationPage from './elements/notification/NotificationPage';
+import PaginationPage from './elements/pagination/PaginationPage';
 import './base_bundle_entry.scss';
 import './svgxuse.min.js'; // ie fallback for sprites
 
@@ -71,6 +73,8 @@ function App() {
             {content === 'search' && <SearchPage />}
             {content === 'select' && <SelectPage />}
             {content === 'tabs' && <TabsPage />}
+            {content === 'notification' && <NotificationPage />}
+            {content === 'pagination' && <PaginationPage />}
           </div>
         </div>
       </div>
