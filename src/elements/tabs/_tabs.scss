@@ -14,12 +14,22 @@
     padding: 1.5rem;
     text-transform: uppercase;
     vertical-align: middle;
+    border: none;
     border-bottom: 3px solid transparent;
+    background: transparent;
+    outline: none;
     @include themify($themes) {
       &:hover {
         color: map-get($colormap-base, gray-dark);
         border-bottom: 3px solid themed('primary');
       }
+    }
+  }
+
+  .#{$prefix}tab--selected {
+    @include themify($themes) {
+      color: map-get($colormap-base, gray-dark);
+      border-bottom: 3px solid themed('primary');
     }
   }
 
