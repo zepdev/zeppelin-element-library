@@ -77,7 +77,7 @@
       "!src/index.js",
       "!src/serviceWorker.js",
       "!src/guidelines/*",
-      "!src/*.min.js/"
+      "!src/**/*.min.js/"
     ]
   },
   "devDependencies": {

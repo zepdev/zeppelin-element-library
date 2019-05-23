@@ -5,42 +5,51 @@
 @mixin tabs {
   .#{$prefix}tabs {
     width: 100%;
-    display: flex;
+    display: table;
+    table-layout: fixed;
+  }
+
+  .#{$prefix}tabs__item {
+    display: table-cell;
+    vertical-align: middle;
   }
 
   .#{$prefix}tab {
     @include typeset('normal', 5);
     color: map-get($colormap-base, gray-light);
+    width: 100%;
     padding: 1.5rem;
+    text-align: center;
     text-transform: uppercase;
     vertical-align: middle;
-    border: none;
-    border-bottom: 3px solid transparent;
+    // split border props for IE9
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-color: transparent;
+    //
     background: transparent;
     outline: none;
+    cursor: pointer;
     @include themify($themes) {
-      &:hover {
+      &:hover,
+      &.#{$prefix}tab--selected {
         color: map-get($colormap-base, gray-dark);
-        border-bottom: 3px solid themed('primary');
+        border-color: themed('primary');
       }
     }
-  }
 
-  .#{$prefix}tab--selected {
-    @include themify($themes) {
-      color: map-get($colormap-base, gray-dark);
-      border-bottom: 3px solid themed('primary');
+    > * {
+      display: inline-block;
+      vertical-align: middle;
     }
   }
 
   .#{$prefix}tab--small {
     @include typeset('normal', 4);
     text-transform: capitalize;
-  }
-
-  .#{$prefix}tab--icon {
-    display: flex;
-    align-items: center;
   }
 
   .#{$prefix}tab__icon {
