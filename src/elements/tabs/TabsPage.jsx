@@ -7,25 +7,25 @@ function TabsPage() {
     <>
       <p>Big</p>
       {themes.map(elem => (
-        <ul
+        <div
           className={`theme-${elem} zep-tabs`}
           key={`tabs${elem}`}
           role="tablist"
           aria-label={`tabs ${elem}`}
         >
-          <li className="zep-tabs__item">
+          <div className="zep-tabs__item">
             <button
               className="zep-tab"
               role="tab"
               aria-selected="true"
               aria-controls="panel-1"
               id="tab-1"
-              tabIndex="0"
+              tabindex="0"
             >
               Tab 1
             </button>
-          </li>
-          <li className="zep-tabs__item">
+          </div>
+          <div className="zep-tabs__item">
             <button
               className="zep-tab"
               role="tab"
@@ -36,20 +36,20 @@ function TabsPage() {
             >
               Tab 2
             </button>
-          </li>
-        </ul>
+          </div>
+        </div>
       ))}
       <br />
       <p>Small</p>
       <br />
       {themes.map(elem => (
-        <ul
+        <div
           className={`theme-${elem} zep-tabs`}
           key={`tabs${elem}`}
           role="tablist"
           aria-label={`tabs ${elem}`}
         >
-          <li className="zep-tabs__item">
+          <div className="zep-tabs__item">
             <button
               className="zep-tab zep-tab--small"
               role="tab"
@@ -60,9 +60,9 @@ function TabsPage() {
             >
               Tab 1
             </button>
-          </li>
+          </div>
 
-          <li className="zep-tabs__item">
+          <div className="zep-tabs__item">
             <button
               className="zep-tab zep-tab--small"
               role="tab"
@@ -73,8 +73,8 @@ function TabsPage() {
             >
               Tab 2
             </button>
-          </li>
-          <li className="zep-tabs__item">
+          </div>
+          <div className="zep-tabs__item">
             <button
               className="zep-tab zep-tab--small"
               role="tab"
@@ -85,9 +85,9 @@ function TabsPage() {
             >
               Tab 3
             </button>
-          </li>
+          </div>
 
-          <li className="zep-tabs__item">
+          <div className="zep-tabs__item">
             <button
               className="zep-tab zep-tab--small"
               role="tab"
@@ -98,20 +98,20 @@ function TabsPage() {
             >
               Tab 4
             </button>
-          </li>
-        </ul>
+          </div>
+        </div>
       ))}
       <br />
       <p>With Icon</p>
       <br />
       {themes.map(elem => (
-        <ul
+        <div
           className={`theme-${elem} zep-tabs`}
           key={`tabs${elem}`}
           role="tablist"
           aria-label={`tabs ${elem}`}
         >
-          <li className="zep-tabs__item">
+          <div className="zep-tabs__item">
             <button
               className="zep-tab zep-tab--icon"
               role="tab"
@@ -123,9 +123,9 @@ function TabsPage() {
               <Icon icon="zepicons-calendar-range" className="zep-tab__icon" />
               Tab 1
             </button>
-          </li>
+          </div>
 
-          <li className="zep-tabs__item">
+          <div className="zep-tabs__item">
             <button
               className="zep-tab zep-tab--icon"
               role="tab"
@@ -137,9 +137,9 @@ function TabsPage() {
               <Icon icon="zepicons-calendar-range" className="zep-tab__icon" />
               Tab 2
             </button>
-          </li>
+          </div>
 
-          <li className="zep-tabs__item">
+          <div className="zep-tabs__item">
             <button
               className="zep-tab zep-tab--icon"
               role="tab"
@@ -151,8 +151,8 @@ function TabsPage() {
               <Icon icon="zepicons-calendar-range" className="zep-tab__icon" />
               Tab 3
             </button>
-          </li>
-        </ul>
+          </div>
+        </div>
       ))}
     </>
   );

@@ -35,6 +35,7 @@
     cursor: pointer;
     @include themify($themes) {
       &:hover,
+      &:focus,
       &.#{$prefix}tab--selected {
         color: map-get($colormap-base, gray-dark);
         border-color: themed('primary');
