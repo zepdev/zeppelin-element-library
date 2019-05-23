@@ -31,5 +31,11 @@ module.exports = {
   },
   select: {
     name: 'select'
+  },
+  notification: {
+    name: 'notification'
+  },
+  pagination: {
+    name: 'pagination'
   }
 };

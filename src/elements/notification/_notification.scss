@@ -1,0 +1,39 @@
+// notification - base style
+
+@mixin notification {
+  .#{$prefix}notification {
+    @include typeset('normal', 3);
+    color: map-get($colormap-base, text-gray);
+    padding: 0.625rem 1.5rem;
+    text-align: center;
+    border: 2px solid map-get($colormap-base, text-gray);
+  }
+
+  .#{$prefix}notification--danger {
+    border: 2px solid map-get($colormap-base, alert);
+    background: map-get($colormap-base, alert-lighter);
+    color: map-get($colormap-base, alert);
+  }
+
+  .#{$prefix}notification--warning {
+    border: 2px solid map-get($colormap-base, warning);
+    background: map-get($colormap-base, warning-lighter);
+    color: map-get($colormap-base, warning);
+  }
+
+  .#{$prefix}notification--success {
+    border: 2px solid map-get($colormap-base, success);
+    background: map-get($colormap-base, success-lighter);
+    color: map-get($colormap-base, success);
+  }
+
+  .#{$prefix}notification--info {
+    border: 2px solid map-get($colormap-base, info);
+    background: map-get($colormap-base, info-lighter);
+    color: map-get($colormap-base, info);
+  }
+}
+
+@include exports('notification') {
+  @include notification;
+}
