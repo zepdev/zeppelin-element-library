@@ -1,4 +1,4 @@
-/* zeppelin-element-library version 0.8.4 */
+/* zeppelin-element-library version 0.10.11 */
 var ZEL = (function () {
   'use strict';
 
@@ -92,7 +92,7 @@ var ZEL = (function () {
       this.inputHtml = this.htmlElem.querySelector('input');
       this.steps = this.htmlElem.hasAttribute('data-zep-step') ? parseInt(this.htmlElem.getAttribute('data-zep-step'), 10) : 1;
       this.minimum = this.htmlElem.hasAttribute('data-zep-min') ? parseInt(this.htmlElem.getAttribute('data-zep-min'), 10) : 0;
-      this.maximum = this.htmlElem.hasAttribute('data-zep-max') ? parseInt(this.htmlElem.getAttribute('data-zep-max'), 10) : null;
+      this.maximum = this.htmlElem.hasAttribute('data-zep-max') ? parseInt(this.htmlElem.getAttribute('data-zep-max'), 10) : 9999999999;
       this.currentNumber = this.inputHtml.value ? parseInt(this.inputHtml.value, 10) : 1;
 
       _Element.prototype.init.call(this);
@@ -196,7 +196,7 @@ var ZEL = (function () {
       // eslint-disable-next-line no-console
       console.log("ZEL - built with \u2665"); // create global event bus instance
 
-      window.eventBus = new EventBus(); // array with the elements and html nodes
+      this.eventBus = new EventBus(); // array with the elements and html nodes
 
       this.elements = [];
     }
