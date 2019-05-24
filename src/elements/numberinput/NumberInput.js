@@ -32,7 +32,7 @@ export default class NumberInput extends Element {
       : 0;
     this.maximum = this.htmlElem.hasAttribute('data-zep-max')
       ? parseInt(this.htmlElem.getAttribute('data-zep-max'), 10)
-      : null;
+      : 9999999999;
     this.currentNumber = this.inputHtml.value
       ? parseInt(this.inputHtml.value, 10)
       : 1;

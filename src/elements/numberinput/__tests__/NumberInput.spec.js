@@ -35,10 +35,10 @@ describe('standard element constructor', () => {
     expect(
       instance.inputHtml === document.querySelector('input[type="text"]')
     ).toBeTruthy();
-    expect(instance.steps === 2).toBeTruthy();
-    expect(instance.minimum === 0).toBeTruthy();
-    expect(instance.maximum === 10).toBeTruthy();
-    expect(instance.currentNumber === 1).toBeTruthy();
+    expect(instance.steps).toEqual(2);
+    expect(instance.minimum).toEqual(0);
+    expect(instance.maximum).toEqual(10);
+    expect(instance.currentNumber).toEqual(1);
   });
 
   test('element has minus and plus button', () => {
