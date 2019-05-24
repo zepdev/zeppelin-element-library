@@ -70,10 +70,10 @@ for file in bundle/*.min.js bundle/*.css; do gzip -k -f $file; done
 cd bundle/assets/icons/SVG
 zip -r -q zepicons.zip .
 mv zepicons.zip ../../dist
+cd ../../../..
 
 # zip sprite
 cd bundle/assets/icons/sprite
 zip -r -q zepsprite.zip .
-mv zepspritez.zip ../../dist
-
-cd ../../..
+mv zepsprite.zip ../../dist
+cd ../../../..
