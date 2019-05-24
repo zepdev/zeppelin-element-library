@@ -16,7 +16,7 @@
   }
 
   .#{$prefix}button-icon {
-    background-color: map-get($colormap-base, white);
+    background-color: map-get($colormap-base, gray-lighter);
     border: 2px solid transparent;
     color: map-get($colormap-base, gray-light);
     width: 3rem;
@@ -44,6 +44,7 @@
   }
 
   .#{$prefix}button-icon--pagination {
+    background-color: map-get($colormap-base, white);
     margin-right: 1px;
   }
 
