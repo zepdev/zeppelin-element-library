@@ -166,7 +166,13 @@ var ZEL = (function () {
   function () {
     // create a fake element
     function EventBus() {
-      this.bus = document.createElement('eventbus');
+      this.bus = null;
+
+      if (typeof document !== "undefined") {
+        this.bus = document.createElement('eventbus');
+      } else {
+        console.warn('EventBus could not be created');
+      }
     }
 
     var _proto = EventBus.prototype;
