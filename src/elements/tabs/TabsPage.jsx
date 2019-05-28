@@ -20,7 +20,7 @@ function TabsPage() {
               aria-selected="true"
               aria-controls="panel-1"
               id="tab-1"
-              tabindex="0"
+              tabIndex="0"
             >
               Tab 1
             </button>
