@@ -1,3 +1,62 @@
+# [0.11.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.10.0...v0.11.0) (2019-05-28)
+
+
+### Bug Fixes
+
+* **babel:** add IE9 classes compatibility plugin ([0b579a2](https://github.com/zepdev/zeppelin-element-library/commit/0b579a2))
+* **bundlehandler:** fix typo on icon sprite command ([a7a9ae0](https://github.com/zepdev/zeppelin-element-library/commit/a7a9ae0))
+* **bundlehandler:** fixed how icons are exported ([b2d06e9](https://github.com/zepdev/zeppelin-element-library/commit/b2d06e9))
+* **bundlehandler:** zip sprite files ([55d1ffb](https://github.com/zepdev/zeppelin-element-library/commit/55d1ffb))
+* **button:** fix button-icon style for numberinput background-color ([a476d14](https://github.com/zepdev/zeppelin-element-library/commit/a476d14))
+* **button:** fix vertical alignment on buttons ([67a164c](https://github.com/zepdev/zeppelin-element-library/commit/67a164c))
+* **EventBus:** add a conditional to check HTML document on construct ([d0418db](https://github.com/zepdev/zeppelin-element-library/commit/d0418db))
+* **global:** edit js class names, add missing tests ([0105c8f](https://github.com/zepdev/zeppelin-element-library/commit/0105c8f))
+* **number input:** fixed icons ([ccd7f33](https://github.com/zepdev/zeppelin-element-library/commit/ccd7f33))
+* **number-input:** Improve event listener handling ([0285451](https://github.com/zepdev/zeppelin-element-library/commit/0285451))
+* **numberinput:** fix vertical alignment ([63ea095](https://github.com/zepdev/zeppelin-element-library/commit/63ea095))
+* **numberInput:** fix max value behavior on init if missing ([c6d4c39](https://github.com/zepdev/zeppelin-element-library/commit/c6d4c39))
+* **pagination:** fixed alignment of pagination numbers ([43b80d4](https://github.com/zepdev/zeppelin-element-library/commit/43b80d4))
+* **sonar:** Add missing sonar organization argument ([502efbd](https://github.com/zepdev/zeppelin-element-library/commit/502efbd))
+* **style:** fix css bug detected by sonarcloud ([764271f](https://github.com/zepdev/zeppelin-element-library/commit/764271f))
+* **svg:** fixed svg sprites ([555af91](https://github.com/zepdev/zeppelin-element-library/commit/555af91))
+* **test:** fix mock object on zel.js test ([f5d4758](https://github.com/zepdev/zeppelin-element-library/commit/f5d4758))
+* **test:** fix name of class import ([e7fd6f3](https://github.com/zepdev/zeppelin-element-library/commit/e7fd6f3))
+
+
+### Features
+
+* **core:** add js core classes ([dd61ef8](https://github.com/zepdev/zeppelin-element-library/commit/dd61ef8))
+* **core:** Add tests for numberinput and constructor ([16825c4](https://github.com/zepdev/zeppelin-element-library/commit/16825c4))
+* **core:** Refactoring and tests ([a5b2d89](https://github.com/zepdev/zeppelin-element-library/commit/a5b2d89))
+* **core:** WIP javascript integration - create basis ([d6cf486](https://github.com/zepdev/zeppelin-element-library/commit/d6cf486))
+* **notification,pagination:** new components addded ([8aecea7](https://github.com/zepdev/zeppelin-element-library/commit/8aecea7))
+* **tabs:** initial set up ([0150042](https://github.com/zepdev/zeppelin-element-library/commit/0150042))
+
+# [0.10.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.9.0...v0.10.0) (2019-05-16)
+
+
+### Bug Fixes
+
+* **assets:** Add back sketch file to library ([d09b753](https://github.com/zepdev/zeppelin-element-library/commit/d09b753))
+* **button:** updated disabled style ([487f99e](https://github.com/zepdev/zeppelin-element-library/commit/487f99e))
+* **checkbox:** fix IE9 layout ([4cf2cd6](https://github.com/zepdev/zeppelin-element-library/commit/4cf2cd6))
+* **checkbox, icon button, tag:** font icon replaced with svg sprite ([d5b19f9](https://github.com/zepdev/zeppelin-element-library/commit/d5b19f9))
+* **react-scripts:** update to newest version of zepdev-react-scripts ([e0d2235](https://github.com/zepdev/zeppelin-element-library/commit/e0d2235))
+* **search:** active state styling changed ([c4d20e4](https://github.com/zepdev/zeppelin-element-library/commit/c4d20e4))
+* **search:** naming follows bem conventions ([47f3284](https://github.com/zepdev/zeppelin-element-library/commit/47f3284))
+* **search:** remove search from homepage ([bb517a2](https://github.com/zepdev/zeppelin-element-library/commit/bb517a2))
+* **select:** rename list__item to BEM listitem ([40bb4d4](https://github.com/zepdev/zeppelin-element-library/commit/40bb4d4))
+* **sidebar:** sidebar searches by key name not title name ([4427699](https://github.com/zepdev/zeppelin-element-library/commit/4427699))
+* **table:** table cell algin middle ([70b3538](https://github.com/zepdev/zeppelin-element-library/commit/70b3538))
+* **typo prop:** removed invalid prop that was a typo ([597b879](https://github.com/zepdev/zeppelin-element-library/commit/597b879))
+
+
+### Features
+
+* **search:** styles added for search ([19cb2e0](https://github.com/zepdev/zeppelin-element-library/commit/19cb2e0))
+* **select:** set up select ([5c2a9b1](https://github.com/zepdev/zeppelin-element-library/commit/5c2a9b1))
+* **table:** created a table element and styling ([cd4ea36](https://github.com/zepdev/zeppelin-element-library/commit/cd4ea36))
+
 # [0.9.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.8.0...v0.9.0) (2019-05-09)
 
 

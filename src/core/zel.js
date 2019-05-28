@@ -8,7 +8,7 @@ class ZEL {
     console.log(`ZEL - built with ♥`);
 
     // create global event bus instance
-    window.eventBus = new EventBus();
+    this.eventBus = new EventBus();
 
     // array with the elements and html nodes
     this.elements = [];

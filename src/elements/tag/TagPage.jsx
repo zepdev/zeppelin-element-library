@@ -7,19 +7,28 @@ function TagPage() {
       <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
         <span role="button" className="zep-tag">
           Tag
-          <Icon icon="zepicons-close" />
+          <button
+            className="zep-tag__button"
+            onClick={() => console.log('test')}
+          >
+            <Icon icon="zepicons-close" className="zep-tag__icon" />
+          </button>
         </span>
       </div>
       <div className="theme-cat" style={{ marginBottom: 15 }}>
         <span role="button" className="zep-tag">
           Tag
-          <Icon icon="zepicons-close" />
+          <button className="zep-tag__button">
+            <Icon icon="zepicons-close" className="zep-tag__icon" />
+          </button>
         </span>
       </div>
       <div className="theme-rental" style={{ marginBottom: 15 }}>
         <span role="button" className="zep-tag">
           Tag
-          <Icon icon="zepicons-close" />
+          <button className="zep-tag__button">
+            <Icon icon="zepicons-close" className="zep-tag__icon" />
+          </button>
         </span>
       </div>
     </>

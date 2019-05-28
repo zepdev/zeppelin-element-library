@@ -15,16 +15,22 @@
         background-color: themed('tagHover');
       }
     }
-    img,
-    i,
-    svg {
-      width: 12px;
-      height: 12px;
-      margin-left: 0.625rem;
-      cursor: pointer;
-      @include themify($themes) {
-        color: themed('primary');
-      }
+  }
+  .#{$prefix}tag__button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0;
+    background: transparent;
+  }
+
+  .#{$prefix}tag__icon {
+    width: 12px;
+    height: 12px;
+    margin-left: 0.625rem;
+    cursor: pointer;
+    @include themify($themes) {
+      color: themed('primary');
     }
   }
 }
