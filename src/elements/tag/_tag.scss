@@ -12,7 +12,13 @@
       &:hover,
       &:focus,
       &.#{$prefix}tag--hover {
-        background-color: themed('tagHover');
+        background-color: themed('secondary');
+        color: themed('buttonTextSecondaryHover');
+        border-color: themed('buttonBorderSecondaryHover');
+
+        .#{$prefix}tag__icon {
+          color: themed('buttonTextSecondaryHover');
+        }
       }
     }
   }
