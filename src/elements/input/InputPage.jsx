@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Input() {
+function InputPage() {
   const themes = ['zeppelin', 'cat', 'rental'];
   return (
     <>
@@ -28,4 +28,4 @@ function Input() {
   );
 }
 
-export default Input;
+export default InputPage;

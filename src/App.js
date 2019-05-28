@@ -10,6 +10,9 @@ import RadioPage from './elements/radio/RadioPage';
 import TablePage from './elements/table/TablePage';
 import SearchPage from './elements/search/SearchPage';
 import SelectPage from './elements/select/SelectPage';
+import TabsPage from './elements/tabs/TabsPage';
+import NotificationPage from './elements/notification/NotificationPage';
+import PaginationPage from './elements/pagination/PaginationPage';
 import './base_bundle_entry.scss';
 import './svgxuse.min.js'; // ie fallback for sprites
 
@@ -57,11 +60,9 @@ function App() {
             style={{ paddingTop: 45, paddingBottom: 75 }}
           >
             {content === 'welcome' && (
-              // <p>Welcome to the Zeppelin Element Library</p>
-              <SelectPage />
+              <p>Welcome to the Zeppelin Element Library</p>
             )}
             {content === 'button' && <ButtonPage />}
-            {content === 'tabs' && <p>This element is not ready</p>}
             {content === 'tag' && <TagPage />}
             {content === 'checkbox' && <CheckboxPage />}
             {content === 'input' && <InputPage />}
@@ -71,6 +72,9 @@ function App() {
             {content === 'table' && <TablePage />}
             {content === 'search' && <SearchPage />}
             {content === 'select' && <SelectPage />}
+            {content === 'tabs' && <TabsPage />}
+            {content === 'notification' && <NotificationPage />}
+            {content === 'pagination' && <PaginationPage />}
           </div>
         </div>
       </div>

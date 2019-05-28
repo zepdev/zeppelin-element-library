@@ -1,0 +1,18 @@
+// pagination - base style
+
+@mixin pagination {
+  .#{$prefix}pagination {
+    > * {
+      margin-right: 1px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  // all other pagination styles are in the button file
+  // zep-button-pagination
+}
+
+@include exports('pagination') {
+  @include pagination;
+}

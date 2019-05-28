@@ -1,6 +1,6 @@
 import React from 'react';
 
-function List() {
+function ListPage() {
   return (
     <>
       <ul className="zep-list" style={{ marginBottom: 30 }}>
@@ -15,4 +15,4 @@ function List() {
   );
 }
 
-export default List;
+export default ListPage;
