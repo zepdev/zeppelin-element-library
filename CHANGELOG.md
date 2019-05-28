@@ -1,3 +1,28 @@
+# [0.10.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.9.0...v0.10.0) (2019-05-16)
+
+
+### Bug Fixes
+
+* **assets:** Add back sketch file to library ([d09b753](https://github.com/zepdev/zeppelin-element-library/commit/d09b753))
+* **button:** updated disabled style ([487f99e](https://github.com/zepdev/zeppelin-element-library/commit/487f99e))
+* **checkbox:** fix IE9 layout ([4cf2cd6](https://github.com/zepdev/zeppelin-element-library/commit/4cf2cd6))
+* **checkbox, icon button, tag:** font icon replaced with svg sprite ([d5b19f9](https://github.com/zepdev/zeppelin-element-library/commit/d5b19f9))
+* **react-scripts:** update to newest version of zepdev-react-scripts ([e0d2235](https://github.com/zepdev/zeppelin-element-library/commit/e0d2235))
+* **search:** active state styling changed ([c4d20e4](https://github.com/zepdev/zeppelin-element-library/commit/c4d20e4))
+* **search:** naming follows bem conventions ([47f3284](https://github.com/zepdev/zeppelin-element-library/commit/47f3284))
+* **search:** remove search from homepage ([bb517a2](https://github.com/zepdev/zeppelin-element-library/commit/bb517a2))
+* **select:** rename list__item to BEM listitem ([40bb4d4](https://github.com/zepdev/zeppelin-element-library/commit/40bb4d4))
+* **sidebar:** sidebar searches by key name not title name ([4427699](https://github.com/zepdev/zeppelin-element-library/commit/4427699))
+* **table:** table cell algin middle ([70b3538](https://github.com/zepdev/zeppelin-element-library/commit/70b3538))
+* **typo prop:** removed invalid prop that was a typo ([597b879](https://github.com/zepdev/zeppelin-element-library/commit/597b879))
+
+
+### Features
+
+* **search:** styles added for search ([19cb2e0](https://github.com/zepdev/zeppelin-element-library/commit/19cb2e0))
+* **select:** set up select ([5c2a9b1](https://github.com/zepdev/zeppelin-element-library/commit/5c2a9b1))
+* **table:** created a table element and styling ([cd4ea36](https://github.com/zepdev/zeppelin-element-library/commit/cd4ea36))
+
 # [0.9.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.8.0...v0.9.0) (2019-05-09)
 
 
