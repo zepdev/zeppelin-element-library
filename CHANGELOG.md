@@ -1,3 +1,10 @@
+## [0.11.1](https://github.com/zepdev/zeppelin-element-library/compare/v0.11.0...v0.11.1) (2019-05-29)
+
+
+### Bug Fixes
+
+* **tag:** add button to tag ([34bb793](https://github.com/zepdev/zeppelin-element-library/commit/34bb793))
+
 # [0.11.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.10.0...v0.11.0) (2019-05-28)
 
 
