@@ -25,11 +25,11 @@
     padding-left: 0;
   }
 
-  .#{$prefix}form-container {
+  .#{$prefix}input-container {
     position: relative;
   }
 
-  .#{$prefix}form-container__label {
+  .#{$prefix}input-container__label {
     @include typeset('normal', 1);
     position: absolute;
     display: inline-block;
@@ -40,7 +40,7 @@
     top: -0.5rem;
   }
 
-  .#{$prefix}input:placeholder-shown + .#{$prefix}form-container__label {
+  .#{$prefix}input:placeholder-shown + .#{$prefix}input-container__label {
     cursor: text;
     max-width: 66.66%;
     white-space: nowrap;
@@ -52,17 +52,34 @@
     color: map-get($colormap-base, gray-light);
   }
 
-  .#{$prefix}input:not(:placeholder-shown) + .#{$prefix}form-container__label,
-  .#{$prefix}input:focus + .#{$prefix}form-container__label {
+  .#{$prefix}input:not(:placeholder-shown) + .#{$prefix}input-container__label,
+  .#{$prefix}input:focus + .#{$prefix}input-container__label {
     top: -0.5rem;
     transform: scale(1);
     cursor: pointer;
   }
 
   .#{$prefix}input,
-  .#{$prefix}form-container__label {
+  .#{$prefix}input-container__label {
     transition: all 0.2s;
     touch-action: manipulation;
+  }
+
+  .#{$prefix}input-container__feedback {
+    display: none;
+    @include typeset('normal', 1);
+    padding-top: 0.3125rem;
+  }
+
+  .#{$prefix}input-container--error {
+    .#{$prefix}input {
+      border-color: map-get($colormap-base, alert);
+    }
+
+    .#{$prefix}input-container__feedback {
+      display: inline-block;
+      color: map-get($colormap-base, alert);
+    }
   }
 }
 
