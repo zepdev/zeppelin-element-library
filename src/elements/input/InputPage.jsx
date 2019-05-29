@@ -6,7 +6,7 @@ function InputPage() {
     <>
       {themes.map(elem => (
         <div
-          className={`theme-${elem} zep-form-container`}
+          className={`theme-${elem} zep-input-container`}
           style={{ marginBottom: 15 }}
           key={elem}
         >
@@ -15,15 +15,47 @@ function InputPage() {
             className="zep-input"
             placeholder={'Placeholder'}
             id={`input-${elem}`}
+            name={`input-${elem}`}
           />
           <label
-            className="zep-form-container__label"
+            className="zep-input-container__feedback"
+            htmlFor={`input-${elem}`}
+          >
+            Your Feedback here
+          </label>
+          <label
+            className="zep-input-container__label"
             htmlFor={`input-${elem}`}
           >
             Input {elem}
           </label>
         </div>
       ))}
+
+      <div
+        className={`theme-zeppelin zep-input-container zep-input-container--error`}
+        style={{ marginBottom: 15 }}
+      >
+        <input
+          type="text"
+          className="zep-input"
+          placeholder={'Placeholder'}
+          id={`input-error-example`}
+          name={`input-error-example`}
+        />
+        <label
+          className="zep-input-container__feedback"
+          htmlFor={`input-error-example`}
+        >
+          Your feedback here
+        </label>
+        <label
+          className="zep-input-container__label"
+          htmlFor={`input-error-example`}
+        >
+          Input Error Example
+        </label>
+      </div>
     </>
   );
 }
