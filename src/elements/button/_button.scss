@@ -19,6 +19,7 @@
     background-color: map-get($colormap-base, gray-lighter);
     border: 2px solid transparent;
     color: map-get($colormap-base, gray-light);
+    fill: map-get($colormap-base, gray-light);
     width: 3rem;
     height: 3rem;
     display: table-cell;
@@ -27,15 +28,18 @@
     &:focus {
       background-color: map-get($colormap-base, gray-lighter);
       color: map-get($colormap-base, gray-dark);
+      fill: map-get($colormap-base, gray-dark);
     }
     &:disabled {
       color: map-get($colormap-base, disabled);
+      fill: map-get($colormap-base, disabled);
       background-color: map-get($colormap-base, gray-lighter);
       cursor: not-allowed;
       outline: 0;
       &:hover,
       &:focus {
         color: map-get($colormap-base, disabled);
+        fill: map-get($colormap-base, disabled);
         background-color: map-get($colormap-base, gray-lighter);
         outline: 0;
         box-shadow: none;
@@ -52,6 +56,7 @@
     @include typeset('normal', 4);
     background-color: map-get($colormap-base, white);
     color: map-get($colormap-base, gray-light);
+    fill: map-get($colormap-base, gray-light);
     width: 3rem;
     height: 3rem;
     margin-right: 1px;
@@ -73,6 +78,7 @@
       &:focus,
       &.#{$prefix}pagination--selected {
         color: map-get($colormap-base, gray-dark);
+        fill: map-get($colormap-base, gray-dark);
         background-color: map-get($colormap-base, gray-lighter);
         border-bottom-color: themed('primary');
       }
@@ -82,6 +88,7 @@
   .#{$prefix}button-primary {
     @include themify($themes) {
       color: themed('buttonText');
+      fill: themed('buttonText');
       background-color: themed('primary');
 
       &:hover,
@@ -94,6 +101,7 @@
     &:disabled,
     &.#{$prefix}button-primary--disabled {
       color: map-get($colormap-base, disabled);
+      fill: map-get($colormap-base, disabled);
       background-color: map-get($colormap-base, gray-lighter);
       cursor: not-allowed;
       outline: 0;
@@ -102,6 +110,7 @@
       &:focus,
       &.#{$prefix}button-primary--hover {
         color: map-get($colormap-base, disabled);
+        fill: map-get($colormap-base, disabled);
         background-color: map-get($colormap-base, gray-lighter);
         outline: 0;
         box-shadow: none;
@@ -111,6 +120,7 @@
 
   .#{$prefix}button-secondary {
     color: map-get($colormap-base, black);
+    fill: map-get($colormap-base, black);
     background-color: map-get($colormap-base, white);
     border: 2px solid;
 
@@ -122,12 +132,14 @@
         background-color: themed('secondary');
         border-color: themed('buttonBorderSecondaryHover');
         color: themed('buttonTextSecondaryHover');
+        fill: themed('buttonTextSecondaryHover');
       }
     }
 
     &:disabled,
     &.#{$prefix}button-secondary--disabled {
       color: map-get($colormap-base, gray-lighter);
+      fill: map-get($colormap-base, gray-lighter);
       background-color: map-get($colormap-base, white);
       border-color: map-get($colormap-base, gray-lighter);
       cursor: not-allowed;
@@ -137,6 +149,7 @@
       &:focus,
       &.#{$prefix}button-secondary--hover {
         color: map-get($colormap-base, gray-lighter);
+        fill: map-get($colormap-base, gray-lighter);
         background-color: map-get($colormap-base, white);
         border-color: map-get($colormap-base, gray-lighter);
         outline: 0;
@@ -145,15 +158,27 @@
     }
   }
 
+  .#{$prefix}button--small {
+    height: 2.5rem;
+    min-height: 2.5rem;
+    .#{$prefix}button__text {
+      @include typeset('special', 3);
+      display: inline-block;
+      padding: 0.25rem 1.125rem 0;
+    }
+  }
+
   .#{$prefix}button-tertiary {
     background-color: map-get($colormap-base, white);
     color: map-get($colormap-base, text-gray);
+    fill: map-get($colormap-base, text-gray);
 
     @include themify($themes) {
       &:hover,
       &:focus,
       &.#{$prefix}button-tertiary--hover {
         color: themed('primary');
+        fill: themed('primary');
       }
     }
 
@@ -166,6 +191,7 @@
     &:disabled,
     &.#{$prefix}button-secondary--disabled {
       color: map-get($colormap-base, gray-lighter);
+      fill: map-get($colormap-base, gray-lighter);
       outline: 0;
       cursor: not-allowed;
       &:hover,
@@ -173,6 +199,7 @@
       &.#{$prefix}button-tertiary--hover,
       .#{$prefix}button__text--tertiary {
         color: map-get($colormap-base, gray-lighter);
+        fill: map-get($colormap-base, gray-lighter);
         outline: 0;
         box-shadow: none;
       }
@@ -229,15 +256,6 @@
   .#{$prefix}button--full {
     display: block;
     width: 100%;
-  }
-
-  .#{$prefix}button--small {
-    min-height: 2.5rem;
-    .#{$prefix}button__text {
-      @include typeset('special', 3);
-      display: inline-block;
-      padding: 0.25rem 1.125rem 0;
-    }
   }
 }
 
