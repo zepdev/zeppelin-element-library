@@ -17,6 +17,7 @@
   .#{$prefix}tab {
     @include typeset('normal', 5);
     color: map-get($colormap-base, gray-light);
+    fill: map-get($colormap-base, gray-light);
     width: 100%;
     padding: 1.5rem;
     text-align: center;
@@ -38,6 +39,7 @@
       &:focus,
       &.#{$prefix}tab--selected {
         color: map-get($colormap-base, gray-dark);
+        fill: map-get($colormap-base, gray-dark);
         border-color: themed('primary');
       }
     }
