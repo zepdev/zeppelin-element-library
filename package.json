@@ -90,7 +90,6 @@
     "@semantic-release/git": "^7.0.16",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
-    "dom-testing-library": "^5.0.0",
     "husky": "^3.0.3",
     "lint-staged": "^9.2.1",
     "mdx": "^0.3.1",
@@ -113,5 +112,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "@testing-library/dom": "^6.0.0"
   }
 }
