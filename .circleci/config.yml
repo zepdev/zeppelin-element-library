@@ -58,6 +58,9 @@ jobs:
           at: ~/project
       - node/with-cache:
           steps:
+            - install:
+                name: install build dir
+                command: yarn
             - run:
                 name: Build build dir
                 command: yarn build
