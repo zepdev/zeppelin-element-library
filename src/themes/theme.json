@@ -429,6 +429,58 @@
         "hsb": null
       }
     },
+    "corporate": {
+      "sand": {
+        "name": "sand",
+        "hex": "#e9cea4",
+        "rgb": "234/206/164",
+        "hsb": null
+      },
+      "steel": {
+        "name": "steel",
+        "hex": "#4e8095",
+        "rgb": "79/128/150",
+        "hsb": null
+      }
+    },
+    "corporateSecondary": {
+      "yellow": {
+        "name": "yellow",
+        "hex": "#FFE72D",
+        "rgb": "255/231/45",
+        "hsb": null
+      },
+      "orange": {
+        "name": "orange",
+        "hex": "#FBBA00",
+        "rgb": "251/186/0",
+        "hsb": null
+      },
+      "red": {
+        "name": "red",
+        "hex": "#DD686A",
+        "rgb": "221/104/106",
+        "hsb": null
+      },
+      "greenLight": {
+        "name": "green-lighter",
+        "hex": "#94C11C",
+        "rgb": "148/193/28",
+        "hsb": null
+      },
+      "greenDark": {
+        "name": "green-dark",
+        "hex": "#00A760",
+        "rgb": "0/167/96",
+        "hsb": null
+      },
+      "gray": {
+        "name": "gray",
+        "hex": "#C8D3D9",
+        "rgb": "200/211/217",
+        "hsb": null
+      }
+    },
     "socialMedia": {
       "xing": {
         "name": "xing",

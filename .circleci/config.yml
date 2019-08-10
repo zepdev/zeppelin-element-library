@@ -16,7 +16,7 @@ jobs:
       - attach_workspace:
           at: ~/project
       - node/with-cache:
-          cache-version: v3
+          cache-version: v5
           steps:
             - run:
                 name: Yarn install
