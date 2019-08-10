@@ -14,7 +14,7 @@ import TabsPage from './elements/tabs/TabsPage';
 import NotificationPage from './elements/notification/NotificationPage';
 import PaginationPage from './elements/pagination/PaginationPage';
 import './base_bundle_entry.scss';
-import './svgxuse.min.js'; // ie fallback for sprites
+import './svgxuse.min.js'; // ie 9 fallback for svg sprites
 
 function App() {
   const [content, setContent] = useState('welcome');

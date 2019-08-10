@@ -1,5 +1,5 @@
 import NumberInput from '../NumberInput.js';
-import { fireEvent } from 'dom-testing-library';
+import { fireEvent } from '@testing-library/dom';
 
 describe('standard element constructor', () => {
   const mockElementBase = `<div class="theme-rental" data-zep-type="number-input" data-zep-init="true" data-zep-min="0" data-zep-max="10"

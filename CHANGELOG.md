@@ -1,3 +1,18 @@
+## [0.11.4](https://github.com/zepdev/zeppelin-element-library/compare/v0.11.3...v0.11.4) (2019-05-31)
+
+
+### Bug Fixes
+
+* **comments:** Fix semantic release ([9d91fc6](https://github.com/zepdev/zeppelin-element-library/commit/9d91fc6))
+
+## [0.11.3](https://github.com/zepdev/zeppelin-element-library/compare/v0.11.2...v0.11.3) (2019-05-31)
+
+
+### Bug Fixes
+
+* **svg:** add fill to colors for svg ([137374d](https://github.com/zepdev/zeppelin-element-library/commit/137374d))
+* **svg:** modify circleci to upload icons folder ([6594610](https://github.com/zepdev/zeppelin-element-library/commit/6594610))
+
 ## [0.11.2](https://github.com/zepdev/zeppelin-element-library/compare/v0.11.1...v0.11.2) (2019-05-29)
 
 
