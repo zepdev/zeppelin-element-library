@@ -3,8 +3,8 @@ $themes: (
     primary: map-get($colormap-base, indigo-blue),
     hover: map-get($colormap-base, indigo-blue-lighter),
     secondary: map-get($colormap-base, indigo-blue),
-    buttonText: map-get($colormap-base, white),
-    buttonTextSecondaryHover: map-get($colormap-base, white),
+    buttonText: rgba(255, 255, 255, 0.84),
+    buttonTextSecondaryHover: rgba(255, 255, 255, 0.84),
     buttonBorderSecondaryHover: map-get($colormap-base, indigo-blue),
     tagHover: map-get($colormap-base, indigo-blue-lighter)
   ),
@@ -12,8 +12,8 @@ $themes: (
     primary: map-get($colormap-base, cat-yellow),
     hover: map-get($colormap-base, cat-yellow-lighter),
     secondary: map-get($colormap-base, cat-yellow-lightest),
-    buttonText: map-get($colormap-base, black),
-    buttonTextSecondaryHover: map-get($colormap-base, black),
+    buttonText: rgba(0, 0, 0, 0.72),
+    buttonTextSecondaryHover: rgba(0, 0, 0, 0.72),
     buttonBorderSecondaryHover: map-get($colormap-base, cat-yellow),
     tagHover: map-get($colormap-base, cat-yellow-lightest)
   ),
@@ -21,8 +21,8 @@ $themes: (
     primary: map-get($colormap-base, rental-red),
     hover: map-get($colormap-base, cat-yellow),
     secondary: map-get($colormap-base, cat-yellow-lightest),
-    buttonText: map-get($colormap-base, white),
-    buttonTextSecondaryHover: map-get($colormap-base, black),
+    buttonText: rgba(255, 255, 255, 0.84),
+    buttonTextSecondaryHover: rgba(255, 255, 255, 0.84),
     buttonBorderSecondaryHover: map-get($colormap-base, cat-yellow),
     tagHover: map-get($colormap-base, cat-yellow-lightest)
   )

@@ -6,7 +6,7 @@ function ButtonPage() {
   const theme = ['zeppelin', 'cat', 'rental'];
   return (
     <>
-      <p>Primary - Large</p>
+      <p className="zep-typo--normal-body1">Primary - Large</p>
       {theme.map(elem => (
         <div
           className={`theme-${elem}`}

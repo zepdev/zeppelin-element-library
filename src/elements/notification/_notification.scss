@@ -2,7 +2,7 @@
 
 @mixin notification {
   .#{$prefix}notification {
-    @include typeset('normal', 3);
+    @extend %typo-normal-body1;
     color: map-get($colormap-base, text-gray);
     padding: 0.625rem 1.5rem;
     text-align: center;

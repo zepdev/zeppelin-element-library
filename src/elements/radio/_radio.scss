@@ -2,7 +2,7 @@
 
 @mixin radio {
   .#{$prefix}radio {
-    @include typeset('normal', 3);
+    @extend %typo-normal-body1;
     display: block;
     position: relative;
     padding-left: 2.125rem;

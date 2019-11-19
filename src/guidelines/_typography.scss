@@ -1,101 +1,164 @@
 @mixin typo(
   $_font-size,
-  $_font-family,
-  $_text-transform: none,
-  $_font-weight: 400,
-  $_line-height: 1.5,
-  $_font-size-base: $global-font-size,
-  $_margin: 0
+  $_font-weight,
+  $_line-height,
+  $_text-transform,
+  $_letter-spacing,
+  $_font-size-base: $global-font-size
 ) {
-  font-family: $_font-family;
   font-size: $_font-size;
   font-weight: $_font-weight;
   line-height: $_line-height;
   text-transform: $_text-transform;
-  margin: $_margin;
+  letter-spacing: $_letter-spacing;
+  font-family: 'Roboto', sans-serif;
 }
 
-// create typo templates 'display sizes'
-$typo-display-fontsize-list: (3.5rem, 4.5rem, 5.5rem, 6rem);
+// DISPLAY
+$typo-display-fontsize-list: (5rem, 4rem, 3rem, 2.25rem, 1.5rem, 0.875rem);
+$typo-display-lineheight-list: (5.5rem, 4.5rem, 3.5rem, 2.75rem, 2rem, 1.25rem);
+$typo-display-letterspacing-list: (0.6px, 0.6px, 0.6px, 0.6px, 1px, 1px);
 
 @for $i from 1 through (length($typo-display-fontsize-list)) {
   %typo-display-#{$i} {
-    @include typo(nth($typo-display-fontsize-list, $i), 'Teko');
+    @include typo(
+      nth($typo-display-fontsize-list, $i),
+      700,
+      nth($typo-display-lineheight-list, $i),
+      uppercase,
+      nth($typo-display-letterspacing-list, $i)
+    );
   }
-
-  // test
   .#{$prefix}typo--display-#{$i} {
     @extend %typo-display-#{$i};
+    color: rgba(0, 0, 0, 0.72);
+  }
+  .#{$prefix}typo--display-#{$i}-inverse {
+    @extend %typo-display-#{$i};
+    color: rgba(255, 255, 255, 0.84);
   }
 }
 
-// create typo templates 'normal sizes'
-$typo-normal-fontsize-list: (
-  0.75rem,
-  0.875rem,
-  1rem,
-  1.25rem,
-  1.5rem,
-  1.75rem,
-  2.25rem,
-  2.5rem
+// NORMAL
+$typo-normal-names: (
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  body1,
+  body2,
+  caption,
+  button1,
+  button2
 );
+$typo-bold-names: (h1, h2, h3, h4, h5, h6, body1, body2, caption);
+$typo-normal-fontsize-list: (
+  2.5rem,
+  2.25rem,
+  1.75rem,
+  1.5rem,
+  1.25rem,
+  1.125rem,
+  1rem,
+  0.875rem,
+  0.75rem,
+  0.9375rem,
+  1rem
+);
+$typo-normal-lineheight-list: (
+  3.75rem,
+  3.25rem,
+  2.5rem,
+  2.25rem,
+  2rem,
+  1.75rem,
+  1.75rem,
+  1.5rem,
+  1.25rem,
+  1.25rem,
+  1.25rem
+);
+$typo-normal-letterspacing-list: (
+  0.4px,
+  0.4px,
+  0.4px,
+  0px,
+  0px,
+  0px,
+  0px,
+  0px,
+  0px,
+  1.25px,
+  0.75px
+);
+$typo-normal-fontweight-list: (
+  300,
+  300,
+  300,
+  400,
+  400,
+  400,
+  400,
+  400,
+  400,
+  500,
+  500
+);
+$typo-normal-texttransform-list: (
+  none,
+  none,
+  none,
+  none,
+  none,
+  none,
+  none,
+  none,
+  none,
+  uppercase,
+  none
+);
+$typo-bold-fontweight-list: (500, 500, 500, 700, 700, 700, 700, 700, 700);
 
-@for $i from 1 through (length($typo-normal-fontsize-list)) {
-  %typo-normal-#{$i} {
-    $_font-size: nth($typo-normal-fontsize-list, $i);
-    $_font-family: if(strip-unit($_font-size) <= 1, 'Roboto', 'Teko');
-    @include typo($_font-size, $_font-family);
-  }
-
-  // dev dummy - TODO: remove for production
-  .#{$prefix}typo--normal-#{$i} {
-    @extend %typo-normal-#{$i};
-  }
-}
-
-// create typo templates 'special sizes'
-$typo-special-fontsize-list: (0.75rem, 0.875rem, 1rem, 1.5rem);
-
-@for $i from 1 through (length($typo-special-fontsize-list)) {
-  %typo-special-#{$i} {
-    $_font-size: nth($typo-special-fontsize-list, $i);
-    $_font-family: if(strip-unit($_font-size) < 1, 'Roboto', 'Teko');
-    @include typo($_font-size, $_font-family, uppercase);
-  }
-
-  // dev dummy - TODO: remove for production
-  .#{$prefix}typo--special-#{$i} {
-    @extend %typo-special-#{$i};
-  }
-}
-
-/// @param {String} $type - display / normal / special
-/// @param {int} $id - typeset id (gets the correct fontsize from list)
-///
-@mixin typeset($type, $id) {
-  $type-map: (
-    'display': $typo-display-fontsize-list,
-    'normal': $typo-normal-fontsize-list,
-    'special': $typo-special-fontsize-list
-  );
-  $list: map-get($type-map, $type);
-  $list-length: length($list);
-  @if is-int($id) and $id <= $list-length {
-    $_font-size: nth($list, $id);
-    $_font-family: if(
-      $type == 'display',
-      'Teko',
-      if(
-        $type == 'special',
-        if(strip-unit($_font-size) < 1, 'Roboto', 'Teko'),
-        if(strip-unit($_font-size) <= 1, 'Roboto', 'Teko')
-      )
+@for $i from 1 through (length($typo-normal-names)) {
+  %typo-normal-#{nth($typo-normal-names, $i)} {
+    @include typo(
+      nth($typo-normal-fontsize-list, $i),
+      nth($typo-normal-fontweight-list, $i),
+      nth($typo-normal-lineheight-list, $i),
+      nth($typo-normal-texttransform-list, $i),
+      nth($typo-normal-letterspacing-list, $i)
     );
-    $_text-transform: if($type == 'special', uppercase, none);
+  }
+  .#{$prefix}typo--normal-#{nth($typo-normal-names, $i)} {
+    @extend %typo-normal-#{nth($typo-normal-names, $i)};
+    color: rgba(0, 0, 0, 0.72);
+    // color: orange;
+  }
+  .#{$prefix}typo--normal-#{nth($typo-normal-names, $i)}-inverse {
+    @extend %typo-normal-#{nth($typo-normal-names, $i)};
+    color: rgba(255, 255, 255, 0.84);
+  }
+}
 
-    @include typo($_font-size, $_font-family, $_text-transform);
-  } @else {
-    @error "Sorry, but #{$id} is not a valid value for $id, max-value is #{$list-length}";
+// bold subset of normal
+@for $i from 1 through (length($typo-bold-names)) {
+  %typo-bold-#{nth($typo-normal-names, $i)} {
+    @include typo(
+      nth($typo-normal-fontsize-list, $i),
+      nth($typo-bold-fontweight-list, $i),
+      nth($typo-normal-lineheight-list, $i),
+      'none',
+      nth($typo-normal-letterspacing-list, $i)
+    );
+  }
+  .#{$prefix}typo--bold-#{nth($typo-normal-names, $i)} {
+    @extend %typo-bold-#{nth($typo-normal-names, $i)};
+    color: rgba(0, 0, 0, 0.72);
+  }
+  .#{$prefix}typo--bold-#{nth($typo-normal-names, $i)}-inverse {
+    @extend %typo-bold-#{nth($typo-normal-names, $i)};
+    color: rgba(255, 255, 255, 0.84);
   }
 }
