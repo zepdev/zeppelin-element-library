@@ -2,12 +2,13 @@
 
 @mixin tag {
   .#{$prefix}tag {
+    @extend %typo-normal-body1;
     box-sizing: border-box;
     display: inline-block;
-    padding: 0.625rem;
+    padding: 0.125rem 0.5rem;
     background-color: map-get($colormap-base, white);
-    color: map-get($colormap-base, black);
-    fill: map-get($colormap-base, black);
+    color: map-get($colormap-base, text-black);
+    fill: map-get($colormap-base, text-black);
     @include themify($themes) {
       border: 2px solid themed('primary');
       &:hover,

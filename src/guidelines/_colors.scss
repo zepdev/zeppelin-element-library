@@ -9,6 +9,8 @@ $colormap-base: (
   cat-yellow-lighter: get('colors.secondary.catYellowLighter.hex'),
   cat-yellow-darker: get('colors.secondary.catYellowDarker.hex'),
   indigo-blue-lighter: get('colors.secondary.indigoBlueLighter.hex'),
+  text-black: rgba(0, 0, 0, 0.72),
+  text-white: rgba(255, 255, 255, 0.84),
   black: get('colors.gray.black.hex'),
   gray-dark: get('colors.gray.grayDark.hex'),
   gray-mid-dark: get('colors.gray.grayMidDark.hex'),

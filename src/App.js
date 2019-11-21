@@ -31,7 +31,7 @@ function App() {
             width: '100%'
           }}
         >
-          <h1 className="zep-typo--normal-h1-inverse">
+          <h1 className="zep-typo--normal-h1-negative">
             Zeppelin Element Library
           </h1>
         </div>
@@ -60,7 +60,7 @@ function App() {
             style={{ paddingTop: 45, paddingBottom: 75 }}
           >
             {content === 'welcome' && (
-              <p className="zep-typo--normal-h1-inverse">
+              <p className="zep-typo--normal-h1-negative">
                 Welcome to the Zeppelin Element Library
               </p>
             )}

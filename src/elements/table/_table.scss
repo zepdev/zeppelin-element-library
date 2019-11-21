@@ -7,7 +7,7 @@
 
   .#{$prefix}table__row {
     @extend %typo-normal-body1;
-    color: map-get($colormap-base, gray-mid-dark);
+    color: map-get($colormap-base, text-black);
   }
 
   .#{$prefix}table__row--gray {

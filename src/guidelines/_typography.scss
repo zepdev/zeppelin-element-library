@@ -4,14 +4,14 @@
   $_line-height,
   $_text-transform,
   $_letter-spacing,
-  $_font-size-base: $global-font-size
+  $_font-family
 ) {
   font-size: $_font-size;
   font-weight: $_font-weight;
   line-height: $_line-height;
   text-transform: $_text-transform;
   letter-spacing: $_letter-spacing;
-  font-family: 'Roboto', sans-serif;
+  font-family: '#{$_font-family}', sans-serif;
 }
 
 // DISPLAY
@@ -26,14 +26,15 @@ $typo-display-letterspacing-list: (0.6px, 0.6px, 0.6px, 0.6px, 1px, 1px);
       700,
       nth($typo-display-lineheight-list, $i),
       uppercase,
-      nth($typo-display-letterspacing-list, $i)
+      nth($typo-display-letterspacing-list, $i),
+      Roboto Condensed
     );
   }
   .#{$prefix}typo--display-#{$i} {
     @extend %typo-display-#{$i};
     color: rgba(0, 0, 0, 0.72);
   }
-  .#{$prefix}typo--display-#{$i}-inverse {
+  .#{$prefix}typo--display-#{$i}-negative {
     @extend %typo-display-#{$i};
     color: rgba(255, 255, 255, 0.84);
   }
@@ -64,8 +65,21 @@ $typo-normal-fontsize-list: (
   1rem,
   0.875rem,
   0.75rem,
-  0.9375rem,
+  1rem,
   1rem
+);
+$typo-normal-fontfamily-list: (
+  Roboto,
+  Roboto,
+  Roboto,
+  Roboto,
+  Roboto,
+  Roboto,
+  Roboto,
+  Roboto,
+  Roboto,
+  Roboto Condensed,
+  Roboto Condensed
 );
 $typo-normal-lineheight-list: (
   3.75rem,
@@ -90,7 +104,7 @@ $typo-normal-letterspacing-list: (
   0px,
   0px,
   0px,
-  1.25px,
+  0.4px,
   0.75px
 );
 $typo-normal-fontweight-list: (
@@ -103,8 +117,8 @@ $typo-normal-fontweight-list: (
   400,
   400,
   400,
-  500,
-  500
+  700,
+  700
 );
 $typo-normal-texttransform-list: (
   none,
@@ -128,15 +142,15 @@ $typo-bold-fontweight-list: (500, 500, 500, 700, 700, 700, 700, 700, 700);
       nth($typo-normal-fontweight-list, $i),
       nth($typo-normal-lineheight-list, $i),
       nth($typo-normal-texttransform-list, $i),
-      nth($typo-normal-letterspacing-list, $i)
+      nth($typo-normal-letterspacing-list, $i),
+      nth($typo-normal-fontfamily-list, $i)
     );
   }
   .#{$prefix}typo--normal-#{nth($typo-normal-names, $i)} {
     @extend %typo-normal-#{nth($typo-normal-names, $i)};
     color: rgba(0, 0, 0, 0.72);
-    // color: orange;
   }
-  .#{$prefix}typo--normal-#{nth($typo-normal-names, $i)}-inverse {
+  .#{$prefix}typo--normal-#{nth($typo-normal-names, $i)}-negative {
     @extend %typo-normal-#{nth($typo-normal-names, $i)};
     color: rgba(255, 255, 255, 0.84);
   }
@@ -150,14 +164,15 @@ $typo-bold-fontweight-list: (500, 500, 500, 700, 700, 700, 700, 700, 700);
       nth($typo-bold-fontweight-list, $i),
       nth($typo-normal-lineheight-list, $i),
       'none',
-      nth($typo-normal-letterspacing-list, $i)
+      nth($typo-normal-letterspacing-list, $i),
+      Roboto
     );
   }
   .#{$prefix}typo--bold-#{nth($typo-normal-names, $i)} {
     @extend %typo-bold-#{nth($typo-normal-names, $i)};
     color: rgba(0, 0, 0, 0.72);
   }
-  .#{$prefix}typo--bold-#{nth($typo-normal-names, $i)}-inverse {
+  .#{$prefix}typo--bold-#{nth($typo-normal-names, $i)}-negative {
     @extend %typo-bold-#{nth($typo-normal-names, $i)};
     color: rgba(255, 255, 255, 0.84);
   }

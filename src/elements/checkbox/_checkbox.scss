@@ -11,14 +11,12 @@
 
   .#{$prefix}checkbox {
     .#{$prefix}checkbox__label {
+      @extend %typo-normal-body1;
       cursor: pointer;
-      color: map-get($colormap-base, gray-dark);
-      line-height: $base;
+      color: map-get($colormap-base, text-black);
       position: relative;
       display: inline-block;
-      padding-left: $base;
-      font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont,
-        Segoe UI, Open Sans, Helvetica Neue, Arial, sans-serif;
+      padding-left: 1.75rem;
       margin-bottom: 0;
       &:before,
       &:after {
@@ -27,7 +25,7 @@
         content: ' ';
         display: block;
         position: absolute;
-        top: $base/4.75;
+        top: 16%;
         left: 0;
         right: 0;
         bottom: 0;
@@ -61,7 +59,7 @@
         &:checked + .#{$prefix}checkbox__label:before {
           content: '\2713';
           position: absolute;
-          top: $base/4.75;
+          top: 16%;
           left: 0;
           right: 0;
           bottom: 0;
