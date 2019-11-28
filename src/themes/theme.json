@@ -381,58 +381,125 @@
     }
   },
   "colors": {
-    "primary": {
-      "indigoBlue": {
-        "name": "indigo-blue",
-        "hex": "#27166f",
-        "rgb": "39/22/111",
-        "hsb": null
-      },
-      "catYellow": {
-        "name": "cat-yellow",
-        "hex": "#FFC50A",
-        "rgb": "240/184/35",
-        "hsb": null
-      },
-      "rentalRed": {
-        "name": "rental-red",
-        "hex": "#af0e0e",
-        "rgb": "175/14/14",
-        "hsb": null
-      },
-      "zlabBlue": {
-        "name": "zlab-blue",
+    "zLab": {
+      "cyan": {
+        "name": "cyan",
+        "type": "primary",
         "hex": "#00aeef",
-        "rgb": "0/174/239",
-        "hsb": null
+        "rgb": "rgb(0,174,239)"
+      },
+      "gray": {
+        "name": "gray",
+        "type": "primary",
+        "hex": "#575757",
+        "rgb": "rgb(87,87,87)"
       }
     },
-    "secondary": {
-      "catYellowLightest": {
-        "name": "cat-yellow-lightest",
-        "hex": "#FFE590",
-        "rgb": null,
-        "hsb": null
+    "corporate": {
+      "indigoBlue": {
+        "name": "indigo-blue",
+        "type": "primary",
+        "hex": "#27166f",
+        "rgb": "rgb(39,22,111)"
       },
-      "catYellowLighter": {
-        "name": "cat-yellow-lighter",
-        "hex": "#FFD240",
-        "rgb": null,
-        "hsb": null
+      "sand": {
+        "name": "sand",
+        "type": "primary",
+        "hex": "#e9cea4",
+        "rgb": "rgb(234,206,164)"
       },
-      "catYellowDarker": {
-        "name": "cat-yellow-lighter",
-        "hex": "#f0b823",
-        "rgb": null,
-        "hsb": null
+      "steel": {
+        "name": "steel",
+        "type": "primary",
+        "hex": "#4e8095",
+        "rgb": "rgb(79,128,150)"
       },
       "indigoBlueLighter": {
         "name": "indigo-blue-lighter",
+        "type": "secondary",
         "hex": "#361e9a",
-        "rgb": null,
-        "hsb": null
+        "rgb": "rgb(54,30,154)"
+      },
+      "yellow": {
+        "name": "yellow",
+        "type": "secondary",
+        "hex": "#FFE72D",
+        "rgb": "rgb(255,231,45)"
+      },
+      "orange": {
+        "name": "orange",
+        "type": "secondary",
+        "hex": "#FBBA00",
+        "rgb": "rgb(251,186,0)"
+      },
+      "red": {
+        "name": "red",
+        "type": "secondary",
+        "hex": "#DD686A",
+        "rgb": "rgb(221,104,106)"
+      },
+      "greenLight": {
+        "name": "green-light",
+        "type": "secondary",
+        "hex": "#94C11C",
+        "rgb": "rgb(148,193,28)"
+      },
+      "greenDark": {
+        "name": "green-dark",
+        "type": "secondary",
+        "hex": "#00A760",
+        "rgb": "rgb(0,167,96)"
+      },
+      "gray": {
+        "name": "gray",
+        "type": "secondary",
+        "hex": "#C8D3D9",
+        "rgb": "rgb(200,211,217)"
       }
     },
+    "cat": {
+      "catYellow": {
+        "name": "cat-yellow",
+        "type": "primary",
+        "hex": "#FFCC00",
+        "rgb": "rgb(240,184,35)"
+      },
+      "catYellowLighter": {
+        "name": "cat-yellow-lighter",
+        "type": "secondary",
+        "hex": "#FFD240",
+        "rgb": "rgb(255,210,64)"
+      },
+      "catYellowLightest": {
+        "name": "cat-yellow-lightest",
+        "type": "secondary",
+        "hex": "#FFE590",
+        "rgb": "rgb(255,229,144)"
+      }
+    },
+    "rental": {
+      "rentalRed": {
+        "name": "rental-red",
+        "type": "primary",
+        "hex": "#af0e0e",
+        "rgb": "rgb(175,14,14)"
+      },
+      "catYellow": {
+        "name": "cat-yellow",
+        "type": "secondary",
+        "hex": "#FFCC00",
+        "rgb": "rgb(240,184,35)"
+      },
+      "catYellowLightest": {
+        "name": "cat-yellow-lightest",
+        "type": "secondary",
+        "hex": "#FFE590",
+        "rgb": "rgb(255,229,144)"
+      }
+    },
+    "construction": {},
+    "powerSystems": {},
+    "plantEngineering": {},
     "gray": {
       "black": {
         "name": "black",
@@ -548,58 +615,6 @@
         "name": "info-lighter",
         "hex": "#d9edf7",
         "rgb": null,
-        "hsb": null
-      }
-    },
-    "corporate": {
-      "sand": {
-        "name": "sand",
-        "hex": "#e9cea4",
-        "rgb": "234/206/164",
-        "hsb": null
-      },
-      "steel": {
-        "name": "steel",
-        "hex": "#4e8095",
-        "rgb": "79/128/150",
-        "hsb": null
-      }
-    },
-    "corporateSecondary": {
-      "yellow": {
-        "name": "yellow",
-        "hex": "#FFE72D",
-        "rgb": "255/231/45",
-        "hsb": null
-      },
-      "orange": {
-        "name": "orange",
-        "hex": "#FBBA00",
-        "rgb": "251/186/0",
-        "hsb": null
-      },
-      "red": {
-        "name": "red",
-        "hex": "#DD686A",
-        "rgb": "221/104/106",
-        "hsb": null
-      },
-      "greenLight": {
-        "name": "green-light",
-        "hex": "#94C11C",
-        "rgb": "148/193/28",
-        "hsb": null
-      },
-      "greenDark": {
-        "name": "green-dark",
-        "hex": "#00A760",
-        "rgb": "0/167/96",
-        "hsb": null
-      },
-      "gray": {
-        "name": "gray",
-        "hex": "#C8D3D9",
-        "rgb": "200/211/217",
         "hsb": null
       }
     },
