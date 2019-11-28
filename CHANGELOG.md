@@ -1,3 +1,15 @@
+# [1.0.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.12.0...v1.0.0) (2019-11-19)
+
+
+### Features
+
+* **typography:** remove Teko font ([b87f805](https://github.com/zepdev/zeppelin-element-library/commit/b87f805)), closes [#117](https://github.com/zepdev/zeppelin-element-library/issues/117)
+
+
+### BREAKING CHANGES
+
+* **typography:** new font names
+
 # [0.12.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.11.4...v0.12.0) (2019-08-10)
 
 
