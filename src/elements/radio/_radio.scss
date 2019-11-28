@@ -2,14 +2,14 @@
 
 @mixin radio {
   .#{$prefix}radio {
-    @include typeset('normal', 3);
+    @extend %typo-normal-body1;
     display: block;
     position: relative;
     padding-left: 2.125rem;
     min-height: 1.5rem;
     cursor: pointer;
     user-select: none;
-    color: map-get($colormap-base, gray-dark);
+    color: map-get($colormap-base, text-black);
   }
 
   .#{$prefix}radio .#{$prefix}radio__input {
@@ -20,7 +20,7 @@
 
   .#{$prefix}radio__indicator {
     position: absolute;
-    top: 1px;
+    top: 3px;
     left: 0;
     height: 1.375rem;
     width: 1.375rem;

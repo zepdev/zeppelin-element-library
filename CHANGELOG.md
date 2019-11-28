@@ -1,3 +1,23 @@
+# [0.12.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.11.4...v0.12.0) (2019-08-10)
+
+
+### Bug Fixes
+
+* **circle ci:** moved cache to v2 ([7866419](https://github.com/zepdev/zeppelin-element-library/commit/7866419))
+* **circle ci:** new cache with dummy change in code ([411b1ff](https://github.com/zepdev/zeppelin-element-library/commit/411b1ff))
+* **circleci:** force new build ([a3022ef](https://github.com/zepdev/zeppelin-element-library/commit/a3022ef))
+* **circleci:** modified version of circle ci so it will not fail ([fc07e0b](https://github.com/zepdev/zeppelin-element-library/commit/fc07e0b))
+* **circleci:** new cache ([9639df0](https://github.com/zepdev/zeppelin-element-library/commit/9639df0))
+* **circleci:** wrong run command ([665f579](https://github.com/zepdev/zeppelin-element-library/commit/665f579))
+* **package.json:** prettier updated ([e50469d](https://github.com/zepdev/zeppelin-element-library/commit/e50469d))
+* **react-testing-library:** update dom-testing-library to new name ([1ad8e24](https://github.com/zepdev/zeppelin-element-library/commit/1ad8e24))
+* **yarn.lock:** new yarn.lock file ([3d143c5](https://github.com/zepdev/zeppelin-element-library/commit/3d143c5))
+
+
+### Features
+
+* **theme.json:** corporate colors added to theme.json ([b412273](https://github.com/zepdev/zeppelin-element-library/commit/b412273))
+
 ## [0.11.4](https://github.com/zepdev/zeppelin-element-library/compare/v0.11.3...v0.11.4) (2019-05-31)
 
 

@@ -2,7 +2,7 @@
 
 @mixin input {
   .#{$prefix}input {
-    @include typeset('normal', 3);
+    @extend %typo-normal-body1;
     width: 100%;
     height: 3rem;
     border: solid 2px map-get($colormap-base, gray-lighter);
@@ -30,7 +30,8 @@
   }
 
   .#{$prefix}input-container__label {
-    @include typeset('normal', 1);
+    @extend %typo-normal-caption;
+    color: map-get($colormap-base, text-black);
     position: absolute;
     display: inline-block;
     background-color: white;
@@ -67,7 +68,7 @@
 
   .#{$prefix}input-container__feedback {
     display: none;
-    @include typeset('normal', 1);
+    @extend %typo-normal-caption;
     padding-top: 0.3125rem;
   }
 

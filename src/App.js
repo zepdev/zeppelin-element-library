@@ -21,17 +21,17 @@ function App() {
   return (
     <div>
       <div>
-        <div>
-          <h1
-            style={{
-              textAlign: 'center',
-              margin: 0,
-              padding: 30,
-              color: '#ffffff',
-              background: '#27166f ',
-              width: '100%'
-            }}
-          >
+        <div
+          style={{
+            textAlign: 'center',
+            margin: 0,
+            padding: 30,
+            color: '#ffffff',
+            background: '#27166f ',
+            width: '100%'
+          }}
+        >
+          <h1 className="zep-typo--normal-h1-negative">
             Zeppelin Element Library
           </h1>
         </div>
@@ -60,7 +60,9 @@ function App() {
             style={{ paddingTop: 45, paddingBottom: 75 }}
           >
             {content === 'welcome' && (
-              <p>Welcome to the Zeppelin Element Library</p>
+              <p className="zep-typo--normal-h1-negative">
+                Welcome to the Zeppelin Element Library
+              </p>
             )}
             {content === 'button' && <ButtonPage />}
             {content === 'tag' && <TagPage />}
