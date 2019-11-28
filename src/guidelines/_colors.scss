@@ -1,14 +1,15 @@
 // COLORS
 
 $colormap-base: (
-  indigo-blue: get('colors.primary.indigoBlue.hex'),
-  cat-yellow: get('colors.primary.catYellow.hex'),
-  rental-red: get('colors.primary.rentalRed.hex'),
-  zlab-blue: get('colors.primary.zlabBlue.hex'),
-  cat-yellow-lightest: get('colors.secondary.catYellowLightest.hex'),
-  cat-yellow-lighter: get('colors.secondary.catYellowLighter.hex'),
-  cat-yellow-darker: get('colors.secondary.catYellowDarker.hex'),
-  indigo-blue-lighter: get('colors.secondary.indigoBlueLighter.hex'),
+  indigo-blue: get('colors.corporate.indigoBlue.hex'),
+  cat-yellow: get('colors.cat.catYellow.hex'),
+  rental-red: get('colors.rental.rentalRed.hex'),
+  zlab-blue: get('colors.zLab.cyan.hex'),
+  cat-yellow-lightest: get('colors.cat.catYellowLightest.hex'),
+  cat-yellow-lighter: get('colors.cat.catYellowLighter.hex'),
+  indigo-blue-lighter: get('colors.corporate.indigoBlueLighter.hex'),
+  text-black: rgba(0, 0, 0, 0.72),
+  text-white: rgba(255, 255, 255, 0.84),
   black: get('colors.gray.black.hex'),
   gray-dark: get('colors.gray.grayDark.hex'),
   gray-mid-dark: get('colors.gray.grayMidDark.hex'),

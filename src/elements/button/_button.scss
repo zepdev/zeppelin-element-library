@@ -170,36 +170,38 @@
 
   .#{$prefix}button-tertiary {
     background-color: map-get($colormap-base, white);
-    color: map-get($colormap-base, text-gray);
-    fill: map-get($colormap-base, text-gray);
+    color: map-get($colormap-base, text-black);
+    fill: map-get($colormap-base, text-black);
 
     @include themify($themes) {
       &:hover,
       &:focus,
-      &.#{$prefix}button-tertiary--hover {
+      &:hover .#{$prefix}button__text--tertiary,
+      &:focus .#{$prefix}button__text--tertiary,
+      &.#{$prefix}button-tertiary--hover .#{$prefix}button__text--tertiary {
         color: themed('primary');
         fill: themed('primary');
       }
     }
 
-    &:hover .#{$prefix}button__text--tertiary,
-    &:focus .#{$prefix}button__text--tertiary,
-    &.#{$prefix}button-tertiary--hover .#{$prefix}button__text--tertiary {
-      color: map-get($colormap-base, gray-dark);
-    }
-
     &:disabled,
-    &.#{$prefix}button-secondary--disabled {
+    &.#{$prefix}button-tertiary--disabled {
       color: map-get($colormap-base, gray-lighter);
       fill: map-get($colormap-base, gray-lighter);
-      outline: 0;
+      background-color: map-get($colormap-base, white);
+      border-color: map-get($colormap-base, gray-lighter);
       cursor: not-allowed;
+      outline: 0;
       &:hover,
       &:focus,
-      &.#{$prefix}button-tertiary--hover,
-      .#{$prefix}button__text--tertiary {
+      .#{$prefix}button__text--tertiary,
+      &:hover .#{$prefix}button__text--tertiary,
+      &:focus .#{$prefix}button__text--tertiary,
+      &.#{$prefix}button-tertiary--hover .#{$prefix}button__text--tertiary {
         color: map-get($colormap-base, gray-lighter);
         fill: map-get($colormap-base, gray-lighter);
+        background-color: map-get($colormap-base, white);
+        border-color: map-get($colormap-base, gray-lighter);
         outline: 0;
         box-shadow: none;
       }
@@ -209,7 +211,7 @@
   .#{$prefix}button__text {
     @extend %typo-normal-button1;
     display: inline-block;
-    padding: 0.25rem 1.125rem 0;
+    padding: 0 0.9375rem 0;
   }
 
   // fixes v-align differences between <a> and <button>
@@ -237,8 +239,7 @@
   }
 
   .#{$prefix}button__text--tertiary {
-    @extend %typo-normal-button2;
-    color: map-get($colormap-base, text-gray);
+    color: map-get($colormap-base, text-black);
     padding: 0.25rem 0 0 0.4375rem;
     display: inline-block;
     margin-left: 1.375rem;

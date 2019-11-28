@@ -47,7 +47,8 @@
   },
   "typography": {
     "typefaces": {
-      "roboto": "'Roboto', Arial, Helvetica, sans-serif"
+      "roboto": "'Roboto', sans-serif",
+      "robotoCondensed": "'Roboto Condensed', sans-serif"
     },
     "basics": {
       "fontSizeBase": {
@@ -56,11 +57,11 @@
       },
       "fontColor": {
         "specification": "font-size-base",
-        "value": "rgba(0,0,0,72)"
+        "value": "rgba(0,0,0,.72)"
       },
-      "fontColorInverse": {
+      "fontColornegative": {
         "specification": "font-size-base",
-        "value": "rgba(255,255,255,72)"
+        "value": "rgba(255,255,255,.84)"
       },
       "lineHeightBase": {
         "specification": "line-height-base",
@@ -89,7 +90,7 @@
           "rem": "2.5rem",
           "px": "40px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 300 (light)",
             "line-height: 60px",
             "text-transform: none",
@@ -100,7 +101,7 @@
           "rem": "2.25rem",
           "px": "36px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 300 (light)",
             "line-height: 52px",
             "text-transform: none",
@@ -111,7 +112,7 @@
           "rem": "1.75rem",
           "px": "28px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 300 (light)",
             "line-height: 40px",
             "text-transform: none",
@@ -122,7 +123,7 @@
           "rem": "1.5rem",
           "px": "24px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 400 (regular)",
             "line-height: 36px",
             "text-transform: none",
@@ -133,7 +134,7 @@
           "rem": "1.25rem",
           "px": "20px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 400 (regular)",
             "line-height: 32px",
             "text-transform: none",
@@ -144,7 +145,7 @@
           "rem": "1.125rem",
           "px": "18px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 400 (regular)",
             "line-height: 18px",
             "text-transform: none",
@@ -155,7 +156,7 @@
           "rem": "1rem",
           "px": "16px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 400 (regular)",
             "line-height: 28px",
             "text-transform: none",
@@ -166,7 +167,7 @@
           "rem": "0.875rem",
           "px": "14px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 400 (regular)",
             "line-height: 24px",
             "text-transform: none",
@@ -177,7 +178,7 @@
           "rem": "0.75rem",
           "px": "12px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 400 (regular)",
             "line-height: 20px",
             "text-transform: none",
@@ -186,21 +187,21 @@
         },
         "zep-typo--normal-button1": {
           "rem": "1rem",
-          "px": "15px",
+          "px": "16px",
           "specifications": [
-            "font-family: \"Roboto\"",
-            "font-weight: 500 (medium)",
+            "font-family: 'Roboto Condensed', sans-serif",
+            "font-weight: 700 (bold)",
             "line-height: 20px",
             "text-transform: uppercase",
-            "letter-spacing: 1.25px"
+            "letter-spacing: 0.4px"
           ]
         },
         "zep-typo--normal-button2": {
           "rem": "1rem",
           "px": "16px",
           "specifications": [
-            "font-family: \"Roboto\"",
-            "font-weight: 500 (medium)",
+            "font-family: 'Roboto Condensed', sans-serif",
+            "font-weight: 700 (bold)",
             "line-height: 20px",
             "text-transform: none",
             "letter-spacing: 0.75px"
@@ -212,7 +213,7 @@
           "rem": "2.5rem",
           "px": "40px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 500 (medium)",
             "line-height: 60px",
             "text-transform: none",
@@ -223,7 +224,7 @@
           "rem": "2.25rem",
           "px": "36px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 500 (medium)",
             "line-height: 52px",
             "text-transform: none",
@@ -234,7 +235,7 @@
           "rem": "1.75rem",
           "px": "28px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 500 (medium)",
             "line-height: 40px",
             "text-transform: none",
@@ -245,7 +246,7 @@
           "rem": "1.5rem",
           "px": "24px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 700 (bold)",
             "line-height: 36px",
             "text-transform: none",
@@ -256,7 +257,7 @@
           "rem": "1.25rem",
           "px": "20px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 700 (bold)",
             "line-height: 32px",
             "text-transform: none",
@@ -267,7 +268,7 @@
           "rem": "1.125rem",
           "px": "18px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 700 (bold)",
             "line-height: 18px",
             "text-transform: none",
@@ -278,7 +279,7 @@
           "rem": "1rem",
           "px": "16px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 700 (bold)",
             "line-height: 28px",
             "text-transform: none",
@@ -289,7 +290,7 @@
           "rem": "0.875rem",
           "px": "14px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 700 (bold)",
             "line-height: 24px",
             "text-transform: none",
@@ -300,7 +301,7 @@
           "rem": "0.75rem",
           "px": "12px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto', sans-serif",
             "font-weight: 700 (bold)",
             "line-height: 20px",
             "text-transform: none",
@@ -314,7 +315,7 @@
           "px": "80px",
           "weight": 400,
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto Condensed', sans-serif",
             "font-weight: 700 (bold)",
             "line-height: 88px",
             "text-transform: uppercase",
@@ -325,7 +326,7 @@
           "rem": "4rem",
           "px": "64px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto Condensed', sans-serif",
             "font-weight: 700 (bold)",
             "line-height: 72px",
             "text-transform: uppercase",
@@ -336,7 +337,7 @@
           "rem": "3rem",
           "px": "48px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto Condensed', sans-serif",
             "font-weight: 700 (bold)",
             "line-height: 56px",
             "text-transform: uppercase",
@@ -347,7 +348,7 @@
           "rem": "2.25rem",
           "px": "36px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto Condensed', sans-serif",
             "font-weight: 700 (bold)",
             "line-height: 44px",
             "text-transform: uppercase",
@@ -358,7 +359,7 @@
           "rem": "1.5rem",
           "px": "24px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto Condensed', sans-serif",
             "font-weight: 700 (bold)",
             "line-height: 32px",
             "text-transform: uppercase",
@@ -369,7 +370,7 @@
           "rem": "0.875rem",
           "px": "14px",
           "specifications": [
-            "font-family: \"Roboto\"",
+            "font-family: 'Roboto Condensed', sans-serif",
             "font-weight: 700 (bold)",
             "line-height: 20px",
             "text-transform: uppercase",
@@ -380,58 +381,125 @@
     }
   },
   "colors": {
-    "primary": {
-      "indigoBlue": {
-        "name": "indigo-blue",
-        "hex": "#27166f",
-        "rgb": "39/22/111",
-        "hsb": null
-      },
-      "catYellow": {
-        "name": "cat-yellow",
-        "hex": "#f0b823",
-        "rgb": "240/184/35",
-        "hsb": null
-      },
-      "rentalRed": {
-        "name": "rental-red",
-        "hex": "#af0e0e",
-        "rgb": "175/14/14",
-        "hsb": null
-      },
-      "zlabBlue": {
-        "name": "zlab-blue",
+    "zLab": {
+      "cyan": {
+        "name": "cyan",
+        "type": "primary",
         "hex": "#00aeef",
-        "rgb": "0/174/239",
-        "hsb": null
+        "rgb": "rgb(0,174,239)"
+      },
+      "gray": {
+        "name": "gray",
+        "type": "primary",
+        "hex": "#575757",
+        "rgb": "rgb(87,87,87)"
       }
     },
-    "secondary": {
-      "catYellowLightest": {
-        "name": "cat-yellow-lightest",
-        "hex": "#fae6b2",
-        "rgb": null,
-        "hsb": null
+    "corporate": {
+      "indigoBlue": {
+        "name": "indigo-blue",
+        "type": "primary",
+        "hex": "#27166f",
+        "rgb": "rgb(39,22,111)"
       },
-      "catYellowLighter": {
-        "name": "cat-yellow-lighter",
-        "hex": "#f3c753",
-        "rgb": null,
-        "hsb": null
+      "sand": {
+        "name": "sand",
+        "type": "primary",
+        "hex": "#e9cea4",
+        "rgb": "rgb(234,206,164)"
       },
-      "catYellowDarker": {
-        "name": "cat-yellow-lighter",
-        "hex": "#f0b823",
-        "rgb": null,
-        "hsb": null
+      "steel": {
+        "name": "steel",
+        "type": "primary",
+        "hex": "#4e8095",
+        "rgb": "rgb(79,128,150)"
       },
       "indigoBlueLighter": {
         "name": "indigo-blue-lighter",
+        "type": "secondary",
         "hex": "#361e9a",
-        "rgb": null,
-        "hsb": null
+        "rgb": "rgb(54,30,154)"
+      },
+      "yellow": {
+        "name": "yellow",
+        "type": "secondary",
+        "hex": "#FFE72D",
+        "rgb": "rgb(255,231,45)"
+      },
+      "orange": {
+        "name": "orange",
+        "type": "secondary",
+        "hex": "#FBBA00",
+        "rgb": "rgb(251,186,0)"
+      },
+      "red": {
+        "name": "red",
+        "type": "secondary",
+        "hex": "#DD686A",
+        "rgb": "rgb(221,104,106)"
+      },
+      "greenLight": {
+        "name": "green-light",
+        "type": "secondary",
+        "hex": "#94C11C",
+        "rgb": "rgb(148,193,28)"
+      },
+      "greenDark": {
+        "name": "green-dark",
+        "type": "secondary",
+        "hex": "#00A760",
+        "rgb": "rgb(0,167,96)"
+      },
+      "gray": {
+        "name": "gray",
+        "type": "secondary",
+        "hex": "#C8D3D9",
+        "rgb": "rgb(200,211,217)"
       }
     },
+    "cat": {
+      "catYellow": {
+        "name": "cat-yellow",
+        "type": "primary",
+        "hex": "#FFCC00",
+        "rgb": "rgb(240,184,35)"
+      },
+      "catYellowLighter": {
+        "name": "cat-yellow-lighter",
+        "type": "secondary",
+        "hex": "#FFD240",
+        "rgb": "rgb(255,210,64)"
+      },
+      "catYellowLightest": {
+        "name": "cat-yellow-lightest",
+        "type": "secondary",
+        "hex": "#FFE590",
+        "rgb": "rgb(255,229,144)"
+      }
+    },
+    "rental": {
+      "rentalRed": {
+        "name": "rental-red",
+        "type": "primary",
+        "hex": "#af0e0e",
+        "rgb": "rgb(175,14,14)"
+      },
+      "catYellow": {
+        "name": "cat-yellow",
+        "type": "secondary",
+        "hex": "#FFCC00",
+        "rgb": "rgb(240,184,35)"
+      },
+      "catYellowLightest": {
+        "name": "cat-yellow-lightest",
+        "type": "secondary",
+        "hex": "#FFE590",
+        "rgb": "rgb(255,229,144)"
+      }
+    },
+    "construction": {},
+    "powerSystems": {},
+    "plantEngineering": {},
     "gray": {
       "black": {
         "name": "black",
@@ -547,58 +615,6 @@
         "name": "info-lighter",
         "hex": "#d9edf7",
         "rgb": null,
-        "hsb": null
-      }
-    },
-    "corporate": {
-      "sand": {
-        "name": "sand",
-        "hex": "#e9cea4",
-        "rgb": "234/206/164",
-        "hsb": null
-      },
-      "steel": {
-        "name": "steel",
-        "hex": "#4e8095",
-        "rgb": "79/128/150",
-        "hsb": null
-      }
-    },
-    "corporateSecondary": {
-      "yellow": {
-        "name": "yellow",
-        "hex": "#FFE72D",
-        "rgb": "255/231/45",
-        "hsb": null
-      },
-      "orange": {
-        "name": "orange",
-        "hex": "#FBBA00",
-        "rgb": "251/186/0",
-        "hsb": null
-      },
-      "red": {
-        "name": "red",
-        "hex": "#DD686A",
-        "rgb": "221/104/106",
-        "hsb": null
-      },
-      "greenLight": {
-        "name": "green-light",
-        "hex": "#94C11C",
-        "rgb": "148/193/28",
-        "hsb": null
-      },
-      "greenDark": {
-        "name": "green-dark",
-        "hex": "#00A760",
-        "rgb": "0/167/96",
-        "hsb": null
-      },
-      "gray": {
-        "name": "gray",
-        "hex": "#C8D3D9",
-        "rgb": "200/211/217",
         "hsb": null
       }
     },

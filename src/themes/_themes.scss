@@ -22,7 +22,7 @@ $themes: (
     hover: map-get($colormap-base, cat-yellow),
     secondary: map-get($colormap-base, cat-yellow-lightest),
     buttonText: rgba(255, 255, 255, 0.84),
-    buttonTextSecondaryHover: rgba(255, 255, 255, 0.84),
+    buttonTextSecondaryHover: rgba(0, 0, 0, 0.72),
     buttonBorderSecondaryHover: map-get($colormap-base, cat-yellow),
     tagHover: map-get($colormap-base, cat-yellow-lightest)
   )
