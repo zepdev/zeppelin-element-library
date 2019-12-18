@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/zepdev/zeppelin-element-library/compare/v1.1.0...v1.1.1) (2019-12-18)
+
+
+### Bug Fixes
+
+* **merge:** merge conflicts ([3b5a848](https://github.com/zepdev/zeppelin-element-library/commit/3b5a848))
+
 # [1.1.0](https://github.com/zepdev/zeppelin-element-library/compare/v1.0.0...v1.1.0) (2019-11-28)
 
 
