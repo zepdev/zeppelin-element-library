@@ -16,38 +16,29 @@
 $grid-values-map: (
   xs: (
     6,
-    get('grid.xs.margin'),
+    map-deep-get($theme, 'grid', 'xs', 'margin'),
     // 32px,
-      get('grid.xs.gutter'),
-    // 32px
+      map-deep-get($theme, 'grid', 'xs', 'gutter') // 32px
   ),
   s: (
     6,
-    get('grid.s.margin'),
-    // 48px,
-      get('grid.s.gutter'),
-    // 32px
+    map-deep-get($theme, 'grid', 's', 'margin') // 48px,
+      map-deep-get($theme, 'grid', 's', 'gutter') // 32px
   ),
   m: (
     8,
-    get('grid.m.margin'),
-    // 64px,
-      get('grid.m.gutter'),
-    // 32px
+    map-deep-get($theme, 'grid', 'm', 'margin') // 64px,
+      map-deep-get($theme, 'grid', 'm', 'gutter') // 32px
   ),
   l: (
     12,
-    get('grid.l.margin'),
-    // 64px,
-      get('grid.l.gutter'),
-    // 32px
+    map-deep-get($theme, 'grid', 'l', 'margin') // 64px,
+      map-deep-get($theme, 'grid', 'l', 'gutter') // 32px
   ),
   xl: (
     12,
-    get('grid.xl.margin'),
-    // auto,
-      get('grid.xl.gutter'),
-    // 32px
+    map-deep-get($theme, 'grid', 'xl', 'margin') // auto,
+      map-deep-get($theme, 'grid', 'xl', 'gutter') // 32px
   )
 );
 

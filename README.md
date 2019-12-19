@@ -86,3 +86,12 @@ Place the following script at the bottom of your body element.
   });
 </script>
 ```
+
+### For Developers
+
+To update guidelines we use theme.json as a single source of truth. When updates are made to this file, please make sure to run the following code to build a new theme.scss file that makes the json file available for use in scss.;
+'''
+yarn convert
+'''
+
+Nested variables can be accessed as 'map-deep-get($theme, "breakpoints", "xs")' (see _variables.scss).
