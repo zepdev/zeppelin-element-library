@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/zepdev/zeppelin-element-library/compare/v1.1.1...v1.2.0) (2019-12-19)
+
+
+### Features
+
+* **icons:** 3 new icons for zeppelin.com header ([d6ecd52](https://github.com/zepdev/zeppelin-element-library/commit/d6ecd52)), closes [#121](https://github.com/zepdev/zeppelin-element-library/issues/121)
+
 ## [1.1.1](https://github.com/zepdev/zeppelin-element-library/compare/v1.1.0...v1.1.1) (2019-12-18)
 
 
