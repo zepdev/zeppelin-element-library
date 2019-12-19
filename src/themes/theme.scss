@@ -9,37 +9,37 @@ $theme: (
   ),
   grid: (
     xxs: (
-      screensize: 576px,
+      screensize: '<576px',
       columns: 4,
       margin: 24px,
       gutter: 24px
     ),
     xs: (
-      screensize: 576px,
+      screensize: '≥576px',
       columns: 6,
       margin: 32px,
       gutter: 32px
     ),
     s: (
-      screensize: 768px,
+      screensize: '≥768px',
       columns: 6,
       margin: 48px,
       gutter: 32px
     ),
     m: (
-      screensize: 992px,
+      screensize: '≥992px',
       columns: 8,
       margin: 64px,
       gutter: 32px
     ),
     l: (
-      screensize: 1200px,
+      screensize: '≥1200px',
       columns: 12,
       margin: 64px,
       gutter: 32px
     ),
     xl: (
-      screensize: 1680px,
+      screensize: '≥1680px',
       columns: 12,
       margin: auto,
       gutter: 32px
