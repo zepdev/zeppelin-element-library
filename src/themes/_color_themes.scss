@@ -1,0 +1,64 @@
+$color_themes: (
+  zeppelin: (
+    primary: map-deep-get($theme, 'colors', 'corporate', 'indigoBlue', 'hex'),
+    hover:
+      map-deep-get($theme, 'colors', 'corporate', 'indigoBlueLighter', 'hex'),
+    secondary: map-deep-get($theme, 'colors', 'corporate', 'indigoBlue', 'hex'),
+    buttonText:
+      map-deep-get($theme, 'typography', 'basics', 'fontColorNegative', 'value'),
+    buttonTextSecondaryHover:
+      map-deep-get($theme, 'typography', 'basics', 'fontColorNegative', 'value'),
+    buttonBorderSecondaryHover:
+      map-deep-get($theme, 'colors', 'corporate', 'indigoBlue', 'hex'),
+    tagHover:
+      map-deep-get($theme, 'colors', 'corporate', 'indigoBlueLighter', 'hex')
+  ),
+  cat: (
+    primary: map-deep-get($theme, 'colors', 'cat', 'catYellow', 'hex'),
+    hover: map-deep-get($theme, 'colors', 'cat', 'catYellowLighter', 'hex'),
+    secondary: map-deep-get($theme, 'colors', 'cat', 'catYellowLightest', 'hex'),
+    buttonText:
+      map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value'),
+    buttonTextSecondaryHover:
+      map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value'),
+    buttonBorderSecondaryHover:
+      map-deep-get($theme, 'colors', 'cat', 'catYellow', 'hex'),
+    tagHover: map-deep-get($theme, 'colors', 'cat', 'catYellowLightest', 'hex')
+  ),
+  rental: (
+    primary: map-deep-get($theme, 'colors', 'rental', 'rentalRed', 'hex'),
+    hover: map-deep-get($theme, 'colors', 'cat', 'catYellow', 'hex'),
+    secondary: map-deep-get($theme, 'colors', 'cat', 'catYellowLightest', 'hex'),
+    buttonText:
+      map-deep-get($theme, 'typography', 'basics', 'fontColorNegative', 'value'),
+    buttonTextSecondaryHover:
+      map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value'),
+    buttonBorderSecondaryHover:
+      map-deep-get($theme, 'colors', 'cat', 'catYellow', 'hex'),
+    tagHover: map-deep-get($theme, 'colors', 'cat', 'catYellowLightest', 'hex')
+  )
+);
+
+@mixin themify($color_themes: $color_themes) {
+  @each $color, $map in $color_themes {
+    .theme-#{$color} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($color_themes, $color), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value
+          )
+        ) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
