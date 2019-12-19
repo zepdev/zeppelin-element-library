@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/zepdev/zeppelin-element-library/compare/v1.0.0...v1.1.0) (2019-11-28)
+
+
+### Bug Fixes
+
+* **colors:** cat color wrong, new zlab seconday, new structure of theme ([456463f](https://github.com/zepdev/zeppelin-element-library/commit/456463f)), closes [#118](https://github.com/zepdev/zeppelin-element-library/issues/118)
+* **theme.json:** updated typeface names ([f811741](https://github.com/zepdev/zeppelin-element-library/commit/f811741))
+
+
+### Features
+
+* **typography:** cleaned up typography in all components ([9a264e9](https://github.com/zepdev/zeppelin-element-library/commit/9a264e9)), closes [#113](https://github.com/zepdev/zeppelin-element-library/issues/113)
+
 # [1.0.0](https://github.com/zepdev/zeppelin-element-library/compare/v0.12.0...v1.0.0) (2019-11-19)
 
 

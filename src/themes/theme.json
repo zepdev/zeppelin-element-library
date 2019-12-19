@@ -390,7 +390,7 @@
       },
       "gray": {
         "name": "gray",
-        "type": "primary",
+        "type": "secondary",
         "hex": "#575757",
         "rgb": "rgb(87,87,87)"
       }
