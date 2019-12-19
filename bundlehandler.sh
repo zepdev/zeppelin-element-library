@@ -18,7 +18,7 @@ find build/static/css -name \*.css -exec cp {} $TARGET_FILE \;
 cp -r src/assets/fonts/* bundle/assets/fonts
 
 # copy theme folder into bundle folder
-cp -r src/themes/* bundle/themes
+cp -r src/themes/theme.json bundle/themes
 
 # copy icons folder into bundle folder
 cp -r src/assets/icons/* bundle/assets/icons

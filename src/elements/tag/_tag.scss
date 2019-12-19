@@ -6,10 +6,10 @@
     box-sizing: border-box;
     display: inline-block;
     padding: 0.125rem 0.5rem;
-    background-color: map-get($colormap-base, white);
-    color: map-get($colormap-base, text-black);
-    fill: map-get($colormap-base, text-black);
-    @include themify($themes) {
+    background-color: map-deep-get($theme, 'colors', gray, white, 'hex');
+    color: map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value');
+    fill: map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value');
+    @include themify($color_themes) {
       border: 2px solid themed('primary');
       &:hover,
       &:focus,
@@ -38,7 +38,7 @@
     height: 12px;
     margin-left: 0.625rem;
     cursor: pointer;
-    @include themify($themes) {
+    @include themify($color_themes) {
       color: themed('primary');
       fill: themed('primary');
     }

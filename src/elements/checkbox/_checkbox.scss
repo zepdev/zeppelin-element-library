@@ -13,7 +13,7 @@
     .#{$prefix}checkbox__label {
       @extend %typo-normal-body1;
       cursor: pointer;
-      color: map-get($colormap-base, text-black);
+      color: map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value');
       position: relative;
       display: inline-block;
       padding-left: 1.75rem;
@@ -38,7 +38,8 @@
         width: ($boxSize) + $borderWidth * 2;
         height: ($boxSize) + $borderWidth * 2;
         margin: -$borderWidth;
-        border: 2px solid map-get($colormap-base, gray-dark);
+        border: 2px solid
+          map-deep-get($theme, 'colors', gray, 'grayDark', 'hex');
         border-radius: 0;
       }
     }
@@ -48,14 +49,15 @@
       opacity: 0;
       &:disabled + .#{$prefix}checkbox__label {
         cursor: not-allowed;
-        color: map-get($colormap-base, text-gray);
+        color: map-deep-get($theme, 'colors', gray, 'textGray', 'hex');
       }
 
       &:disabled + .#{$prefix}checkbox__label:before {
-        border: 2px solid map-get($colormap-base, gray-light);
+        border: 2px solid
+          map-deep-get($theme, 'colors', gray, 'grayLight', 'hex');
       }
 
-      @include themify($themes) {
+      @include themify($color_themes) {
         &:checked + .#{$prefix}checkbox__label:before {
           content: '\2713';
           position: absolute;
@@ -64,7 +66,7 @@
           right: 0;
           bottom: 0;
           display: inline-block;
-          background: map-get($colormap-base, white);
+          background: map-deep-get($theme, 'colors', gray, white, 'hex');
           line-height: 1; //$boxSize + $borderWidth;
           font-size: 1.125rem;
           text-align: center;
@@ -73,13 +75,13 @@
         }
         &:checked:focus + .#{$prefix}checkbox__label:before {
           box-shadow: 0 0 5px 1px themed('primary');
-          background: map-get($colormap-base, white);
+          background: map-deep-get($theme, 'colors', gray, white, 'hex');
         }
         &:active + .#{$prefix}checkbox__label:before {
           background: themed('hover');
         }
         &:disabled:active + .#{$prefix}checkbox__label:before {
-          background: map-get($colormap-base, white);
+          background: map-deep-get($theme, 'colors', gray, white, 'hex');
         }
       }
     }

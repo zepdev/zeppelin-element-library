@@ -7,16 +7,16 @@
 
   .#{$prefix}search__input {
     @extend %typo-normal-body1;
-    color: map-get($colormap-base, text-black);
+    color: map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value');
     width: 100%;
     height: 3rem;
     border: none;
-    background-color: map-get($colormap-base, white);
+    background-color: map-deep-get($theme, 'colors', gray, white, 'hex');
     padding-left: 1.25rem;
     padding-top: 0.25rem;
     border-bottom: 3px solid;
-    border-bottom-color: map-get($colormap-base, disabled);
-    @include themify($themes) {
+    border-bottom-color: map-deep-get($theme, 'colors', gray, disabled, 'hex');
+    @include themify($color_themes) {
       &:focus {
         border-bottom-color: themed('primary');
         @extend %typo-bold-body1;
@@ -34,7 +34,7 @@
     right: 0;
     width: 24px;
     height: 24px;
-    color: map-get($colormap-base, gray-light);
+    color: map-deep-get($theme, 'colors', gray, 'grayLight', 'hex');
   }
 }
 
