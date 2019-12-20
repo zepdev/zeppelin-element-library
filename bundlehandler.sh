@@ -54,6 +54,14 @@ rm $TARGET_FILE.bak
 sed -i.bak 's@/static/media/@assets/fonts/@g' $TARGET_FILE
 rm $TARGET_FILE.bak
 
+# delete hash from font name in css file
+for font in eot woff woff2 ttf svg
+do
+    sed -i.bak 's/\(\.\)\(.[^\.]*\)\(\.'$font'\)/\3/g' $TARGET_FILE
+
+done
+rm $TARGET_FILE.bak
+
 if [[ -z "${CIRCLE_TAG}" ]]; then
   ZEL_VERSION="v0.0.0" # not inside CI run, just testing
 else
