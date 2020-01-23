@@ -9,7 +9,13 @@
     min-height: 1.5rem;
     cursor: pointer;
     user-select: none;
-    color: map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value');
+    color: map-deep-get(
+      $guidelines,
+      'typography',
+      'basics',
+      'fontColor',
+      'value'
+    );
   }
 
   .#{$prefix}radio .#{$prefix}radio__input {
@@ -24,8 +30,9 @@
     left: 0;
     height: 1.375rem;
     width: 1.375rem;
-    background-color: map-deep-get($theme, 'colors', gray, white, 'hex');
-    border: 2px solid map-deep-get($theme, 'colors', gray, 'grayDark', 'hex');
+    background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
+    border: 2px solid
+      map-deep-get($guidelines, 'color', gray, 'grayDark', 'hex');
     border-radius: 50%;
   }
 

@@ -3,54 +3,63 @@
 @mixin notification {
   .#{$prefix}notification {
     @extend %typo-normal-body1;
-    color: map-deep-get($theme, 'colors', gray, 'textGray', 'hex');
+    color: map-deep-get($guidelines, 'color', gray, 'textGray', 'hex');
     padding: 0.625rem 1.5rem;
     text-align: center;
-    border: 2px solid map-deep-get($theme, 'colors', gray, 'textGray', 'hex');
+    border: 2px solid
+      map-deep-get($guidelines, 'color', gray, 'textGray', 'hex');
   }
 
   .#{$prefix}notification--danger {
-    border: 2px solid map-deep-get($theme, 'colors', 'support', 'alert', 'hex');
+    border: 2px solid
+      map-deep-get($guidelines, 'color', 'support', 'alert', 'hex');
     background: map-deep-get(
-      $theme,
-      'colors',
+      $guidelines,
+      'color',
       'support',
       'alertLighter',
       'hex'
     );
-    color: map-deep-get($theme, 'colors', 'support', 'alert', 'hex');
+    color: map-deep-get($guidelines, 'color', 'support', 'alert', 'hex');
   }
 
   .#{$prefix}notification--warning {
     border: 2px solid
-      map-deep-get($theme, 'colors', 'support', 'warning', 'hex');
+      map-deep-get($guidelines, 'color', 'support', 'warning', 'hex');
     background: map-deep-get(
-      $theme,
-      'colors',
+      $guidelines,
+      'color',
       'support',
       'warningLighter',
       'hex'
     );
-    color: map-deep-get($theme, 'colors', 'support', 'warning', 'hex');
+    color: map-deep-get($guidelines, 'color', 'support', 'warning', 'hex');
   }
 
   .#{$prefix}notification--success {
     border: 2px solid
-      map-deep-get($theme, 'colors', 'support', 'success', 'hex');
+      map-deep-get($guidelines, 'color', 'support', 'success', 'hex');
     background: map-deep-get(
-      $theme,
-      'colors',
+      $guidelines,
+      'color',
       'support',
       'successLighter',
       'hex'
     );
-    color: map-deep-get($theme, 'colors', 'support', 'success', 'hex');
+    color: map-deep-get($guidelines, 'color', 'support', 'success', 'hex');
   }
 
   .#{$prefix}notification--info {
-    border: 2px solid map-deep-get($theme, 'colors', 'support', 'info', 'hex');
-    background: map-deep-get($theme, 'colors', 'support', 'infoLighter', 'hex');
-    color: map-deep-get($theme, 'colors', 'support', 'info', 'hex');
+    border: 2px solid
+      map-deep-get($guidelines, 'color', 'support', 'info', 'hex');
+    background: map-deep-get(
+      $guidelines,
+      'color',
+      'support',
+      'infoLighter',
+      'hex'
+    );
+    color: map-deep-get($guidelines, 'color', 'support', 'info', 'hex');
   }
 }
 

@@ -2,29 +2,31 @@
 
 # create bundle folders if not exist
 mkdir -p bundle;
-mkdir -p bundle/themes;
-mkdir -p bundle/assets/fonts;
-mkdir -p bundle/assets/icons;
-mkdir -p bundle/assets/dist;
+mkdir -p assets/fonts;
+mkdir -p assets/icons;
+mkdir -p assets/sketch;
+mkdir -p assets/logos;
 
 #create target destination variable
-TARGET_FILE="bundle/zeppelin-element-library.css"
+TARGET_FILE="zel.css"
 
-# copy build css file from react app to bundle folder
+# copy build css file from react app build to main folder
 find build/static/css -name \*.css -exec cp {} $TARGET_FILE \;
 
+# copy guidelines.json file from src to main folder
+cp -r src/themes/*.json .
 
-# copy fonts into bundle folder
-cp -r src/assets/fonts/* bundle/assets/fonts
+# copy fonts into assets folder
+cp -r src/assets/fonts/* assets/fonts
 
-# copy theme folder into bundle folder
-cp -r src/themes/theme.json bundle/themes
+# copy icons folder into assets folder
+cp -r src/assets/icons/* assets/icons
 
-# copy icons folder into bundle folder
-cp -r src/assets/icons/* bundle/assets/icons
+# copy logos folder into assets folder
+cp -r src/assets/logos/* assets/logos
 
-# copy sketch file into bundle folder
-cp -r src/assets/sketches/zds-library.sketch bundle/assets/dist
+# copy sketch file into assets folder
+cp -r src/assets/sketches/zds-library.sketch assets/sketch
 
 # rename icons
 # cd bundle/assets/icons
@@ -72,16 +74,16 @@ fi
 mv tmpfile $TARGET_FILE
 
 # gzip files
-for file in bundle/*.min.js bundle/*.css; do gzip -k -f $file; done
+for file in bundle/*.min.js; do gzip -k -f $file; done
 
 # zip icons
-cd bundle/assets/icons/SVG
+cd assets/icons/SVG
 zip -r -q zepicons.zip .
-mv zepicons.zip ../../dist
-cd ../../../..
+mv zepicons.zip ../
+cd ../../../
 
 # zip sprite
-cd bundle/assets/icons/sprite
+cd assets/icons/sprite
 zip -r -q zepsprite.zip .
-mv zepsprite.zip ../../dist
-cd ../../../..
+mv zepsprite.zip ../
+cd ../../../

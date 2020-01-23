@@ -2,14 +2,22 @@
   "name": "zeppelin-element-library",
   "version": "1.2.1",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
-  "main": "bundle/zeppelin-element-library.cjs.js",
-  "module": "bundle/zeppelin-element-library.esm.js",
   "author": "Joerg Schneider <joerg.schneider@z-lab.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/zepdev/zeppelin-element-library.git"
   },
+  "main": "bundle/zeppelin-element-library.cjs.js",
+  "module": "bundle/zeppelin-element-library.esm.js",
+  "browser": "bundle/zeppelin-element-library.esm.js",
+  "unpkg": "bundle/zeppelin-element-library.min.js",
+  "files": [
+    "dist/*",
+    "assets/*",
+    "guidelines.json",
+    "zeppelin-element-library.css"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -28,7 +36,7 @@
     "lint:prettier": "yarn prettier --check",
     "lint:sonarqube": "yarn lint:eslint -f json -o report.json",
     "lint": "yarn lint:eslint && yarn lint:prettier",
-    "convert": "json-to-scss ./src/themes/theme.json"
+    "convert": "json-to-scss ./src/themes/guidelines.json"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -106,9 +114,6 @@
     "semantic-release": "^15.13.31",
     "sonarqube-scanner": "^2.5.0"
   },
-  "files": [
-    "bundle"
-  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
