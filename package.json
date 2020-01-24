@@ -1,6 +1,6 @@
 {
   "name": "zeppelin-element-library",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
   "author": "Joerg Schneider <joerg.schneider@z-lab.com>",
   "license": "MIT",
@@ -8,15 +8,15 @@
     "type": "git",
     "url": "https://github.com/zepdev/zeppelin-element-library.git"
   },
-  "main": "bundle/zeppelin-element-library.cjs.js",
-  "module": "bundle/zeppelin-element-library.esm.js",
-  "browser": "bundle/zeppelin-element-library.esm.js",
-  "unpkg": "bundle/zeppelin-element-library.min.js",
+  "main": "bundle/zel.cjs.js",
+  "module": "bundle/zel.esm.js",
+  "browser": "bundle/zel.esm.js",
+  "unpkg": "bundle/zel.min.js",
   "files": [
     "dist/*",
     "assets/*",
     "guidelines.json",
-    "zeppelin-element-library.css"
+    "zel.css"
   ],
   "scripts": {
     "start": "react-scripts start",
