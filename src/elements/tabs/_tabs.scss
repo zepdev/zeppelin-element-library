@@ -14,8 +14,8 @@
 
   .#{$prefix}tab {
     @extend %typo-normal-body1;
-    color: map-deep-get($theme, 'colors', gray, 'grayLight', 'hex');
-    fill: map-deep-get($theme, 'colors', gray, 'grayLight', 'hex');
+    color: map-deep-get($guidelines, 'color', gray, 'grayLight', 'hex');
+    fill: map-deep-get($guidelines, 'color', gray, 'grayLight', 'hex');
     width: 100%;
     padding: 1.5rem;
     text-align: center;
@@ -36,8 +36,8 @@
       &:hover,
       &:focus,
       &.#{$prefix}tab--selected {
-        color: map-deep-get($theme, 'colors', gray, 'grayDark', 'hex');
-        fill: map-deep-get($theme, 'colors', gray, 'grayDark', 'hex');
+        color: map-deep-get($guidelines, 'color', gray, 'grayDark', 'hex');
+        fill: map-deep-get($guidelines, 'color', gray, 'grayDark', 'hex');
         border-color: themed('primary');
       }
     }

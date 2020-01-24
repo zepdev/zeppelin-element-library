@@ -17,15 +17,15 @@
 
   .#{$prefix}button-icon {
     background-color: map-deep-get(
-      $theme,
-      'colors',
+      $guidelines,
+      'color',
       gray,
       'grayLighter',
       'hex'
     );
     border: 2px solid transparent;
-    color: map-deep-get($theme, 'colors', gray, 'grayLight', 'hex');
-    fill: map-deep-get($theme, 'colors', gray, 'grayLight', 'hex');
+    color: map-deep-get($guidelines, 'color', gray, 'grayLight', 'hex');
+    fill: map-deep-get($guidelines, 'color', gray, 'grayLight', 'hex');
     width: 3rem;
     height: 3rem;
     display: table-cell;
@@ -33,21 +33,21 @@
     &:hover,
     &:focus {
       background-color: map-deep-get(
-        $theme,
-        'colors',
+        $guidelines,
+        'color',
         gray,
         'grayLighter',
         'hex'
       );
-      color: map-deep-get($theme, 'colors', gray, 'grayDark', 'hex');
-      fill: map-deep-get($theme, 'colors', gray, 'grayDark', 'hex');
+      color: map-deep-get($guidelines, 'color', gray, 'grayDark', 'hex');
+      fill: map-deep-get($guidelines, 'color', gray, 'grayDark', 'hex');
     }
     &:disabled {
-      color: map-deep-get($theme, 'colors', gray, disabled, 'hex');
-      fill: map-deep-get($theme, 'colors', gray, disabled, 'hex');
+      color: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
+      fill: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
       background-color: map-deep-get(
-        $theme,
-        'colors',
+        $guidelines,
+        'color',
         gray,
         'grayLighter',
         'hex'
@@ -56,11 +56,11 @@
       outline: 0;
       &:hover,
       &:focus {
-        color: map-deep-get($theme, 'colors', gray, disabled, 'hex');
-        fill: map-deep-get($theme, 'colors', gray, disabled, 'hex');
+        color: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
+        fill: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
         background-color: map-deep-get(
-          $theme,
-          'colors',
+          $guidelines,
+          'color',
           gray,
           'grayLighter',
           'hex'
@@ -72,15 +72,15 @@
   }
 
   .#{$prefix}button-icon--pagination {
-    background-color: map-deep-get($theme, 'colors', gray, white, 'hex');
+    background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
     margin-right: 1px;
   }
 
   .#{$prefix}button-pagination {
     @extend %typo-normal-button1;
-    background-color: map-deep-get($theme, 'colors', gray, white, 'hex');
-    color: map-deep-get($theme, 'colors', gray, 'grayLight', 'hex');
-    fill: map-deep-get($theme, 'colors', gray, 'grayLight', 'hex');
+    background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
+    color: map-deep-get($guidelines, 'color', gray, 'grayLight', 'hex');
+    fill: map-deep-get($guidelines, 'color', gray, 'grayLight', 'hex');
     width: 3rem;
     height: 3rem;
     margin-right: 1px;
@@ -101,11 +101,11 @@
       &:hover,
       &:focus,
       &.#{$prefix}pagination--selected {
-        color: map-deep-get($theme, 'colors', gray, 'grayDark', 'hex');
-        fill: map-deep-get($theme, 'colors', gray, 'grayDark', 'hex');
+        color: map-deep-get($guidelines, 'color', gray, 'grayDark', 'hex');
+        fill: map-deep-get($guidelines, 'color', gray, 'grayDark', 'hex');
         background-color: map-deep-get(
-          $theme,
-          'colors',
+          $guidelines,
+          'color',
           gray,
           'grayLighter',
           'hex'
@@ -130,11 +130,11 @@
     }
     &:disabled,
     &.#{$prefix}button-primary--disabled {
-      color: map-deep-get($theme, 'colors', gray, disabled, 'hex');
-      fill: map-deep-get($theme, 'colors', gray, disabled, 'hex');
+      color: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
+      fill: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
       background-color: map-deep-get(
-        $theme,
-        'colors',
+        $guidelines,
+        'color',
         gray,
         'grayLighter',
         'hex'
@@ -145,11 +145,11 @@
       &:hover,
       &:focus,
       &.#{$prefix}button-primary--hover {
-        color: map-deep-get($theme, 'colors', gray, disabled, 'hex');
-        fill: map-deep-get($theme, 'colors', gray, disabled, 'hex');
+        color: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
+        fill: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
         background-color: map-deep-get(
-          $theme,
-          'colors',
+          $guidelines,
+          'color',
           gray,
           'grayLighter',
           'hex'
@@ -161,9 +161,9 @@
   }
 
   .#{$prefix}button-secondary {
-    color: map-deep-get($theme, 'colors', gray, black, 'hex');
-    fill: map-deep-get($theme, 'colors', gray, black, 'hex');
-    background-color: map-deep-get($theme, 'colors', gray, white, 'hex');
+    color: map-deep-get($guidelines, 'color', gray, black, 'hex');
+    fill: map-deep-get($guidelines, 'color', gray, black, 'hex');
+    background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
     border: 2px solid;
 
     @include themify($color_themes) {
@@ -180,22 +180,34 @@
 
     &:disabled,
     &.#{$prefix}button-secondary--disabled {
-      color: map-deep-get($theme, 'colors', gray, 'grayLighter', 'hex');
-      fill: map-deep-get($theme, 'colors', gray, 'grayLighter', 'hex');
-      background-color: map-deep-get($theme, 'colors', gray, white, 'hex');
-      border-color: map-deep-get($theme, 'colors', gray, 'grayLighter', 'hex');
+      color: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
+      fill: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
+      background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
+      border-color: map-deep-get(
+        $guidelines,
+        'color',
+        gray,
+        'grayLighter',
+        'hex'
+      );
       cursor: not-allowed;
       outline: 0;
 
       &:hover,
       &:focus,
       &.#{$prefix}button-secondary--hover {
-        color: map-deep-get($theme, 'colors', gray, 'grayLighter', 'hex');
-        fill: map-deep-get($theme, 'colors', gray, 'grayLighter', 'hex');
-        background-color: map-deep-get($theme, 'colors', gray, white, 'hex');
+        color: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
+        fill: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
+        background-color: map-deep-get(
+          $guidelines,
+          'color',
+          gray,
+          white,
+          'hex'
+        );
         border-color: map-deep-get(
-          $theme,
-          'colors',
+          $guidelines,
+          'color',
           gray,
           'grayLighter',
           'hex'
@@ -217,9 +229,9 @@
   }
 
   .#{$prefix}button-tertiary {
-    background-color: map-deep-get($theme, 'colors', gray, white, 'hex');
-    color: map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value');
-    fill: map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value');
+    background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
+    color: map-deep-get($guidelines, 'color', 'font');
+    fill: map-deep-get($guidelines, 'color', 'font');
 
     @include themify($color_themes) {
       &:hover,
@@ -234,10 +246,16 @@
 
     &:disabled,
     &.#{$prefix}button-tertiary--disabled {
-      color: map-deep-get($theme, 'colors', gray, 'grayLighter', 'hex');
-      fill: map-deep-get($theme, 'colors', gray, 'grayLighter', 'hex');
-      background-color: map-deep-get($theme, 'colors', gray, white, 'hex');
-      border-color: map-deep-get($theme, 'colors', gray, 'grayLighter', 'hex');
+      color: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
+      fill: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
+      background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
+      border-color: map-deep-get(
+        $guidelines,
+        'color',
+        gray,
+        'grayLighter',
+        'hex'
+      );
       cursor: not-allowed;
       outline: 0;
       &:hover,
@@ -246,12 +264,18 @@
       &:hover .#{$prefix}button__text--tertiary,
       &:focus .#{$prefix}button__text--tertiary,
       &.#{$prefix}button-tertiary--hover .#{$prefix}button__text--tertiary {
-        color: map-deep-get($theme, 'colors', gray, 'grayLighter', 'hex');
-        fill: map-deep-get($theme, 'colors', gray, 'grayLighter', 'hex');
-        background-color: map-deep-get($theme, 'colors', gray, white, 'hex');
+        color: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
+        fill: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
+        background-color: map-deep-get(
+          $guidelines,
+          'color',
+          gray,
+          white,
+          'hex'
+        );
         border-color: map-deep-get(
-          $theme,
-          'colors',
+          $guidelines,
+          'color',
           gray,
           'grayLighter',
           'hex'
@@ -293,7 +317,7 @@
   }
 
   .#{$prefix}button__text--tertiary {
-    color: map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value');
+    color: map-deep-get($guidelines, 'color', 'font');
     padding: 0.25rem 0 0 0.4375rem;
     display: inline-block;
     margin-left: 1.375rem;

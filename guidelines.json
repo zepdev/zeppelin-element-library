@@ -1,5 +1,55 @@
 {
-  "breakpoints": {
+  "logo": {
+    "indigo": {
+      "hex": "#27166F",
+      "name": "Indigo"
+    },
+    "rentalRed": {
+      "hex": "#Af0E0E",
+      "name": "Rental Red"
+    },
+    "catYellow": {
+      "hex": "#FFCC00",
+      "name": "Cat Yellow"
+    },
+    "digitBlue": {
+      "hex": "#0066FF",
+      "name": "Digit Blue"
+    },
+    "zLabCyan": {
+      "hex": "#00AEEF",
+      "name": "Z-Lab Cyan"
+    },
+    "zLabGrey": {
+      "hex": "#575757",
+      "name": "Z-Lab Gray"
+    },
+    "nuovaBlack": {
+      "hex": "#1E1E1E",
+      "name": "Nuova Black"
+    },
+    "black": {
+      "hex": "#000000",
+      "name": "Black"
+    },
+    "white": {
+      "hex": "#FFFFFF",
+      "name": "White"
+    },
+    "napierGray": {
+      "hex": "#B2B2B2",
+      "name": "Napier Gray"
+    },
+    "napierGreen": {
+      "hex": "#073D1A",
+      "name": "Napier Green"
+    },
+    "makGreen": {
+      "hex": "#006837",
+      "name": "Mak Green"
+    }
+  },
+  "breakpoint": {
     "xs": "36em",
     "s": "48em",
     "m": "62em",
@@ -380,24 +430,28 @@
       }
     }
   },
-  "colors": {
-    "zLab": {
-      "cyan": {
-        "name": "cyan",
-        "type": "primary",
-        "hex": "#00aeef",
-        "rgb": "rgb(0,174,239)"
-      },
-      "gray": {
-        "name": "gray",
-        "type": "secondary",
-        "hex": "#575757",
-        "rgb": "rgb(87,87,87)"
-      }
+  "theme": {
+    "indigo": {
+      "primary": "#27166f",
+      "secondary": "#361e9a"
     },
+    "red": {
+      "primary": "#AF0E0E",
+      "secondary": "#FFCC00",
+      "tertiary": "#FFE590"
+    },
+    "yellow": {
+      "primary": "#FFCC00",
+      "secondary": "#FFD240",
+      "tertiary": "#FFE590"
+    }
+  },
+  "color": {
+    "font": "rgba(0,0,0,.72)",
+    "fontNegative": "rgba(255,255,255,.84)",
     "corporate": {
-      "indigoBlue": {
-        "name": "indigo-blue",
+      "indigo": {
+        "name": "indigo",
         "type": "primary",
         "hex": "#27166f",
         "rgb": "rgb(39,22,111)"
@@ -413,12 +467,6 @@
         "type": "primary",
         "hex": "#4e8095",
         "rgb": "rgb(79,128,150)"
-      },
-      "indigoBlueLighter": {
-        "name": "indigo-blue-lighter",
-        "type": "secondary",
-        "hex": "#361e9a",
-        "rgb": "rgb(54,30,154)"
       },
       "yellow": {
         "name": "yellow",
@@ -457,49 +505,6 @@
         "rgb": "rgb(200,211,217)"
       }
     },
-    "cat": {
-      "catYellow": {
-        "name": "cat-yellow",
-        "type": "primary",
-        "hex": "#FFCC00",
-        "rgb": "rgb(240,184,35)"
-      },
-      "catYellowLighter": {
-        "name": "cat-yellow-lighter",
-        "type": "secondary",
-        "hex": "#FFD240",
-        "rgb": "rgb(255,210,64)"
-      },
-      "catYellowLightest": {
-        "name": "cat-yellow-lightest",
-        "type": "secondary",
-        "hex": "#FFE590",
-        "rgb": "rgb(255,229,144)"
-      }
-    },
-    "rental": {
-      "rentalRed": {
-        "name": "rental-red",
-        "type": "primary",
-        "hex": "#af0e0e",
-        "rgb": "rgb(175,14,14)"
-      },
-      "catYellow": {
-        "name": "cat-yellow",
-        "type": "secondary",
-        "hex": "#FFCC00",
-        "rgb": "rgb(240,184,35)"
-      },
-      "catYellowLightest": {
-        "name": "cat-yellow-lightest",
-        "type": "secondary",
-        "hex": "#FFE590",
-        "rgb": "rgb(255,229,144)"
-      }
-    },
-    "construction": {},
-    "powerSystems": {},
-    "plantEngineering": {},
     "gray": {
       "black": {
         "name": "black",
