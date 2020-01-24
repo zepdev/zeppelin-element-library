@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/zepdev/zeppelin-element-library/compare/v1.2.1...v1.3.0) (2020-01-24)
+
+
+### Bug Fixes
+
+* **package.json:** fixed typo in naming ([04d34cb](https://github.com/zepdev/zeppelin-element-library/commit/04d34cbde583a49005869341777a7b9b1a4d5086))
+
+
+### Features
+
+* **logos:** logos added and guidelines structure changed ([c346cb3](https://github.com/zepdev/zeppelin-element-library/commit/c346cb33575558e0211c8885eb55733ff9b9b7f4))
+
 ## [1.2.1](https://github.com/zepdev/zeppelin-element-library/compare/v1.2.0...v1.2.1) (2019-12-20)
 
 
