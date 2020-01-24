@@ -6,9 +6,21 @@
     box-sizing: border-box;
     display: inline-block;
     padding: 0.125rem 0.5rem;
-    background-color: map-deep-get($theme, 'colors', gray, white, 'hex');
-    color: map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value');
-    fill: map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value');
+    background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
+    color: map-deep-get(
+      $guidelines,
+      'typography',
+      'basics',
+      'fontColor',
+      'value'
+    );
+    fill: map-deep-get(
+      $guidelines,
+      'typography',
+      'basics',
+      'fontColor',
+      'value'
+    );
     @include themify($color_themes) {
       border: 2px solid themed('primary');
       &:hover,

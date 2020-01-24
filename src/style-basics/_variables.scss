@@ -1,8 +1,8 @@
 $prefix: 'zep-';
 $global-font-size: 16px !default;
 
-// Allows us to call variables from theme.scss that are nested
-// map-deep-get($theme, "breakpoints", "xs")
+// Allows us to call variables from guidelines.scss that are nested
+// map-deep-get($guidelines, "breakpoints", "xs")
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
     $map: map-get($map, $key);

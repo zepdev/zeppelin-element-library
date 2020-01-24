@@ -1,41 +1,38 @@
+// Note map-deep-get won't accept variables that have color names in strings (ie 'yellow') as they are already reserved in SASS. It will cause a map-get error: argument `$map` of `map-get($map, $key)` must be a map.
+// so for map get of the json: 'yellow': { primary: "#FFCC00"}
+// you cannot do: map-get-deep($guidelines, 'yellow', 'primary')
+//instead you must do: map-get-deep($guidelines, yellow, 'primary')
+
 $color_themes: (
   zeppelin: (
-    primary: map-deep-get($theme, 'colors', 'corporate', 'indigoBlue', 'hex'),
-    hover:
-      map-deep-get($theme, 'colors', 'corporate', 'indigoBlueLighter', 'hex'),
-    secondary: map-deep-get($theme, 'colors', 'corporate', 'indigoBlue', 'hex'),
-    buttonText:
-      map-deep-get($theme, 'typography', 'basics', 'fontColorNegative', 'value'),
-    buttonTextSecondaryHover:
-      map-deep-get($theme, 'typography', 'basics', 'fontColorNegative', 'value'),
+    primary: map-deep-get($guidelines, 'theme', indigo, 'primary'),
+    hover: map-deep-get($guidelines, 'theme', indigo, 'secondary'),
+    secondary: map-deep-get($guidelines, 'theme', indigo, 'primary'),
+    buttonText: map-deep-get($guidelines, 'color', 'fontNegative'),
+    buttonTextSecondaryHover: map-deep-get($guidelines, 'color', 'fontNegative'),
     buttonBorderSecondaryHover:
-      map-deep-get($theme, 'colors', 'corporate', 'indigoBlue', 'hex'),
-    tagHover:
-      map-deep-get($theme, 'colors', 'corporate', 'indigoBlueLighter', 'hex')
+      map-deep-get($guidelines, 'theme', indigo, 'primary'),
+    tagHover: map-deep-get($guidelines, 'theme', indigo, 'secondary')
   ),
   cat: (
-    primary: map-deep-get($theme, 'colors', 'cat', 'catYellow', 'hex'),
-    hover: map-deep-get($theme, 'colors', 'cat', 'catYellowLighter', 'hex'),
-    secondary: map-deep-get($theme, 'colors', 'cat', 'catYellowLightest', 'hex'),
-    buttonText:
-      map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value'),
-    buttonTextSecondaryHover:
-      map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value'),
+    primary: map-deep-get($guidelines, 'theme', yellow, 'primary'),
+    hover: map-deep-get($guidelines, 'theme', yellow, 'secondary'),
+    secondary: map-deep-get($guidelines, 'theme', yellow, 'tertiary'),
+    buttonText: map-deep-get($guidelines, 'color', 'font'),
+    buttonTextSecondaryHover: map-deep-get($guidelines, 'color', 'font'),
     buttonBorderSecondaryHover:
-      map-deep-get($theme, 'colors', 'cat', 'catYellow', 'hex'),
-    tagHover: map-deep-get($theme, 'colors', 'cat', 'catYellowLightest', 'hex')
+      map-deep-get($guidelines, 'theme', yellow, 'primary'),
+    tagHover: map-deep-get($guidelines, 'theme', yellow, 'tertiary')
   ),
   rental: (
-    primary: map-deep-get($theme, 'colors', 'rental', 'rentalRed', 'hex'),
-    hover: map-deep-get($theme, 'colors', 'cat', 'catYellow', 'hex'),
-    secondary: map-deep-get($theme, 'colors', 'cat', 'catYellowLightest', 'hex'),
-    buttonText:
-      map-deep-get($theme, 'typography', 'basics', 'fontColorNegative', 'value'),
-    buttonTextSecondaryHover:
-      map-deep-get($theme, 'typography', 'basics', 'fontColor', 'value'),
+    primary: map-deep-get($guidelines, 'theme', red, 'primary'),
+    hover: map-deep-get($guidelines, 'theme', red, 'secondary'),
+    secondary: map-deep-get($guidelines, 'theme', red, 'tertiary'),
+    buttonText: map-deep-get($guidelines, 'color', 'fontNegative'),
+    buttonTextSecondaryHover: map-deep-get($guidelines, 'color', 'font'),
     buttonBorderSecondaryHover:
-      map-deep-get($theme, 'colors', 'cat', 'catYellow', 'hex'),
-    tagHover: map-deep-get($theme, 'colors', 'cat', 'catYellowLightest', 'hex')
+      map-deep-get($guidelines, 'theme', red, 'secondary'),
+    tagHover: map-deep-get($guidelines, 'theme', red, 'tertiary')
   )
 );
 

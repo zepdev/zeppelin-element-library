@@ -29,12 +29,10 @@ const inputOptions = {
   plugins: defaultPlugins
 };
 const outputOptions = {
-  file: path.resolve(__dirname, 'bundle/zeppelin-element-library.js'),
+  file: path.resolve(__dirname, 'bundle/zel.js'),
   format: 'iife',
   name: 'ZEL',
-  banner: `/* zeppelin-element-library version ${
-    process.env.npm_package_version
-  } */`
+  banner: `/* zel version ${process.env.npm_package_version} */`
 };
 
 const options = [
@@ -63,7 +61,7 @@ const options = [
     output: {
       ...outputOptions,
       format: 'esm',
-      file: path.resolve(__dirname, 'bundle/zeppelin-element-library.esm.js')
+      file: path.resolve(__dirname, 'bundle/zel.esm.js')
     }
   },
 
@@ -73,7 +71,7 @@ const options = [
     output: {
       ...outputOptions,
       format: 'cjs',
-      file: path.resolve(__dirname, 'bundle/zeppelin-element-library.cjs.js')
+      file: path.resolve(__dirname, 'bundle/zel.cjs.js')
     }
   },
 
@@ -83,7 +81,7 @@ const options = [
     output: {
       ...outputOptions,
       format: 'umd',
-      file: path.resolve(__dirname, 'bundle/zeppelin-element-library.umd.js')
+      file: path.resolve(__dirname, 'bundle/zel.umd.js')
     }
   },
 
@@ -92,7 +90,7 @@ const options = [
     input: { ...inputOptions, plugins: [...defaultPlugins, uglify({})] },
     output: {
       ...outputOptions,
-      file: path.resolve(__dirname, 'bundle/zeppelin-element-library.min.js')
+      file: path.resolve(__dirname, 'bundle/zel.min.js')
     }
   }
 ];
