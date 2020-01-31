@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from '../icon/Icon';
 
 function NumberInputPage() {
-  const theme = ['zeppelin', 'cat', 'rental'];
+  const theme = ['indigo', 'yellow', 'red'];
   return (
     <>
       {theme.map(elem => (

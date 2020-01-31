@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from '../icon/Icon';
 
 function SearchPage() {
-  const themes = ['zeppelin', 'cat', 'rental'];
+  const themes = ['indigo', 'yellow', 'red'];
   return (
     <>
       {themes.map(elem => (

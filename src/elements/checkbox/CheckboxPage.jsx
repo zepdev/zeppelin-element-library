@@ -1,7 +1,7 @@
 import React from 'react';
 
 function CheckboxPage() {
-  const themes = ['zeppelin', 'cat', 'rental'];
+  const themes = ['indigo', 'yellow', 'red'];
   return (
     <>
       {themes.map(elem => (

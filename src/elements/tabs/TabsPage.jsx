@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from '../icon/Icon';
 
 function TabsPage() {
-  const themes = ['zeppelin', 'cat', 'rental'];
+  const themes = ['indigo', 'yellow', 'red'];
   const fragments = [
     <>
       <div className="zep-tabs__item">

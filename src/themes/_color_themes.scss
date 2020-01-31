@@ -4,7 +4,7 @@
 //instead you must do: map-get-deep($guidelines, yellow, 'primary')
 
 $color_themes: (
-  zeppelin: (
+  indigo: (
     primary: map-deep-get($guidelines, 'theme', indigo, 'primary'),
     hover: map-deep-get($guidelines, 'theme', indigo, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', indigo, 'primary'),
@@ -14,7 +14,7 @@ $color_themes: (
       map-deep-get($guidelines, 'theme', indigo, 'primary'),
     tagHover: map-deep-get($guidelines, 'theme', indigo, 'secondary')
   ),
-  cat: (
+  yellow: (
     primary: map-deep-get($guidelines, 'theme', yellow, 'primary'),
     hover: map-deep-get($guidelines, 'theme', yellow, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', yellow, 'tertiary'),
@@ -24,7 +24,7 @@ $color_themes: (
       map-deep-get($guidelines, 'theme', yellow, 'primary'),
     tagHover: map-deep-get($guidelines, 'theme', yellow, 'tertiary')
   ),
-  rental: (
+  red: (
     primary: map-deep-get($guidelines, 'theme', red, 'primary'),
     hover: map-deep-get($guidelines, 'theme', red, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', red, 'tertiary'),

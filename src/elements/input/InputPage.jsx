@@ -1,7 +1,7 @@
 import React from 'react';
 
 function InputPage() {
-  const themes = ['zeppelin', 'cat', 'rental'];
+  const themes = ['indigo', 'yellow', 'red'];
   return (
     <>
       {themes.map(elem => (
@@ -33,7 +33,7 @@ function InputPage() {
       ))}
 
       <div
-        className={`theme-zeppelin zep-input-container zep-input-container--error`}
+        className={`theme-indigo zep-input-container zep-input-container--error`}
         style={{ marginBottom: 15 }}
       >
         <input

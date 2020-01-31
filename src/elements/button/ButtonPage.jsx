@@ -3,7 +3,7 @@ import CopyIcon from '../icon/CopyIcon';
 import Icon from '../icon/Icon';
 
 function ButtonPage() {
-  const theme = ['zeppelin', 'cat', 'rental'];
+  const theme = ['indigo', 'yellow', 'red'];
   return (
     <>
       <p className="zep-typo--normal-body1">Primary - Large</p>
@@ -19,12 +19,12 @@ function ButtonPage() {
         </div>
       ))}
       <p>Other</p>
-      <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
+      <div className="theme-indigo" style={{ marginBottom: 15 }}>
         <button className="zep-button zep-button-primary zep-button--small">
           <span className="zep-button__text">SMALL button</span>
         </button>
       </div>
-      <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
+      <div className="theme-indigo" style={{ marginBottom: 15 }}>
         <button className="zep-button zep-button-primary zep-button--full">
           <span className="zep-button__text">Full Width button</span>
         </button>
@@ -80,7 +80,7 @@ function ButtonPage() {
         </div>
       ))}
       <p>Disabled</p>
-      <div className="theme-zeppelin">
+      <div className="theme-indigo">
         <div style={{ marginBottom: 15 }}>
           <button className="zep-button zep-button-primary" disabled>
             <span className="zep-button__text">Normal button</span>
