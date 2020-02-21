@@ -433,22 +433,32 @@
   "theme": {
     "indigo": {
       "primary": "#27166f",
-      "secondary": "#361e9a"
+      "secondary": "#9890BA",
+      "iconPrimary": "#EEEEEE",
+      "iconSecondary": "989898"
     },
     "red": {
       "primary": "#AF0E0E",
-      "secondary": "#FFCC00",
-      "tertiary": "#FFE590"
+      "secondary": "#D98C8C",
+      "iconPrimary": "#EEEEEE",
+      "iconSecondary": "989898"
     },
     "yellow": {
       "primary": "#FFCC00",
-      "secondary": "#FFD240",
-      "tertiary": "#FFE590"
+      "secondary": "#FFE785",
+      "iconPrimary": "#111111",
+      "iconSecondary": "676767"
     }
   },
   "color": {
-    "font": "rgba(0,0,0,.72)",
-    "fontNegative": "rgba(255,255,255,.84)",
+    "font": "#111111",
+    "fontNegative": "#EEEEEE",
+    "text": {
+      "black": "#111111",
+      "darkGray": "#676767",
+      "lightGray": "#989898",
+      "white": "#EEEEEE"
+    },
     "corporate": {
       "indigo": {
         "name": "indigo",

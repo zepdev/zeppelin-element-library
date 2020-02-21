@@ -511,22 +511,32 @@ $guidelines: (
   theme: (
     indigo: (
       primary: #27166f,
-      secondary: #361e9a
+      secondary: #9890ba,
+      iconPrimary: #eeeeee,
+      iconSecondary: 989898
     ),
     red: (
       primary: #af0e0e,
-      secondary: #ffcc00,
-      tertiary: #ffe590
+      secondary: #d98c8c,
+      iconPrimary: #eeeeee,
+      iconSecondary: 989898
     ),
     yellow: (
       primary: #ffcc00,
-      secondary: #ffd240,
-      tertiary: #ffe590
+      secondary: #ffe785,
+      iconPrimary: #111111,
+      iconSecondary: 676767
     )
   ),
   color: (
-    font: rgba(0, 0, 0, 0.72),
-    fontNegative: rgba(255, 255, 255, 0.84),
+    font: #111111,
+    fontNegative: #eeeeee,
+    text: (
+      black: #111111,
+      darkGray: #676767,
+      lightGray: #989898,
+      white: #eeeeee
+    ),
     corporate: (
       indigo: (
         name: indigo,
