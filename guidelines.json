@@ -373,6 +373,12 @@
     }
   },
   "theme": {
+    "digit": {
+      "primary": "#0066FF",
+      "secondary": "#C4DCFF",
+      "iconPrimary": "#111111",
+      "iconSecondary": "#EEEEEE"
+    },
     "indigo": {
       "primary": "#27166f",
       "secondary": "#9890BA",
