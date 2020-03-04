@@ -128,11 +128,6 @@ function ButtonPage() {
           </button>
         </div>
         <p>Disabled</p>
-        <div className="theme-indigo">
-          <a href="" className="zep-button zep-button-primary">
-            Link
-          </a>
-        </div>
       </div>
     </>
   );
