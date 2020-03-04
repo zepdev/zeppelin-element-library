@@ -6,33 +6,19 @@
     box-sizing: border-box;
     display: inline-block;
     padding: 0.125rem 0.5rem;
-    background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
-    color: map-deep-get(
-      $guidelines,
-      'typography',
-      'basics',
-      'fontColor',
-      'value'
-    );
-    fill: map-deep-get(
-      $guidelines,
-      'typography',
-      'basics',
-      'fontColor',
-      'value'
-    );
+    background-color: transparent;
+    color: map-deep-get($guidelines, 'color', 'font');
+    fill: map-deep-get($guidelines, 'color', 'font');
     @include themify($color_themes) {
       border: 2px solid themed('primary');
       &:hover,
       &:focus,
       &.#{$prefix}tag--hover {
-        background-color: themed('secondary');
-        color: themed('buttonTextSecondaryHover');
-        border-color: themed('buttonBorderSecondaryHover');
-
+        color: themed('hover');
+        border-color: themed('hover');
         .#{$prefix}tag__icon {
-          color: themed('buttonTextSecondaryHover');
-          fill: themed('buttonTextSecondaryHover');
+          color: themed('hover');
+          fill: themed('hover');
         }
       }
     }

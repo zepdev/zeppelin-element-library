@@ -90,28 +90,28 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/plugin-transform-classes": "^7.7.4",
-    "@babel/preset-env": "^7.7.6",
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "@semantic-release/changelog": "^3.0.6",
-    "@semantic-release/git": "^7.0.18",
-    "@testing-library/dom": "^6.11.0",
+    "@babel/core": "^7.8.6",
+    "@babel/plugin-transform-classes": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@semantic-release/changelog": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "@testing-library/dom": "^6.13.0",
     "commitizen": "^4.0.3",
-    "cz-conventional-changelog": "^3.0.2",
-    "husky": "^3.1.0",
-    "lint-staged": "^9.5.0",
+    "cz-conventional-changelog": "^3.1.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "^3.3.0",
-    "rollup": "^1.27.13",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "^3.4.0",
+    "rollup": "^1.32.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-uglify": "^6.0.4",
-    "semantic-release": "^15.13.31",
+    "semantic-release": "^17.0.4",
     "sonarqube-scanner": "^2.5.0"
   },
   "config": {
@@ -120,7 +120,7 @@
     }
   },
   "dependencies": {
-    "json-to-scss": "^1.4.0",
-    "node-sass": "^4.13.0"
+    "json-to-scss": "^1.5.0",
+    "node-sass": "^4.13.1"
   }
 }
