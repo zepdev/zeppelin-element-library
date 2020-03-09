@@ -13,13 +13,7 @@
     .#{$prefix}checkbox__label {
       @extend %typo-normal-body1;
       cursor: pointer;
-      color: map-deep-get(
-        $guidelines,
-        'typography',
-        'basics',
-        'fontColor',
-        'value'
-      );
+      color: map-deep-get($guidelines, 'color', 'font');
       position: relative;
       display: inline-block;
       padding-left: 1.75rem;
@@ -44,8 +38,7 @@
         width: ($boxSize) + $borderWidth * 2;
         height: ($boxSize) + $borderWidth * 2;
         margin: -$borderWidth;
-        border: 2px solid
-          map-deep-get($guidelines, 'color', gray, 'grayDark', 'hex');
+        border: 2px solid map-deep-get($guidelines, 'color', 'font');
         border-radius: 0;
       }
     }
@@ -55,12 +48,11 @@
       opacity: 0;
       &:disabled + .#{$prefix}checkbox__label {
         cursor: not-allowed;
-        color: map-deep-get($guidelines, 'color', gray, 'textGray', 'hex');
+        color: map-deep-get($guidelines, 'color', 'text', lightGray);
       }
 
       &:disabled + .#{$prefix}checkbox__label:before {
-        border: 2px solid
-          map-deep-get($guidelines, 'color', gray, 'grayLight', 'hex');
+        border: 2px solid map-deep-get($guidelines, 'color', 'text', lightGray);
       }
 
       @include themify($color_themes) {
@@ -72,7 +64,7 @@
           right: 0;
           bottom: 0;
           display: inline-block;
-          background: map-deep-get($guidelines, 'color', gray, white, 'hex');
+          background: transparent;
           line-height: 1; //$boxSize + $borderWidth;
           font-size: 1.125rem;
           text-align: center;
@@ -81,13 +73,9 @@
         }
         &:checked:focus + .#{$prefix}checkbox__label:before {
           box-shadow: 0 0 5px 1px themed('primary');
-          background: map-deep-get($guidelines, 'color', gray, white, 'hex');
         }
         &:active + .#{$prefix}checkbox__label:before {
           background: themed('hover');
-        }
-        &:disabled:active + .#{$prefix}checkbox__label:before {
-          background: map-deep-get($guidelines, 'color', gray, white, 'hex');
         }
       }
     }
