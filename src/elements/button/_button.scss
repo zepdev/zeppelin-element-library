@@ -127,6 +127,10 @@
         background-color: themed('hover');
         box-shadow: 0 0 5px 1px themed('primary');
       }
+
+      &:active {
+        box-shadow: 0 0 5px 0px themed('primary');
+      }
     }
     &:disabled,
     &.#{$prefix}button-primary--disabled {
@@ -294,20 +298,11 @@
 
   // fixes v-align differences between <a> and <button>
   a.#{$prefix}button {
+    display: inline-flex;
+
     > .#{$prefix}button__text {
-      padding-top: 0.5rem;
-    }
-
-    &.#{$prefix}button-secondary {
-      > .#{$prefix}button__text {
-        padding-top: calc(0.5rem - 2px);
-      }
-    }
-
-    &.#{$prefix}button--small {
-      > .#{$prefix}button__text {
-        padding-top: 0.6rem;
-      }
+      margin-top: auto;
+      margin-bottom: auto;
     }
   }
 

@@ -40,14 +40,17 @@ class ZEL {
       `[${helpers.htmlDataVarType}]`
     );
 
-    let tempTypeList = [];
+    //let tempTypeList = [];
     let tempElements = [];
 
     [...jsElementList].forEach(elem => {
       let type = helpers.formatZepType(elem.getAttribute('data-zep-type'));
+
+      /*
       if (tempTypeList.indexOf(type) === -1) {
         tempElements[type] = [];
       }
+      */
 
       let newElement = {
         type: type,
