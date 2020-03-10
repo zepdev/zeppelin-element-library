@@ -10,10 +10,6 @@ it('renders without crashing', () => {
 });
 
 it('shows the requested content', () => {
-  const setContent = jest.fn();
-  const useStateSpy = jest.spyOn(React, 'useState');
-  useStateSpy.mockImplementation(content => [content, setContent]);
-
   const wrapper = shallow(<App />);
   const buttons = wrapper.find('#main-navigation button');
 
@@ -29,8 +25,4 @@ it('shows the requested content', () => {
       .toLowerCase();
     expect(prop.toLowerCase()).toEqual(btnName);
   }
-
-  // expect(setContent).toHaveBeenCalledTimes(13);
-
-  jest.clearAllMocks();
 });
