@@ -27,6 +27,14 @@ $color_themes: (
     buttonText: map-deep-get($guidelines, 'color', 'fontNegative'),
     buttonTextHover: map-deep-get($guidelines, 'color', 'fontNegative'),
     tagHover: map-deep-get($guidelines, 'theme', red, 'tertiary')
+  ),
+  blue: (
+    primary: map-deep-get($guidelines, 'theme', blue, 'primary'),
+    hover: map-deep-get($guidelines, 'theme', blue, 'secondary'),
+    secondary: map-deep-get($guidelines, 'theme', blue, 'primary'),
+    buttonText: map-deep-get($guidelines, 'color', 'fontNegative'),
+    buttonTextHover: map-deep-get($guidelines, 'color', 'fontNegative'),
+    tagHover: map-deep-get($guidelines, 'theme', blue, 'secondary')
   )
 );
 
