@@ -3,7 +3,7 @@ import CopyIcon from '../icon/CopyIcon';
 import Icon from '../icon/Icon';
 
 function ButtonPage() {
-  const theme = ['indigo', 'yellow', 'red'];
+  const theme = ['indigo', 'yellow', 'red', 'blue'];
   return (
     <>
       <p className="zep-typo--normal-body1">Primary - Large</p>
