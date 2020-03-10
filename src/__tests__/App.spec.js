@@ -22,10 +22,12 @@ it('shows the requested content', () => {
   for (let i = 0; i < buttons.length; i++) {
     let btn = buttons.at(i);
     btn.simulate('click');
-
-    // TODO: complete test
-    //console.log('state', wrapper.state());
-    //expect().toEqual(true);
+    const prop = wrapper.find('#main-content').prop('data-test-content');
+    const btnName = btn
+      .text()
+      .replace(/\s+/g, '')
+      .toLowerCase();
+    expect(prop.toLowerCase()).toEqual(btnName);
   }
 
   // expect(setContent).toHaveBeenCalledTimes(13);

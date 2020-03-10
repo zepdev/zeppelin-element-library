@@ -63,6 +63,8 @@ function App() {
             ))}
           </div>
           <div
+            id="main-content"
+            data-test-content={content}
             className="zep-grid__col zep-grid__col--xs-5-6"
             style={{ paddingTop: 45, paddingBottom: 75 }}
           >
