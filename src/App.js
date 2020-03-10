@@ -16,7 +16,6 @@ import PaginationPage from './elements/pagination/PaginationPage';
 import ZEL from './core/zel.js';
 import './base_bundle_entry.scss';
 import './svgxuse.min.js'; // ie 9 fallback for svg sprites
-import ZEL from './core/zel.js';
 
 function App() {
   const [content, setContent] = useState('welcome');
@@ -56,9 +55,7 @@ function App() {
                   className="zep-button zep-button-primary zep-button--full"
                   onClick={() => setContent(elem)}
                 >
-                  <span className="zep-button__text">
-                    {elements[elem].name}
-                  </span>
+                  {elements[elem].name}
                 </button>
               </div>
             ))}
