@@ -16,6 +16,7 @@ import PaginationPage from './elements/pagination/PaginationPage';
 import ZEL from './core/zel.js';
 import './base_bundle_entry.scss';
 import './svgxuse.min.js'; // ie 9 fallback for svg sprites
+import ZEL from './core/zel.js';
 
 function App() {
   const [content, setContent] = useState('welcome');

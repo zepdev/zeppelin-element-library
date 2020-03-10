@@ -9,9 +9,7 @@ $color_themes: (
     hover: map-deep-get($guidelines, 'theme', indigo, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', indigo, 'primary'),
     buttonText: map-deep-get($guidelines, 'color', 'fontNegative'),
-    buttonTextSecondaryHover: map-deep-get($guidelines, 'color', 'fontNegative'),
-    buttonBorderSecondaryHover:
-      map-deep-get($guidelines, 'theme', indigo, 'primary'),
+    buttonTextHover: map-deep-get($guidelines, 'color', 'fontNegative'),
     tagHover: map-deep-get($guidelines, 'theme', indigo, 'secondary')
   ),
   yellow: (
@@ -19,9 +17,7 @@ $color_themes: (
     hover: map-deep-get($guidelines, 'theme', yellow, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', yellow, 'tertiary'),
     buttonText: map-deep-get($guidelines, 'color', 'font'),
-    buttonTextSecondaryHover: map-deep-get($guidelines, 'color', 'font'),
-    buttonBorderSecondaryHover:
-      map-deep-get($guidelines, 'theme', yellow, 'primary'),
+    buttonTextHover: map-deep-get($guidelines, 'color', 'text', darkGray),
     tagHover: map-deep-get($guidelines, 'theme', yellow, 'tertiary')
   ),
   red: (
@@ -29,10 +25,16 @@ $color_themes: (
     hover: map-deep-get($guidelines, 'theme', red, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', red, 'tertiary'),
     buttonText: map-deep-get($guidelines, 'color', 'fontNegative'),
-    buttonTextSecondaryHover: map-deep-get($guidelines, 'color', 'font'),
-    buttonBorderSecondaryHover:
-      map-deep-get($guidelines, 'theme', red, 'secondary'),
+    buttonTextHover: map-deep-get($guidelines, 'color', 'fontNegative'),
     tagHover: map-deep-get($guidelines, 'theme', red, 'tertiary')
+  ),
+  blue: (
+    primary: map-deep-get($guidelines, 'theme', blue, 'primary'),
+    hover: map-deep-get($guidelines, 'theme', blue, 'secondary'),
+    secondary: map-deep-get($guidelines, 'theme', blue, 'primary'),
+    buttonText: map-deep-get($guidelines, 'color', 'fontNegative'),
+    buttonTextHover: map-deep-get($guidelines, 'color', 'fontNegative'),
+    tagHover: map-deep-get($guidelines, 'theme', blue, 'secondary')
   )
 );
 

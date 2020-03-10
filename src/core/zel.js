@@ -5,7 +5,7 @@ import EventBus from './EventBus';
 class ZEL {
   constructor() {
     // eslint-disable-next-line no-console
-    console.log(`ZEL - built with ♥`);
+    // console.log(`ZEL - built with ♥`);
 
     // create global event bus instance
     this.eventBus = new EventBus();

@@ -3,7 +3,7 @@ import CopyIcon from '../icon/CopyIcon';
 import Icon from '../icon/Icon';
 
 function ButtonPage() {
-  const theme = ['indigo', 'yellow', 'red'];
+  const theme = ['indigo', 'yellow', 'red', 'blue'];
   return (
     <>
       <p className="zep-typo--normal-body1">Primary - Large (anchor tags)</p>
@@ -31,7 +31,7 @@ function ButtonPage() {
           key={elem}
         >
           <button className="zep-button zep-button-primary">
-            <span className="zep-button__text">Primary Button</span>
+            primary button
           </button>
         </div>
       ))}
@@ -48,7 +48,7 @@ function ButtonPage() {
       </div>
       <div className="theme-indigo" style={{ marginBottom: 15 }}>
         <button className="zep-button zep-button-primary zep-button--small">
-          <span className="zep-button__text">SMALL button</span>
+          small
         </button>
       </div>
       <div className="theme-indigo" style={{ marginBottom: 15 }}>
@@ -65,7 +65,7 @@ function ButtonPage() {
       </div>
       <div className="theme-indigo" style={{ marginBottom: 15 }}>
         <button className="zep-button zep-button-primary zep-button--full">
-          <span className="zep-button__text">Full Width button</span>
+          Full Width
         </button>
       </div>
       <p>Secondary (anchor tags)</p>
@@ -93,42 +93,7 @@ function ButtonPage() {
           key={elem}
         >
           <button className="zep-button zep-button-secondary">
-            <span className="zep-button__text">Secondary button</span>
-          </button>
-        </div>
-      ))}
-      <p>Tertiary (anchor tags)</p>
-      {theme.map(elem => (
-        <div
-          className={`theme-${elem}`}
-          style={{ marginBottom: 15 }}
-          key={elem}
-        >
-          <a
-            href="https://www.zeppelin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="zep-button zep-button-tertiary"
-          >
-            <CopyIcon className="zep-button__icon zep-button__icon--tertiary" />
-            <span className="zep-button__text zep-button__text--tertiary">
-              Icon button
-            </span>
-          </a>
-        </div>
-      ))}
-      <p>Tertiary (button tags)</p>
-      {theme.map(elem => (
-        <div
-          className={`theme-${elem}`}
-          style={{ marginBottom: 15 }}
-          key={elem}
-        >
-          <button className="zep-button zep-button-tertiary">
-            <CopyIcon className="zep-button__icon zep-button__icon--tertiary" />
-            <span className="zep-button__text zep-button__text--tertiary">
-              Icon button
-            </span>
+            secondary button
           </button>
         </div>
       ))}
@@ -184,14 +149,6 @@ function ButtonPage() {
           </button>
         </div>
         <div style={{ marginBottom: 15 }}>
-          <button className="zep-button zep-button-tertiary" disabled>
-            <CopyIcon className="zep-button__icon zep-button__icon--tertiary" />
-            <span className="zep-button__text zep-button__text--tertiary">
-              Icon button
-            </span>
-          </button>
-        </div>
-        <div style={{ marginBottom: 15 }}>
           <button
             className="zep-button zep-button-primary zep-button-icon"
             disabled
@@ -207,6 +164,7 @@ function ButtonPage() {
             <CopyIcon className="zep-button__icon" />
           </button>
         </div>
+        <p>Disabled</p>
       </div>
     </>
   );

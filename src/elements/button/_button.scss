@@ -2,130 +2,63 @@
 
 @mixin button {
   .#{$prefix}button {
-    position: relative;
-    box-sizing: border-box;
-    display: inline-block;
-    border: 0;
-    background: transparent;
+    border-radius: 3px;
     text-align: center;
-    vertical-align: top;
-    outline: 0;
     cursor: pointer;
-    min-height: 3rem;
-    padding: 0;
-  }
-
-  .#{$prefix}button-icon {
-    background-color: map-deep-get(
-      $guidelines,
-      'color',
-      gray,
-      'grayLighter',
-      'hex'
-    );
-    border: 2px solid transparent;
-    color: map-deep-get($guidelines, 'color', gray, 'grayLight', 'hex');
-    fill: map-deep-get($guidelines, 'color', gray, 'grayLight', 'hex');
-    width: 3rem;
-    height: 3rem;
-    display: table-cell;
-    vertical-align: middle;
+    outline: 0;
+    border: 0;
+    background-color: map-deep-get($guidelines, 'color', 'text', white);
+    color: map-deep-get($guidelines, 'color', 'text', lightGray);
     &:hover,
     &:focus {
-      background-color: map-deep-get(
-        $guidelines,
-        'color',
-        gray,
-        'grayLighter',
-        'hex'
-      );
-      color: map-deep-get($guidelines, 'color', gray, 'grayDark', 'hex');
-      fill: map-deep-get($guidelines, 'color', gray, 'grayDark', 'hex');
-    }
-    &:disabled {
-      color: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
-      fill: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
-      background-color: map-deep-get(
-        $guidelines,
-        'color',
-        gray,
-        'grayLighter',
-        'hex'
-      );
-      cursor: not-allowed;
-      outline: 0;
-      &:hover,
-      &:focus {
-        color: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
-        fill: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
-        background-color: map-deep-get(
-          $guidelines,
-          'color',
-          gray,
-          'grayLighter',
-          'hex'
-        );
-        outline: 0;
-        box-shadow: none;
-      }
+      color: map-deep-get($guidelines, 'color', 'text', black);
     }
   }
 
   .#{$prefix}button-icon--pagination {
-    background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
+    background-color: map-deep-get($guidelines, 'color', 'text', lightGray);
     margin-right: 1px;
   }
 
   .#{$prefix}button-pagination {
     @extend %typo-normal-button1;
-    background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
-    color: map-deep-get($guidelines, 'color', gray, 'grayLight', 'hex');
-    fill: map-deep-get($guidelines, 'color', gray, 'grayLight', 'hex');
+    border-radius: 0;
+    background-color: transparent;
+    color: map-deep-get($guidelines, 'color', 'text', lightGray);
+    fill: map-deep-get($guidelines, 'color', 'text', lightGray);
     width: 3rem;
     height: 3rem;
     margin-right: 1px;
     display: table-cell;
     vertical-align: middle;
     outline: none;
+    border-bottom: 2px solid transparent;
     cursor: pointer;
-    // split border props for IE9
-    border-left: none;
-    border-right: none;
-    border-bottom-width: 3px;
-    border-top-width: 3px;
-    border-bottom-style: solid;
-    border-top-style: solid;
-    border-color: transparent;
-    //
     @include themify($color_themes) {
       &:hover,
       &:focus,
       &.#{$prefix}pagination--selected {
-        color: map-deep-get($guidelines, 'color', gray, 'grayDark', 'hex');
-        fill: map-deep-get($guidelines, 'color', gray, 'grayDark', 'hex');
-        background-color: map-deep-get(
-          $guidelines,
-          'color',
-          gray,
-          'grayLighter',
-          'hex'
-        );
-        border-bottom-color: themed('primary');
+        color: map-deep-get($guidelines, 'color', 'text', black);
+        fill: map-deep-get($guidelines, 'color', 'text', black);
+        background-color: transparent;
+        border-bottom: 2px solid themed('primary');
       }
     }
   }
 
   .#{$prefix}button-primary {
+    @extend %typo-normal-button1;
+    padding: 20px 32px;
     @include themify($color_themes) {
       color: themed('buttonText');
       fill: themed('buttonText');
       background-color: themed('primary');
-
       &:hover,
       &:focus,
       &.#{$prefix}button-primary--hover {
         background-color: themed('hover');
-        box-shadow: 0 0 5px 1px themed('primary');
+        color: themed('buttonTextHover');
+        fill: themed('buttonTextHover');
       }
 
       &:active {
@@ -134,156 +67,76 @@
     }
     &:disabled,
     &.#{$prefix}button-primary--disabled {
-      color: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
-      fill: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
-      background-color: map-deep-get(
-        $guidelines,
-        'color',
-        gray,
-        'grayLighter',
-        'hex'
-      );
+      color: map-deep-get($guidelines, 'color', 'text', lightGray);
+      fill: map-deep-get($guidelines, 'color', 'text', lightGray);
+      background-color: map-deep-get($guidelines, 'color', 'text', white);
       cursor: not-allowed;
       outline: 0;
-
       &:hover,
       &:focus,
       &.#{$prefix}button-primary--hover {
-        color: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
-        fill: map-deep-get($guidelines, 'color', gray, disabled, 'hex');
-        background-color: map-deep-get(
-          $guidelines,
-          'color',
-          gray,
-          'grayLighter',
-          'hex'
-        );
-        outline: 0;
-        box-shadow: none;
+        color: map-deep-get($guidelines, 'color', 'text', lightGray);
+        fill: map-deep-get($guidelines, 'color', 'text', lightGray);
+        background-color: map-deep-get($guidelines, 'color', 'text', white);
       }
     }
   }
 
   .#{$prefix}button-secondary {
-    color: map-deep-get($guidelines, 'color', gray, black, 'hex');
-    fill: map-deep-get($guidelines, 'color', gray, black, 'hex');
-    background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
+    @extend %typo-normal-button1;
+    background: transparent;
+    padding: 20px 32px;
     border: 2px solid;
-
     @include themify($color_themes) {
       border-color: themed('primary');
+      color: themed('primary');
+      fill: themed('primary');
       &:hover,
       &:focus,
       &.#{$prefix}button-secondary--hover {
-        background-color: themed('secondary');
-        border-color: themed('buttonBorderSecondaryHover');
-        color: themed('buttonTextSecondaryHover');
-        fill: themed('buttonTextSecondaryHover');
+        border-color: themed('hover');
+        color: themed('hover');
+        fill: themed('hover');
       }
     }
 
     &:disabled,
     &.#{$prefix}button-secondary--disabled {
-      color: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
-      fill: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
-      background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
-      border-color: map-deep-get(
-        $guidelines,
-        'color',
-        gray,
-        'grayLighter',
-        'hex'
-      );
+      color: map-deep-get($guidelines, 'color', 'text', lightGray);
+      fill: map-deep-get($guidelines, 'color', 'text', lightGray);
+      border-color: map-deep-get($guidelines, 'color', 'text', lightGray);
       cursor: not-allowed;
       outline: 0;
-
       &:hover,
       &:focus,
       &.#{$prefix}button-secondary--hover {
-        color: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
-        fill: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
-        background-color: map-deep-get(
-          $guidelines,
-          'color',
-          gray,
-          white,
-          'hex'
-        );
-        border-color: map-deep-get(
-          $guidelines,
-          'color',
-          gray,
-          'grayLighter',
-          'hex'
-        );
+        color: map-deep-get($guidelines, 'color', 'text', lightGray);
+        fill: map-deep-get($guidelines, 'color', 'text', lightGray);
+        border-color: map-deep-get($guidelines, 'color', 'text', lightGray);
         outline: 0;
-        box-shadow: none;
       }
     }
   }
 
   .#{$prefix}button--small {
-    height: 2.5rem;
-    min-height: 2.5rem;
-    .#{$prefix}button__text {
-      @extend %typo-normal-button1;
-      display: inline-block;
-      padding: 0.25rem 1.125rem 0;
-    }
+    padding: 15px 24px;
+    font-size: 0.875rem;
   }
 
-  .#{$prefix}button-tertiary {
-    background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
-    color: map-deep-get($guidelines, 'color', 'font');
-    fill: map-deep-get($guidelines, 'color', 'font');
+  .#{$prefix}button--full {
+    display: block;
+    width: 100%;
+  }
 
-    @include themify($color_themes) {
-      &:hover,
-      &:focus,
-      &:hover .#{$prefix}button__text--tertiary,
-      &:focus .#{$prefix}button__text--tertiary,
-      &.#{$prefix}button-tertiary--hover .#{$prefix}button__text--tertiary {
-        color: themed('primary');
-        fill: themed('primary');
-      }
-    }
-
-    &:disabled,
-    &.#{$prefix}button-tertiary--disabled {
-      color: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
-      fill: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
-      background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
-      border-color: map-deep-get(
-        $guidelines,
-        'color',
-        gray,
-        'grayLighter',
-        'hex'
-      );
+  .#{$prefix}button-icon {
+    padding: 0;
+    width: 3rem;
+    height: 3rem;
+    &:disabled {
       cursor: not-allowed;
       outline: 0;
       &:hover,
-      &:focus,
-      .#{$prefix}button__text--tertiary,
-      &:hover .#{$prefix}button__text--tertiary,
-      &:focus .#{$prefix}button__text--tertiary,
-      &.#{$prefix}button-tertiary--hover .#{$prefix}button__text--tertiary {
-        color: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
-        fill: map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
-        background-color: map-deep-get(
-          $guidelines,
-          'color',
-          gray,
-          white,
-          'hex'
-        );
-        border-color: map-deep-get(
-          $guidelines,
-          'color',
-          gray,
-          'grayLighter',
-          'hex'
-        );
+      &:focus {
         outline: 0;
         box-shadow: none;
       }
@@ -311,26 +164,61 @@
     width: 1.375rem;
   }
 
-  .#{$prefix}button__text--tertiary {
-    color: map-deep-get($guidelines, 'color', 'font');
-    padding: 0.25rem 0 0 0.4375rem;
-    display: inline-block;
-    margin-left: 1.375rem;
-    vertical-align: middle;
-    text-align: left;
-  }
+  // .#{$prefix}button-tertiary {
+  //   background-color: map-deep-get($guidelines, 'color', 'text', white);
+  //   color: map-deep-get($guidelines, 'color', 'font');
+  //   fill: map-deep-get($guidelines, 'color', 'font');
 
-  .#{$prefix}button__icon--tertiary {
-    position: absolute;
-    display: inline-block;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+  //   @include themify($color_themes) {
+  //     &:hover,
+  //     &:focus,
+  //     &:hover .#{$prefix}button__text--tertiary,
+  //     &:focus .#{$prefix}button__text--tertiary,
+  //     &.#{$prefix}button-tertiary--hover .#{$prefix}button__text--tertiary {
+  //       color: themed('primary');
+  //       fill: themed('primary');
+  //     }
+  //   }
 
-  .#{$prefix}button--full {
-    display: block;
-    width: 100%;
-  }
+  //   &:disabled,
+  //   &.#{$prefix}button-tertiary--disabled {
+  //     color: map-deep-get($guidelines, 'color', 'text', lightGray);
+  //     fill: map-deep-get($guidelines, 'color', 'text', lightGray);
+  //     background-color: map-deep-get($guidelines, 'color', 'text', white);
+  //     border-color: map-deep-get($guidelines, 'color', 'text', 'white');
+  //     cursor: not-allowed;
+  //     outline: 0;
+  //     &:hover,
+  //     &:focus,
+  //     .#{$prefix}button__text--tertiary,
+  //     &:hover .#{$prefix}button__text--tertiary,
+  //     &:focus .#{$prefix}button__text--tertiary,
+  //     &.#{$prefix}button-tertiary--hover .#{$prefix}button__text--tertiary {
+  //       color: map-deep-get($guidelines, 'color', 'text', lightGray);
+  //       fill: map-deep-get($guidelines, 'color', 'text', lightGray);
+  //       background-color: map-deep-get($guidelines, 'color', 'text', white);
+  //       border-color: map-deep-get($guidelines, 'color', 'text', lightGray);
+  //       outline: 0;
+  //       box-shadow: none;
+  //     }
+  //   }
+  // }
+
+  // .#{$prefix}button__text--tertiary {
+  //   color: map-deep-get($guidelines, 'color', 'font');
+  //   padding: 0.25rem 0 0 0.4375rem;
+  //   display: inline-block;
+  //   margin-left: 1.375rem;
+  //   vertical-align: middle;
+  //   text-align: left;
+  // }
+
+  // .#{$prefix}button__icon--tertiary {
+  //   position: absolute;
+  //   display: inline-block;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  // }
 }
 
 @include exports('button') {
