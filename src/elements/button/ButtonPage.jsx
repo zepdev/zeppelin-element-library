@@ -47,6 +47,11 @@ function ButtonPage() {
         </a>
       </div>
       <div className="theme-indigo" style={{ marginBottom: 15 }}>
+        <button className="zep-button zep-button-primary zep-button--medium">
+          medium
+        </button>
+      </div>
+      <div className="theme-indigo" style={{ marginBottom: 15 }}>
         <button className="zep-button zep-button-primary zep-button--small">
           small
         </button>
@@ -141,6 +146,7 @@ function ButtonPage() {
             SMALL button
           </button>
         </div>
+
         <div style={{ marginBottom: 15 }}>
           <button className="zep-button zep-button-secondary" disabled>
             Normal button

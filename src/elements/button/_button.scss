@@ -118,9 +118,12 @@
     }
   }
 
+  .#{$prefix}button--medium {
+    padding: 14px 24px;
+  }
+
   .#{$prefix}button--small {
-    padding: 15px 24px;
-    font-size: 0.875rem;
+    padding: 6px 16px;
   }
 
   .#{$prefix}button--full {
