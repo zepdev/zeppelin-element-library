@@ -13,9 +13,9 @@ import SelectPage from './elements/select/SelectPage';
 import TabsPage from './elements/tabs/TabsPage';
 import NotificationPage from './elements/notification/NotificationPage';
 import PaginationPage from './elements/pagination/PaginationPage';
+import ZEL from './core/zel.js';
 import './base_bundle_entry.scss';
 import './svgxuse.min.js'; // ie 9 fallback for svg sprites
-import ZEL from './core/zel.js';
 
 function App() {
   const [content, setContent] = useState('welcome');
@@ -55,14 +55,14 @@ function App() {
                   className="zep-button zep-button-primary zep-button--full"
                   onClick={() => setContent(elem)}
                 >
-                  <span className="zep-button__text">
-                    {elements[elem].name}
-                  </span>
+                  {elements[elem].name}
                 </button>
               </div>
             ))}
           </div>
           <div
+            id="main-content"
+            data-test-content={content}
             className="zep-grid__col zep-grid__col--xs-5-6"
             style={{ paddingTop: 45, paddingBottom: 75 }}
           >

@@ -6,20 +6,64 @@ function ButtonPage() {
   const theme = ['indigo', 'yellow', 'red', 'blue'];
   return (
     <>
-      <p className="zep-typo--normal-body1">Primary - Large</p>
+      <p className="zep-typo--normal-body1">Primary - Large (anchor tags)</p>
       {theme.map(elem => (
         <div
           className={`theme-${elem}`}
           style={{ marginBottom: 15 }}
           key={elem}
         >
-          <button className="zep-button zep-button-primary">button</button>
+          <a
+            href="https://www.zeppelin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="zep-button zep-button-primary"
+          >
+            Zeppelin
+          </a>
+        </div>
+      ))}
+      <p className="zep-typo--normal-body1">Primary - Large (button tags)</p>
+      {theme.map(elem => (
+        <div
+          className={`theme-${elem}`}
+          style={{ marginBottom: 15 }}
+          key={elem}
+        >
+          <button className="zep-button zep-button-primary">
+            primary button
+          </button>
         </div>
       ))}
       <p>Other</p>
       <div className="theme-indigo" style={{ marginBottom: 15 }}>
+        <a
+          href="https://www.zeppelin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="zep-button zep-button-primary zep-button--small"
+        >
+          SMALL button (anchor tag)
+        </a>
+      </div>
+      <div className="theme-indigo" style={{ marginBottom: 15 }}>
+        <button className="zep-button zep-button-primary zep-button--medium">
+          medium
+        </button>
+      </div>
+      <div className="theme-indigo" style={{ marginBottom: 15 }}>
         <button className="zep-button zep-button-primary zep-button--small">
           small
+        </button>
+      </div>
+      <div className="theme-indigo" style={{ marginBottom: 15 }}>
+        <button
+          href="https://www.zeppelin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="zep-button zep-button-primary zep-button--full"
+        >
+          Full Width button (anchor tag)
         </button>
       </div>
       <div className="theme-indigo" style={{ marginBottom: 15 }}>
@@ -27,31 +71,35 @@ function ButtonPage() {
           Full Width
         </button>
       </div>
-      <p>Secondary</p>
+      <p>Secondary (anchor tags)</p>
       {theme.map(elem => (
         <div
           className={`theme-${elem}`}
           style={{ marginBottom: 15 }}
           key={elem}
         >
-          <button className="zep-button zep-button-secondary">button</button>
+          <a
+            href="https://www.zeppelin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="zep-button zep-button-secondary"
+          >
+            Zeppelin
+          </a>
         </div>
       ))}
-      {/* <p>Tertiary</p>
+      <p>Secondary (button tags)</p>
       {theme.map(elem => (
         <div
           className={`theme-${elem}`}
           style={{ marginBottom: 15 }}
           key={elem}
         >
-          <button className="zep-button zep-button-tertiary">
-            <CopyIcon className="zep-button__icon zep-button__icon--tertiary" />
-            <span className="zep-button__text zep-button__text--tertiary">
-              Icon button
-            </span>
+          <button className="zep-button zep-button-secondary">
+            secondary button
           </button>
         </div>
-      ))} */}
+      ))}
       <p>Icon</p>
       {theme.map(elem => (
         <div
@@ -79,7 +127,7 @@ function ButtonPage() {
       <div className="theme-indigo">
         <div style={{ marginBottom: 15 }}>
           <button className="zep-button zep-button-primary" disabled>
-            <span className="zep-button__text">Normal button</span>
+            Normal button
           </button>
         </div>
         <div style={{ marginBottom: 15 }}>
@@ -87,7 +135,7 @@ function ButtonPage() {
             className="zep-button zep-button-primary zep-button--full"
             disabled
           >
-            <span className="zep-button__text">Full Width button</span>
+            Full Width button
           </button>
         </div>
         <div style={{ marginBottom: 15 }}>
@@ -95,22 +143,15 @@ function ButtonPage() {
             className="zep-button zep-button-primary zep-button--small"
             disabled
           >
-            <span className="zep-button__text">SMALL button</span>
+            SMALL button
           </button>
         </div>
+
         <div style={{ marginBottom: 15 }}>
           <button className="zep-button zep-button-secondary" disabled>
-            <span className="zep-button__text">Normal button</span>
+            Normal button
           </button>
         </div>
-        {/* <div style={{ marginBottom: 15 }}>
-          <button className="zep-button zep-button-tertiary" disabled>
-            <CopyIcon className="zep-button__icon zep-button__icon--tertiary" />
-            <span className="zep-button__text zep-button__text--tertiary">
-              Icon button
-            </span>
-          </button>
-        </div> */}
         <div style={{ marginBottom: 15 }}>
           <button
             className="zep-button zep-button-primary zep-button-icon"

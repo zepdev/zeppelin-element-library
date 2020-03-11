@@ -373,7 +373,7 @@
     }
   },
   "theme": {
-    "digit": {
+    "blue": {
       "primary": "#0066FF",
       "secondary": "#C4DCFF",
       "iconPrimary": "#111111",

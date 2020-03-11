@@ -100,6 +100,8 @@
     "@testing-library/dom": "^6.13.0",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
