@@ -5,7 +5,7 @@
     @extend %typo-normal-body1;
     width: 100%;
     height: 3rem;
-    border: solid 2px map-deep-get($guidelines, 'color', 'text', lightGray);
+    border: solid 2px map-deep-get($guidelines, 'color', 'global' lightGray);
     background-color: white;
     padding-left: 1.25rem;
     padding-top: 0.25rem;
@@ -32,7 +32,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     background: white;
-    color: map-deep-get($guidelines, 'color', 'text', darkGray);
+    color: map-deep-get($guidelines, 'color', 'global' darkGray);
     position: relative;
     padding: 0 8px;
     top: 10px;
@@ -54,7 +54,7 @@
     padding: 10px 18px;
     outline: none;
     &:focus {
-      background: map-deep-get($guidelines, 'color', 'text', white);
+      background: map-deep-get($guidelines, 'color', 'global' white);
     }
   }
 }

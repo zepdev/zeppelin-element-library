@@ -491,13 +491,27 @@ $guidelines: (
     makGreen: #006837
   ),
   color: (
-    font: #111111,
-    fontNegative: #eeeeee,
-    text: (
-      black: #111111,
-      darkGray: #676767,
-      lightGray: #989898,
-      white: #eeeeee
+    font: rgba(0, 0, 0, 0.84),
+    fontNegative: rgba(255, 255, 255, 0.84),
+    global: (
+      black: #000000,
+      almostBlack: #292929,
+      darkGray: #666666,
+      lightGray: #999999,
+      almostWhite: #d6d6d6,
+      white: #ffffff
+    ),
+    black: (
+      16: rgba(0, 0, 0, 0.16),
+      40: rgba(0, 0, 0, 0.4),
+      60: rgba(0, 0, 0, 0.6),
+      84: rgba(0, 0, 0, 0.84)
+    ),
+    white: (
+      16: rgba(255, 255, 255, 0.16),
+      40: rgba(255, 255, 255, 0.4),
+      60: rgba(255, 255, 255, 0.6),
+      84: rgba(255, 255, 255, 0.84)
     ),
     corporate: (
       indigo: #27166f,

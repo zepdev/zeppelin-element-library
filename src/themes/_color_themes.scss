@@ -8,8 +8,8 @@ $color_themes: (
     primary: map-deep-get($guidelines, 'theme', indigo, 'primary'),
     hover: map-deep-get($guidelines, 'theme', indigo, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', indigo, 'primary'),
-    buttonText: map-deep-get($guidelines, 'color', 'fontNegative'),
-    buttonTextHover: map-deep-get($guidelines, 'color', 'fontNegative'),
+    buttonText: map-deep-get($guidelines, 'color', 'global', white),
+    buttonTextHover: map-deep-get($guidelines, 'color', 'global', white),
     tagHover: map-deep-get($guidelines, 'theme', indigo, 'secondary')
   ),
   yellow: (
@@ -17,23 +17,23 @@ $color_themes: (
     hover: map-deep-get($guidelines, 'theme', yellow, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', yellow, 'tertiary'),
     buttonText: map-deep-get($guidelines, 'color', 'font'),
-    buttonTextHover: map-deep-get($guidelines, 'color', 'text', darkGray),
+    buttonTextHover: map-deep-get($guidelines, 'color', 'global' darkGray),
     tagHover: map-deep-get($guidelines, 'theme', yellow, 'tertiary')
   ),
   red: (
     primary: map-deep-get($guidelines, 'theme', red, 'primary'),
     hover: map-deep-get($guidelines, 'theme', red, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', red, 'tertiary'),
-    buttonText: map-deep-get($guidelines, 'color', 'fontNegative'),
-    buttonTextHover: map-deep-get($guidelines, 'color', 'fontNegative'),
+    buttonText: map-deep-get($guidelines, 'color', 'global', white),
+    buttonTextHover: map-deep-get($guidelines, 'color', 'global', white),
     tagHover: map-deep-get($guidelines, 'theme', red, 'tertiary')
   ),
   blue: (
     primary: map-deep-get($guidelines, 'theme', blue, 'primary'),
     hover: map-deep-get($guidelines, 'theme', blue, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', blue, 'primary'),
-    buttonText: map-deep-get($guidelines, 'color', 'fontNegative'),
-    buttonTextHover: map-deep-get($guidelines, 'color', 'fontNegative'),
+    buttonText: map-deep-get($guidelines, 'color', 'global', white),
+    buttonTextHover: map-deep-get($guidelines, 'color', 'global', white),
     tagHover: map-deep-get($guidelines, 'theme', blue, 'secondary')
   )
 );
