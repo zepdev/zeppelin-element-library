@@ -34,8 +34,8 @@
     @extend %typo-normal-button1;
     border-radius: 0;
     background-color: transparent;
-    color: map-deep-get($guidelines, 'color', 'global' lightGray);
-    fill: map-deep-get($guidelines, 'color', 'global' lightGray);
+    color: map-deep-get($guidelines, 'color', 'global', lightGray);
+    fill: map-deep-get($guidelines, 'color', 'global', lightGray);
     width: 3rem;
     height: 3rem;
     margin-right: 1px;
@@ -77,17 +77,27 @@
     }
     &:disabled,
     &.#{$prefix}button-primary--disabled {
-      color: map-deep-get($guidelines, 'color', 'global' lightGray);
-      fill: map-deep-get($guidelines, 'color', 'global' lightGray);
-      background-color: map-deep-get($guidelines, 'color', 'global' white);
+      color: map-deep-get($guidelines, 'color', 'global', lightGray);
+      fill: map-deep-get($guidelines, 'color', 'global', lightGray);
+      background-color: map-deep-get(
+        $guidelines,
+        'color',
+        'global',
+        'almostWhite'
+      );
       cursor: not-allowed;
       outline: 0;
       &:hover,
       &:focus,
       &.#{$prefix}button-primary--hover {
-        color: map-deep-get($guidelines, 'color', 'global' lightGray);
-        fill: map-deep-get($guidelines, 'color', 'global' lightGray);
-        background-color: map-deep-get($guidelines, 'color', 'global' white);
+        color: map-deep-get($guidelines, 'color', 'global', lightGray);
+        fill: map-deep-get($guidelines, 'color', 'global', lightGray);
+        background-color: map-deep-get(
+          $guidelines,
+          'color',
+          'global',
+          'almostWhite'
+        );
       }
     }
   }
@@ -112,17 +122,17 @@
 
     &:disabled,
     &.#{$prefix}button-secondary--disabled {
-      color: map-deep-get($guidelines, 'color', 'global' lightGray);
-      fill: map-deep-get($guidelines, 'color', 'global' lightGray);
-      border-color: map-deep-get($guidelines, 'color', 'global' lightGray);
+      color: map-deep-get($guidelines, 'color', 'global', lightGray);
+      fill: map-deep-get($guidelines, 'color', 'global', lightGray);
+      border-color: map-deep-get($guidelines, 'color', 'global', lightGray);
       cursor: not-allowed;
       outline: 0;
       &:hover,
       &:focus,
       &.#{$prefix}button-secondary--hover {
-        color: map-deep-get($guidelines, 'color', 'global' lightGray);
-        fill: map-deep-get($guidelines, 'color', 'global' lightGray);
-        border-color: map-deep-get($guidelines, 'color', 'global' lightGray);
+        color: map-deep-get($guidelines, 'color', 'global', lightGray);
+        fill: map-deep-get($guidelines, 'color', 'global', lightGray);
+        border-color: map-deep-get($guidelines, 'color', 'global', lightGray);
         outline: 0;
       }
     }

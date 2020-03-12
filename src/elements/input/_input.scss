@@ -30,7 +30,7 @@
 
   .#{$prefix}input-container__label {
     @extend %typo-normal-caption;
-    color: map-deep-get($guidelines, 'color', 'global' lightGray);
+    color: map-deep-get($guidelines, 'color', 'global', lightGray);
     position: absolute;
     display: inline-block;
     background-color: white;
@@ -49,7 +49,7 @@
     transform-origin: left bottom;
     top: 1.2rem;
     transform: scale(1.5);
-    color: map-deep-get($guidelines, 'color', 'global' lightGray);
+    color: map-deep-get($guidelines, 'color', 'global', lightGray);
   }
 
   .#{$prefix}input:not(:placeholder-shown) + .#{$prefix}input-container__label,

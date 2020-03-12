@@ -24,7 +24,7 @@
     left: 0;
     height: 1.375rem;
     width: 1.375rem;
-    border: 2px solid map-deep-get($guidelines, 'color', 'global' lightGray);
+    border: 2px solid map-deep-get($guidelines, 'color', 'global', lightGray);
     border-radius: 50%;
   }
 
