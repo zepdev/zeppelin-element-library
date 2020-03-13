@@ -48,11 +48,12 @@
       opacity: 0;
       &:disabled + .#{$prefix}checkbox__label {
         cursor: not-allowed;
-        color: map-deep-get($guidelines, 'color', 'text', lightGray);
+        color: map-deep-get($guidelines, 'color', 'global', lightGray);
       }
 
       &:disabled + .#{$prefix}checkbox__label:before {
-        border: 2px solid map-deep-get($guidelines, 'color', 'text', lightGray);
+        border: 2px solid
+          map-deep-get($guidelines, 'color', 'global', lightGray);
       }
 
       @include themify($color_themes) {

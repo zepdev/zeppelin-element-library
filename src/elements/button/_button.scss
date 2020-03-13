@@ -7,16 +7,26 @@
     cursor: pointer;
     outline: 0;
     border: 0;
-    background-color: map-deep-get($guidelines, 'color', 'text', white);
-    color: map-deep-get($guidelines, 'color', 'text', lightGray);
+    background-color: map-deep-get(
+      $guidelines,
+      'color',
+      'global',
+      'almostWhite'
+    );
+    color: map-deep-get($guidelines, 'color', 'global', lightGray);
     &:hover,
     &:focus {
-      color: map-deep-get($guidelines, 'color', 'text', black);
+      color: map-deep-get($guidelines, 'color', 'global', black);
     }
   }
 
   .#{$prefix}button-icon--pagination {
-    background-color: map-deep-get($guidelines, 'color', 'text', lightGray);
+    background-color: map-deep-get(
+      $guidelines,
+      'color',
+      'global',
+      'almostWhite'
+    );
     margin-right: 1px;
   }
 
@@ -24,8 +34,8 @@
     @extend %typo-normal-button1;
     border-radius: 0;
     background-color: transparent;
-    color: map-deep-get($guidelines, 'color', 'text', lightGray);
-    fill: map-deep-get($guidelines, 'color', 'text', lightGray);
+    color: map-deep-get($guidelines, 'color', 'global', lightGray);
+    fill: map-deep-get($guidelines, 'color', 'global', lightGray);
     width: 3rem;
     height: 3rem;
     margin-right: 1px;
@@ -38,8 +48,8 @@
       &:hover,
       &:focus,
       &.#{$prefix}pagination--selected {
-        color: map-deep-get($guidelines, 'color', 'text', black);
-        fill: map-deep-get($guidelines, 'color', 'text', black);
+        color: map-deep-get($guidelines, 'color', 'global' black);
+        fill: map-deep-get($guidelines, 'color', 'global' black);
         background-color: transparent;
         border-bottom: 2px solid themed('primary');
       }
@@ -67,17 +77,27 @@
     }
     &:disabled,
     &.#{$prefix}button-primary--disabled {
-      color: map-deep-get($guidelines, 'color', 'text', lightGray);
-      fill: map-deep-get($guidelines, 'color', 'text', lightGray);
-      background-color: map-deep-get($guidelines, 'color', 'text', white);
+      color: map-deep-get($guidelines, 'color', 'global', lightGray);
+      fill: map-deep-get($guidelines, 'color', 'global', lightGray);
+      background-color: map-deep-get(
+        $guidelines,
+        'color',
+        'global',
+        'almostWhite'
+      );
       cursor: not-allowed;
       outline: 0;
       &:hover,
       &:focus,
       &.#{$prefix}button-primary--hover {
-        color: map-deep-get($guidelines, 'color', 'text', lightGray);
-        fill: map-deep-get($guidelines, 'color', 'text', lightGray);
-        background-color: map-deep-get($guidelines, 'color', 'text', white);
+        color: map-deep-get($guidelines, 'color', 'global', lightGray);
+        fill: map-deep-get($guidelines, 'color', 'global', lightGray);
+        background-color: map-deep-get(
+          $guidelines,
+          'color',
+          'global',
+          'almostWhite'
+        );
       }
     }
   }
@@ -102,17 +122,17 @@
 
     &:disabled,
     &.#{$prefix}button-secondary--disabled {
-      color: map-deep-get($guidelines, 'color', 'text', lightGray);
-      fill: map-deep-get($guidelines, 'color', 'text', lightGray);
-      border-color: map-deep-get($guidelines, 'color', 'text', lightGray);
+      color: map-deep-get($guidelines, 'color', 'global', lightGray);
+      fill: map-deep-get($guidelines, 'color', 'global', lightGray);
+      border-color: map-deep-get($guidelines, 'color', 'global', lightGray);
       cursor: not-allowed;
       outline: 0;
       &:hover,
       &:focus,
       &.#{$prefix}button-secondary--hover {
-        color: map-deep-get($guidelines, 'color', 'text', lightGray);
-        fill: map-deep-get($guidelines, 'color', 'text', lightGray);
-        border-color: map-deep-get($guidelines, 'color', 'text', lightGray);
+        color: map-deep-get($guidelines, 'color', 'global', lightGray);
+        fill: map-deep-get($guidelines, 'color', 'global', lightGray);
+        border-color: map-deep-get($guidelines, 'color', 'global', lightGray);
         outline: 0;
       }
     }
