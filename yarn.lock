@@ -15461,11 +15461,3 @@ yauzl@^2.4.2:
   dependencies:
     buffer-crc32 "~0.2.3"
     fd-slicer "~1.1.0"
-
-zeppelin-element-library@^1.3.9:
-  version "1.3.9"
-  resolved "https://registry.yarnpkg.com/zeppelin-element-library/-/zeppelin-element-library-1.3.9.tgz#25e162fbe1be905283372cd69378a37feeb887d4"
-  integrity sha512-Y+ZGbNJdZBGyib2r9BY5heSPDSheiWQVPFFTh4YY0cnudMoK2a8kgLqn8pQFxzmeHmOc+6Q3iEdbDqbgZ2Ir9A==
-  dependencies:
-    json-to-scss "^1.5.0"
-    node-sass "^4.13.1"
