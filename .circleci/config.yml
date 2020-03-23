@@ -62,6 +62,9 @@ jobs:
                 name: install build dir
                 command: yarn
             - run:
+                name: Convert guidelines to SCSS
+                command: yarn convert
+            - run:
                 name: Build build dir
                 command: yarn build
       - persist_to_workspace:
@@ -98,16 +101,16 @@ jobs:
   deploy:
     parameters:
       bucket:
-        description: 'Target bucket name where the build should be copied'
-        default: ''
+        description: "Target bucket name where the build should be copied"
+        default: ""
         type: string
       aws_region:
-        description: 'The AWS region where the infrastructure is'
-        default: 'eu-central-1'
+        description: "The AWS region where the infrastructure is"
+        default: "eu-central-1"
         type: string
       cloudfront_distribution:
-        description: 'The CloudFront Distribution caching the site'
-        default: ''
+        description: "The CloudFront Distribution caching the site"
+        default: ""
         type: string
     executor: aws-cli/default
     environment:
@@ -118,25 +121,25 @@ jobs:
           at: ~/project
       - aws-s3/sync:
           from: bundle
-          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/js'
+          to: "s3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/js"
           arguments: --exclude "*" --include "*.js" --include "*.js.gz"
           overwrite: true
       - aws-s3/sync:
           from: bundle
-          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css'
+          to: "s3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css"
           arguments: --exclude "*" --include "*.css" --include "*.css.gz"
           overwrite: true
       - aws-s3/sync:
           from: bundle/assets/fonts
-          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/fonts'
+          to: "s3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/fonts"
           overwrite: true
       - aws-s3/sync:
           from: bundle/assets/dist
-          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/dist'
+          to: "s3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/dist"
           overwrite: true
       - aws-s3/sync:
           from: bundle/assets/icons
-          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/icons'
+          to: "s3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/icons"
           overwrite: true
       - run:
           name: Invalidate CloudFront Distribution Cache
