@@ -123,7 +123,5 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {
-    "clsx": "^1.1.0"
-  }
+  "dependencies": {}
 }
