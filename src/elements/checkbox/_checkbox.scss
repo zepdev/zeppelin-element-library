@@ -29,6 +29,7 @@
   .#{$prefix}checkbox:checked + .#{$prefix}checkbox__label::before {
     @include themify($color_themes) {
       background: themed('primary');
+      border: 2px solid themed('primary');
     }
   }
 
