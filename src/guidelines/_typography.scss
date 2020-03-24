@@ -32,11 +32,11 @@ $typo-display-letterspacing-list: (0.6px, 0.6px, 0.6px, 0.6px, 1px, 1px);
   }
   .#{$prefix}typo--display-#{$i} {
     @extend %typo-display-#{$i};
-    color: #111111;
+    color: map-deep-get($guidelines, 'color', 'font');
   }
   .#{$prefix}typo--display-#{$i}-negative {
     @extend %typo-display-#{$i};
-    color: #eeeeee;
+    color: map-deep-get($guidelines, 'color', 'fontNegative');
   }
 }
 
