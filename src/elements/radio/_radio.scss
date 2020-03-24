@@ -1,7 +1,7 @@
 //Radio - base style
 
 @mixin radio {
-  .#{$prefix}radio__input {
+  .#{$prefix}radio {
     opacity: 0;
 
     + .#{$prefix}radio__label {
