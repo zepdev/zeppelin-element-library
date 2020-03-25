@@ -2,6 +2,7 @@ import React from 'react';
 
 function RadioPage() {
   const themes = ['indigo', 'yellow', 'red'];
+
   return (
     <>
       {themes.map(elem => (
@@ -14,9 +15,9 @@ function RadioPage() {
             type="radio"
             id={`id${elem}`}
             name="radio"
-            className="zep-radio__input"
+            className="zep-radio"
           />
-          <label for={`id${elem}`} className="zep-radio__label">
+          <label htmlFor={`id${elem}`} className="zep-radio__label">
             Radio {elem}
           </label>
         </div>
