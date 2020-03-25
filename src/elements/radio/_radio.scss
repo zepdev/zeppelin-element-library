@@ -1,59 +1,71 @@
 //Radio - base style
 
 @mixin radio {
-  .#{$prefix}radio {
-    @extend %typo-normal-body1;
-    display: block;
-    position: relative;
-    padding-left: 2.125rem;
-    min-height: 1.5rem;
-    cursor: pointer;
-    user-select: none;
-    color: map-deep-get($guidelines, 'color', 'font');
-  }
-
-  .#{$prefix}radio .#{$prefix}radio__input {
-    position: absolute;
+  .#{$prefix}radio__input {
     opacity: 0;
-    cursor: pointer;
-  }
 
-  .#{$prefix}radio__indicator {
-    position: absolute;
-    top: 3px;
-    left: 0;
-    height: 1.375rem;
-    width: 1.375rem;
-    border: 2px solid map-deep-get($guidelines, 'color', 'global', lightGray);
-    border-radius: 50%;
-  }
+    + .#{$prefix}radio__label {
+      @extend %typo-normal-body1;
+      position: relative;
+      cursor: pointer;
 
-  .#{$prefix}radio:hover .#{$prefix}radio__input ~ .#{$prefix}radio__indicator {
-    @include themify($color_themes) {
-      box-shadow: 0 0 5px 1px themed('primary');
+      &::before {
+        content: '';
+        position: absolute;
+        left: -30px;
+
+        /* Fixed alignment in some browsers. */
+        top: -1px;
+        border-radius: 50%;
+        border: 2px solid map-deep-get($guidelines, 'color', 'font');
+        width: 18px;
+        height: 18px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: -23px;
+        top: 6px;
+        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+      }
     }
-  }
 
-  .#{$prefix}radio__indicator:after {
-    content: '';
-    position: absolute;
-    display: none;
-  }
+    &:checked {
+      + .#{$prefix}radio__label::before {
+        @include themify($color_themes) {
+          background: themed('primary');
+          border: 2px solid themed('primary');
+        }
+      }
+      + .#{$prefix}radio__label::after {
+        @include themify($color_themes) {
+          background: themed('buttonText');
+        }
 
-  .#{$prefix}radio
-    .#{$prefix}radio__input:checked
-    ~ .#{$prefix}radio__indicator:after {
-    display: block;
-  }
+        /* The background is removed in Windows high-contrast mode, so we
+           need to set it explicitly here. `WindowText` is a system color
+           that should work with whatever high contrast mode the user
+           has set. */
+        @media screen and (-ms-high-contrast: active) {
+          & {
+            background: WindowText;
+          }
+        }
+      }
+    }
 
-  .#{$prefix}radio .#{$prefix}radio__indicator:after {
-    top: 0.25rem;
-    left: 0.25625rem;
-    width: 0.625rem;
-    height: 0.625rem;
-    border-radius: 50%;
-    @include themify($color_themes) {
-      background: themed('primary');
+    &:focus {
+      + .#{$prefix}radio__label::before {
+        @include themify($color_themes) {
+          box-shadow: 0 0 5px 1px themed('primary');
+          /* Since box shadows don't show up in high contrast mode,
+             we're adding a transparent outline (which does show up). */
+          outline: 2px dotted transparent;
+        }
+      }
     }
   }
 }

@@ -10,10 +10,14 @@ function RadioPage() {
           key={elem}
           style={{ marginBottom: 15 }}
         >
-          <label className="zep-radio">
-            <input type="radio" name="radio" className="zep-radio__input" />
-            <span className="zep-radio__indicator" />
-            <span className="zep-radio__label">Radio {elem}</span>
+          <input
+            type="radio"
+            id={`id${elem}`}
+            name="radio"
+            className="zep-radio__input"
+          />
+          <label for={`id${elem}`} className="zep-radio__label">
+            Radio {elem}
           </label>
         </div>
       ))}
