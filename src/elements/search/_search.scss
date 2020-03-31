@@ -10,20 +10,32 @@
     color: map-deep-get($guidelines, 'color', 'font');
     width: 100%;
     height: 3rem;
-    border: none;
     background-color: white;
-    padding-left: 1.25rem;
+    padding-left: 3.25rem;
     padding-top: 0.25rem;
-    border-bottom: 3px solid;
-    border-bottom-color: map-deep-get(
-      $guidelines,
-      'color',
-      'global',
-      lightGray
-    );
+    border: 1px solid map-deep-get($guidelines, 'color', 'global', lightGray);
+    &--rounded-left {
+      background: rgb(255, 255, 255);
+      border-radius: 30px 0px 0px 30px;
+    }
+    &--searchfield {
+      border: none;
+      padding-left: 1.25rem;
+      border-bottom: 1px solid
+        map-deep-get($guidelines, 'color', 'global', lightGray);
+      @include themify($color_themes) {
+        &:focus {
+          border-bottom-color: themed('primary');
+        }
+      }
+      + .#{$prefix}search__icon {
+        right: 0;
+        left: unset;
+      }
+    }
     @include themify($color_themes) {
       &:focus {
-        border-bottom-color: themed('primary');
+        border-color: themed('primary');
         @extend %typo-bold-body1;
         outline: none;
       }
@@ -35,8 +47,8 @@
 
   .#{$prefix}search__icon {
     position: absolute;
-    top: 11px;
-    right: 0;
+    top: 15px;
+    left: 20px;
     width: 24px;
     height: 24px;
     color: black;
