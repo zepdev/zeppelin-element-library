@@ -36,7 +36,6 @@
     @include themify($color_themes) {
       &:focus {
         border-color: themed('primary');
-        @extend %typo-bold-body1;
         outline: none;
       }
       &:focus + .#{$prefix}search__icon {
@@ -51,7 +50,7 @@
     left: 20px;
     width: 24px;
     height: 24px;
-    color: black;
+    color: rgba($color: #000000, $alpha: 0.5);
   }
 }
 
