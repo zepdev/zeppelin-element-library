@@ -13,7 +13,7 @@ function SearchPage() {
         >
           <input
             type="text"
-            className="zep-search__input zep-search__input--searchfield zep-search__input--rounded-left"
+            className="zep-search__input zep-search__input--rounded-left"
             placeholder="Search"
             id={`search-${elem}`}
           />
