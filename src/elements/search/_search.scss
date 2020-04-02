@@ -21,7 +21,7 @@
     &--searchfield {
       border: none;
       padding-left: 1.25rem;
-      border-bottom: 1px solid
+      border-bottom: 2px solid
         map-deep-get($guidelines, 'color', 'global', lightGray);
       @include themify($color_themes) {
         &:focus {
@@ -50,7 +50,7 @@
     left: 20px;
     width: 24px;
     height: 24px;
-    color: rgba($color: #000000, $alpha: 0.5);
+    color: rgba($color: #000000, $alpha: 0.8);
   }
 }
 
