@@ -5,7 +5,7 @@ function SearchPage() {
   const themes = ['indigo', 'yellow', 'red'];
   return (
     <>
-      <div style={{ padding: 30, background: '#000', marginBottom: 15 }}>
+      <div style={{ padding: 30, background: '#fff', marginBottom: 15 }}>
         <p style={{ color: '#FFF' }}>Search Default</p>
         {themes.map(elem => (
           <div
