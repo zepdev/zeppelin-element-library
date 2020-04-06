@@ -1,4 +1,15 @@
 @mixin checkbox {
+  @keyframes ripple {
+    0% {
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+    }
+    50% {
+      box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+      box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0);
+    }
+  }
   .#{$prefix}checkbox {
     position: absolute !important;
     height: 1px;
@@ -49,8 +60,7 @@
 
   .#{$prefix}checkbox:focus + .#{$prefix}checkbox__label::before {
     @include themify($color_themes) {
-      box-shadow: 0 0px 8px themed('primary');
-      border-radius: 4px;
+      animation: ripple 0.8s ease-in-out;
     }
   }
 

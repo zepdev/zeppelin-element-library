@@ -1,69 +1,83 @@
 //Radio - base style
 
 @mixin radio {
+  @keyframes ripple {
+    0% {
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+    }
+    50% {
+      box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+      box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0);
+    }
+  }
+
   .#{$prefix}radio {
-    opacity: 0;
+    &.#{$prefix}radio-inline {
+      display: inline-block;
+    }
+    input[type='radio'] {
+      visibility: visible;
+      opacity: 0;
 
-    + .#{$prefix}radio__label {
-      @extend %typo-normal-body1;
-      position: relative;
-      cursor: pointer;
-
-      &::before {
-        content: '';
-        position: absolute;
-        left: -30px;
-
-        /* Fixed alignment in some browsers. */
-        top: -1px;
-        border-radius: 50%;
-        border: 2px solid map-deep-get($guidelines, 'color', 'font');
-        width: 18px;
-        height: 18px;
+      &:checked + label:before {
+        @include themify($color_themes) {
+          background: themed('primary');
+          border-color: themed('primary');
+        }
+        animation: ripple 0.8s ease-in-out;
       }
-
-      &::after {
-        content: '';
-        position: absolute;
-        left: -23px;
-        top: 6px;
-        border-radius: 50%;
-        width: 8px;
-        height: 8px;
+      &:checked + label:after {
+        transform: scale(1);
+      }
+      &:focus + label:before,
+      &:active + label:before {
+        animation: ripple 0.8s ease-in-out;
+      }
+      &:disabled + label:before {
+        background: map-deep-get($guidelines, 'color', 'global', white);
+        border-color: map-deep-get($guidelines, 'color', 'global', lightGray);
+      }
+      &:focus &:disabled + label:before {
+        animation: none;
       }
     }
 
-    &:checked {
-      + .#{$prefix}radio__label::before {
+    label {
+      @extend %typo-normal-body1;
+      display: inline-block;
+      min-height: 18px;
+      position: relative;
+      padding: 0 28px;
+      margin-bottom: 0;
+      cursor: pointer;
+      vertical-align: bottom;
+      &:before,
+      &:after {
+        position: absolute;
+        content: '';
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        transition-property: transform, border-color;
+      }
+      &:before {
+        left: 0;
+        top: 3px;
+        width: 18px;
+        height: 18px;
         @include themify($color_themes) {
-          background: themed('primary');
           border: 2px solid themed('primary');
         }
       }
-      + .#{$prefix}radio__label::after {
+      &:after {
+        left: 7px;
+        top: 10px;
+        width: 8px;
+        height: 8px;
+        transform: scale(0);
         @include themify($color_themes) {
           background: themed('buttonText');
-        }
-
-        /* The background is removed in Windows high-contrast mode, so we
-           need to set it explicitly here. `WindowText` is a system color
-           that should work with whatever high contrast mode the user
-           has set. */
-        @media screen and (-ms-high-contrast: active) {
-          & {
-            background: WindowText;
-          }
-        }
-      }
-    }
-
-    &:focus {
-      + .#{$prefix}radio__label::before {
-        @include themify($color_themes) {
-          box-shadow: 0 0 5px 1px themed('primary');
-          /* Since box shadows don't show up in high contrast mode,
-             we're adding a transparent outline (which does show up). */
-          outline: 2px dotted transparent;
         }
       }
     }
