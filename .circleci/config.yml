@@ -1,113 +1,120 @@
 version: 2.1
 orbs:
-  node: circleci/node@1.1.6
+  node: circleci/node@2.0.3
   aws-cli: circleci/aws-cli@0.1.11
   aws-s3: circleci/aws-s3@1.0.4
 executors:
-  node_12:
+  node_14:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:14
 
 jobs:
   test:
-    executor: node_12
+    executor: node_14
     steps:
       - checkout # check out the code in the project directory
       - attach_workspace:
           at: ~/project
-      - node/with-cache:
-          cache-version: v7
-          steps:
-            - run:
-                name: Yarn install
-                command: yarn
-            - run:
-                name: Run all tests
-                command: yarn test
+      - node/install:
+          install-yarn: true
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Run all tests
+          command: yarn test
       - persist_to_workspace:
           root: .
           paths: coverage
 
   sonarqube:
-    executor: node_12
+    executor: node_14
     steps:
       - checkout # check out the code in the project directory
       - attach_workspace:
           at: ~/project
-      - node/with-cache:
-          steps:
-            - run:
-                name: Generate eslint report
-                command: yarn lint:sonarqube
-            - restore_cache:
-                keys:
-                  - sonar-scanner-{{ .Branch }}
-                  - sonar-scanner
-            - run:
-                name: Run sonar scanner
-                command: yarn sonar-scanner -Dsonar.login=$SONAR_LOGIN || true
-            - save_cache:
-                key: sonar-scanner-{{ .Branch }}
-                paths:
-                  - /home/circleci/.sonar
+      - node/install:
+          install-yarn: true
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Generate eslint report
+          command: yarn lint:sonarqube
+      - restore_cache:
+          keys:
+            - sonar-scanner-{{ .Branch }}
+            - sonar-scanner
+      - run:
+          name: Run sonar scanner
+          command: yarn sonar-scanner -Dsonar.login=$SONAR_LOGIN || true
+      - save_cache:
+          key: sonar-scanner-{{ .Branch }}
+          paths:
+            - /home/circleci/.sonar
+
   build:
-    executor: node_12
+    executor: node_14
     steps:
       - checkout # check out the code in the project directory
       - attach_workspace:
           at: ~/project
-      - node/with-cache:
-          steps:
-            - run:
-                name: Convert guidelines to SCSS
-                command: yarn convert
-            - run:
-                name: Build build dir
-                command: yarn build
+      - node/install:
+          install-yarn: true
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Convert guidelines to SCSS
+          command: yarn convert
+      - run:
+          name: Build build dir
+          command: yarn build
       - persist_to_workspace:
           root: .
           paths: build
 
   bundle:
-    executor: node_12
+    executor: node_14
     steps:
       - checkout # check out the code in the project directory
       - attach_workspace:
           at: ~/project
-      - node/with-cache:
-          steps:
-            - run:
-                name: Create bundle
-                command: yarn bundle
+      - node/install:
+          install-yarn: true
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Create bundle
+          command: yarn bundle
       - persist_to_workspace:
           root: .
           paths: bundle
 
   release:
-    executor: node_12
+    executor: node_14
     steps:
       - checkout # check out the code in the project directory
       - attach_workspace:
           at: ~/project
-      - node/with-cache:
-          steps:
-            - run:
-                name: release
-                command: yarn semantic-release || true
+      - node/install:
+          install-yarn: true
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: release
+          command: yarn semantic-release || true
 
   deploy:
     parameters:
       bucket:
-        description: 'Target bucket name where the build should be copied'
-        default: ''
+        description: "Target bucket name where the build should be copied"
+        default: ""
         type: string
       aws_region:
-        description: 'The AWS region where the infrastructure is'
-        default: 'eu-central-1'
+        description: "The AWS region where the infrastructure is"
+        default: "eu-central-1"
         type: string
       cloudfront_distribution:
-        description: 'The CloudFront Distribution caching the site'
-        default: ''
+        description: "The CloudFront Distribution caching the site"
+        default: ""
         type: string
     executor: aws-cli/default
     environment:
@@ -118,25 +125,25 @@ jobs:
           at: ~/project
       - aws-s3/sync:
           from: bundle
-          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/js'
+          to: "s3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/js"
           arguments: --exclude "*" --include "*.js" --include "*.js.gz"
           overwrite: true
       - aws-s3/sync:
           from: bundle
-          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css'
+          to: "s3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css"
           arguments: --exclude "*" --include "*.css" --include "*.css.gz"
           overwrite: true
       - aws-s3/sync:
           from: bundle/assets/fonts
-          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/fonts'
+          to: "s3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/fonts"
           overwrite: true
       - aws-s3/sync:
           from: bundle/assets/dist
-          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/dist'
+          to: "s3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/dist"
           overwrite: true
       - aws-s3/sync:
           from: bundle/assets/icons
-          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/icons'
+          to: "s3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/icons"
           overwrite: true
       - run:
           name: Invalidate CloudFront Distribution Cache
