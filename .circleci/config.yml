@@ -17,6 +17,7 @@ jobs:
           at: ~/project
       - node/install-packages:
           pkg-manager: yarn
+          cache-key: yarn.lock
       - run:
           name: Run all tests
           command: yarn test
@@ -32,6 +33,7 @@ jobs:
           at: ~/project
       - node/install-packages:
           pkg-manager: yarn
+          cache-key: yarn.lock
       - run:
           name: Generate eslint report
           command: yarn lint:sonarqube
@@ -55,6 +57,7 @@ jobs:
           at: ~/project
       - node/install-packages:
           pkg-manager: yarn
+          cache-key: yarn.lock
       - run:
           name: Convert guidelines to SCSS
           command: yarn convert
@@ -73,6 +76,7 @@ jobs:
           at: ~/project
       - node/install-packages:
           pkg-manager: yarn
+          cache-key: yarn.lock
       - run:
           name: Create bundle
           command: yarn bundle
@@ -88,6 +92,7 @@ jobs:
           at: ~/project
       - node/install-packages:
           pkg-manager: yarn
+          cache-key: yarn.lock
       - run:
           name: release
           command: yarn semantic-release || true
