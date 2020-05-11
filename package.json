@@ -37,7 +37,7 @@
     "lint:prettier": "yarn prettier --check",
     "lint:sonarqube": "yarn lint:eslint -f json -o report.json",
     "lint": "yarn lint:eslint && yarn lint:prettier",
-    "convert": "yarn json-to-scss ./src/themes/guidelines.json"
+    "convert": "json-to-scss ./src/themes/guidelines.json"
   },
   "eslintConfig": {
     "extends": "react-app"
