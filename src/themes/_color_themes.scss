@@ -38,16 +38,26 @@ $color_themes: (
   )
 );
 
-@mixin themify($color_themes: $color_themes) {
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+@mixin themify($color_themes: $color_themes, $selector: '.theme-$color &') {
   @each $color, $map in $color_themes {
-    .theme-#{$color} & {
+    #{str-replace($selector, '$color', $color)} {
       $theme-map: () !global;
       @each $key, $submap in $map {
-        $value: map-get(map-get($color_themes, $color), '#{$key}');
+        $value: map-get(map-get($color_themes, $color), "#{$key}");
         $theme-map: map-merge(
           $theme-map,
           (
-            $key: $value
+            $key: $value,
           )
         ) !global;
       }
