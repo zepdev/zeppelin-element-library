@@ -10,15 +10,17 @@ $color_themes: (
     secondary: map-deep-get($guidelines, 'theme', indigo, 'primary'),
     buttonText: map-deep-get($guidelines, 'color', 'global', white),
     buttonTextHover: map-deep-get($guidelines, 'color', 'global', white),
-    tagHover: map-deep-get($guidelines, 'theme', indigo, 'secondary')
-  ),
-  yellow: (
+    tagHover: map-deep-get($guidelines, 'theme', indigo, 'secondary'),
+    textBase: map-deep-get($guidelines, 'color', 'global', white)
+),
+yellow: (
     primary: map-deep-get($guidelines, 'theme', yellow, 'primary'),
     hover: map-deep-get($guidelines, 'theme', yellow, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', yellow, 'tertiary'),
     buttonText: map-deep-get($guidelines, 'color', 'font'),
     buttonTextHover: map-deep-get($guidelines, 'color', 'global' darkGray),
-    tagHover: map-deep-get($guidelines, 'theme', yellow, 'tertiary')
+    tagHover: map-deep-get($guidelines, 'theme', yellow, 'tertiary'),
+    textBase: map-deep-get($guidelines, 'color', 'global', black)
   ),
   red: (
     primary: map-deep-get($guidelines, 'theme', red, 'primary'),
@@ -26,16 +28,18 @@ $color_themes: (
     secondary: map-deep-get($guidelines, 'theme', red, 'tertiary'),
     buttonText: map-deep-get($guidelines, 'color', 'global', white),
     buttonTextHover: map-deep-get($guidelines, 'color', 'global', white),
-    tagHover: map-deep-get($guidelines, 'theme', red, 'tertiary')
-  ),
+    tagHover: map-deep-get($guidelines, 'theme', red, 'tertiary'),
+    textBase: map-deep-get($guidelines, 'color', 'global', white)
+),
   blue: (
     primary: map-deep-get($guidelines, 'theme', blue, 'primary'),
     hover: map-deep-get($guidelines, 'theme', blue, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', blue, 'primary'),
     buttonText: map-deep-get($guidelines, 'color', 'global', white),
     buttonTextHover: map-deep-get($guidelines, 'color', 'global', white),
-    tagHover: map-deep-get($guidelines, 'theme', blue, 'secondary')
-  )
+    tagHover: map-deep-get($guidelines, 'theme', blue, 'secondary'),
+    textBase: map-deep-get($guidelines, 'color', 'global', white)
+)
 );
 
 @function str-replace($string, $search, $replace: '') {
