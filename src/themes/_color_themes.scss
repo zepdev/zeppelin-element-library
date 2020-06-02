@@ -10,7 +10,8 @@ $color_themes: (
     secondary: map-deep-get($guidelines, 'theme', indigo, 'primary'),
     buttonText: map-deep-get($guidelines, 'color', 'global', white),
     buttonTextHover: map-deep-get($guidelines, 'color', 'global', white),
-    tagHover: map-deep-get($guidelines, 'theme', indigo, 'secondary')
+    tagHover: map-deep-get($guidelines, 'theme', indigo, 'secondary'),
+    textBase: map-deep-get($guidelines, 'color', 'global', white)
   ),
   yellow: (
     primary: map-deep-get($guidelines, 'theme', yellow, 'primary'),
@@ -18,7 +19,8 @@ $color_themes: (
     secondary: map-deep-get($guidelines, 'theme', yellow, 'tertiary'),
     buttonText: map-deep-get($guidelines, 'color', 'font'),
     buttonTextHover: map-deep-get($guidelines, 'color', 'global' darkGray),
-    tagHover: map-deep-get($guidelines, 'theme', yellow, 'tertiary')
+    tagHover: map-deep-get($guidelines, 'theme', yellow, 'tertiary'),
+    textBase: map-deep-get($guidelines, 'color', 'global', black)
   ),
   red: (
     primary: map-deep-get($guidelines, 'theme', red, 'primary'),
@@ -26,7 +28,8 @@ $color_themes: (
     secondary: map-deep-get($guidelines, 'theme', red, 'tertiary'),
     buttonText: map-deep-get($guidelines, 'color', 'global', white),
     buttonTextHover: map-deep-get($guidelines, 'color', 'global', white),
-    tagHover: map-deep-get($guidelines, 'theme', red, 'tertiary')
+    tagHover: map-deep-get($guidelines, 'theme', red, 'tertiary'),
+    textBase: map-deep-get($guidelines, 'color', 'global', white)
   ),
   blue: (
     primary: map-deep-get($guidelines, 'theme', blue, 'primary'),
@@ -34,7 +37,8 @@ $color_themes: (
     secondary: map-deep-get($guidelines, 'theme', blue, 'primary'),
     buttonText: map-deep-get($guidelines, 'color', 'global', white),
     buttonTextHover: map-deep-get($guidelines, 'color', 'global', white),
-    tagHover: map-deep-get($guidelines, 'theme', blue, 'secondary')
+    tagHover: map-deep-get($guidelines, 'theme', blue, 'secondary'),
+    textBase: map-deep-get($guidelines, 'color', 'global', white)
   )
 );
 
@@ -42,7 +46,12 @@ $color_themes: (
   $index: str-index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
   }
 
   @return $string;
@@ -53,11 +62,11 @@ $color_themes: (
     #{str-replace($selector, '$color', $color)} {
       $theme-map: () !global;
       @each $key, $submap in $map {
-        $value: map-get(map-get($color_themes, $color), "#{$key}");
+        $value: map-get(map-get($color_themes, $color), '#{$key}');
         $theme-map: map-merge(
           $theme-map,
           (
-            $key: $value,
+            $key: $value
           )
         ) !global;
       }
