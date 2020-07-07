@@ -22,10 +22,12 @@
       opacity: 0;
 
       &:checked + label:before {
-        @include themify($color_themes) {
-          background: themed('primary');
-          border-color: themed('primary');
-        }
+        background: map-deep-get($guidelines, 'color', 'global', white);
+        border-color: rgba(0, 0, 0, 0.84);
+        // @include themify($color_themes) {
+        //   background: themed('primary');
+        //   border-color: themed('primary');
+        // }
         animation: ripple 0.8s ease-in-out;
       }
       &:checked + label:after {
@@ -66,9 +68,10 @@
         top: 3px;
         width: 18px;
         height: 18px;
-        @include themify($color_themes) {
-          border: 2px solid themed('primary');
-        }
+        border: 2px solid rgba(0, 0, 0, 0.84);
+        // @include themify($color_themes) {
+        //   border: 2px solid themed('primary');
+        // }
       }
       &:after {
         left: 7px;
@@ -76,9 +79,10 @@
         width: 8px;
         height: 8px;
         transform: scale(0);
-        @include themify($color_themes) {
-          background: themed('buttonText');
-        }
+        background: rgba(0, 0, 0, 0.84);
+        // @include themify($color_themes) {
+        //   background: themed('buttonText');
+        // }
       }
     }
   }
