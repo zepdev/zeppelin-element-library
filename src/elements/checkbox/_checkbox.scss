@@ -31,17 +31,19 @@
     display: inline-block;
     margin-right: 10px;
     border-radius: 4px;
-    border: 2px solid map-deep-get($guidelines, 'color', 'font');
+    border: 2px solid rgba(0, 0, 0, 0.84);
     width: 18px;
     height: 18px;
     top: 6px;
   }
 
   .#{$prefix}checkbox:checked + .#{$prefix}checkbox__label::before {
-    @include themify($color_themes) {
-      background: themed('primary');
-      border: 2px solid themed('primary');
-    }
+    background: map-deep-get($guidelines, 'color', 'global', white);
+    border: 2px solid rgba(0, 0, 0, 0.84);
+    // @include themify($color_themes) {
+    //   background: themed('primary');
+    //   border: 2px solid themed('primary');
+    // }
   }
 
   .#{$prefix}checkbox:checked + .#{$prefix}checkbox__label::after {
@@ -52,10 +54,12 @@
     height: 3px;
     width: 10px;
     transform: rotate(-45deg);
-    @include themify($color_themes) {
-      border-left: 2px solid themed('buttonText');
-      border-bottom: 2px solid themed('buttonText');
-    }
+    border-left: 2px solid rgba(0, 0, 0, 0.84);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.84);
+    // @include themify($color_themes) {
+    //   border-left: 2px solid themed('buttonText');
+    //   border-bottom: 2px solid themed('buttonText');
+    // }
   }
 
   .#{$prefix}checkbox:focus + .#{$prefix}checkbox__label::before {
