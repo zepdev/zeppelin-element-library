@@ -35,6 +35,7 @@
     "sonar-scanner": "sonar-scanner",
     "lint:eslint": "eslint src/**/*.js src/**/*.jsx",
     "lint:prettier": "yarn prettier --check",
+    "lint:prettier:fix": "yarn prettier --write",
     "lint:sonarqube": "yarn lint:eslint -f json -o report.json",
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "convert": "json-to-scss src/themes/guidelines.json"
