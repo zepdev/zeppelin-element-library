@@ -23,14 +23,14 @@ CopyIcon.propTypes = {
   height: PropTypes.string,
   viewBox: PropTypes.string,
   fill: PropTypes.string,
-  ariaLabel: PropTypes.string
+  ariaLabel: PropTypes.string,
 };
 
 CopyIcon.defaultProps = {
   width: '32',
   height: '32',
   viewBox: '0 0 24 24',
-  fill: 'currentColor'
+  fill: 'currentColor',
 };
 
 export default CopyIcon;

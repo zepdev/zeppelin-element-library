@@ -7,7 +7,7 @@ function ButtonPage() {
   return (
     <>
       <p className="zep-typo--normal-body1">Primary - Large (anchor tags)</p>
-      {theme.map(elem => (
+      {theme.map((elem) => (
         <div
           className={`theme-${elem}`}
           style={{ marginBottom: 15 }}
@@ -24,7 +24,7 @@ function ButtonPage() {
         </div>
       ))}
       <p className="zep-typo--normal-body1">Primary - Large (button tags)</p>
-      {theme.map(elem => (
+      {theme.map((elem) => (
         <div
           className={`theme-${elem}`}
           style={{ marginBottom: 15 }}
@@ -72,7 +72,7 @@ function ButtonPage() {
         </button>
       </div>
       <p>Secondary (anchor tags)</p>
-      {theme.map(elem => (
+      {theme.map((elem) => (
         <div
           className={`theme-${elem}`}
           style={{ marginBottom: 15 }}
@@ -89,7 +89,7 @@ function ButtonPage() {
         </div>
       ))}
       <p>Secondary (button tags)</p>
-      {theme.map(elem => (
+      {theme.map((elem) => (
         <div
           className={`theme-${elem}`}
           style={{ marginBottom: 15 }}
@@ -101,7 +101,7 @@ function ButtonPage() {
         </div>
       ))}
       <p>Icon</p>
-      {theme.map(elem => (
+      {theme.map((elem) => (
         <div
           className={`theme-${elem}`}
           style={{ marginBottom: 15 }}
@@ -112,7 +112,7 @@ function ButtonPage() {
           </button>
         </div>
       ))}
-      {theme.map(elem => (
+      {theme.map((elem) => (
         <div
           className={`theme-${elem}`}
           style={{ marginBottom: 15 }}

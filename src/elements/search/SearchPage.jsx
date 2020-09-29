@@ -7,7 +7,7 @@ function SearchPage() {
     <>
       <div style={{ padding: 30, background: '#fff', marginBottom: 15 }}>
         <p style={{ color: '#FFF' }}>Search Default</p>
-        {themes.map(elem => (
+        {themes.map((elem) => (
           <div
             className={`theme-${elem} zep-search`}
             style={{ marginBottom: 15 }}
@@ -28,7 +28,7 @@ function SearchPage() {
       </div>
 
       <p>Header Default</p>
-      {themes.map(elem => (
+      {themes.map((elem) => (
         <div
           className={`theme-${elem} zep-search`}
           style={{ marginBottom: 15 }}

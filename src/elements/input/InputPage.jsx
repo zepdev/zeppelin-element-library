@@ -4,7 +4,7 @@ function InputPage() {
   const themes = ['indigo', 'yellow', 'red'];
   return (
     <>
-      {themes.map(elem => (
+      {themes.map((elem) => (
         <div
           className={`theme-${elem} zep-input-container`}
           style={{ marginBottom: 15 }}

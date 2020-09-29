@@ -5,7 +5,7 @@ function PaginationPage() {
   const themes = ['indigo', 'yellow', 'red'];
   return (
     <>
-      {themes.map(elem => (
+      {themes.map((elem) => (
         <div
           className={`theme-${elem} zep-pagination`}
           style={{ marginBottom: 15 }}
@@ -17,7 +17,7 @@ function PaginationPage() {
           <button className="zep-button zep-button-icon" disabled>
             <Icon icon="zepicons-chevron-left" className="zep-button__icon" />
           </button>
-          {[1, 2, 3, 4, 5].map(elem => (
+          {[1, 2, 3, 4, 5].map((elem) => (
             <button
               className="zep-button zep-button-pagination"
               key={`count${elem}`}

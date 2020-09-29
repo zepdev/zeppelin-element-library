@@ -19,10 +19,7 @@ it('shows the requested content', () => {
     let btn = buttons.at(i);
     btn.simulate('click');
     const prop = wrapper.find('#main-content').prop('data-test-content');
-    const btnName = btn
-      .text()
-      .replace(/\s+/g, '')
-      .toLowerCase();
+    const btnName = btn.text().replace(/\s+/g, '').toLowerCase();
     expect(prop.toLowerCase()).toEqual(btnName);
   }
 });

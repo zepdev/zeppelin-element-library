@@ -9,7 +9,7 @@ function SelectPage() {
   return (
     <>
       <p style={{ marginBottom: 45 }}>With List</p>
-      {themes.map(elem => (
+      {themes.map((elem) => (
         <div
           className={`theme-${elem}`}
           style={{ marginBottom: 15 }}
