@@ -124,13 +124,13 @@ function TabsPage() {
           Icon Tab 3
         </button>
       </div>
-    </>
+    </>,
   ];
 
-  const fragmentsList = fragments.map(function(frag, i) {
+  const fragmentsList = fragments.map(function (frag, i) {
     return (
       <div key={`tab-list-${i}`}>
-        {themes.map(elem => (
+        {themes.map((elem) => (
           <div
             className={`theme-${elem} zep-tabs`}
             key={`tab-list-${i}-tabs${elem}`}

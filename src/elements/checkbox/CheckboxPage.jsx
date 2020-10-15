@@ -4,7 +4,7 @@ function CheckboxPage() {
   const themes = ['indigo', 'yellow', 'red'];
   return (
     <>
-      {themes.map(elem => (
+      {themes.map((elem) => (
         <div
           key={`theme-${elem}`}
           className={`theme-${elem}`}

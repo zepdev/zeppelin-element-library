@@ -21,13 +21,13 @@ const Icon = ({ className, width, height, icon, viewBox, ariaLabel }) => {
 Icon.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
-  viewBox: PropTypes.string
+  viewBox: PropTypes.string,
 };
 
 Icon.defaultProps = {
   width: '32',
   height: '32',
-  viewBox: '0 0 24 24'
+  viewBox: '0 0 24 24',
 };
 
 export default Icon;

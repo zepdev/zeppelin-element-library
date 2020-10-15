@@ -7,7 +7,7 @@ module.exports = {
     m: '62em' /* 992px */,
     l: '75em' /* 1200px */,
     xl: '105em' /* 1680px */,
-    xxl: '120em' /* 1920px */
+    xxl: '120em' /* 1920px */,
   },
   typography: {
     fontFamily: "'Roboto', Arial, Helvetica, sans-serif",
@@ -16,8 +16,8 @@ module.exports = {
       1: 'zep-typo--display-1',
       2: 'zep-typo--display-2',
       3: 'zep-typo--display-3',
-      4: 'zep-typo--display-4'
-    }
+      4: 'zep-typo--display-4',
+    },
   },
   colors: {
     indigoBlue: { name: 'indigo blue', hex: '#27166f', rgb: null, hsb: null },
@@ -28,7 +28,7 @@ module.exports = {
       name: 'gray mid dark',
       hex: '#373d3f',
       rgb: null,
-      hsb: null
+      hsb: null,
     },
     gray: { name: 'gray', hex: '#464a4c', rgb: null, hsb: null },
     grayLight: { name: 'gray light', hex: '#6f7c80', rgb: null, hsb: null },
@@ -38,9 +38,9 @@ module.exports = {
       name: 'gray lightest',
       hex: '#f7f7f9',
       rgb: null,
-      hsb: null
+      hsb: null,
     },
-    white: { name: 'white', hex: '#ffffff', rgb: null, hsb: null }
+    white: { name: 'white', hex: '#ffffff', rgb: null, hsb: null },
   },
   spacing: {
     xxs: '1rem 1.5rem',
@@ -49,6 +49,6 @@ module.exports = {
     m: '2rem 3rem',
     l: '2rem 3rem',
     xl: '3rem',
-    xxl: '3rem'
-  }
+    xxl: '3rem',
+  },
 };

@@ -34,7 +34,7 @@ function App() {
             padding: 30,
             color: '#ffffff',
             background: '#27166f ',
-            width: '100%'
+            width: '100%',
           }}
         >
           <h1 className="zep-typo--normal-h1-negative">
