@@ -1,41 +1,41 @@
 module.exports = {
   button: {
-    name: 'button'
+    name: 'button',
   },
   tabs: {
-    name: 'tabs'
+    name: 'tabs',
   },
   tag: {
-    name: 'tag'
+    name: 'tag',
   },
   checkbox: {
-    name: 'checkbox'
+    name: 'checkbox',
   },
   input: {
-    name: 'input'
+    name: 'input',
   },
   numberInput: {
-    name: 'number input'
+    name: 'number input',
   },
   list: {
-    name: 'list'
+    name: 'list',
   },
   radio: {
-    name: 'radio'
+    name: 'radio',
   },
   table: {
-    name: 'table'
+    name: 'table',
   },
   search: {
-    name: 'search'
+    name: 'search',
   },
   select: {
-    name: 'select'
+    name: 'select',
   },
   notification: {
-    name: 'notification'
+    name: 'notification',
   },
   pagination: {
-    name: 'pagination'
-  }
+    name: 'pagination',
+  },
 };

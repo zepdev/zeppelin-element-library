@@ -42,7 +42,7 @@ class ZEL {
 
     let tempElements = [];
 
-    [...jsElementList].forEach(elem => {
+    [...jsElementList].forEach((elem) => {
       let type = helpers.formatZepType(elem.getAttribute('data-zep-type'));
 
       let newElement = {
@@ -50,7 +50,7 @@ class ZEL {
         htmlNode: elem,
         innerHTML: elem.innerHTML,
         jsInstance: null,
-        initialized: false
+        initialized: false,
       };
 
       tempElements.push(newElement);

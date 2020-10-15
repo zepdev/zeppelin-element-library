@@ -6,7 +6,7 @@ function RadioPage() {
   return (
     <>
       <div>
-        {themes.map(elem => (
+        {themes.map((elem) => (
           <div
             className={`theme-${elem}`}
             key={elem}
@@ -21,7 +21,7 @@ function RadioPage() {
       </div>
       <p style={{ marginTop: 15, marginBottom: 15 }}>Inline</p>
       <div>
-        {themes.map(elem => (
+        {themes.map((elem) => (
           <div
             className={`theme-${elem}`}
             key={elem}
@@ -39,7 +39,7 @@ function RadioPage() {
         ))}
       </div>
       <p style={{ marginTop: 15, marginBottom: 15 }}>Disabled</p>
-      {themes.map(elem => (
+      {themes.map((elem) => (
         <div
           className={`theme-${elem}`}
           key={elem}

@@ -5,7 +5,7 @@ function NumberInputPage() {
   const theme = ['indigo', 'yellow', 'red'];
   return (
     <>
-      {theme.map(elem => (
+      {theme.map((elem) => (
         <div
           key={`key-${elem}`}
           className={`theme-${elem} zep-numberinput`}
