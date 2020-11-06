@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from '../icon/Icon';
 
 function SearchPage() {
-  const themes = ['indigo', 'yellow', 'red'];
+  const themes = ['indigo', 'yellow', 'red', 'blue'];
   return (
     <>
       <div style={{ padding: 30, background: '#fff', marginBottom: 15 }}>

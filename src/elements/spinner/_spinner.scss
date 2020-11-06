@@ -1,0 +1,67 @@
+@mixin spinner {
+  .#{$prefix}spinner {
+    display: inline-block;
+    height: 1.25rem;
+    width: 1.25rem;
+    animation: #{$prefix}rotate 0.9s linear infinite;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .stroke {
+      stroke: black;
+      stroke-opacity: 0.6;
+      stroke-width: 1.25;
+      fill: transparent;
+      stroke-linecap: round;
+      stroke-dasharray: 6.283, 18.849;
+      stroke-dashoffset: 9.426;
+      animation: #{$prefix}inertia 1.3s ease-in-out infinite;
+      transform-origin: 50% 50%;
+    }
+
+    &--invert {
+      .stroke {
+        stroke: white;
+      }
+    }
+    &--medium {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    &--large {
+      width: 3.75rem;
+      height: 3.75rem;
+    }
+  }
+
+  @keyframes #{$prefix}rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes #{$prefix}inertia {
+    0% {
+      stroke-dasharray: 6.283, 18.849;
+      stroke-opacity: 0.4;
+    }
+    50% {
+      stroke-dasharray: 17.278, 7.853;
+      stroke-opacity: 0.6;
+    }
+    100% {
+      stroke-dasharray: 6.283, 18.849;
+      stroke-opacity: 0.4;
+    }
+  }
+}
+
+@include exports('spinner') {
+  @include spinner;
+}
