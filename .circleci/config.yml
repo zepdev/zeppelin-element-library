@@ -126,19 +126,23 @@ jobs:
       - aws-s3/sync:
           from: bundle
           to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css'
-          arguments: --exclude "*" --include "*.css" --include "*.css.gz"
+          arguments: --exclude "*" --include "*.css"
           overwrite: true
       - aws-s3/sync:
-          from: bundle/assets/fonts
-          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/fonts'
+          from: assets/fonts
+          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/assets/fonts'
           overwrite: true
       - aws-s3/sync:
-          from: bundle/assets/dist
-          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/dist'
+          from: assets/icons
+          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/assets/icons'
           overwrite: true
       - aws-s3/sync:
-          from: bundle/assets/icons
-          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/css/assets/icons'
+          from: assets/logos
+          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/assets/logos'
+          overwrite: true
+      - aws-s3/sync:
+          from: assets/sketch
+          to: 's3://<< parameters.bucket >>/zel/${CIRCLE_TAG/v/}/assets/sketch'
           overwrite: true
       - run:
           name: Invalidate CloudFront Distribution Cache
