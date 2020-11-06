@@ -8,10 +8,13 @@ mkdir -p assets/sketch;
 mkdir -p assets/logos;
 
 #create target destination variable
-TARGET_FILE="zel.css"
+TARGET_FILE="bundle/zel.css"
 
 # copy build css file from react app build to main folder
 find build/static/css -name \*.css -exec cp {} $TARGET_FILE \;
+
+# copy zel.css file from bundle to main folder
+cp -r bundle/zel.css .
 
 # copy guidelines.json file from src to main folder
 cp -r src/themes/*.json .
@@ -28,32 +31,12 @@ cp -r src/assets/logos/* assets/logos
 # copy sketch file into assets folder
 cp -r src/assets/sketches/zds-library.sketch assets/sketch
 
-# rename icons
-# cd bundle/assets/icons
-# for f in *.svg
-# do
-#     newFileName=$(echo $f | \
-#      awk '{gsub(/iconsLanguages/, "")};1' | \
-#      awk '{gsub(/iconsMiscAction/, "")};1' | \
-#      awk '{gsub(/iconsMiscNavigation/, "")};1' | \
-#      awk '{gsub(/iconsMiscIndicator/, "")};1' | \
-#      awk '{gsub(/iconsSbu/, "")};1' | \
-#      awk '{gsub(/iconsSocial/, "")};1' | \
-#      awk '{gsub(/[A-Z]/, "-&")};1' | \
-#      awk '{ print tolower($0) }')
-# #     mv $f "zepicons$newFileName" ONLY USE IF CHANGING FILE NAMES THE FIRST TIME
-#      mv $f $newFileName
-# done
-
-# # move back to main folder
-# cd ../../../
-
 # delete sourceMapping comment line from css file
 sed -i.bak 's@/\*.*\*/@@g' $TARGET_FILE
 rm $TARGET_FILE.bak
 
 # change fonts path in css files
-sed -i.bak 's@/static/media/@assets/fonts/@g' $TARGET_FILE
+sed -i.bak 's@/static/media/@../assets/fonts/@g' $TARGET_FILE
 rm $TARGET_FILE.bak
 
 # delete hash from font name in css file
