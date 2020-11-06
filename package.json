@@ -30,7 +30,7 @@
     "commit": "git-cz",
     "semantic-release": "semantic-release",
     "prettier": "prettier src/**/*.js src/**/*.jsx",
-    "publish:check": "semantic-release --branches=master,development --no-ci --dry-run",
+    "publish:check": "semantic-release --branches=main,development --no-ci --dry-run",
     "publish:dev": "yarn publish --tag=next",
     "sonar-scanner": "sonar-scanner",
     "lint:eslint": "eslint src/**/*.js src/**/*.jsx",
