@@ -1,3 +1,40 @@
+# [2.0.0](https://github.com/zepdev/zeppelin-element-library/compare/v1.3.0...v2.0.0) (2020-11-06)
+
+
+### Bug Fixes
+
+* **radio, checkbox:** theme color to black new version ([e474aec](https://github.com/zepdev/zeppelin-element-library/commit/e474aecf1ffd98f0d82d1870416b4cf613c25e12))
+* **themes:** [#153](https://github.com/zepdev/zeppelin-element-library/issues/153) add text base colors to themes ([8014de4](https://github.com/zepdev/zeppelin-element-library/commit/8014de46cea86b94ec1cd26b02e100e44a5a458d))
+* liniting ([4eddc3b](https://github.com/zepdev/zeppelin-element-library/commit/4eddc3b3cadc61b5da838165c497370f2b4e5d84))
+* update icon opacity and remove increase font weight on focus ([1914249](https://github.com/zepdev/zeppelin-element-library/commit/1914249754f18ca4d91f1ac8674e093950cf8cbb)), closes [#149](https://github.com/zepdev/zeppelin-element-library/issues/149)
+* **all:** clean up files for theme ([673cacb](https://github.com/zepdev/zeppelin-element-library/commit/673cacbe15a11c34d2b41b1942d08579d40e7bb8))
+* **all:** resolve conflicts ([6014440](https://github.com/zepdev/zeppelin-element-library/commit/6014440ad5fd3c5a53b8f678029f1b3080e44021))
+* **checkbox:** fixed border on active ([91ac193](https://github.com/zepdev/zeppelin-element-library/commit/91ac193aff9a0b90be92ea3e0ba92dfefa3308ed))
+* **circleci:** updated node ([eada04e](https://github.com/zepdev/zeppelin-element-library/commit/eada04ed8939dfa9da9f26b943538c2fa291c86a))
+* **merge conflicts:** solve conflicts, clean up button related files ([b18cbdd](https://github.com/zepdev/zeppelin-element-library/commit/b18cbddc48a40bb7b1b65afef4fffbeaa3fb9753))
+* **numberinput:** add useLayoutEffect hook for ZEL.refresh on page ([ecd9fe8](https://github.com/zepdev/zeppelin-element-library/commit/ecd9fe83a080f1e9ce404b765a225029b2c5c0eb)), closes [#136](https://github.com/zepdev/zeppelin-element-library/issues/136)
+* **package.json:** removed temp package ([8c05bf7](https://github.com/zepdev/zeppelin-element-library/commit/8c05bf7910b656dc1ad378f1e7ea8c34f45bf935))
+* **push:** fixes were not pushed ([a6470e2](https://github.com/zepdev/zeppelin-element-library/commit/a6470e230b92c36c5e987fc4780b8476d9059108))
+* **searchbar:** added different views ([d3b4a9e](https://github.com/zepdev/zeppelin-element-library/commit/d3b4a9ed7064cd6d061e1513eb2dd8bcf3b74e27))
+* **typo in lightgray:** missing comma in lightGray colors ([929c77b](https://github.com/zepdev/zeppelin-element-library/commit/929c77baa93e4d4945b05f1a8a49ccc351cbdba3))
+
+
+### Features
+
+* **loading-spinner:** add spinner, update devDependencies ([ebddd62](https://github.com/zepdev/zeppelin-element-library/commit/ebddd62abcb3299c4dfeb693b9e65e9426731269))
+* themify mixin with custom selectors ([3015a35](https://github.com/zepdev/zeppelin-element-library/commit/3015a3593dd6a2bba007cfb6629f7a429d8dc5a9))
+* **button:** button styles and colors changed ([d649f8a](https://github.com/zepdev/zeppelin-element-library/commit/d649f8a0aa211e2a74f50cb17683b4d74b48bb45))
+* **buttons:** new styles, fix js, fix tests ([9888ac7](https://github.com/zepdev/zeppelin-element-library/commit/9888ac753eaf29e8e6fd4210e62a02aa4f7261a3)), closes [#136](https://github.com/zepdev/zeppelin-element-library/issues/136)
+* **checkbox:** new style ([a9f06e4](https://github.com/zepdev/zeppelin-element-library/commit/a9f06e434ab17fe953d2883d04a39c6af81c884d))
+* **colors:** guideline colors for fonts changed, updated buttons ([d6d930c](https://github.com/zepdev/zeppelin-element-library/commit/d6d930c94685fab0bb06d82fa011b69a571c011d))
+* **radio:** new focus state ([220ff14](https://github.com/zepdev/zeppelin-element-library/commit/220ff14fc7df3ead69e392ce942e129ca4973734))
+* **radio:** new styles ([edcd82b](https://github.com/zepdev/zeppelin-element-library/commit/edcd82ba711c94ecc42684a9861a7d9ab53c40f6))
+
+
+### BREAKING CHANGES
+
+* **button:** color name changes
+
 # [1.3.0](https://github.com/zepdev/zeppelin-element-library/compare/v1.2.1...v1.3.0) (2020-01-24)
 
 
