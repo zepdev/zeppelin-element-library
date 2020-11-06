@@ -1,6 +1,6 @@
 {
   "name": "zeppelin-element-library",
-  "version": "1.3.15",
+  "version": "1.3.18",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
   "author": "Joerg Schneider <joerg.schneider@z-lab.com>",
   "license": "MIT",
@@ -44,15 +44,15 @@
     "extends": "react-app"
   },
   "husky": {
-        "hooks": {
-          "pre-commit": "lint-staged"
-        }
-      },
-       "lint-staged": {
-           "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-             "prettier --write"
-           ]
-         },
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
@@ -90,32 +90,32 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.12.0",
-    "@babel/plugin-transform-classes": "^7.10.4",
-    "@babel/preset-env": "^7.12.0",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-classes": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
-    "@testing-library/dom": "^7.26.0",
-    "commitizen": "^4.2.1",
+    "@testing-library/dom": "^7.26.5",
+    "commitizen": "^4.2.2",
     "cz-conventional-changelog": "^3.3.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "husky": "^4.3.0",
     "json-to-scss": "^1.6.2",
-    "lint-staged": "^10.4.0",
+    "lint-staged": "^10.5.1",
     "node-sass": "^4.14.1",
     "prettier": "^2.1.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-scripts": "^3.4.3",
-    "rollup": "^2.30.0",
+    "react-scripts": "^3.4.4",
+    "rollup": "^2.33.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-uglify": "^6.0.4",
-    "semantic-release": "^17.2.1",
+    "semantic-release": "^17.2.2",
     "sonarqube-scanner": "^2.7.0"
   },
   "config": {

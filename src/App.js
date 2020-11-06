@@ -10,6 +10,7 @@ import RadioPage from './elements/radio/RadioPage';
 import TablePage from './elements/table/TablePage';
 import SearchPage from './elements/search/SearchPage';
 import SelectPage from './elements/select/SelectPage';
+import SpinnerPage from './elements/spinner/SpinnerPage';
 import TabsPage from './elements/tabs/TabsPage';
 import NotificationPage from './elements/notification/NotificationPage';
 import PaginationPage from './elements/pagination/PaginationPage';
@@ -81,6 +82,7 @@ function App() {
             {content === 'table' && <TablePage />}
             {content === 'search' && <SearchPage />}
             {content === 'select' && <SelectPage />}
+            {content === 'spinner' && <SpinnerPage />}
             {content === 'tabs' && <TabsPage />}
             {content === 'notification' && <NotificationPage />}
             {content === 'pagination' && <PaginationPage />}

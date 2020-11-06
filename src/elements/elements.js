@@ -32,6 +32,9 @@ module.exports = {
   select: {
     name: 'select',
   },
+  spinner: {
+    name: 'spinner',
+  },
   notification: {
     name: 'notification',
   },
