@@ -5,7 +5,7 @@ import EventBus from './EventBus';
 class ZEL {
   constructor() {
     // eslint-disable-next-line no-console
-    console.log(`ZEL - built with ♥`);
+    // console.log(`ZEL - built with ♥`);
 
     // create global event bus instance
     this.eventBus = new EventBus();
@@ -40,21 +40,17 @@ class ZEL {
       `[${helpers.htmlDataVarType}]`
     );
 
-    let tempTypeList = [];
     let tempElements = [];
 
-    [...jsElementList].forEach(elem => {
+    [...jsElementList].forEach((elem) => {
       let type = helpers.formatZepType(elem.getAttribute('data-zep-type'));
-      if (tempTypeList.indexOf(type) === -1) {
-        tempElements[type] = [];
-      }
 
       let newElement = {
         type: type,
         htmlNode: elem,
         innerHTML: elem.innerHTML,
         jsInstance: null,
-        initialized: false
+        initialized: false,
       };
 
       tempElements.push(newElement);

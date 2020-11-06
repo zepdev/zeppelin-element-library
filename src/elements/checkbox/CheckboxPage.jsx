@@ -1,27 +1,29 @@
 import React from 'react';
 
 function CheckboxPage() {
-  const themes = ['zeppelin', 'cat', 'rental'];
+  const themes = ['indigo', 'yellow', 'red'];
   return (
     <>
-      {themes.map(elem => (
-        <div key={`theme-${elem}`} className={`theme-${elem}`}>
-          <div className="zep-checkbox">
-            <input
-              className="zep-checkbox__input"
-              type="checkbox"
-              value=""
-              id={`checkbox${elem}`}
-            />
-            <label className="zep-checkbox__label" htmlFor={`checkbox${elem}`}>
-              {elem} checkbox
-            </label>
-          </div>
+      {themes.map((elem) => (
+        <div
+          key={`theme-${elem}`}
+          className={`theme-${elem}`}
+          style={{ marginBottom: 15 }}
+        >
+          <input
+            className="zep-checkbox"
+            type="checkbox"
+            value=""
+            id={`checkbox${elem}`}
+          />
+          <label className="zep-checkbox__label" htmlFor={`checkbox${elem}`}>
+            {elem} checkbox
+          </label>
         </div>
       ))}
-      <div className="zep-checkbox">
+      <div>
         <input
-          className="zep-checkbox__input"
+          className="zep-checkbox"
           type="checkbox"
           value=""
           id="checkboxDisabled"

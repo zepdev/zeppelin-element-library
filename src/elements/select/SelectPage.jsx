@@ -5,11 +5,11 @@ import Icon from '../icon/Icon';
 // take javascript example from https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/listbox/listbox-collapsible.htmla
 
 function SelectPage() {
-  const themes = ['zeppelin', 'cat', 'rental'];
+  const themes = ['indigo', 'yellow', 'red'];
   return (
     <>
       <p style={{ marginBottom: 45 }}>With List</p>
-      {themes.map(elem => (
+      {themes.map((elem) => (
         <div
           className={`theme-${elem}`}
           style={{ marginBottom: 15 }}

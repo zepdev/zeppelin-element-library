@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from '../icon/Icon';
 
 function TabsPage() {
-  const themes = ['zeppelin', 'cat', 'rental'];
+  const themes = ['indigo', 'yellow', 'red'];
   const fragments = [
     <>
       <div className="zep-tabs__item">
@@ -124,13 +124,13 @@ function TabsPage() {
           Icon Tab 3
         </button>
       </div>
-    </>
+    </>,
   ];
 
-  const fragmentsList = fragments.map(function(frag, i) {
+  const fragmentsList = fragments.map(function (frag, i) {
     return (
       <div key={`tab-list-${i}`}>
-        {themes.map(elem => (
+        {themes.map((elem) => (
           <div
             className={`theme-${elem} zep-tabs`}
             key={`tab-list-${i}-tabs${elem}`}

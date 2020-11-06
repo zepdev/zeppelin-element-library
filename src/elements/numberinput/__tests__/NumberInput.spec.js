@@ -2,7 +2,7 @@ import NumberInput from '../NumberInput.js';
 import { fireEvent } from '@testing-library/dom';
 
 describe('standard element constructor', () => {
-  const mockElementBase = `<div class="theme-rental" data-zep-type="number-input" data-zep-init="true" data-zep-min="0" data-zep-max="10"
+  const mockElementBase = `<div class="theme-red" data-zep-type="number-input" data-zep-init="true" data-zep-min="0" data-zep-max="10"
     data-zep-step="2" style="margin-bottom: 15px;" id="numberInput">
         <button class="zep-button zep-button-icon" data-zep-option="minus">
             <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="zep-button__icon"

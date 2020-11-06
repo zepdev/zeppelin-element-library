@@ -4,7 +4,7 @@ import Icon from '../icon/Icon';
 function TagPage() {
   return (
     <>
-      <div className="theme-zeppelin" style={{ marginBottom: 15 }}>
+      <div className="theme-indigo" style={{ marginBottom: 15 }}>
         <span role="button" className="zep-tag">
           Tag
           <button
@@ -15,7 +15,7 @@ function TagPage() {
           </button>
         </span>
       </div>
-      <div className="theme-cat" style={{ marginBottom: 15 }}>
+      <div className="theme-yellow" style={{ marginBottom: 15 }}>
         <span role="button" className="zep-tag">
           Tag
           <button className="zep-tag__button">
@@ -23,7 +23,7 @@ function TagPage() {
           </button>
         </span>
       </div>
-      <div className="theme-rental" style={{ marginBottom: 15 }}>
+      <div className="theme-red" style={{ marginBottom: 15 }}>
         <span role="button" className="zep-tag">
           Tag
           <button className="zep-tag__button">

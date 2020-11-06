@@ -1,10 +1,10 @@
 import React from 'react';
 
 function TablePage() {
-  const themes = ['zeppelin', 'cat', 'rental'];
+  const themes = ['indigo', 'yellow', 'red'];
   return (
     <>
-      {themes.map(elem => (
+      {themes.map((elem) => (
         <table
           className={`theme-${elem} zep-table`}
           key={elem}
@@ -13,7 +13,7 @@ function TablePage() {
           <caption className="zep-visually-hidden">{`table ${elem}`}</caption>
           <thead>
             <tr className="zep-table__row zep-table__row--header">
-              {[1, 2, 3].map(elem => (
+              {[1, 2, 3].map((elem) => (
                 <th
                   scope="col"
                   className="zep-table__cell zep-table__cell--header"
@@ -25,7 +25,7 @@ function TablePage() {
             </tr>
           </thead>
           <tbody>
-            {[1, 2].map(elem => (
+            {[1, 2].map((elem) => (
               <tr
                 className={
                   elem === 1

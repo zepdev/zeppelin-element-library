@@ -5,9 +5,8 @@
     @extend %typo-normal-body1;
     width: 100%;
     height: 3rem;
-    border: solid 2px
-      map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
-    background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
+    border: solid 2px map-deep-get($guidelines, 'color', 'global', lightGray);
+    background-color: white;
     padding-left: 1.25rem;
     padding-top: 0.25rem;
     appearance: none;
@@ -32,8 +31,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    background: map-deep-get($guidelines, 'color', gray, white, 'hex');
-    color: map-deep-get($guidelines, 'color', gray, 'grayMidDark', 'hex');
+    background: white;
+    color: map-deep-get($guidelines, 'color', 'global' darkGray);
     position: relative;
     padding: 0 8px;
     top: 10px;
@@ -43,7 +42,7 @@
 
   .#{$prefix}select__list {
     @extend %typo-normal-body1;
-    background: map-deep-get($guidelines, 'color', gray, white, 'hex');
+    background: white;
     @include themify($color_themes) {
       border: 2px solid themed('primary');
       outline: none;
@@ -55,13 +54,7 @@
     padding: 10px 18px;
     outline: none;
     &:focus {
-      background: map-deep-get(
-        $guidelines,
-        'color',
-        gray,
-        'grayLighter',
-        'hex'
-      );
+      background: map-deep-get($guidelines, 'color', 'global' white);
     }
   }
 }

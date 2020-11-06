@@ -5,9 +5,7 @@
     @extend %typo-normal-body1;
     width: 100%;
     height: 3rem;
-    border: solid 2px
-      map-deep-get($guidelines, 'color', gray, 'grayLighter', 'hex');
-    background-color: map-deep-get($guidelines, 'color', gray, white, 'hex');
+    border: solid 2px map-deep-get($guidelines, 'color', 'global' white);
     padding-left: 1.25rem;
     padding-top: 0.25rem;
     @include themify($color_themes) {
@@ -32,13 +30,7 @@
 
   .#{$prefix}input-container__label {
     @extend %typo-normal-caption;
-    color: map-deep-get(
-      $guidelines,
-      'typography',
-      'basics',
-      'fontColor',
-      'value'
-    );
+    color: map-deep-get($guidelines, 'color', 'global', lightGray);
     position: absolute;
     display: inline-block;
     background-color: white;
@@ -57,7 +49,7 @@
     transform-origin: left bottom;
     top: 1.2rem;
     transform: scale(1.5);
-    color: map-deep-get($guidelines, 'color', gray, 'grayLight', 'hex');
+    color: map-deep-get($guidelines, 'color', 'global', lightGray);
   }
 
   .#{$prefix}input:not(:placeholder-shown) + .#{$prefix}input-container__label,
@@ -81,18 +73,12 @@
 
   .#{$prefix}input-container--error {
     .#{$prefix}input {
-      border-color: map-deep-get(
-        $guidelines,
-        'color',
-        'support',
-        'alert',
-        'hex'
-      );
+      border-color: map-deep-get($guidelines, 'color', 'support', 'alert');
     }
 
     .#{$prefix}input-container__feedback {
       display: inline-block;
-      color: map-deep-get($guidelines, 'color', 'support', 'alert', 'hex');
+      color: map-deep-get($guidelines, 'color', 'support', 'alert');
     }
   }
 }

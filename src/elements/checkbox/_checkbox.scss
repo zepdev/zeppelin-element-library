@@ -1,96 +1,81 @@
 @mixin checkbox {
-  $lineHeight: 2.125rem;
-  $fontSize: 36px;
-  // strip the units (expecting a px value, but remove so we've just got an int)
-  $baseFont: ($fontSize) / ($fontSize * 0 + 1);
-  // ensure our base is a rem val
-  $base: ($lineHeight) / ($lineHeight * 0 + 1) * 1rem;
-  // get our borderwidth in rems
-  $borderWidth: (2 / (2 * 0 + 1) / $baseFont) * 1rem;
-  $boxSize: $base/1.7;
-
+  @keyframes ripple {
+    0% {
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+    }
+    50% {
+      box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+      box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0);
+    }
+  }
   .#{$prefix}checkbox {
-    .#{$prefix}checkbox__label {
-      @extend %typo-normal-body1;
-      cursor: pointer;
-      color: map-deep-get(
-        $guidelines,
-        'typography',
-        'basics',
-        'fontColor',
-        'value'
-      );
-      position: relative;
-      display: inline-block;
-      padding-left: 1.75rem;
-      margin-bottom: 0;
-      &:before,
-      &:after {
-        box-sizing: border-box;
-        line-height: $base;
-        content: ' ';
-        display: block;
-        position: absolute;
-        top: 16%;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: $boxSize;
-        height: $boxSize;
-        border-radius: 0;
-      }
-      &:before {
-        cursor: pointer;
-        width: ($boxSize) + $borderWidth * 2;
-        height: ($boxSize) + $borderWidth * 2;
-        margin: -$borderWidth;
-        border: 2px solid
-          map-deep-get($guidelines, 'color', gray, 'grayDark', 'hex');
-        border-radius: 0;
-      }
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
+  .#{$prefix}checkbox + .#{$prefix}checkbox__label {
+    @extend %typo-normal-body1;
+    display: block;
+    position: relative;
+  }
+
+  .#{$prefix}checkbox + .#{$prefix}checkbox__label::before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.84);
+    width: 18px;
+    height: 18px;
+    top: 6px;
+  }
+
+  .#{$prefix}checkbox:checked + .#{$prefix}checkbox__label::before {
+    background: map-deep-get($guidelines, 'color', 'global', white);
+    border: 2px solid rgba(0, 0, 0, 0.84);
+    // @include themify($color_themes) {
+    //   background: themed('primary');
+    //   border: 2px solid themed('primary');
+    // }
+  }
+
+  .#{$prefix}checkbox:checked + .#{$prefix}checkbox__label::after {
+    content: '';
+    position: absolute;
+    top: 13px;
+    left: 5px;
+    height: 3px;
+    width: 10px;
+    transform: rotate(-45deg);
+    border-left: 2px solid rgba(0, 0, 0, 0.84);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.84);
+    // @include themify($color_themes) {
+    //   border-left: 2px solid themed('buttonText');
+    //   border-bottom: 2px solid themed('buttonText');
+    // }
+  }
+
+  .#{$prefix}checkbox:focus + .#{$prefix}checkbox__label::before {
+    @include themify($color_themes) {
+      animation: ripple 0.8s ease-in-out;
     }
+  }
 
-    /* hide the input element */
-    .#{$prefix}checkbox__input {
-      opacity: 0;
-      &:disabled + .#{$prefix}checkbox__label {
-        cursor: not-allowed;
-        color: map-deep-get($guidelines, 'color', gray, 'textGray', 'hex');
-      }
+  .#{$prefix}checkbox:disabled + .#{$prefix}checkbox__label {
+    color: map-deep-get($guidelines, 'color', 'global', lightGray);
+  }
 
-      &:disabled + .#{$prefix}checkbox__label:before {
-        border: 2px solid
-          map-deep-get($guidelines, 'color', gray, 'grayLight', 'hex');
-      }
-
-      @include themify($color_themes) {
-        &:checked + .#{$prefix}checkbox__label:before {
-          content: '\2713';
-          position: absolute;
-          top: 16%;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          display: inline-block;
-          background: map-deep-get($guidelines, 'color', gray, white, 'hex');
-          line-height: 1; //$boxSize + $borderWidth;
-          font-size: 1.125rem;
-          text-align: center;
-          transform: scale(1);
-          color: themed('primary');
-        }
-        &:checked:focus + .#{$prefix}checkbox__label:before {
-          box-shadow: 0 0 5px 1px themed('primary');
-          background: map-deep-get($guidelines, 'color', gray, white, 'hex');
-        }
-        &:active + .#{$prefix}checkbox__label:before {
-          background: themed('hover');
-        }
-        &:disabled:active + .#{$prefix}checkbox__label:before {
-          background: map-deep-get($guidelines, 'color', gray, white, 'hex');
-        }
-      }
-    }
+  .#{$prefix}checkbox:disabled + .#{$prefix}checkbox__label::before {
+    background: map-deep-get($guidelines, 'color', 'global', 'almostWhite');
+    border: 2px solid map-deep-get($guidelines, 'color', 'global', lightGray);
+    color: map-deep-get($guidelines, 'color', 'global', lightGray);
   }
 }
 

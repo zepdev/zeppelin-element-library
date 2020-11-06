@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import elements from './elements/elements';
 import ButtonPage from './elements/button/ButtonPage';
 import TagPage from './elements/tag/TagPage';
@@ -10,14 +10,21 @@ import RadioPage from './elements/radio/RadioPage';
 import TablePage from './elements/table/TablePage';
 import SearchPage from './elements/search/SearchPage';
 import SelectPage from './elements/select/SelectPage';
+import SpinnerPage from './elements/spinner/SpinnerPage';
 import TabsPage from './elements/tabs/TabsPage';
 import NotificationPage from './elements/notification/NotificationPage';
 import PaginationPage from './elements/pagination/PaginationPage';
+import ZEL from './core/zel.js';
 import './base_bundle_entry.scss';
 import './svgxuse.min.js'; // ie 9 fallback for svg sprites
 
 function App() {
   const [content, setContent] = useState('welcome');
+
+  useLayoutEffect(() => {
+    ZEL.refresh();
+  });
+
   return (
     <div>
       <div>
@@ -28,7 +35,7 @@ function App() {
             padding: 30,
             color: '#ffffff',
             background: '#27166f ',
-            width: '100%'
+            width: '100%',
           }}
         >
           <h1 className="zep-typo--normal-h1-negative">
@@ -41,6 +48,7 @@ function App() {
           <div
             className="zep-grid__col zep-grid__col--3-12 zep-grid__col--xs-1-6 zep-grid__col--xxs-4-4"
             style={{ paddingTop: 45 }}
+            id="main-navigation"
           >
             {Object.keys(elements).map((elem, i) => (
               <div key={`btn-${i}`}>
@@ -48,14 +56,14 @@ function App() {
                   className="zep-button zep-button-primary zep-button--full"
                   onClick={() => setContent(elem)}
                 >
-                  <span className="zep-button__text">
-                    {elements[elem].name}
-                  </span>
+                  {elements[elem].name}
                 </button>
               </div>
             ))}
           </div>
           <div
+            id="main-content"
+            data-test-content={content}
             className="zep-grid__col zep-grid__col--xs-5-6"
             style={{ paddingTop: 45, paddingBottom: 75 }}
           >
@@ -74,6 +82,7 @@ function App() {
             {content === 'table' && <TablePage />}
             {content === 'search' && <SearchPage />}
             {content === 'select' && <SelectPage />}
+            {content === 'spinner' && <SpinnerPage />}
             {content === 'tabs' && <TabsPage />}
             {content === 'notification' && <NotificationPage />}
             {content === 'pagination' && <PaginationPage />}
