@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/zepdev/zeppelin-element-library/compare/v2.0.0...v2.0.1) (2020-11-06)
+
+
+### Bug Fixes
+
+* **deployment:** fix bundling and deployment paths ([f74f7ba](https://github.com/zepdev/zeppelin-element-library/commit/f74f7baf857f4f3d7c2280ef480b501cc60d9ab6))
+
 # [2.0.0](https://github.com/zepdev/zeppelin-element-library/compare/v1.3.0...v2.0.0) (2020-11-06)
 
 
