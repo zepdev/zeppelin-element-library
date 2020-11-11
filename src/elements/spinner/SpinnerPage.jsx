@@ -3,29 +3,29 @@ import React from 'react';
 function SpinnerPage() {
   return (
     <>
-      <p className="zep-typo--normal-body1">Spinner default (1.25rem = 20px)</p>
+      <p className="zep-typo--normal-body1">Spinner default (1.5rem = 24px)</p>
       <div className="zep-spinner">
-        <svg viewBox="0 0 20 20">
-          <circle className="stroke" cx="10" cy="10" r="8" />
+        <svg viewBox="0 0 24 24">
+          <circle className="stroke" cx="12" cy="12" r="9.38" />
         </svg>
       </div>
 
-      <p className="zep-typo--normal-body1">Spinner medium (2.5rem = 40px)</p>
+      <p className="zep-typo--normal-body1">Spinner medium (3rem = 48px)</p>
       <div className="zep-spinner zep-spinner--medium">
-        <svg viewBox="0 0 20 20">
-          <circle className="stroke" cx="10" cy="10" r="8" />
+        <svg viewBox="0 0 24 24">
+          <circle className="stroke" cx="12" cy="12" r="9.38" />
         </svg>
       </div>
 
-      <p className="zep-typo--normal-body1">Spinner large (3.75rem = 60px)</p>
+      <p className="zep-typo--normal-body1">Spinner large (4.5rem = 72px)</p>
       <div className="zep-spinner zep-spinner--large">
-        <svg viewBox="0 0 20 20">
-          <circle className="stroke" cx="10" cy="10" r="8" />
+        <svg viewBox="0 0 24 24">
+          <circle className="stroke" cx="12" cy="12" r="9.38" />
         </svg>
       </div>
 
       <p className="zep-typo--normal-body1">
-        Spinner default inverted (1.25rem = 20px)
+        Spinner default inverted (1.5rem = 20px)
       </p>
       <div
         style={{
@@ -35,13 +35,13 @@ function SpinnerPage() {
         }}
       >
         <div className="zep-spinner zep-spinner--invert">
-          <svg viewBox="0 0 20 20">
-            <circle className="stroke" cx="10" cy="10" r="8" />
+          <svg viewBox="0 0 24 24">
+            <circle className="stroke" cx="12" cy="12" r="9.38" />
           </svg>
         </div>
       </div>
       <p className="zep-typo--normal-body1">
-        Spinner medium inverted (2.5rem = 40px)
+        Spinner medium inverted (3rem = 48px)
       </p>
       <div
         style={{
@@ -51,13 +51,13 @@ function SpinnerPage() {
         }}
       >
         <div className="zep-spinner zep-spinner--invert zep-spinner--medium">
-          <svg viewBox="0 0 20 20">
-            <circle className="stroke" cx="10" cy="10" r="8" />
+          <svg viewBox="0 0 24 24">
+            <circle className="stroke" cx="12" cy="12" r="9.38" />
           </svg>
         </div>
       </div>
       <p className="zep-typo--normal-body1">
-        Spinner large inverted(3.75rem = 60px)
+        Spinner large inverted (4.5rem = 72px)
       </p>
       <div
         style={{
@@ -67,8 +67,8 @@ function SpinnerPage() {
         }}
       >
         <div className="zep-spinner zep-spinner--invert zep-spinner--large">
-          <svg viewBox="0 0 20 20">
-            <circle className="stroke" cx="10" cy="10" r="8" />
+          <svg viewBox="0 0 24 24">
+            <circle className="stroke" cx="12" cy="12" r="9.38" />
           </svg>
         </div>
       </div>
