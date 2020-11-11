@@ -1,3 +1,11 @@
+## [2.0.2](https://github.com/zepdev/zeppelin-element-library/compare/v2.0.1...v2.0.2) (2020-11-11)
+
+
+### Bug Fixes
+
+* **spinner:** adjust sizes to ZDS icon rules ([8ed0d30](https://github.com/zepdev/zeppelin-element-library/commit/8ed0d302fb73f94f8a8cce965cd4fb7fea4dfd5e))
+* **spinner:** adjust sizes to ZDS icon rules ([13e51dc](https://github.com/zepdev/zeppelin-element-library/commit/13e51dcc8ad1f9688558516d18d3f48701fcc3e8))
+
 ## [2.0.1](https://github.com/zepdev/zeppelin-element-library/compare/v2.0.0...v2.0.1) (2020-11-06)
 
 
