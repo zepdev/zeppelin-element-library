@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import elements from './elements/elements';
 import ButtonPage from './elements/button/ButtonPage';
 import TagPage from './elements/tag/TagPage';
@@ -14,6 +14,7 @@ import SpinnerPage from './elements/spinner/SpinnerPage';
 import TabsPage from './elements/tabs/TabsPage';
 import NotificationPage from './elements/notification/NotificationPage';
 import PaginationPage from './elements/pagination/PaginationPage';
+import TypographyPage from './guidelines/TypographyPage';
 import ZEL from './core/zel.js';
 import './base_bundle_entry.scss';
 import './svgxuse.min.js'; // ie 9 fallback for svg sprites
@@ -65,13 +66,17 @@ function App() {
             id="main-content"
             data-test-content={content}
             className="zep-grid__col zep-grid__col--xs-5-6"
-            style={{ paddingTop: 45, paddingBottom: 75 }}
+            style={{
+              paddingTop: 45,
+              paddingBottom: 75,
+            }}
           >
             {content === 'welcome' && (
               <p className="zep-typo--normal-h1-negative">
                 Welcome to the Zeppelin Element Library
               </p>
             )}
+            {content === 'typo' && <TypographyPage />}
             {content === 'button' && <ButtonPage />}
             {content === 'tag' && <TagPage />}
             {content === 'checkbox' && <CheckboxPage />}

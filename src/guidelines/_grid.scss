@@ -1,3 +1,5 @@
+@warn 'Grid v0: Grid is deprecated - Since we don\'t have to rely on IE9, please update it and make it fancy!';
+
 // this grid should be only implemented on full browser width elements!
 
 //
@@ -18,28 +20,28 @@ $grid-values-map: (
     6,
     map-deep-get($guidelines, 'grid', 'xs', 'margin'),
     // 32px,
-      map-deep-get($guidelines, 'grid', 'xs', 'gutter') // 32px
+    map-deep-get($guidelines, 'grid', 'xs', 'gutter') // 32px,
   ),
   s: (
     6,
     map-deep-get($guidelines, 'grid', 's', 'margin') // 48px,
-      map-deep-get($guidelines, 'grid', 's', 'gutter') // 32px
+    map-deep-get($guidelines, 'grid', 's', 'gutter') // 32px,
   ),
   m: (
     8,
     map-deep-get($guidelines, 'grid', 'm', 'margin') // 64px,
-      map-deep-get($guidelines, 'grid', 'm', 'gutter') // 32px
+    map-deep-get($guidelines, 'grid', 'm', 'gutter') // 32px,
   ),
   l: (
     12,
     map-deep-get($guidelines, 'grid', 'l', 'margin') // 64px,
-      map-deep-get($guidelines, 'grid', 'l', 'gutter') // 32px
+    map-deep-get($guidelines, 'grid', 'l', 'gutter') // 32px,
   ),
   xl: (
     12,
     map-deep-get($guidelines, 'grid', 'xl', 'margin') // auto,
-      map-deep-get($guidelines, 'grid', 'xl', 'gutter') // 32px
-  )
+    map-deep-get($guidelines, 'grid', 'xl', 'gutter') // 32px,
+  ),
 );
 
 // xxs values

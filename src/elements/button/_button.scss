@@ -1,8 +1,9 @@
 // Button
+@use "../../guidelines/typography_legacy" as *;
 
 @mixin button {
   .#{$prefix}button {
-    border-radius: 3px;
+    border-radius: 0.25rem;
     text-align: center;
     cursor: pointer;
     outline: 0;
@@ -72,7 +73,7 @@
       }
 
       &:active {
-        box-shadow: 0 0 5px 0px themed('primary');
+        box-shadow: 0 0 5px 0 themed('primary');
       }
     }
     &:disabled,

@@ -1,4 +1,7 @@
 module.exports = {
+  typo: {
+    name: 'typo', //->../guidelines/_typography
+  },
   button: {
     name: 'button',
   },
