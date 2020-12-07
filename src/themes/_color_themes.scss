@@ -80,7 +80,3 @@ $color_themes: (
 @function themed($key) {
   @return map-get($theme-map, $key);
 }
-
-@function themed2($keys...) {
-  @return map-deep-get($theme-map, $keys...);
-}

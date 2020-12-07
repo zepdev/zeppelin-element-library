@@ -47,8 +47,8 @@
   },
   "typography": {
     "typefaces": {
-      "roboto": "'Roboto, sans-serif'",
-      "robotoCondensed": "'Roboto Condensed, sans-serif'"
+      "roboto": "'Roboto', sans-serif",
+      "robotoCondensed": "'Roboto Condensed', sans-serif"
     },
     "basics": {
       "fontSizeBase": {
@@ -82,7 +82,7 @@
           "rem": "5rem",
           "px": "80px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "700 (bold)",
             "line-height": "88px",
             "text-transform": "uppercase",
@@ -93,7 +93,7 @@
           "rem": "4rem",
           "px": "64px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "700 (bold)",
             "line-height": "72px",
             "text-transform": "uppercase",
@@ -104,7 +104,7 @@
           "rem": "3rem",
           "px": "48px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "700 (bold)",
             "line-height": "56px",
             "text-transform": "uppercase",
@@ -115,7 +115,7 @@
           "rem": "2.25rem",
           "px": "36px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "700 (bold)",
             "line-height": "44px",
             "text-transform": "uppercase",
@@ -126,7 +126,7 @@
           "rem": "1.5rem",
           "px": "24px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "700 (bold)",
             "line-height": "32px",
             "text-transform": "uppercase",
@@ -137,7 +137,7 @@
           "rem": "0.875rem",
           "px": "14px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "700 (bold)",
             "line-height": "20px",
             "text-transform": "uppercase",
@@ -150,7 +150,7 @@
           "rem": "2.5rem",
           "px": "40px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "300 (light)",
             "line-height": "60px",
             "text-transform": "none",
@@ -161,7 +161,7 @@
           "rem": "2.25rem",
           "px": "36px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "300 (light)",
             "line-height": "52px",
             "text-transform": "none",
@@ -172,7 +172,7 @@
           "rem": "1.75rem",
           "px": "28px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "400 (regular)",
             "line-height": "40px",
             "text-transform": "none",
@@ -183,7 +183,7 @@
           "rem": "1.5rem",
           "px": "24px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "400 (regular)",
             "line-height": "36px",
             "text-transform": "none",
@@ -193,7 +193,7 @@
             "rem": "1.25rem",
             "px": "20px",
             "specifications": {
-              "font-family": "'Roboto, sans-serif'",
+              "font-family": "'Roboto', sans-serif",
               "font-weight": "400 (regular)",
               "line-height": "32px",
               "text-transform": "none",
@@ -204,7 +204,7 @@
             "rem": "1.125rem",
             "px": "18px",
             "specifications": {
-              "font-family": "'Roboto, sans-serif'",
+              "font-family": "'Roboto', sans-serif",
               "font-weight": "400 (regular)",
               "line-height": "28px",
               "text-transform": "none",
@@ -218,7 +218,7 @@
           "rem": "2.5rem",
           "px": "40px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "500 (medium)",
             "line-height": "60px",
             "text-transform": "none",
@@ -229,7 +229,7 @@
           "rem": "2.25rem",
           "px": "36px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "400 (medium)",
             "line-height": "52px",
             "text-transform": "none",
@@ -240,7 +240,7 @@
           "rem": "1.75rem",
           "px": "28px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "700 (bold)",
             "line-height": "40px",
             "text-transform": "none",
@@ -251,7 +251,7 @@
           "rem": "1.5rem",
           "px": "24px",
           "specifications": {
-            "font-family": "'Roboto, sans-serif'",
+            "font-family": "'Roboto', sans-serif",
             "font-weight": "700 (bold)",
             "line-height": "36px",
             "text-transform": "none",
@@ -261,7 +261,7 @@
             "rem": "1.25rem",
             "px": "20px",
             "specifications": {
-              "font-family": "'Roboto, sans-serif'",
+              "font-family": "'Roboto', sans-serif",
               "font-weight": "700 (bold)",
               "line-height": "32px",
               "text-transform": "none",
@@ -272,7 +272,7 @@
             "rem": "1.125rem",
             "px": "18px",
             "specifications": {
-              "font-family": "'Roboto, sans-serif'",
+              "font-family": "'Roboto', sans-serif",
               "font-weight": "700 (bold)",
               "line-height": "28px",
               "text-transform": "none",
@@ -287,7 +287,7 @@
         "rem": "1rem",
         "px": "16px",
         "specifications": {
-          "font-family": "'Roboto, sans-serif'",
+          "font-family": "'Roboto', sans-serif",
           "font-weight": "400 (regular)",
           "line-height": "20px",
           "text-transform": "uppercase",
@@ -300,7 +300,7 @@
         "rem": "1.125rem",
         "px": "18px",
         "specifications": {
-          "font-family": "'Roboto, sans-serif'",
+          "font-family": "'Roboto', sans-serif",
           "font-weight": "400 (regular)",
           "line-height": "32px",
           "text-transform": "none",
@@ -311,7 +311,7 @@
         "rem": "1rem",
         "px": "16px",
         "specifications": {
-          "font-family": "'Roboto, sans-serif'",
+          "font-family": "'Roboto', sans-serif",
           "font-weight": "400 (regular)",
           "line-height": "28px",
           "text-transform": "none",
@@ -322,7 +322,7 @@
         "rem": "0.875rem",
         "px": "14px",
         "specifications": {
-          "font-family": "'Roboto, sans-serif'",
+          "font-family": "'Roboto', sans-serif",
           "font-weight": "400 (regular)",
           "line-height": "24px",
           "text-transform": "none",
@@ -333,7 +333,7 @@
         "rem": "0.75rem",
         "px": "12px",
         "specifications": {
-          "font-family": "'Roboto, sans-serif'",
+          "font-family": "'Roboto', sans-serif",
           "font-weight": "400 (regular)",
           "line-height": "20px",
           "text-transform": "none",

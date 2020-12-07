@@ -1,297 +1,45 @@
+@mixin generateTypoClassFromMap($displayMap) {
+  // iterate through $displayMap and generate display typo classes
+  @each $className, $classMap in $displayMap {
+    .#{$className} {
+      // iterate through class map and write css properties
+      @each $cssProp, $cssValue in $classMap {
+        // create breakpoints
+        @if $cssProp == 'breakpoint' {
+          //iterate through breakpoint map and write media query for each breakpoint
+          @each $breakpointSize, $breakpointMap in $cssValue {
+            @include breakpoint--max(#{$breakpointSize}) {
+              // iterate through $breakpointMap
+              @each $breakpointProp, $breakpointValue in $breakpointMap {
+                // write standard css props
+                #{$breakpointProp}: #{$breakpointValue};
+              }
+            }
+          }
+        } @else {
+          // write standard css props
+          #{$cssProp}: #{$cssValue};
+        }
+      }
+    }
+  }
+}
+
 @mixin typography {
-  //display
-  %display-shared {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.0375rem;
-  }
-
-  .#{$prefix}typo--display-1 {
-    font-size: 2.5rem; //40px
-    line-height: 2.75rem; //44px
-    @extend %display-shared;
-    @include breakpoint--min(xs) {
-      font-size: 5rem; //80px
-      line-height: 5.5rem; //88px
-    }
-  }
-
-  .#{$prefix}typo--display-2 {
-    font-size: 2.25rem; //36px
-    line-height: 2.75rem;
-    @extend %display-shared;
-    @include breakpoint--min(xs) {
-      font-size: 4rem; //64px
-      line-height: 4.5rem; //72px
-    }
-  }
-
-  .#{$prefix}typo--display-3 {
-    font-size: 2rem; //32px
-    line-height: 2.5rem; //40px
-    @extend %display-shared;
-    @include breakpoint--min(xs) {
-      font-size: 3rem; //48px
-      line-height: 3.5rem; //56px
-    }
-  }
-
-  .#{$prefix}typo--display-4 {
-    font-size: 1.75rem; //28px
-    line-height: 2.25rem;
-    @extend %display-shared;
-    @include breakpoint--min(xs) {
-      font-size: 2.25rem; //36px
-      line-height: 2.75rem;
-    }
-  }
-
-  .#{$prefix}typo--display-5 {
-    font-size: 1.25rem; //20px
-    line-height: 1.75rem; //28px
-    @extend %display-shared;
-    @include breakpoint--min(xs) {
-      font-size: 1.5rem; //24px
-      line-height: 2rem; //32px
-    }
-  }
-
-  .#{$prefix}typo--display-6 {
-    font-size: 0.875rem; //14px
-    line-height: 1.25rem;
-    @extend %display-shared;
-    @include breakpoint--min(xs) {
-      font-size: 0.875rem; //14px
-      line-height: 1.25rem;
-    }
-  }
-
-  //headline
-  %headline-shared {
-    font-family: 'Roboto', sans-serif;
-    text-transform: none;
-  }
-  %headline-shared-1 {
-    @extend %headline-shared;
-    font-weight: 300;
-    letter-spacing: 0.025rem;
-  }
-  %headline-shared-2 {
-    @extend %headline-shared;
-    font-weight: 400;
-    letter-spacing: 0;
-  }
-
-  .#{$prefix}typo--headline-1 {
-    font-size: 2.25rem; //36px
-    line-height: 3.25rem; //52px;
-    @extend %headline-shared-1;
-    @include breakpoint--min(xs) {
-      font-size: 2.5rem; //40px
-      line-height: 3.75rem; //60px
-    }
-  }
-
-  .#{$prefix}typo--headline-2 {
-    font-size: 1.75rem; //28px
-    line-height: 2.5rem;
-    @extend %headline-shared-1;
-    @include breakpoint--min(xs) {
-      font-size: 2.25rem; //36px
-      line-height: 3.25rem;
-    }
-  }
-
-  .#{$prefix}typo--headline-3 {
-    font-size: 1.5rem; //24px
-    line-height: 2.25rem;
-    @extend %headline-shared;
-    font-weight: 400;
-    letter-spacing: 0.025em;
-    @include breakpoint--min(xs) {
-      font-size: 1.75rem; //28px
-      line-height: 2.5rem;
-    }
-  }
-
-  .#{$prefix}typo--headline-4 {
-    font-size: 1.25rem; //20px
-    line-height: 2rem;
-
-    @include breakpoint--min(xs) {
-      font-size: 1.5rem; //24px
-      line-height: 2.25rem;
-    }
-  }
-
-  .#{$prefix}typo--headline-5 {
-    font-size: 1.125rem; //18px
-    line-height: 1.75rem;
-    @extend %headline-shared-2;
-    @include breakpoint--min(xs) {
-      font-size: 1.25rem; //20px
-      line-height: 2rem;
-    }
-  }
-
-  .#{$prefix}typo--headline-6 {
-    font-size: 1rem; //16px
-    line-height: 1.5rem;
-    @extend %headline-shared-2;
-    @include breakpoint--min(xs) {
-      font-size: 1.125rem; //18px
-      line-height: 1.75rem;
-    }
-  }
-
-  %headline_alt-shared-1 {
-    @extend %headline-shared;
-    font-weight: 500;
-    letter-spacing: 0.025rem;
-  }
-  %headline_alt-shared-2 {
-    @extend %headline-shared;
-    font-weight: 700;
-    letter-spacing: 0;
-  }
-
-  .#{$prefix}typo--headline-1_alt {
-    font-size: 2.25rem; //36px
-    line-height: 3.25rem;
-    @extend %headline_alt-shared-1;
-    @include breakpoint--min(xs) {
-      font-size: 2.5rem; //40px
-      line-height: 3.75rem;
-    }
-  }
-
-  .#{$prefix}typo--headline-2_alt {
-    font-size: 1.75rem; //28px
-    line-height: 2.5rem;
-    @extend %headline_alt-shared-1;
-    @include breakpoint--min(xs) {
-      font-size: 2.25rem; //36px
-      line-height: 3.25rem;
-    }
-  }
-
-  .#{$prefix}typo--headline-3_alt {
-    font-size: 1.5rem; //24px
-    line-height: 2.25rem;
-    @extend %headline-shared;
-    font-weight: 700;
-    letter-spacing: 0.025rem;
-    @include breakpoint--min(xs) {
-      font-size: 1.75rem; //28px
-      line-height: 2.5rem;
-    }
-  }
-
-  .#{$prefix}typo--headline-4_alt {
-    font-size: 1.25rem; //20px
-    line-height: 2rem;
-    @extend %headline_alt-shared-2;
-    @include breakpoint--min(xs) {
-      font-size: 1.5rem; //24px
-      line-height: 2.25rem; //36px
-    }
-  }
-
-  .#{$prefix}typo--headline-5_alt {
-    font-size: 1.125rem; //18px
-    line-height: 1.75rem;
-    @extend %headline_alt-shared-2;
-    @include breakpoint--min(xs) {
-      font-size: 1.25rem; //20px
-      line-height: 2rem;
-    }
-  }
-
-  .#{$prefix}typo--headline-6_alt {
-    font-size: 1rem; //16px
-    line-height: 1.5rem;
-    @extend %headline_alt-shared-2;
-    @include breakpoint--min(xs) {
-      font-size: 1.125rem; //18px
-      line-height: 1.75rem;
-    }
-  }
-
-  .#{$prefix}typo--section-header {
-    font-size: 1rem; //16px
-    line-height: 1.25rem; //20px
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.06875rem; //1.1px
-    @include breakpoint--min(xs) {
-      letter-spacing: 0.0875rem; //1.4px
-      font-size: 1rem; //16px
-      line-height: 1.25rem;
-    }
-  }
-
-  //body
-  %body-shared {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    text-transform: none;
-    letter-spacing: 0;
-  }
-
-  .#{$prefix}typo--body-large {
-    font-size: 1rem; //16px
-    line-height: 1.75rem;
-    @extend %body-shared;
-    @include breakpoint--min(xs) {
-      font-size: 1.125rem; //18px
-      line-height: 2rem;
-    }
-  }
-
-  .#{$prefix}typo--body-default {
-    font-size: 0.875rem; //14px
-    line-height: 1.5rem; //24px
-    @extend %body-shared;
-    @include breakpoint--min(xs) {
-      font-size: 1rem; //16px
-      line-height: 1.75rem;
-    }
-  }
-
-  .#{$prefix}typo--body-small {
-    font-size: 0.75rem; //12px
-    line-height: 1.25rem;
-    @extend %body-shared;
-    @include breakpoint--min(xs) {
-      font-size: 0.875rem; //14px
-      line-height: 1.5rem;
-    }
-  }
-
-  .#{$prefix}typo--body-extra-small {
-    font-size: 0.625rem; //10px
-    line-height: 1rem;
-    @extend %body-shared;
-    @include breakpoint--min(xs) {
-      font-size: 0.75rem; //12px
-      line-height: 1.25rem;
-    }
-  }
-
-  //menu-items
-  .#{$prefix}typo--menu-item {
-    font-size: 0.75rem; //12px
-    line-height: 1.25rem; //20px
-    font-family: 'Roboto Condensed', sans-serif;
-    letter-spacing: 0.0625rem;
-    text-transform: uppercase;
-    @include breakpoint--min(xs) {
-      font-size: 0.875rem; //14px
-      letter-spacing: 0.078125rem;
-    }
-  }
+  @include generateTypoClassFromMap(
+    get('typography.headings.display', $guidelines)
+  );
+  @include generateTypoClassFromMap(
+    get('typography.headings.headline', $guidelines)
+  );
+  @include generateTypoClassFromMap(
+    get('typography.headings.headline_alt', $guidelines)
+  );
+  @include generateTypoClassFromMap(
+    get('typography.headings.section-header', $guidelines)
+  );
+  @include generateTypoClassFromMap(get('typography.body', $guidelines));
+  @include generateTypoClassFromMap(get('typography.menu', $guidelines));
 }
 
 @include exports('typography') {
