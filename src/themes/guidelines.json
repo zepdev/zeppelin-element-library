@@ -47,8 +47,8 @@
   },
   "typography": {
     "typefaces": {
-      "roboto": "'\"Roboto Condensed\", sans-serif'",
-      "robotoCondensed": "'\"Roboto Condensed\", sans-serif'"
+      "roboto": "'Roboto Condensed', sans-serif",
+      "robotoCondensed": "'Roboto Condensed', sans-serif"
     },
     "basics": {
       "fontSizeBase": {

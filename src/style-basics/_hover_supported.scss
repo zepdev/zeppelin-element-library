@@ -1,0 +1,25 @@
+// ------------------------------------------------------------------------------------------------
+// hover-supported mixin
+//
+// The first media query makes sure that the CSS is only executed when
+// the current device has a real hover state.
+// This works in nearly every browser: https://caniuse.com/#feat=css-media-interaction
+//
+// The second media query is to support IE11 because the first one isn't supported by IE11
+// https://developer.mozilla.org/en-US/docs/Web/CSS/@media/-ms-high-contrast
+//
+// Usage example:
+// button {
+//   background-color:gray;
+//   @include hover-supported() {
+//     background-color:white;
+//   }
+//}
+// ------------------------------------------------------------------------------------------------
+@mixin hover-supported {
+  @media (hover: hover), (-ms-high-contrast: none) {
+    &:hover {
+      @content;
+    }
+  }
+}

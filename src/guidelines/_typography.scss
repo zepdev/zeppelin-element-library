@@ -4,7 +4,7 @@
     .#{$className} {
       // iterate through class map and write css properties
       @each $cssProp, $cssValue in $classMap {
-        // create breakpoints
+        // check breakpoints
         @if $cssProp == 'breakpoint' {
           //iterate through breakpoint map and write media query for each breakpoint
           @each $breakpointSize, $breakpointMap in $cssValue {

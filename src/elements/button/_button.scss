@@ -1,7 +1,23 @@
 // Button
-@use "../../guidelines/typography_legacy" as *;
 
 @mixin button {
+  $font-default: #{get('typography.typefaces.roboto', $guidelines)};
+  $font-condensed: #{get('typography.typefaces.robotoCondensed', $guidelines)};
+
+  %button-basics {
+    border: 0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $font-default;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.078125rem;
+    line-height: 1.25em;
+    outline: 0;
+    text-align: center;
+  }
+
   .#{$prefix}button {
     border-radius: 0.25rem;
     text-align: center;
@@ -58,26 +74,49 @@
   }
 
   .#{$prefix}button-primary {
-    @extend %typo-normal-button1;
-    padding: 20px 32px;
+    @extend %button-basics;
+    text-transform: uppercase;
+    padding: 1.25rem 2rem;
+
     @include themify($color_themes) {
       color: themed('buttonText');
       fill: themed('buttonText');
       background-color: themed('primary');
-      &:hover,
-      &:focus,
-      &.#{$prefix}button-primary--hover {
+
+      @include hover-supported() {
+        background-color: themed('hover');
+        color: themed('buttonTextHover');
+        fill: themed('buttonTextHover');
+      }
+
+      &:focus {
         background-color: themed('hover');
         color: themed('buttonTextHover');
         fill: themed('buttonTextHover');
       }
 
       &:active {
-        box-shadow: 0 0 5px 0 themed('primary');
+        box-shadow: 0 0 0.3125rem 0 themed('primary');
       }
     }
-    &:disabled,
-    &.#{$prefix}button-primary--disabled {
+    &:disabled {
+      //@extend .#{$prefix}button-primary--disabled;
+    }
+  }
+
+  .#{$prefix}button-primary--disabled {
+    color: map-deep-get($guidelines, 'color', 'global', lightGray);
+    fill: map-deep-get($guidelines, 'color', 'global', lightGray);
+    background-color: map-deep-get(
+      $guidelines,
+      'color',
+      'global',
+      'almostWhite'
+    );
+    cursor: not-allowed;
+    outline: 0;
+
+    @include hover-supported() {
       color: map-deep-get($guidelines, 'color', 'global', lightGray);
       fill: map-deep-get($guidelines, 'color', 'global', lightGray);
       background-color: map-deep-get(
@@ -86,20 +125,17 @@
         'global',
         'almostWhite'
       );
-      cursor: not-allowed;
-      outline: 0;
-      &:hover,
-      &:focus,
-      &.#{$prefix}button-primary--hover {
-        color: map-deep-get($guidelines, 'color', 'global', lightGray);
-        fill: map-deep-get($guidelines, 'color', 'global', lightGray);
-        background-color: map-deep-get(
-          $guidelines,
-          'color',
-          'global',
-          'almostWhite'
-        );
-      }
+    }
+
+    &:focus {
+      color: map-deep-get($guidelines, 'color', 'global', lightGray);
+      fill: map-deep-get($guidelines, 'color', 'global', lightGray);
+      background-color: map-deep-get(
+        $guidelines,
+        'color',
+        'global',
+        'almostWhite'
+      );
     }
   }
 

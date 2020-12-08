@@ -17,9 +17,9 @@ function ButtonPage() {
             href="https://www.zeppelin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="zep-button zep-button-primary"
+            className="zep-button-primary"
           >
-            Zeppelin
+            Primary Button
           </a>
         </div>
       ))}
@@ -30,9 +30,7 @@ function ButtonPage() {
           style={{ marginBottom: 15 }}
           key={elem}
         >
-          <button className="zep-button zep-button-primary">
-            primary button
-          </button>
+          <button className="zep-button-primary">primary button</button>
         </div>
       ))}
       <p>Other</p>

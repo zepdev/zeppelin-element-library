@@ -38,7 +38,7 @@
     "lint:prettier:fix": "yarn prettier --write",
     "lint:sonarqube": "yarn lint:eslint -f json -o report.json",
     "lint": "yarn lint:eslint && yarn lint:prettier",
-    "convert": "json-to-scss src/themes/guidelines.json"
+    "convert": "json-to-scss --sk='roboto,robotoCondensed,family,font-family,fontfamily,stack,font-stack,fontstack,face,font-face,fontface' src/themes/guidelines.json"
   },
   "eslintConfig": {
     "extends": "react-app"
