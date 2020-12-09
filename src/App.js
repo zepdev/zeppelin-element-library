@@ -47,7 +47,7 @@ function App() {
       <div className="zep-grid">
         <div className="zep-grid__row">
           <div
-            className="zep-grid__col zep-grid__col--3-12 zep-grid__col--xs-1-6 zep-grid__col--xxs-4-4"
+            className="zep-grid__col zep-grid__col--l-2-12  zep-grid__col--m-2-8 zep-grid__col--xs-2-6 zep-grid__col--xxs-2-4"
             style={{ paddingTop: 45 }}
             id="main-navigation"
           >
@@ -56,6 +56,7 @@ function App() {
                 <button
                   className="zep-button zep-button-primary zep-button--full"
                   onClick={() => setContent(elem)}
+                  style={{ marginBottom: 4 }}
                 >
                   {elements[elem].name}
                 </button>
@@ -65,7 +66,7 @@ function App() {
           <div
             id="main-content"
             data-test-content={content}
-            className="zep-grid__col zep-grid__col--xs-5-6"
+            className="zep-grid__col zep-grid__col--xs-4-6 zep-grid__col--xxs-2-4"
             style={{
               paddingTop: 45,
               paddingBottom: 75,

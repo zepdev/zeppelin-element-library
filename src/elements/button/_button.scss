@@ -18,22 +18,128 @@
     text-align: center;
   }
 
-  .#{$prefix}button {
-    border-radius: 0.25rem;
-    text-align: center;
-    cursor: pointer;
-    outline: 0;
-    border: 0;
-    background-color: map-deep-get(
-      $guidelines,
-      'color',
-      'global',
-      'almostWhite'
-    );
-    color: map-deep-get($guidelines, 'color', 'global', lightGray);
-    &:hover,
-    &:focus {
-      color: map-deep-get($guidelines, 'color', 'global', black);
+  .#{$prefix}button-primary {
+    @extend %button-basics;
+    text-transform: uppercase;
+    padding: 1.25rem 2rem;
+
+    @include themify($color_themes) {
+      color: themed('buttonText');
+      fill: themed('buttonText');
+      background-color: themed('primary');
+
+      @include hover-supported('focus') {
+        background-color: themed('hover');
+      }
+
+      &:active {
+        box-shadow: 0 0 0.3125rem 0 themed('primary');
+      }
+    }
+
+    &:disabled,
+    &:disabled:hover,
+    &:disabled:active {
+      @extend .#{$prefix}button-primary--disabled;
+    }
+
+    @include breakpoint--max('xs') {
+      font-size: 0.875rem;
+      letter-spacing: 0.075rem;
+      padding: 0.9375rem 1.5rem;
+    }
+  }
+
+  .#{$prefix}button-primary--disabled {
+    color: map-deep-get($guidelines, 'color', white, 60);
+    fill: map-deep-get($guidelines, 'color', white, 60);
+    background-color: map-deep-get($guidelines, 'color', black, 40);
+    cursor: not-allowed;
+  }
+
+  .#{$prefix}button-secondary {
+    @extend %button-basics;
+    background-color: map-deep-get($guidelines, 'color', 'global', white);
+    border-style: solid;
+    border-width: 0.125rem;
+    text-transform: uppercase;
+    padding: 1.25rem 2rem;
+
+    @include themify($color_themes) {
+      $color: themed('secondary');
+      color: $color;
+      fill: $color;
+      border-color: $color;
+
+      @include hover-supported('focus') {
+        $color: themed('hover');
+        border-color: $color;
+        color: $color;
+        fill: $color;
+      }
+
+      &:active {
+        box-shadow: 0 0 0.3125rem 0 themed('secondary');
+      }
+    }
+
+    &:disabled,
+    &:disabled:hover,
+    &:disabled:active {
+      @extend .#{$prefix}button-secondary--disabled;
+    }
+
+    @include breakpoint--max('xs') {
+      font-size: 0.875rem;
+      letter-spacing: 0.075rem;
+      padding: 0.9375rem 1.5rem;
+    }
+  }
+
+  .#{$prefix}button-secondary--disabled {
+    $color: map-deep-get($guidelines, 'color', black, 40);
+    color: $color;
+    fill: $color;
+    border-color: $color;
+    cursor: not-allowed;
+  }
+
+  .#{$prefix}button--medium {
+    padding: 0.875rem 1.5rem;
+    @include breakpoint--max(xs) {
+      padding: 0.6875rem 1rem;
+    }
+  }
+
+  .#{$prefix}button--small {
+    letter-spacing: 0.046875rem;
+    padding: 0.375rem 1rem;
+    text-transform: none;
+    @include breakpoint--max(xs) {
+      letter-spacing: 0.04375rem;
+      padding: 0.4375rem 0.75rem;
+    }
+  }
+
+  .#{$prefix}button--full {
+    display: block;
+    width: 100%;
+  }
+
+  .#{$prefix}button-icon {
+    padding: 0;
+    width: 3rem;
+    height: 3rem;
+
+    &:disabled {
+      cursor: not-allowed;
+      outline: 0;
+
+      &:hover,
+      &:focus {
+        outline: 0;
+        box-shadow: none;
+      }
     }
   }
 
@@ -71,141 +177,6 @@
         border-bottom: 2px solid themed('primary');
       }
     }
-  }
-
-  .#{$prefix}button-primary {
-    @extend %button-basics;
-    text-transform: uppercase;
-    padding: 1.25rem 2rem;
-
-    @include themify($color_themes) {
-      color: themed('buttonText');
-      fill: themed('buttonText');
-      background-color: themed('primary');
-
-      @include hover-supported() {
-        background-color: themed('hover');
-        color: themed('buttonTextHover');
-        fill: themed('buttonTextHover');
-      }
-
-      &:focus {
-        background-color: themed('hover');
-        color: themed('buttonTextHover');
-        fill: themed('buttonTextHover');
-      }
-
-      &:active {
-        box-shadow: 0 0 0.3125rem 0 themed('primary');
-      }
-    }
-    &:disabled {
-      //@extend .#{$prefix}button-primary--disabled;
-    }
-  }
-
-  .#{$prefix}button-primary--disabled {
-    color: map-deep-get($guidelines, 'color', 'global', lightGray);
-    fill: map-deep-get($guidelines, 'color', 'global', lightGray);
-    background-color: map-deep-get(
-      $guidelines,
-      'color',
-      'global',
-      'almostWhite'
-    );
-    cursor: not-allowed;
-    outline: 0;
-
-    @include hover-supported() {
-      color: map-deep-get($guidelines, 'color', 'global', lightGray);
-      fill: map-deep-get($guidelines, 'color', 'global', lightGray);
-      background-color: map-deep-get(
-        $guidelines,
-        'color',
-        'global',
-        'almostWhite'
-      );
-    }
-
-    &:focus {
-      color: map-deep-get($guidelines, 'color', 'global', lightGray);
-      fill: map-deep-get($guidelines, 'color', 'global', lightGray);
-      background-color: map-deep-get(
-        $guidelines,
-        'color',
-        'global',
-        'almostWhite'
-      );
-    }
-  }
-
-  .#{$prefix}button-secondary {
-    @extend %typo-normal-button1;
-    background: transparent;
-    padding: 20px 32px;
-    border: 2px solid;
-    @include themify($color_themes) {
-      border-color: themed('primary');
-      color: themed('primary');
-      fill: themed('primary');
-      &:hover,
-      &:focus,
-      &.#{$prefix}button-secondary--hover {
-        border-color: themed('hover');
-        color: themed('hover');
-        fill: themed('hover');
-      }
-    }
-
-    &:disabled,
-    &.#{$prefix}button-secondary--disabled {
-      color: map-deep-get($guidelines, 'color', 'global', lightGray);
-      fill: map-deep-get($guidelines, 'color', 'global', lightGray);
-      border-color: map-deep-get($guidelines, 'color', 'global', lightGray);
-      cursor: not-allowed;
-      outline: 0;
-      &:hover,
-      &:focus,
-      &.#{$prefix}button-secondary--hover {
-        color: map-deep-get($guidelines, 'color', 'global', lightGray);
-        fill: map-deep-get($guidelines, 'color', 'global', lightGray);
-        border-color: map-deep-get($guidelines, 'color', 'global', lightGray);
-        outline: 0;
-      }
-    }
-  }
-
-  .#{$prefix}button--medium {
-    padding: 14px 24px;
-  }
-
-  .#{$prefix}button--small {
-    padding: 6px 16px;
-  }
-
-  .#{$prefix}button--full {
-    display: block;
-    width: 100%;
-  }
-
-  .#{$prefix}button-icon {
-    padding: 0;
-    width: 3rem;
-    height: 3rem;
-    &:disabled {
-      cursor: not-allowed;
-      outline: 0;
-      &:hover,
-      &:focus {
-        outline: 0;
-        box-shadow: none;
-      }
-    }
-  }
-
-  // fixes v-align differences between <a> and <button>
-  a.#{$prefix}button {
-    display: inline-flex;
   }
 
   .#{$prefix}button__icon {

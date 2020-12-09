@@ -8,6 +8,8 @@
 // The second media query is to support IE11 because the first one isn't supported by IE11
 // https://developer.mozilla.org/en-US/docs/Web/CSS/@media/-ms-high-contrast
 //
+// @param {string} $additional-pseudo-classes
+//
 // Usage example:
 // button {
 //   background-color:gray;
@@ -16,10 +18,15 @@
 //   }
 //}
 // ------------------------------------------------------------------------------------------------
-@mixin hover-supported {
+@mixin hover-supported($additional-pseudo-classes...) {
+  // add hover to the provided list of pseudo-classes
+  $pseudo-classes: join('hover', $additional-pseudo-classes);
+
   @media (hover: hover), (-ms-high-contrast: none) {
-    &:hover {
-      @content;
+    @each $pseudo-class in $pseudo-classes {
+      &:#{$pseudo-class} {
+        @content;
+      }
     }
   }
 }
