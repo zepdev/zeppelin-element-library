@@ -28,3 +28,4 @@ report.json
 # IDEs
 /.idea
 /.vscode
+.eslintcache
