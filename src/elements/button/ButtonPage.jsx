@@ -21,10 +21,7 @@ function ButtonPage() {
               style={{ marginBottom: 15 }}
               key={theme}
             >
-              <p
-                className="zep-typo--display-default"
-                style={{ marginBottom: 5 }}
-              >
+              <p className="zep-typo--body-default" style={{ marginBottom: 5 }}>
                 Theme {theme}
               </p>
               {sizes.map((size) => (
@@ -42,10 +39,7 @@ function ButtonPage() {
             </div>
           ))}
           <div style={{ marginBottom: 15 }}>
-            <p
-              className="zep-typo--display-default"
-              style={{ marginBottom: 10 }}
-            >
+            <p className="zep-typo--body-default" style={{ marginBottom: 10 }}>
               disabled
             </p>
             {sizes.map((size2) => (
@@ -70,10 +64,7 @@ function ButtonPage() {
               style={{ marginBottom: 15 }}
               key={theme2}
             >
-              <p
-                className="zep-typo--display-default"
-                style={{ marginBottom: 5 }}
-              >
+              <p className="zep-typo--body-default" style={{ marginBottom: 5 }}>
                 Theme {theme2}
               </p>
               {sizes.map((size3) => (
@@ -88,10 +79,7 @@ function ButtonPage() {
             </div>
           ))}
           <div style={{ marginBottom: 15 }}>
-            <p
-              className="zep-typo--display-default"
-              style={{ marginBottom: 10 }}
-            >
+            <p className="zep-typo--body-default" style={{ marginBottom: 10 }}>
               disabled
             </p>
             {sizes.map((size4) => (
@@ -134,10 +122,7 @@ function ButtonPage() {
               style={{ marginBottom: 15 }}
               key={theme3}
             >
-              <p
-                className="zep-typo--display-default"
-                style={{ marginBottom: 5 }}
-              >
+              <p className="zep-typo--body-default" style={{ marginBottom: 5 }}>
                 Theme {theme3}
               </p>
               <button
@@ -147,7 +132,7 @@ function ButtonPage() {
               </button>
             </div>
           ))}
-          <p className="zep-typo--display-default" style={{ marginBottom: 10 }}>
+          <p className="zep-typo--body-default" style={{ marginBottom: 10 }}>
             disabled
           </p>
           <div style={{ marginBottom: 15 }}>

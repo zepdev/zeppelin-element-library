@@ -39,9 +39,7 @@ function App() {
             width: '100%',
           }}
         >
-          <h1 className="zep-typo--normal-h1-negative">
-            Zeppelin Element Library
-          </h1>
+          <h1 className="zep-typo--display-5">Zeppelin Element Library</h1>
         </div>
       </div>
       <div className="zep-grid">
@@ -54,7 +52,7 @@ function App() {
             {Object.keys(elements).map((elem, i) => (
               <div key={`btn-${i}`}>
                 <button
-                  className="zep-button zep-button-primary zep-button--full"
+                  className="zep-button zep-button--primary zep-button--full"
                   onClick={() => setContent(elem)}
                   style={{ marginBottom: 4 }}
                 >
@@ -73,7 +71,7 @@ function App() {
             }}
           >
             {content === 'welcome' && (
-              <p className="zep-typo--normal-h1-negative">
+              <p className="zep-typo--headline-5">
                 Welcome to the Zeppelin Element Library
               </p>
             )}
