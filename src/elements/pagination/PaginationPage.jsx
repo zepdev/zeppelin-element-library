@@ -5,12 +5,12 @@ function PaginationPage() {
   const themes = ['none', 'indigo', 'yellow', 'red'];
   return (
     <>
-      {themes.map((elem, i) => (
-        <div key={`pagination${elem}`} style={{ marginBottom: 15 }} key={elem}>
+      {themes.map((theme, i) => (
+        <div key={`pagination${theme}`} style={{ marginBottom: 15 }}>
           <p style={{ marginBottom: 5 }} className="zep-typo--body-default">
-            Theme {elem} (selected item: {i + 1})
+            Theme {theme} (selected item: {i + 1})
           </p>
-          <div className={`theme-${elem} zep-pagination`}>
+          <div className={`theme-${theme} zep-pagination`}>
             <button className="zep-button zep-button--icon" disabled>
               <Icon
                 icon="zepicons-previous-page"
