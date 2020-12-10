@@ -176,8 +176,9 @@
       color: map-deep-get($guidelines, 'color', 'font');
       fill: map-deep-get($guidelines, 'color', 'font');
       background-color: map-deep-get($guidelines, 'color', 'global', white);
+      border-bottom: 0.125rem solid map-deep-get($guidelines, 'color', 'font');
       @include themify($color_themes) {
-        border-bottom: 0.125rem solid themed('primary');
+        border-bottom-color: themed('primary');
       }
     }
 

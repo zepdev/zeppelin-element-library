@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from '../icon/Icon';
 
 function PaginationPage() {
-  const themes = ['indigo', 'yellow', 'red'];
+  const themes = ['none', 'indigo', 'yellow', 'red'];
   return (
     <>
       {themes.map((elem, i) => (
