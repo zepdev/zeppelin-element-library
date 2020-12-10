@@ -2,35 +2,24 @@ import React from 'react';
 import Icon from '../icon/Icon';
 
 function TagPage() {
+  const themes = ['none', 'indigo', 'yellow', 'red'];
   return (
     <>
-      <div className="theme-indigo" style={{ marginBottom: 15 }}>
-        <span role="button" className="zep-tag">
-          Tag
-          <button
-            className="zep-tag__button"
-            onClick={() => console.log('test')}
-          >
-            <Icon icon="zepicons-close" className="zep-tag__icon" />
-          </button>
-        </span>
-      </div>
-      <div className="theme-yellow" style={{ marginBottom: 15 }}>
-        <span role="button" className="zep-tag">
-          Tag
-          <button className="zep-tag__button">
-            <Icon icon="zepicons-close" className="zep-tag__icon" />
-          </button>
-        </span>
-      </div>
-      <div className="theme-red" style={{ marginBottom: 15 }}>
-        <span role="button" className="zep-tag">
-          Tag
-          <button className="zep-tag__button">
-            <Icon icon="zepicons-close" className="zep-tag__icon" />
-          </button>
-        </span>
-      </div>
+      {themes.map((theme) => (
+        <div key={theme}>
+          <p className="zep-typo--body-default" style={{ marginBottom: 5 }}>
+            Theme {theme}
+          </p>
+          <div className={`theme-${theme}`} style={{ marginBottom: 15 }}>
+            <span role="button" className="zep-tag">
+              Tag
+              <button className="zep-tag__button">
+                <Icon icon="zepicons-close" className="zep-tag__icon" />
+              </button>
+            </span>
+          </div>
+        </div>
+      ))}
     </>
   );
 }

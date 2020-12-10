@@ -6,7 +6,7 @@ function PaginationPage() {
   return (
     <>
       {themes.map((elem, i) => (
-        <div key={`pagination${elem}`} style={{ marginBottom: 15 }}>
+        <div key={`pagination${elem}`} style={{ marginBottom: 15 }} key={elem}>
           <p style={{ marginBottom: 5 }} className="zep-typo--body-default">
             Theme {elem} (selected item: {i + 1})
           </p>
