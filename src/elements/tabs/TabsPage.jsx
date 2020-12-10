@@ -7,7 +7,7 @@ function TabsPage() {
     <>
       <div className="zep-tabs__item">
         <button
-          className="zep-tab"
+          className="zep-tab zep-tab--selected"
           role="tab"
           aria-selected="true"
           aria-controls="panel-1"
@@ -33,7 +33,7 @@ function TabsPage() {
     <>
       <div className="zep-tabs__item">
         <button
-          className="zep-tab zep-tab--small"
+          className="zep-tab zep-tab--small zep-tab--selected"
           role="tab"
           aria-selected="true"
           aria-controls="panel-1"
@@ -60,7 +60,7 @@ function TabsPage() {
         <button
           className="zep-tab zep-tab--small"
           role="tab"
-          aria-selected="true"
+          aria-selected="false"
           aria-controls="panel-3"
           id="small-tab-3"
           tabIndex="0"
@@ -85,7 +85,7 @@ function TabsPage() {
     <>
       <div className="zep-tabs__item">
         <button
-          className="zep-tab zep-tab--icon"
+          className="zep-tab zep-tab--icon zep-tab--selected"
           role="tab"
           aria-selected="true"
           aria-controls="panel-1"
@@ -129,22 +129,33 @@ function TabsPage() {
 
   const fragmentsList = fragments.map(function (frag, i) {
     return (
-      <div key={`tab-list-${i}`}>
-        {themes.map((elem) => (
-          <div
-            className={`theme-${elem} zep-tabs`}
-            key={`tab-list-${i}-tabs${elem}`}
-            role="tablist"
-            aria-label={`tabs ${elem}`}
-          >
-            {frag}
+      <div key={`tab-list-${i}`} style={{ marginBottom: 30 }}>
+        {themes.map((theme) => (
+          <div key={`tab-list-${i}-tabs${theme}`} style={{ marginBottom: 15 }}>
+            <p className="zep-typo--body-default" style={{ marginBottom: 5 }}>
+              Theme {theme}
+            </p>
+            <div
+              className={`theme-${theme} zep-tabs`}
+              role="tablist"
+              aria-label={`tabs ${theme}`}
+            >
+              {frag}
+            </div>
           </div>
         ))}
       </div>
     );
   });
 
-  return <>{fragmentsList}</>;
+  return (
+    <>
+      <p style={{ marginBottom: 15 }} className="zep-typo--headline-3">
+        Tabs (every 1st tab shows the selected state)
+      </p>
+      {fragmentsList}
+    </>
+  );
 }
 
 export default TabsPage;
