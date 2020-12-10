@@ -172,7 +172,7 @@
     border-bottom: 0.125rem solid transparent;
     cursor: pointer;
 
-    @include hover-supported('focus') {
+    &.#{$prefix}button--selected {
       color: map-deep-get($guidelines, 'color', 'font');
       fill: map-deep-get($guidelines, 'color', 'font');
       background-color: map-deep-get($guidelines, 'color', 'global', white);
@@ -181,7 +181,7 @@
       }
     }
 
-    &.#{$prefix}--selected {
+    @include hover-supported('focus') {
       color: map-deep-get($guidelines, 'color', 'font');
       fill: map-deep-get($guidelines, 'color', 'font');
       background-color: map-deep-get($guidelines, 'color', 'global', white);
