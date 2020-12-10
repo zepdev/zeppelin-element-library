@@ -4,7 +4,7 @@
   $font-default: #{get('typography.typefaces.roboto', $guidelines)};
   $font-condensed: #{get('typography.typefaces.robotoCondensed', $guidelines)};
 
-  %button-basics {
+  .#{$prefix}button {
     border: 0;
     border-radius: 0.25rem;
     cursor: pointer;
@@ -16,10 +16,16 @@
     line-height: 1.25em;
     outline: 0;
     text-align: center;
+    vertical-align: middle;
+    color: map-deep-get($guidelines, 'color', black, 84);
+    fill: map-deep-get($guidelines, 'color', black, 84);
+    background-color: map-deep-get($guidelines, 'color', 'global', almostWhite);
   }
 
-  .#{$prefix}button-primary {
-    @extend %button-basics;
+  @warn ".#{$prefix}button-primary is deprecated and will be removed in future versions, please use .#{$prefix}button--primary instead";
+  .#{$prefix}button-primary,
+  .#{$prefix}button--primary {
+    @extend .#{$prefix}button;
     text-transform: uppercase;
     padding: 1.25rem 2rem;
 
@@ -40,7 +46,7 @@
     &:disabled,
     &:disabled:hover,
     &:disabled:active {
-      @extend .#{$prefix}button-primary--disabled;
+      @extend .#{$prefix}button--primary.#{$prefix}button--disabled;
     }
 
     @include breakpoint--max('xs') {
@@ -50,15 +56,19 @@
     }
   }
 
-  .#{$prefix}button-primary--disabled {
+  @warn ".#{$prefix}button-primary--disabled is deprecated and will be removed in future versions, please use .#{$prefix}button--primary.#{$prefix}button--disabled instead";
+  .#{$prefix}button-primary--disabled,
+  .#{$prefix}button--primary.#{$prefix}button--disabled {
     color: map-deep-get($guidelines, 'color', white, 60);
     fill: map-deep-get($guidelines, 'color', white, 60);
     background-color: map-deep-get($guidelines, 'color', black, 40);
     cursor: not-allowed;
   }
 
-  .#{$prefix}button-secondary {
-    @extend %button-basics;
+  @warn ".#{$prefix}button-secondary is deprecated and will be removed in future versions, please use .#{$prefix}button--secondary instead";
+  .#{$prefix}button-secondary,
+  .#{$prefix}button--secondary {
+    @extend .#{$prefix}button;
     background-color: map-deep-get($guidelines, 'color', 'global', white);
     border-style: solid;
     border-width: 0.125rem;
@@ -86,7 +96,7 @@
     &:disabled,
     &:disabled:hover,
     &:disabled:active {
-      @extend .#{$prefix}button-secondary--disabled;
+      @extend .#{$prefix}button--secondary.#{$prefix}button--disabled;
     }
 
     @include breakpoint--max('xs') {
@@ -96,7 +106,9 @@
     }
   }
 
-  .#{$prefix}button-secondary--disabled {
+  @warn ".#{$prefix}button-secondary--disabled is deprecated and will be removed in future versions, please use .#{$prefix}button--secondary.#{$prefix}button--disabled instead";
+  .#{$prefix}button-secondary--disabled,
+  .#{$prefix}button--secondary.#{$prefix}button--disabled {
     $color: map-deep-get($guidelines, 'color', black, 40);
     color: $color;
     fill: $color;
@@ -126,7 +138,9 @@
     width: 100%;
   }
 
-  .#{$prefix}button-icon {
+  @warn ".#{$prefix}button-icon is deprecated and will be removed in future versions, please use .#{$prefix}button--icon instead";
+  .#{$prefix}button-icon,
+  .#{$prefix}button--icon {
     padding: 0;
     width: 3rem;
     height: 3rem;
@@ -135,53 +149,51 @@
       cursor: not-allowed;
       outline: 0;
 
-      &:hover,
-      &:focus {
+      @include hover-supported('focus') {
         outline: 0;
         box-shadow: none;
       }
     }
   }
 
-  .#{$prefix}button-icon--pagination {
-    background-color: map-deep-get(
-      $guidelines,
-      'color',
-      'global',
-      'almostWhite'
-    );
-    margin-right: 1px;
-  }
-
-  .#{$prefix}button-pagination {
-    @extend %typo-normal-button1;
+  @warn ".#{$prefix}button-pagination is deprecated and will be removed in future versions, please use .#{$prefix}button--pagination instead";
+  .#{$prefix}button-pagination,
+  .#{$prefix}button--pagination {
+    @extend .#{$prefix}button;
     border-radius: 0;
     background-color: transparent;
     color: map-deep-get($guidelines, 'color', 'global', lightGray);
     fill: map-deep-get($guidelines, 'color', 'global', lightGray);
     width: 3rem;
     height: 3rem;
-    margin-right: 1px;
     display: table-cell;
     vertical-align: middle;
     outline: none;
-    border-bottom: 2px solid transparent;
+    border-bottom: 0.125rem solid transparent;
     cursor: pointer;
-    @include themify($color_themes) {
-      &:hover,
-      &:focus,
-      &.#{$prefix}pagination--selected {
-        color: map-deep-get($guidelines, 'color', 'global' black);
-        fill: map-deep-get($guidelines, 'color', 'global' black);
-        background-color: transparent;
-        border-bottom: 2px solid themed('primary');
+
+    @include hover-supported('focus') {
+      color: map-deep-get($guidelines, 'color', 'font');
+      fill: map-deep-get($guidelines, 'color', 'font');
+      background-color: map-deep-get($guidelines, 'color', 'global', white);
+      @include themify($color_themes) {
+        border-bottom: 0.125rem solid themed('primary');
+      }
+    }
+
+    &.#{$prefix}--selected {
+      color: map-deep-get($guidelines, 'color', 'font');
+      fill: map-deep-get($guidelines, 'color', 'font');
+      background-color: map-deep-get($guidelines, 'color', 'global', white);
+      @include themify($color_themes) {
+        border-bottom: 0.125rem solid themed('primary');
       }
     }
   }
 
   .#{$prefix}button__icon {
-    height: 1.375rem;
-    width: 1.375rem;
+    height: 1.5rem;
+    width: 1.5rem;
   }
 }
 
