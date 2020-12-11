@@ -6,7 +6,6 @@ export default class NumberInput extends Element {
     this.name = 'NumberInputInstance';
   }
 
-  //TODO: fix inheritance problem this.htmlElem
   init() {
     this.buttonMinus = this.htmlElem.querySelector(
       'button[data-zep-option="minus"]'

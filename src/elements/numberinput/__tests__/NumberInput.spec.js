@@ -10,7 +10,7 @@ describe('standard element constructor', () => {
                 <use xlink:href="#zepicons-minus"></use>
             </svg>
         </button>
-        <input type="text" class="zep-input zep-input--number" value="1">
+        <input type="text" class="zep-input zep-input--number" value="2">
         <button class="zep-button zep-button-icon" data-zep-option="plus">
             <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24" class="zep-button__icon" fill="currentColor">
@@ -31,14 +31,26 @@ describe('standard element constructor', () => {
     instance = new NumberInput(htmlElement);
   });
 
-  test('constructor is succesfully called and properties are set in init function.', () => {
+  test('constructor is successfully called and properties are set in init function.', () => {
     expect(
       instance.inputHtml === document.querySelector('input[type="text"]')
     ).toBeTruthy();
     expect(instance.steps).toEqual(2);
     expect(instance.minimum).toEqual(0);
     expect(instance.maximum).toEqual(10);
+    expect(instance.currentNumber).toEqual(2);
+
+    instance.inputHtml.value = '';
+    const htmlElement = instance.htmlElem;
+    instance = new NumberInput(htmlElement);
     expect(instance.currentNumber).toEqual(1);
+  });
+
+  test('property currentNumber is other than default', () => {
+    document.querySelector('input[type="text"]').value = 10;
+    let htmlElement = document.querySelector('#numberInput');
+    const localInstance = new NumberInput(htmlElement);
+    expect(localInstance.currentNumber).toEqual(10);
   });
 
   test('element has minus and plus button', () => {
