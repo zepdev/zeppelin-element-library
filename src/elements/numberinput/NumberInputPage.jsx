@@ -16,7 +16,7 @@ function NumberInputPage() {
           data-zep-max="10"
           data-zep-step="2"
         >
-          <button className="zep-button zep-button-icon">
+          <button className="zep-button zep-button--icon">
             <Icon icon="zepicons-minus" className="zep-button__icon" />
           </button>
           <input
@@ -24,7 +24,7 @@ function NumberInputPage() {
             className="zep-input zep-input--number"
             defaultValue="1"
           />
-          <button className="zep-button zep-button-icon">
+          <button className="zep-button zep-button--icon">
             <Icon icon="zepicons-plus" className="zep-button__icon" />
           </button>
         </div>
