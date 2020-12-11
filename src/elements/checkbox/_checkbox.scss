@@ -1,11 +1,6 @@
 @mixin checkbox {
   $border-color: map-deep-get($guidelines, 'color', black, 84);
-  $border-color--disabled: map-deep-get(
-    $guidelines,
-    'color',
-    'global',
-    lightGray
-  );
+  $border-color--disabled: map-deep-get($guidelines, 'color', black, 40);
 
   @keyframes ripple {
     0% {
