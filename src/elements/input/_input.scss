@@ -4,6 +4,7 @@
   $color-alert: map-deep-get($guidelines, 'color', 'support', 'alert');
   $color-label: map-deep-get($guidelines, 'color', black, 60);
   $color-disabled: map-deep-get($guidelines, 'color', black, 40);
+  $color-white: map-deep-get($guidelines, 'color', 'global', white);
 
   .#{$prefix}input {
     @extend .#{$prefix}typo--body-default;
@@ -44,19 +45,16 @@
 
   .#{$prefix}input-container__label {
     @extend .#{$prefix}typo--body-extra-small;
-    font-weight: 400;
-    line-height: 1.25rem;
     text-transform: none;
-    letter-spacing: 0;
-    font-family: 'Roboto', sans-serif;
     color: $color-label;
     position: absolute;
     display: inline-block;
-    background-color: white;
+    background-color: $color-white;
     margin: 0 0.5625rem;
     padding: 0 0.5625rem;
     left: 0;
-    top: -0.5rem;
+    top: 0;
+    transform: translateY(-50%);
   }
 
   .#{$prefix}input:placeholder-shown + .#{$prefix}input-container__label {
@@ -73,9 +71,9 @@
 
   .#{$prefix}input:not(:placeholder-shown) + .#{$prefix}input-container__label,
   .#{$prefix}input:focus + .#{$prefix}input-container__label {
-    top: -0.5rem;
-    transform: scale(1);
-    cursor: pointer;
+    top: 0;
+    transform: translateY(-50%) scale(1);
+    //cursor: pointer;
   }
 
   .#{$prefix}input:disabled + .#{$prefix}input-container__label {
