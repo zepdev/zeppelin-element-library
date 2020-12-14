@@ -12,7 +12,7 @@ function TablePage() {
         >
           <caption className="zep-visually-hidden">{`table ${elem}`}</caption>
           <thead>
-            <tr className="zep-table__row zep-table__row--header">
+            <tr className="zep-table__row">
               {[1, 2, 3].map((elem) => (
                 <th
                   scope="col"
@@ -26,14 +26,7 @@ function TablePage() {
           </thead>
           <tbody>
             {[1, 2].map((elem) => (
-              <tr
-                className={
-                  elem === 1
-                    ? 'zep-table__row zep-table__row--white'
-                    : 'zep-table__row zep-table__row--gray'
-                }
-                key={`row${elem}`}
-              >
+              <tr key={`row${elem}`}>
                 {[1, 2, 3].map((item, idx) =>
                   idx === 0 ? (
                     <th
