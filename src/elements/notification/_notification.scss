@@ -6,6 +6,7 @@
 
   .#{$prefix}notification {
     @extend .#{$prefix}typo--body-default;
+    background: map-deep-get($guidelines, 'color', 'global', white);
     color: $color-default;
     padding: 0.625rem 1.5rem;
     text-align: center;
