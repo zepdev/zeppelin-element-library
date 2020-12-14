@@ -14,7 +14,7 @@
     padding-left: 1.25rem;
     padding-top: 0.25rem;
     color: map-deep-get($guidelines, 'color', 'font');
-    background-color: map-deep-get($guidelines, 'color', 'global', white);
+    background-color: $color-white;
 
     &:focus {
       outline: 0.125rem solid $color-label;
