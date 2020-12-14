@@ -17,7 +17,7 @@
   .#{$prefix}table__cell--header {
     @extend .#{$prefix}typo--headline-6_alt;
     @include themify($color_themes) {
-      border-bottom: 0.0625rem solid themed('primary');
+      border-bottom: 0.125rem solid themed('primary');
     }
   }
 
