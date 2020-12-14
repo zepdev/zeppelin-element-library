@@ -3,6 +3,7 @@
 @mixin button {
   $font-default: #{get('typography.typefaces.roboto', $guidelines)};
   $font-condensed: #{get('typography.typefaces.robotoCondensed', $guidelines)};
+  $color-font: map-deep-get($guidelines, 'color', 'font');
 
   .#{$prefix}button {
     border: 0;
@@ -173,26 +174,28 @@
     cursor: pointer;
 
     &.#{$prefix}button--selected {
-      color: map-deep-get($guidelines, 'color', 'font');
-      fill: map-deep-get($guidelines, 'color', 'font');
+      color: $color-font;
+      fill: $color-font;
       background-color: map-deep-get($guidelines, 'color', 'global', white);
-      border-bottom: 0.125rem solid map-deep-get($guidelines, 'color', 'font');
+      border-bottom: 0.125rem solid $color-font;
       @include themify($color_themes) {
         border-bottom-color: themed('primary');
       }
     }
 
     @include hover-supported('focus') {
-      color: map-deep-get($guidelines, 'color', 'font');
-      fill: map-deep-get($guidelines, 'color', 'font');
+      color: $color-font;
+      fill: $color-font;
       background-color: map-deep-get($guidelines, 'color', 'global', white);
+      border-bottom: 0.125rem solid $color-font;
       @include themify($color_themes) {
-        border-bottom: 0.125rem solid themed('primary');
+        border-bottom-color: themed('primary');
       }
     }
   }
 
   .#{$prefix}button__icon {
+    vertical-align: middle;
     height: 1.5rem;
     width: 1.5rem;
   }

@@ -11,13 +11,19 @@ function PaginationPage() {
             Theme {theme} (selected item: {i + 1})
           </p>
           <div className={`theme-${theme} zep-pagination`}>
-            <button className="zep-button zep-button--icon" disabled>
+            <button
+              className="zep-button zep-button--primary zep-button--icon"
+              disabled={i === 0}
+            >
               <Icon
                 icon="zepicons-previous-page"
                 className="zep-button__icon"
               />
             </button>
-            <button className="zep-button zep-button--icon" disabled>
+            <button
+              className="zep-button zep-button--primary zep-button--icon"
+              disabled={i === 0}
+            >
               <Icon icon="zepicons-chevron-left" className="zep-button__icon" />
             </button>
             {[1, 2, 3, 4, 5].map((num) => (
@@ -30,13 +36,13 @@ function PaginationPage() {
                 {num}
               </button>
             ))}
-            <button className="zep-button zep-button--icon">
+            <button className="zep-button zep-button--primary zep-button--icon">
               <Icon
                 icon="zepicons-chevron-right"
                 className="zep-button__icon"
               />
             </button>
-            <button className="zep-button zep-button--icon">
+            <button className="zep-button zep-button--primary zep-button--icon">
               <Icon icon="zepicons-next-page" className="zep-button__icon" />
             </button>
           </div>
