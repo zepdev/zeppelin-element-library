@@ -3,7 +3,7 @@
   "version": "2.0.2",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
   "author": "Joerg Schneider <joerg.schneider@z-lab.com>",
-  "license": "MIT",
+  "license": "Copyright (C) Zeppelin GmbH",
   "repository": {
     "type": "git",
     "url": "https://github.com/zepdev/zeppelin-element-library.git"
