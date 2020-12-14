@@ -45,13 +45,45 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "header-max-length": [
+        2,
+        "always",
+        200
+      ],
+      "scope-case": [
+        1,
+        "always",
+        [
+          "upper-case",
+          "lower-case",
+          "pascal-case",
+          "start-case"
+        ]
+      ],
+      "subject-case": [
+        1,
+        "always",
+        [
+          "sentence-case",
+          "lower-case",
+          "start-case"
+        ]
+      ]
+    }
   },
   "release": {
     "branches": [
