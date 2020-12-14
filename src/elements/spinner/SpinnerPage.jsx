@@ -3,11 +3,7 @@ import React from 'react';
 function SpinnerPage() {
   return (
     <>
-      <p
-        className="zep-typo--normal-body1"
-        style={{ marginBottom: 5 }}
-        style={{ marginBottom: 5 }}
-      >
+      <p className="zep-typo--normal-body1" style={{ marginBottom: 5 }}>
         Spinner default (1.5rem = 24px)
       </p>
       <div className="zep-spinner" style={{ marginBottom: 15 }}>
@@ -16,11 +12,7 @@ function SpinnerPage() {
         </svg>
       </div>
 
-      <p
-        className="zep-typo--normal-body1"
-        style={{ marginBottom: 5 }}
-        style={{ marginBottom: 5 }}
-      >
+      <p className="zep-typo--normal-body1" style={{ marginBottom: 5 }}>
         Spinner medium (3rem = 48px)
       </p>
       <div
@@ -32,11 +24,7 @@ function SpinnerPage() {
         </svg>
       </div>
 
-      <p
-        className="zep-typo--normal-body1"
-        style={{ marginBottom: 5 }}
-        style={{ marginBottom: 5 }}
-      >
+      <p className="zep-typo--normal-body1" style={{ marginBottom: 5 }}>
         Spinner large (4.5rem = 72px)
       </p>
       <div
@@ -48,11 +36,7 @@ function SpinnerPage() {
         </svg>
       </div>
 
-      <p
-        className="zep-typo--normal-body1"
-        style={{ marginBottom: 5 }}
-        style={{ marginBottom: 5 }}
-      >
+      <p className="zep-typo--normal-body1" style={{ marginBottom: 5 }}>
         Spinner default inverted (1.5rem = 20px)
       </p>
       <div
@@ -69,11 +53,7 @@ function SpinnerPage() {
           </svg>
         </div>
       </div>
-      <p
-        className="zep-typo--normal-body1"
-        style={{ marginBottom: 5 }}
-        style={{ marginBottom: 5 }}
-      >
+      <p className="zep-typo--normal-body1" style={{ marginBottom: 5 }}>
         Spinner medium inverted (3rem = 48px)
       </p>
       <div
@@ -90,11 +70,7 @@ function SpinnerPage() {
           </svg>
         </div>
       </div>
-      <p
-        className="zep-typo--normal-body1"
-        style={{ marginBottom: 5 }}
-        style={{ marginBottom: 5 }}
-      >
+      <p className="zep-typo--normal-body1" style={{ marginBottom: 5 }}>
         Spinner large inverted (4.5rem = 72px)
       </p>
       <div
