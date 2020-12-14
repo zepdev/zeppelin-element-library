@@ -2,50 +2,37 @@ import React from 'react';
 import Icon from '../icon/Icon';
 
 function SearchPage() {
-  const themes = ['indigo', 'yellow', 'red', 'blue'];
   return (
     <>
-      <div style={{ padding: 30, background: '#fff', marginBottom: 15 }}>
-        <p style={{ color: '#FFF' }}>Search Default</p>
-        {themes.map((elem) => (
-          <div
-            className={`theme-${elem} zep-search`}
-            style={{ marginBottom: 15 }}
-            key={elem}
-          >
-            <input
-              type="text"
-              className="zep-search__input zep-search__input--rounded-left"
-              placeholder="Search"
-              id={`search-${elem}`}
-            />
-            <Icon icon="zepicons-search" className="zep-search__icon" />
-            <label className="zep-visually-hidden" htmlFor={`search-${elem}`}>
-              Search {elem}
-            </label>
-          </div>
-        ))}
+      <p style={{ marginBottom: 15 }}>Header Search</p>
+      <div className="zep-search" style={{ marginBottom: 30 }}>
+        <input
+          type="text"
+          className="zep-search__input zep-search__input--searchfield"
+          placeholder="Search"
+          id="header-search"
+        />
+        <Icon icon="zepicons-search" className="zep-search__icon" />
+        <label className="zep-visually-hidden" htmlFor="header-search">
+          Search
+        </label>
       </div>
 
-      <p>Header Default</p>
-      {themes.map((elem) => (
-        <div
-          className={`theme-${elem} zep-search`}
-          style={{ marginBottom: 15 }}
-          key={elem}
-        >
+      <div style={{ marginBottom: 30 }}>
+        <p style={{ marginBottom: 15 }}>Search Default</p>
+        <div className="zep-search" style={{ marginBottom: 15 }}>
           <input
             type="text"
-            className="zep-search__input zep-search__input--searchfield"
+            className="zep-search__input zep-search__input--rounded-left"
             placeholder="Search"
-            id={`search-${elem}`}
+            id="search-default"
           />
           <Icon icon="zepicons-search" className="zep-search__icon" />
-          <label className="zep-visually-hidden" htmlFor={`search-${elem}`}>
-            Search {elem}
+          <label className="zep-visually-hidden" htmlFor="search-default">
+            Search
           </label>
         </div>
-      ))}
+      </div>
     </>
   );
 }

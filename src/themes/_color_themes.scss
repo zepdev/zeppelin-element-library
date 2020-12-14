@@ -8,54 +8,35 @@ $color_themes: (
     primary: map-deep-get($guidelines, 'theme', indigo, 'primary'),
     hover: map-deep-get($guidelines, 'theme', indigo, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', indigo, 'primary'),
-    buttonText: map-deep-get($guidelines, 'color', 'global', white),
-    buttonTextHover: map-deep-get($guidelines, 'color', 'global', white),
+    buttonText: map-deep-get($guidelines, 'color', 'fontNegative'),
     tagHover: map-deep-get($guidelines, 'theme', indigo, 'secondary'),
-    textBase: map-deep-get($guidelines, 'color', 'global', white)
+    textBase: map-deep-get($guidelines, 'color', 'global', white),
   ),
   yellow: (
     primary: map-deep-get($guidelines, 'theme', yellow, 'primary'),
     hover: map-deep-get($guidelines, 'theme', yellow, 'secondary'),
-    secondary: map-deep-get($guidelines, 'theme', yellow, 'tertiary'),
+    secondary: map-deep-get($guidelines, 'theme', yellow, 'primary'),
     buttonText: map-deep-get($guidelines, 'color', 'font'),
-    buttonTextHover: map-deep-get($guidelines, 'color', 'global' darkGray),
-    tagHover: map-deep-get($guidelines, 'theme', yellow, 'tertiary'),
-    textBase: map-deep-get($guidelines, 'color', 'global', black)
+    tagHover: map-deep-get($guidelines, 'theme', yellow, 'secondary'),
+    textBase: map-deep-get($guidelines, 'color', 'global', black),
   ),
   red: (
     primary: map-deep-get($guidelines, 'theme', red, 'primary'),
     hover: map-deep-get($guidelines, 'theme', red, 'secondary'),
-    secondary: map-deep-get($guidelines, 'theme', red, 'tertiary'),
-    buttonText: map-deep-get($guidelines, 'color', 'global', white),
-    buttonTextHover: map-deep-get($guidelines, 'color', 'global', white),
-    tagHover: map-deep-get($guidelines, 'theme', red, 'tertiary'),
-    textBase: map-deep-get($guidelines, 'color', 'global', white)
+    secondary: map-deep-get($guidelines, 'theme', red, 'primary'),
+    buttonText: map-deep-get($guidelines, 'color', 'fontNegative'),
+    tagHover: map-deep-get($guidelines, 'theme', red, 'secondary'),
+    textBase: map-deep-get($guidelines, 'color', 'global', white),
   ),
   blue: (
     primary: map-deep-get($guidelines, 'theme', blue, 'primary'),
     hover: map-deep-get($guidelines, 'theme', blue, 'secondary'),
     secondary: map-deep-get($guidelines, 'theme', blue, 'primary'),
-    buttonText: map-deep-get($guidelines, 'color', 'global', white),
-    buttonTextHover: map-deep-get($guidelines, 'color', 'global', white),
+    buttonText: map-deep-get($guidelines, 'color', 'fontNegative'),
     tagHover: map-deep-get($guidelines, 'theme', blue, 'secondary'),
-    textBase: map-deep-get($guidelines, 'color', 'global', white)
-  )
+    textBase: map-deep-get($guidelines, 'color', 'global', white),
+  ),
 );
-
-@function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
-
-  @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace +
-      str-replace(
-        str-slice($string, $index + str-length($search)),
-        $search,
-        $replace
-      );
-  }
-
-  @return $string;
-}
 
 @mixin themify($color_themes: $color_themes, $selector: '.theme-$color &') {
   @each $color, $map in $color_themes {
@@ -66,7 +47,7 @@ $color_themes: (
         $theme-map: map-merge(
           $theme-map,
           (
-            $key: $value
+            $key: $value,
           )
         ) !global;
       }

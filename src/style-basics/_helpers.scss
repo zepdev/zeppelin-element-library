@@ -1,0 +1,17 @@
+@mixin helpers {
+  .#{$prefix}font-weight--bold {
+    font-weight: 700 !important;
+  }
+
+  .#{$prefix}text-align--left {
+    text-align: left;
+  }
+
+  .#{$prefix}text-align--center {
+    text-align: center;
+  }
+}
+
+@include exports('helpers') {
+  @include helpers;
+}

@@ -1,17 +1,32 @@
 //Input - base style
 
 @mixin input {
+  $color-alert: map-deep-get($guidelines, 'color', 'support', 'alert');
+  $color-label: map-deep-get($guidelines, 'color', black, 60);
+  $color-disabled: map-deep-get($guidelines, 'color', black, 40);
+  $color-white: map-deep-get($guidelines, 'color', 'global', white);
+
   .#{$prefix}input {
-    @extend %typo-normal-body1;
+    @extend .#{$prefix}typo--body-default;
     width: 100%;
     height: 3rem;
-    border: solid 2px map-deep-get($guidelines, 'color', 'global' white);
+    border: solid 0.125rem $color-label;
     padding-left: 1.25rem;
     padding-top: 0.25rem;
-    @include themify($color_themes) {
-      &:focus {
-        outline: 2px solid themed('primary');
+    color: map-deep-get($guidelines, 'color', 'font');
+    background-color: $color-white;
+
+    &:focus {
+      outline: 0.125rem solid $color-label;
+      border: solid 0.0625rem $color-disabled;
+      @include themify($color_themes) {
+        outline: 0.125rem solid themed('primary');
       }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      border-color: $color-disabled;
     }
   }
 
@@ -29,15 +44,17 @@
   }
 
   .#{$prefix}input-container__label {
-    @extend %typo-normal-caption;
-    color: map-deep-get($guidelines, 'color', 'global', lightGray);
+    @extend .#{$prefix}typo--body-extra-small;
+    text-transform: none;
+    color: $color-label;
     position: absolute;
     display: inline-block;
-    background-color: white;
+    background-color: $color-white;
     margin: 0 0.5625rem;
     padding: 0 0.5625rem;
     left: 0;
-    top: -0.5rem;
+    top: 0;
+    transform: translateY(-50%);
   }
 
   .#{$prefix}input:placeholder-shown + .#{$prefix}input-container__label {
@@ -49,14 +66,20 @@
     transform-origin: left bottom;
     top: 1.2rem;
     transform: scale(1.5);
-    color: map-deep-get($guidelines, 'color', 'global', lightGray);
+    color: $color-label;
   }
 
   .#{$prefix}input:not(:placeholder-shown) + .#{$prefix}input-container__label,
   .#{$prefix}input:focus + .#{$prefix}input-container__label {
-    top: -0.5rem;
-    transform: scale(1);
-    cursor: pointer;
+    top: 0;
+    transform: translateY(-50%) scale(1);
+    //cursor: pointer;
+  }
+
+  .#{$prefix}input:disabled + .#{$prefix}input-container__label {
+    background-color: map-deep-get($guidelines, 'color', 'global', white);
+    color: $color-disabled;
+    pointer-events: none;
   }
 
   .#{$prefix}input,
@@ -67,18 +90,18 @@
 
   .#{$prefix}input-container__feedback {
     display: none;
-    @extend %typo-normal-caption;
+    @extend .#{$prefix}typo--body-extra-small;
     padding-top: 0.3125rem;
   }
 
   .#{$prefix}input-container--error {
     .#{$prefix}input {
-      border-color: map-deep-get($guidelines, 'color', 'support', 'alert');
+      border-color: $color-alert;
     }
 
     .#{$prefix}input-container__feedback {
       display: inline-block;
-      color: map-deep-get($guidelines, 'color', 'support', 'alert');
+      color: $color-alert;
     }
   }
 }

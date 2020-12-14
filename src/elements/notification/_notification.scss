@@ -1,36 +1,40 @@
 // notification - base style
 
 @mixin notification {
+  $color-default: map-deep-get($guidelines, 'color', black, 60);
+  $variants: 'alert', 'info', 'success', 'warning';
+
   .#{$prefix}notification {
-    @extend %typo-normal-body1;
-    color: map-deep-get($guidelines, 'color', 'global', lightGray);
+    @extend .#{$prefix}typo--body-default;
+    background: map-deep-get($guidelines, 'color', 'global', white);
+    color: $color-default;
     padding: 0.625rem 1.5rem;
     text-align: center;
-    border: 2px solid map-deep-get($guidelines, 'color', 'global', lightGray);
+    border: 0.125rem solid $color-default;
   }
 
+  @each $variant in $variants {
+    $color: map-deep-get($guidelines, 'color', 'support', $variant);
+
+    .#{$prefix}notification--#{$variant} {
+      background: map-deep-get(
+        $guidelines,
+        'color',
+        'support',
+        '#{$variant}Lighter'
+      );
+      border-color: $color;
+      color: $color;
+    }
+  }
+
+  @warn ".#{$prefix}notification--danger is deprecated and will be removed in future versions, please use .#{$prefix}notification--alert instead";
   .#{$prefix}notification--danger {
-    border: 2px solid map-deep-get($guidelines, 'color', 'support', 'alert');
+    $color: map-deep-get($guidelines, 'color', 'support', 'alert');
+
     background: map-deep-get($guidelines, 'color', 'support', 'alertLighter');
-    color: map-deep-get($guidelines, 'color', 'support', 'alert');
-  }
-
-  .#{$prefix}notification--warning {
-    border: 2px solid map-deep-get($guidelines, 'color', 'support', 'warning');
-    background: map-deep-get($guidelines, 'color', 'support', 'warningLighter');
-    color: map-deep-get($guidelines, 'color', 'support', 'warning');
-  }
-
-  .#{$prefix}notification--success {
-    border: 2px solid map-deep-get($guidelines, 'color', 'support', 'success');
-    background: map-deep-get($guidelines, 'color', 'support', 'successLighter');
-    color: map-deep-get($guidelines, 'color', 'support', 'success');
-  }
-
-  .#{$prefix}notification--info {
-    border: 2px solid map-deep-get($guidelines, 'color', 'support', 'info');
-    background: map-deep-get($guidelines, 'color', 'support', 'infoLighter');
-    color: map-deep-get($guidelines, 'color', 'support', 'info');
+    border-color: $color;
+    color: $color;
   }
 }
 

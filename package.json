@@ -3,7 +3,7 @@
   "version": "2.0.2",
   "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
   "author": "Joerg Schneider <joerg.schneider@z-lab.com>",
-  "license": "SEE LICENSE",
+  "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
     "url": "https://github.com/zepdev/zeppelin-element-library.git"
@@ -38,20 +38,52 @@
     "lint:prettier:fix": "yarn prettier --write",
     "lint:sonarqube": "yarn lint:eslint -f json -o report.json",
     "lint": "yarn lint:eslint && yarn lint:prettier",
-    "convert": "json-to-scss src/themes/guidelines.json"
+    "convert": "json-to-scss --sk='roboto,robotoCondensed,family,font-family,fontfamily,stack,font-stack,fontstack,face,font-face,fontface' src/themes/guidelines.json"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "header-max-length": [
+        2,
+        "always",
+        200
+      ],
+      "scope-case": [
+        1,
+        "always",
+        [
+          "upper-case",
+          "lower-case",
+          "pascal-case",
+          "start-case"
+        ]
+      ],
+      "subject-case": [
+        1,
+        "always",
+        [
+          "sentence-case",
+          "lower-case",
+          "start-case"
+        ]
+      ]
+    }
   },
   "release": {
     "branches": [
@@ -94,14 +126,14 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
+    "@babel/core": "^7.12.7",
     "@babel/plugin-transform-classes": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
-    "@testing-library/dom": "^7.26.5",
+    "@testing-library/dom": "^7.28.1",
     "commitizen": "^4.2.2",
     "cz-conventional-changelog": "^3.3.0",
     "enzyme": "^3.11.0",
@@ -109,18 +141,18 @@
     "husky": "^4.3.0",
     "json-to-scss": "^1.6.2",
     "lint-staged": "^10.5.1",
-    "node-sass": "^4.14.1",
-    "prettier": "^2.1.2",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-scripts": "^3.4.4",
-    "rollup": "^2.33.1",
+    "node-sass": "4.14.1",
+    "prettier": "^2.2.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.1",
+    "rollup": "^2.33.3",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-uglify": "^6.0.4",
-    "semantic-release": "^17.2.2",
-    "sonarqube-scanner": "^2.7.0"
+    "semantic-release": "^17.3.0",
+    "sonarqube-scanner": "^2.8.0"
   },
   "config": {
     "commitizen": {

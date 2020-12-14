@@ -1,61 +1,43 @@
 // Select - base style
 
 @mixin select {
+  $color-label: map-deep-get($guidelines, 'color', black, 60);
+  $color-white: map-deep-get($guidelines, 'color', 'global', white);
+
+  .#{$prefix}select {
+    position: relative;
+  }
+
   .#{$prefix}select__button {
-    @extend %typo-normal-body1;
-    width: 100%;
-    height: 3rem;
-    border: solid 2px map-deep-get($guidelines, 'color', 'global', lightGray);
-    background-color: white;
-    padding-left: 1.25rem;
-    padding-top: 0.25rem;
+    @extend .#{$prefix}input;
     appearance: none;
     border-radius: 0;
     text-align: left;
-    @include themify($color_themes) {
-      &:focus {
-        border: 2px solid themed('primary');
-        outline: none;
-      }
-    }
   }
+
   .#{$prefix}select__icon {
     float: right;
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .#{$prefix}select__label {
-    @extend %typo-normal-body1;
-    max-width: 66.66%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background: white;
-    color: map-deep-get($guidelines, 'color', 'global' darkGray);
-    position: relative;
-    padding: 0 8px;
-    top: 10px;
-    left: 10px;
-    z-index: 10;
+    @extend .#{$prefix}input-container__label;
   }
 
   .#{$prefix}select__list {
-    @extend %typo-normal-body1;
-    background: white;
+    @extend .#{$prefix}typo--body-default;
+    background: $color-white;
+    outline: none;
+    border: 0.125rem solid $color-label;
     @include themify($color_themes) {
-      border: 2px solid themed('primary');
-      outline: none;
+      border-color: themed('primary');
     }
   }
 
   .#{$prefix}select__listitem {
-    @extend %typo-normal-body1;
-    padding: 10px 18px;
+    padding: 0.625rem 1.125rem;
     outline: none;
-    &:focus {
-      background: map-deep-get($guidelines, 'color', 'global' white);
-    }
   }
 }
 

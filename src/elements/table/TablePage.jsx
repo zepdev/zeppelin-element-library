@@ -4,15 +4,15 @@ function TablePage() {
   const themes = ['indigo', 'yellow', 'red'];
   return (
     <>
-      {themes.map((elem) => (
+      {themes.map((theme) => (
         <table
-          className={`theme-${elem} zep-table`}
-          key={elem}
+          className={`theme-${theme} zep-table`}
+          key={theme}
           style={{ marginBottom: 30 }}
         >
-          <caption className="zep-visually-hidden">{`table ${elem}`}</caption>
+          <caption className="zep-visually-hidden">{`table ${theme}`}</caption>
           <thead>
-            <tr className="zep-table__row zep-table__row--header">
+            <tr className="zep-table__row">
               {[1, 2, 3].map((elem) => (
                 <th
                   scope="col"
@@ -25,15 +25,8 @@ function TablePage() {
             </tr>
           </thead>
           <tbody>
-            {[1, 2].map((elem) => (
-              <tr
-                className={
-                  elem === 1
-                    ? 'zep-table__row zep-table__row--white'
-                    : 'zep-table__row zep-table__row--gray'
-                }
-                key={`row${elem}`}
-              >
+            {[1, 2].map((elem2) => (
+              <tr key={`row${elem2}`}>
                 {[1, 2, 3].map((item, idx) =>
                   idx === 0 ? (
                     <th

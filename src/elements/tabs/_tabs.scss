@@ -13,22 +13,20 @@
   }
 
   .#{$prefix}tab {
-    @extend %typo-normal-body1;
+    @extend .#{$prefix}typo--body-default;
     width: 100%;
     padding: 1.5rem;
     text-align: center;
     text-transform: uppercase;
     vertical-align: middle;
     border: none;
-    border-bottom: 2px solid transparent;
+    border-bottom: 0.125rem solid transparent;
     background: transparent;
     outline: none;
     cursor: pointer;
     @include themify($color_themes) {
-      &:hover,
-      &:focus,
-      &.#{$prefix}tab--selected {
-        border-color: themed('primary');
+      @include hover-supported('focus') {
+        border-color: themed('hover');
       }
     }
 
@@ -38,13 +36,19 @@
     }
   }
 
+  .#{$prefix}tab--selected {
+    @include themify($color_themes) {
+      border-color: themed('primary');
+    }
+  }
+
   .#{$prefix}tab--small {
-    @extend %typo-normal-body1;
+    @extend .#{$prefix}typo--body-default;
     text-transform: capitalize;
   }
 
   .#{$prefix}tab__icon {
-    padding-right: 10px;
+    padding-right: 0.625rem;
   }
 }
 
