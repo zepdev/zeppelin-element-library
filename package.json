@@ -121,7 +121,6 @@
       "src/**/*.{js,jsx}",
       "!src/index.js",
       "!src/serviceWorker.js",
-      "!src/guidelines/*",
       "!src/**/*.min.js/"
     ]
   },
@@ -134,6 +133,8 @@
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "@testing-library/dom": "^7.28.1",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
     "commitizen": "^4.2.2",
     "cz-conventional-changelog": "^3.3.0",
     "enzyme": "^3.11.0",
