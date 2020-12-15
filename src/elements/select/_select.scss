@@ -10,19 +10,32 @@
 
   .#{$prefix}select__button {
     @extend .#{$prefix}input;
+    min-height: 3rem;
+    height: auto;
+    padding-right: 1.5rem;
+    position: relative;
     appearance: none;
     border-radius: 0;
     text-align: left;
+    overflow: hidden;
   }
 
   .#{$prefix}select__icon {
-    float: right;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     width: 1.5rem;
     height: 1.5rem;
   }
 
   .#{$prefix}select__label {
     @extend .#{$prefix}input-container__label;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 2;
   }
 
   .#{$prefix}select__list {
