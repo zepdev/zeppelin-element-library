@@ -7,6 +7,7 @@ function TypographyPage() {
     if (!amount) {
       content.push(
         <h1
+          data-testid={`${type}`}
           key={`typo-${type}`}
           className={`zep-typo--${type}`}
           style={{ marginBottom: 15 }}
@@ -19,6 +20,7 @@ function TypographyPage() {
     for (let i = 1; i <= amount; i++) {
       content.push(
         <h1
+          data-testid={`${type}-${i}${suffix}`}
           key={`typo-${type}-${i}${suffix}`}
           className={`zep-typo--${type}-${i}${suffix}`}
           style={{ marginBottom: 15 }}
@@ -33,7 +35,10 @@ function TypographyPage() {
 
   return (
     <>
-      <div style={{ color: guidelines.color.black['84'] }}>
+      <div
+        data-testid="content"
+        style={{ color: guidelines.color.black['84'] }}
+      >
         <div style={{ marginBottom: 30 }}>{getTypo('display', 6)}</div>
         <div style={{ marginBottom: 30 }}>{getTypo('headline', 6)}</div>
         <div style={{ marginBottom: 30 }}>{getTypo('headline', 6, '_alt')}</div>
