@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import svg from '../../assets/icons/sprite/sprite.svg';
+import svg from '../../assets/icons_v1/sprite/sprite.svg';
 
 const Icon = ({ className, width, height, icon, viewBox, ariaLabel }) => {
   return (
