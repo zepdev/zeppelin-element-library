@@ -1,6 +1,9 @@
 #!/bin/bash
 dir_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" || exit ; pwd -P )
 
+echo "delete old icons folder"
+rm -rf assets/icons
+
 # create bundle folders if not exist
 mkdir -p bundle;
 mkdir -p assets/fonts;
