@@ -11,15 +11,15 @@ mkdir -p assets/logos;
 #create target destination variable
 TARGET_FILE="bundle/zel.css"
 
-# copy build css file from react app build to main folder
-echo -e "\nCopy build css file from react app build to main folder"
+# copy build css file from react app build to project root
+echo -e "\nCopy build css file from react app build to project root"
 find build/static/css -name \*.css -exec cp {} $TARGET_FILE \;
 
 # copy zel.css file from bundle to project root
 echo -e "\nCopy zel.css file from bundle to project root"
 cp -r bundle/zel.css .
 
-# copy guidelines.json file from src to main folder
+# copy guidelines.json file from src to project root
 echo -e "\nCopy zel.css file from bundle to project root"
 cp -r src/themes/*.json .
 

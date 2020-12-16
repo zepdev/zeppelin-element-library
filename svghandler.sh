@@ -1,31 +1,46 @@
 #!/bin/bash
 dir_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" || exit ; pwd -P )
 
-#prefix SVG names in raw folder
+#prefix and transform SVG file names in raw folder
 echo -e "\nStart prefixing filenames..."
 cd "$dir_path"/src/assets/icons/raw || exit
 for i in *.svg ; do
   if  [[ $i != zep-* ]];
   then
-      mv -v $i zep-${i%.svg}.svg
+      prefixed_name=zep-"${i%.svg}".svg
+      lowercase_name=$(echo "$prefixed_name" | tr '[:upper:]' '[:lower:]')
+      dashed_name=$(echo "$lowercase_name" | sed 's/_/-/g')
+      mv -v "$i" "$dashed_name"
   else
       echo -e "skip ${i} (already prefixed)."
   fi
 done
 echo -e "\nPrefixing filenames done.\n"
 
+# replace fill="#000000" with fill="currentColor" in all svg files
+echo -e "\nStart replacing black fillings with currentColor..."
+cd "$dir_path"/src/assets/icons/raw || exit
+for i in *.svg ; do
+  sed -i.bak 's@fill="#000000"@fill="currentColor"@g' "$i"
+  rm "$i".bak
+done
+echo -e "\nReplacing black fillings with currentColor done."
+
 #optimize SVGs https://github.com/svg/svgo
-echo "Starting SVG optimization ..."
-svgo -f . -o ../SVG -p 2 --disable=removeTitle,removeViewBox
+cd "$dir_path"/src/assets/icons || exit
+echo "delete old /src/assets/icons/SVG folder"
+rm -rf ./SVG
+echo "Starting SVG optimization and move optimized files to new./src/assets/icons/SVG folder ..."
+svgo -f ./raw -o ./SVG -p 2 --disable=removeTitle,removeViewBox
 echo -e "\nSVG optimization done."
 
 #create SVG sprite
-echo "Starting SVG sprite creation..."
+echo -e "\nStarting SVG sprite creation..."
 cd "$dir_path"/src/assets/icons || exit
 mkdir -p sprite
 
 cd "$dir_path"/src/assets/icons/SVG || exit
-spritesh --output ../sprite/icons.svg
+spritesh --output ../sprite/zep-icons-sprite.svg
 echo -e "\nSVG sprite creation done."
 
 #copy svgxuse polyfill script to sprite folder

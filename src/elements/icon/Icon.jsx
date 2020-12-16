@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import svg from '../../assets/icons_v1/sprite/sprite.svg';
+import svg from '../../assets/icons/sprite/zep-icons-sprite.svg';
 
 const Icon = ({ className, width, height, icon, viewBox, ariaLabel }) => {
   return (
@@ -25,8 +25,8 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
-  width: '32',
-  height: '32',
+  width: '24',
+  height: '24',
   viewBox: '0 0 24 24',
 };
 

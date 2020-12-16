@@ -92,7 +92,7 @@ function TabsPage() {
           id="icon-tab-1"
           tabIndex="0"
         >
-          <Icon icon="zepicons-calendar-range" className="zep-tab__icon" />
+          <Icon icon="zep-icon-essential-star" className="zep-tab__icon" />
           Icon Tab 1
         </button>
       </div>
@@ -106,7 +106,7 @@ function TabsPage() {
           id="icon-tab-2"
           tabIndex="-1"
         >
-          <Icon icon="zepicons-calendar-range" className="zep-tab__icon" />
+          <Icon icon="zep-icon-essential-settings" className="zep-tab__icon" />
           Icon Tab 2
         </button>
       </div>
@@ -120,7 +120,7 @@ function TabsPage() {
           id="icon-tab-3"
           tabIndex="-1"
         >
-          <Icon icon="zepicons-calendar-range" className="zep-tab__icon" />
+          <Icon icon="zep-icon-essential-info" className="zep-tab__icon" />
           Icon Tab 3
         </button>
       </div>
