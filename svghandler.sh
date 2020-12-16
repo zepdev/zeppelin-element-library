@@ -28,11 +28,15 @@ echo -e "\nReplacing black fillings with currentColor done."
 
 #optimize SVGs https://github.com/svg/svgo
 cd "$dir_path"/src/assets/icons || exit
-echo "delete old /src/assets/icons/SVG folder"
+echo -e "\ndelete old /src/assets/icons/SVG folder"
 rm -rf ./SVG
-echo "Starting SVG optimization and move optimized files to new./src/assets/icons/SVG folder ..."
+echo -e "\nStarting SVG optimization and move optimized files to new./src/assets/icons/SVG folder ..."
 svgo -f ./raw -o ./SVG -p 2 --disable=removeTitle,removeViewBox
 echo -e "\nSVG optimization done."
+
+echo -e "\ndelete files in /src/assets/icons/raw folder"
+rm -v "$dir_path"/src/assets/icons/raw/*
+echo -e "\ndeleting raw files done"
 
 #create SVG sprite
 echo -e "\nStarting SVG sprite creation..."
