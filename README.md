@@ -1,12 +1,12 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
+<p style="text-align:center">
     <img alt="Zeppelin" src="https://s3.eu-central-1.amazonaws.com/com.zeppelin.zds.assets/zel/ZEP_Logo_rgb_DINlang.png" width="200"/>
 </p>
-<h1 align="center">
+<h1 style="text-align:center">
   Zeppelin Element Library
 </h1>
 
-<span align="center">
+<span style="text-align:center">
 
 [![CircleCI](https://circleci.com/gh/zepdev/zeppelin-element-library.svg?style=svg&circle-token=8459cd0c2f3c88c2cfde73dc36634f2a4d21f982)](https://circleci.com/gh/zepdev/zeppelin-element-library)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=zepdev_zeppelin-element-library&metric=alert_status)](https://sonarcloud.io/dashboard?id=zepdev_zeppelin-element-library)
@@ -76,14 +76,13 @@ import 'zeppelin-element-library/zel.css';
 
 ### Initialize Script
 
-To get the JavaScript running, initialize ZEL after the DOM has loaded.
-Place the following script at the bottom of your body element.
+To get the JavaScript running, initialize ZEL after the DOM has loaded. Place the following script at the bottom of your body element.
 
-```javascript
+```html
 <script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    ZEL.init();
-  });
+    document.addEventListener("DOMContentLoaded", function () {
+        ZEL.init();
+    });
 </script>
 ```
 
@@ -97,7 +96,7 @@ There are a few main parts to this project for use in the npm package;
 
 3. Logos - Update logos at src/assets/logos (please add them as a zip file) and 'yarn bundle' will move it to the folder assets/logos/ for you automatically.
 
-4. Icons - Update icons at src/assets/icons and 'yarn bundle' will zip and move it to the folder assets/icons/ for you automatically.
+4. Icons - Update icons at src/assets/icons/raw and 'yarn svg:update' will prefix, optimize and move them into src/assets/icons/SVG. Also a sprite of all prepared SVGs will be generated at src/assets/icons/sprite. SVG and sprite folders within src/assets/icons/ will then be zipped automatically. By 'yarn bundle' the src/assets/icons/ folder except src/assets/icons/raw will be copied to the folder assets/icons/ which will be part of the npm package and also be available via CDN after deployment.
 
 5. zel.css - please do not touch this file - This file is made by 'yarn build' and then automatically moved renamed and moved to the main folder by 'yarn bundle' for npm packaging.
 
@@ -105,4 +104,4 @@ There are a few main parts to this project for use in the npm package;
 
 Note on 'yarn convert': Nested variables can be accessed as 'map-deep-get(\$guideliness, "breakpoints", "xs")' (see \_variables.scss).
 
-7. bundle - This folder contains all complied javascript for ZEL. It is made automatically by 'yarn build' and then renamed and moved by 'yarn bundle' for npm packaging.
+7. bundle - This folder contains all compiled javascript for ZEL. It is made automatically by 'yarn build' and then renamed and moved by 'yarn bundle' for npm packaging.
