@@ -32,7 +32,8 @@ cp -r src/assets/fonts/* assets/fonts
 
 # copy icons folder into assets folder
 echo -e "\nCopy icons folder into assets folder"
-rsync -av --progress --exclude="raw" src/assets/icons/ assets/icons
+cp -r src/assets/icons/ assets/icons
+rm -rf assets/icons/raw
 
 # zip SVG icons
 cd "$dir_path"/assets/icons/SVG || exit
