@@ -26,7 +26,7 @@
         "eject": "react-scripts eject",
         "bundle:js": "node rollup.build.js",
         "bundle:misc": "./bundlehandler.sh",
-        "bundle": "rm -rf bundle && yarn bundle:js && yarn bundle:misc",
+        "bundle": "yarn svg:update && rm -rf bundle && yarn bundle:js && yarn bundle:misc",
         "commit": "git-cz",
         "semantic-release": "semantic-release",
         "prettier": "prettier src/**/*.js src/**/*.jsx",
