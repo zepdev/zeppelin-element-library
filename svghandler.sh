@@ -37,18 +37,3 @@ else
   cp -r "$dir_path"/node_modules/svgxuse/svgxuse.min.js .
   echo -e "\nFile 'svgxuse.min.js' successfully added to sprite folder."
 fi
-
-
-# zip SVG icons
-cd "$dir_path"/src/assets/icons/SVG || exit
-zip -r -q icons.zip .
-mv icons.zip ../
-echo -e "\nFile 'icons.zip' successfully created."
-
-# zip sprite
-cd "$dir_path"/src/assets/icons/sprite || exit
-zip -r -q sprite.zip .
-mv sprite.zip ../
-echo -e "\nFile 'sprite.zip' successfully created."
-
-cd "$dir_path" || exit

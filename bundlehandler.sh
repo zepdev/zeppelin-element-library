@@ -1,4 +1,5 @@
 #!/bin/bash
+dir_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" || exit ; pwd -P )
 
 # create bundle folders if not exist
 mkdir -p bundle;
@@ -29,6 +30,20 @@ cp -r src/assets/fonts/* assets/fonts
 # copy icons folder into assets folder
 echo -e "\nCopy icons folder into assets folder"
 rsync -av --progress --exclude="raw" src/assets/icons/ assets/icons
+
+# zip SVG icons
+cd "$dir_path"/assets/icons/SVG || exit
+zip -r -q icons.zip .
+mv icons.zip ../
+echo -e "\nFile 'icons.zip' successfully created."
+
+# zip sprite
+cd "$dir_path"/assets/icons/sprite || exit
+zip -r -q sprite.zip .
+mv sprite.zip ../
+echo -e "\nFile 'sprite.zip' successfully created."
+
+cd "$dir_path" || exit
 
 # copy logos folder into assets folder
 echo -e "\nCopy logos folder into assets folder"
