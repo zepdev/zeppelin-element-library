@@ -33,23 +33,28 @@ cp -r src/themes/*.json .
 echo -e "\nCopy fonts into assets folder"
 cp -r src/assets/fonts/* assets/fonts
 
+# zip SVG icons
+echo -e "\nzip icons."
+cd "$DIR_PATH"/src/assets/icons/SVG || exit
+zip -r -q icons.zip .
+mv icons.zip ../
+echo -e "\nFile 'icons.zip' successfully created."
+
+# zip sprite
+cd "$DIR_PATH"/src/assets/icons/sprite || exit
+zip -r -q sprite.zip .
+mv sprite.zip ../
+cd "$DIR_PATH" || exit
+echo -e "\nFile 'sprite.zip' successfully created."
+
 # copy icons folder into assets folder
 echo -e "\nCopy icons folder into assets folder"
 cp -r src/assets/icons/ assets/icons
 rm -rf assets/icons/raw
 
-# zip SVG icons
-echo -e "\nzip icons."
-cd assets/icons/SVG || exit
-zip -r -q icons.zip .
-mv icons.zip ../
-echo -e "\nFile 'icons.zip' successfully created."
-# zip sprite
-cd ../sprite || exit
-zip -r -q sprite.zip .
-mv sprite.zip ../
-cd "$DIR_PATH" || exit
-echo -e "\nFile 'sprite.zip' successfully created."
+# delete icon zip files in src folder
+echo -e "\nDelete files:"
+rm -v src/assets/icons/*.zip
 
 # copy logos folder into assets folder
 echo -e "\nCopy logos folder into assets folder"
