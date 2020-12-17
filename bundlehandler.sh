@@ -1,15 +1,18 @@
 #!/bin/bash
-dir_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" || exit ; pwd -P )
+DIR_PATH=$(
+  cd "$(dirname "${BASH_SOURCE[0]}")"
+  pwd -P
+)
 
 echo "delete old icons folder"
 rm -rf assets/icons
 
 # create bundle folders if not exist
-mkdir -p bundle;
-mkdir -p assets/fonts;
-mkdir -p assets/icons;
-mkdir -p assets/sketch;
-mkdir -p assets/logos;
+mkdir -p bundle
+mkdir -p assets/fonts
+mkdir -p assets/icons
+mkdir -p assets/sketch
+mkdir -p assets/logos
 
 #create target destination variable
 TARGET_FILE="bundle/zel.css"
@@ -37,16 +40,16 @@ rm -rf assets/icons/raw
 
 # zip SVG icons
 echo -e "\nzip icons."
-cd  "$dir_path"/src/assets/icons/SVG || exit
+cd "$DIR_PATH"/assets/icons/SVG || exit
 zip -r -q icons.zip .
 mv icons.zip ../
 echo -e "\nFile 'icons.zip' successfully created."
 
 # zip sprite
-cd "$dir_path"/src/assets/icons/sprite || exit
+cd "$DIR_PATH"/assets/icons/sprite || exit
 zip -r -q sprite.zip .
 mv sprite.zip ../
-cd "$dir_path"
+cd "$DIR_PATH"
 echo -e "\nFile 'sprite.zip' successfully created."
 
 # copy logos folder into assets folder
@@ -69,9 +72,8 @@ rm $TARGET_FILE.bak
 
 # delete hash from font name in css file
 echo -e "\nDelete hash from font names in css file"
-for font in eot woff woff2 ttf svg
-do
-    sed -i.bak 's/\(\.\)\(.[^\.]*\)\(\.'$font'\)/\3/g' $TARGET_FILE
+for font in eot woff woff2 ttf svg; do
+  sed -i.bak 's/\(\.\)\(.[^\.]*\)\(\.'$font'\)/\3/g' $TARGET_FILE
 done
 rm $TARGET_FILE.bak
 
@@ -82,10 +84,12 @@ else
   ZEL_VERSION="${CIRCLE_TAG}"
 fi
 
-(echo "/* zeppelin-element-library version ${ZEL_VERSION} */"; cat $TARGET_FILE) > tmpfile
+(
+  echo "/* zeppelin-element-library version ${ZEL_VERSION} */"
+  cat $TARGET_FILE
+) >tmpfile
 mv tmpfile $TARGET_FILE
 
 # gzip files
 echo -e "\ngzip bundled minified js files"
 for file in bundle/*.min.js; do gzip -k -f $file; done
-
