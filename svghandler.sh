@@ -79,8 +79,8 @@ process_raw_svgs() {
   copy_svgxuse_polyfill
 }
 
-if [[ -d "$RAW_PATH" ]]; then
+if [[ -d "$RAW_PATH" ]] && [[ $(ls -A "$RAW_PATH") ]]; then
   process_raw_svgs
 else
-  echo "Can't process SVGs, ${RAW_PATH} does not exist."
+  echo "Can't process SVGs, ${RAW_PATH} does not exist or is empty."
 fi
