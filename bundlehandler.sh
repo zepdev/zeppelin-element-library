@@ -40,16 +40,15 @@ rm -rf assets/icons/raw
 
 # zip SVG icons
 echo -e "\nzip icons."
-cd "$DIR_PATH"/assets/icons/SVG || exit
+cd assets/icons/SVG || exit
 zip -r -q icons.zip .
 mv icons.zip ../
 echo -e "\nFile 'icons.zip' successfully created."
-
 # zip sprite
-cd "$DIR_PATH"/assets/icons/sprite || exit
+cd ../sprite || exit
 zip -r -q sprite.zip .
 mv sprite.zip ../
-cd "$DIR_PATH"
+cd "$DIR_PATH" || exit
 echo -e "\nFile 'sprite.zip' successfully created."
 
 # copy logos folder into assets folder
