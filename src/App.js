@@ -35,7 +35,7 @@ function App() {
             margin: 0,
             padding: 30,
             color: '#ffffff',
-            background: '#27166f ',
+            background: '#27166f',
             width: '100%',
           }}
         >

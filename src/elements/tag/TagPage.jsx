@@ -14,7 +14,10 @@ function TagPage() {
             <span role="button" className="zep-tag">
               Tag
               <button className="zep-tag__button">
-                <Icon icon="zepicons-close" className="zep-tag__icon" />
+                <Icon
+                  icon="zep-icon-essential-close"
+                  className="zep-tag__icon"
+                />
               </button>
             </span>
           </div>

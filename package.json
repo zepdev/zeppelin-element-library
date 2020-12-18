@@ -26,7 +26,7 @@
         "eject": "react-scripts eject",
         "bundle:js": "node rollup.build.js",
         "bundle:misc": "./bundlehandler.sh",
-        "bundle": "rm -rf bundle && yarn bundle:js && yarn bundle:misc",
+        "bundle": "yarn svg:update && rm -rf bundle && yarn bundle:js && yarn bundle:misc",
         "commit": "git-cz",
         "semantic-release": "semantic-release",
         "prettier": "prettier src/**/*.js src/**/*.jsx",
@@ -38,7 +38,8 @@
         "lint:prettier:fix": "yarn prettier --write",
         "lint:sonarqube": "yarn lint:eslint -f json -o report.json",
         "lint": "yarn lint:eslint && yarn lint:prettier",
-        "convert": "json-to-scss --sk='roboto,robotoCondensed,family,font-family,fontfamily,stack,font-stack,fontstack,face,font-face,fontface' src/themes/guidelines.json"
+        "convert": "json-to-scss --sk='roboto,robotoCondensed,family,font-family,fontfamily,stack,font-stack,fontstack,face,font-face,fontface' src/themes/guidelines.json",
+        "svg:update": "./svghandler.sh"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -154,7 +155,10 @@
         "rollup-plugin-node-resolve": "^5.2.0",
         "rollup-plugin-uglify": "^6.0.4",
         "semantic-release": "^17.3.0",
-        "sonarqube-scanner": "^2.8.0"
+        "sonarqube-scanner": "^2.8.0",
+        "spritesh": "^1.2.1",
+        "svgo": "^1.3.2",
+        "svgxuse": "^1.2.6"
     },
     "config": {
         "commitizen": {

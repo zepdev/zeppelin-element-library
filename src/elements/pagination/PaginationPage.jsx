@@ -15,16 +15,16 @@ function PaginationPage() {
               className="zep-button zep-button--primary zep-button--icon"
               disabled={i === 0}
             >
-              <Icon
-                icon="zepicons-previous-page"
-                className="zep-button__icon"
-              />
+              <Icon icon="zep-icon-arrow-left" className="zep-button__icon" />
             </button>
             <button
               className="zep-button zep-button--primary zep-button--icon"
               disabled={i === 0}
             >
-              <Icon icon="zepicons-chevron-left" className="zep-button__icon" />
+              <Icon
+                icon="zep-icon-arrow-chevron-left"
+                className="zep-button__icon"
+              />
             </button>
             {[1, 2, 3, 4, 5].map((num) => (
               <button
@@ -38,12 +38,12 @@ function PaginationPage() {
             ))}
             <button className="zep-button zep-button--primary zep-button--icon">
               <Icon
-                icon="zepicons-chevron-right"
+                icon="zep-icon-arrow-chevron-right"
                 className="zep-button__icon"
               />
             </button>
             <button className="zep-button zep-button--primary zep-button--icon">
-              <Icon icon="zepicons-next-page" className="zep-button__icon" />
+              <Icon icon="zep-icon-arrow-right" className="zep-button__icon" />
             </button>
           </div>
         </div>

@@ -12,7 +12,7 @@ function SearchPage() {
           placeholder="Search"
           id="header-search"
         />
-        <Icon icon="zepicons-search" className="zep-search__icon" />
+        <Icon icon="zep-icon-essential-search" className="zep-search__icon" />
         <label className="zep-visually-hidden" htmlFor="header-search">
           Search
         </label>
@@ -27,7 +27,7 @@ function SearchPage() {
             placeholder="Search"
             id="search-default"
           />
-          <Icon icon="zepicons-search" className="zep-search__icon" />
+          <Icon icon="zep-icon-essential-search" className="zep-search__icon" />
           <label className="zep-visually-hidden" htmlFor="search-default">
             Search
           </label>

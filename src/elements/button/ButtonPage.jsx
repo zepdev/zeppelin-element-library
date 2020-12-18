@@ -128,7 +128,10 @@ function ButtonPage() {
               <button
                 className={`zep-button zep-button--${type} zep-button-icon`}
               >
-                <Icon icon="zepicons-copy" className="zep-button__icon" />
+                <Icon
+                  icon="zep-icon-sbu-zbm-service"
+                  className="zep-button__icon"
+                />
               </button>
             </div>
           ))}
@@ -140,7 +143,10 @@ function ButtonPage() {
               className={`zep-button zep-button--${type} zep-button-icon`}
               disabled
             >
-              <Icon icon="zepicons-copy" className="zep-button__icon" />
+              <Icon
+                icon="zep-icon-sbu-zbm-service"
+                className="zep-button__icon"
+              />
             </button>
           </div>
         </div>
