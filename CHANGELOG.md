@@ -1,3 +1,38 @@
+# [3.0.0](https://github.com/zepdev/zeppelin-element-library/compare/v2.0.2...v3.0.0) (2020-12-18)
+
+
+### Bug Fixes
+
+* **assets:** remove unnecessary icons ([f7a0ebf](https://github.com/zepdev/zeppelin-element-library/commit/f7a0ebf2a540c1cfe064d183c14027b2da3438a1))
+* **breakpoints:** change px to em in media queries, get sizes from guidelines map ([9c43c28](https://github.com/zepdev/zeppelin-element-library/commit/9c43c28659b4e7019f3b861570010f5118d45bba))
+* **button--pagination:** add default selected border-color if no theming is used ([9340835](https://github.com/zepdev/zeppelin-element-library/commit/9340835adcff0197e72fb168278a87286ce8a23e))
+* **icons:** add latest icons, adjust icon processing, adjust icon component, replace old icons in element pages ([ed683e3](https://github.com/zepdev/zeppelin-element-library/commit/ed683e35b9c17fcd6813f0d2418543516a288a67))
+* **icons:** substract to subtract icon typo ([9af1818](https://github.com/zepdev/zeppelin-element-library/commit/9af1818fba7a2db88320283be9a8af0e59e50d24))
+* **input:** adjust label position ([3f1aef8](https://github.com/zepdev/zeppelin-element-library/commit/3f1aef891621e147f3d80c12cb69a7c7f43931c1))
+* **notification:** add white background to default ([ecb9997](https://github.com/zepdev/zeppelin-element-library/commit/ecb9997aeae4000518f3e67ac46c0c198f02f189))
+* **notification:** use new typography scss, px to rem, edit notificationPage, deprecate --danger modifier ([6ed41d5](https://github.com/zepdev/zeppelin-element-library/commit/6ed41d5ffd3867e8999c6a712a997d812ad460a6))
+* **pagination:** fix button themes and icon vertical alignment ([fde474e](https://github.com/zepdev/zeppelin-element-library/commit/fde474e372c469f9097954a570a58ca609665f9b))
+* **paginationPage:** fix build error, remove duplicate prop ([31140be](https://github.com/zepdev/zeppelin-element-library/commit/31140becc3d05dd5057f60f0fcdbfd0d2c060dbe))
+* **search:** edit input paddings ([7d0a7f6](https://github.com/zepdev/zeppelin-element-library/commit/7d0a7f6b86fbe634102d47627e2479dd4f73b723))
+* **select:** resolve text wrap overflow issue from [#129](https://github.com/zepdev/zeppelin-element-library/issues/129) ([be48ce8](https://github.com/zepdev/zeppelin-element-library/commit/be48ce8d528508b6801f1ee4e918509b927147b3))
+* **spinnerPage:** remove duplicate props ([61758c2](https://github.com/zepdev/zeppelin-element-library/commit/61758c2827712a1bfb345aba3477fa1806608305))
+* **table:** adjust header border-width ([7cf46a7](https://github.com/zepdev/zeppelin-element-library/commit/7cf46a785f5c1f49c0fe98afc37d8fc3bee959a4))
+* **typography:** fix and refactor guidelines.json, refactor typography scss for using values from guidelines ([5125d74](https://github.com/zepdev/zeppelin-element-library/commit/5125d74fb3559078573ee131a526ddaf7ba586e4))
+
+
+### Features
+
+* **assets:** add latest sketch library ([19d0b5f](https://github.com/zepdev/zeppelin-element-library/commit/19d0b5f014061316e76fe49be03fe4fdd756abca))
+* **icons:** add simplified location dot and pin to icons ([77683ae](https://github.com/zepdev/zeppelin-element-library/commit/77683aef4e55723b47f1f3a085778ae2ca831853))
+* **icons:** add svghandler.sh to automate prefixing, optimization and sprite creation of SVG icons ([dfadb8a](https://github.com/zepdev/zeppelin-element-library/commit/dfadb8abbb6b8aa1662ecfdcf7f8dcb285542819))
+* **icons:** change "simplified-dot" and pin to just "dot" and "pin", add colored dot and pin icons ([d884a6e](https://github.com/zepdev/zeppelin-element-library/commit/d884a6e65c2141be49b5ac8a288924af9d52434f))
+* **typography:** add new typo classes related to ZDS.Sketch -> Global Textstyles ([9855cd3](https://github.com/zepdev/zeppelin-element-library/commit/9855cd3a932feb171e203113eb1a5f6a89b181b3))
+
+
+### BREAKING CHANGES
+
+* **typography:** changed typo css class names and its values to the latest ZDS.Sketch Global Textstyles
+
 ## [2.0.2](https://github.com/zepdev/zeppelin-element-library/compare/v2.0.1...v2.0.2) (2020-11-11)
 
 
