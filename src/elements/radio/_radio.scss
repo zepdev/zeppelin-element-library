@@ -1,90 +1,108 @@
 //Radio - base style
 
 @mixin radio {
+  $color-font: map-deep-get($guidelines, 'color', 'font');
+  $color-disabled: map-deep-get($guidelines, 'color', black, 40);
+  $color-background: map-deep-get($guidelines, 'color', 'global', white);
+
   @keyframes ripple {
     0% {
-      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+      box-shadow: 0 0 0 0.0625rem rgba(0, 0, 0, 0);
     }
     50% {
-      box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 0.625rem rgba(0, 0, 0, 0.1);
     }
     100% {
-      box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0);
+      box-shadow: 0 0 0 0.625rem rgba(0, 0, 0, 0);
     }
   }
 
   .#{$prefix}radio {
-    &.#{$prefix}radio-inline {
-      display: inline-block;
-    }
-    input[type='radio'] {
-      visibility: visible;
-      opacity: 0;
-
-      &:checked + label:before {
-        background: map-deep-get($guidelines, 'color', 'global', white);
-        border-color: rgba(0, 0, 0, 0.84);
-        // @include themify($color_themes) {
-        //   background: themed('primary');
-        //   border-color: themed('primary');
-        // }
-        animation: ripple 0.8s ease-in-out;
-      }
-      &:checked + label:after {
-        transform: scale(1);
-      }
-      &:focus + label:before,
-      &:active + label:before {
-        animation: ripple 0.8s ease-in-out;
-      }
-      &:disabled + label:before {
-        background: map-deep-get($guidelines, 'color', 'global', white);
-        border-color: map-deep-get($guidelines, 'color', 'global', lightGray);
-      }
-      &:focus &:disabled + label:before {
-        animation: none;
-      }
+    > label {
+      @extend .#{$prefix}radio__label;
     }
 
-    label {
-      @extend %typo-normal-body1;
-      display: inline-block;
-      min-height: 18px;
-      position: relative;
-      padding: 0 28px;
-      margin-bottom: 0;
-      cursor: pointer;
-      vertical-align: bottom;
-      &:before,
-      &:after {
-        position: absolute;
-        content: '';
-        border-radius: 50%;
-        transition: all 0.3s ease;
-        transition-property: transform, border-color;
-      }
-      &:before {
-        left: 0;
-        top: 3px;
-        width: 18px;
-        height: 18px;
-        border: 2px solid rgba(0, 0, 0, 0.84);
-        // @include themify($color_themes) {
-        //   border: 2px solid themed('primary');
-        // }
-      }
-      &:after {
-        left: 7px;
-        top: 10px;
-        width: 8px;
-        height: 8px;
-        transform: scale(0);
-        background: rgba(0, 0, 0, 0.84);
-        // @include themify($color_themes) {
-        //   background: themed('buttonText');
-        // }
-      }
+    > input[type='radio'] {
+      @extend .#{$prefix}radio__input;
     }
+  }
+
+  .#{$prefix}radio__label {
+    @extend .#{$prefix}typo--body-default;
+    color: $color-font;
+    display: inline-block;
+    min-height: 1.125rem;
+    position: relative;
+    padding: 0 1.75rem;
+    margin-bottom: 0;
+    cursor: pointer;
+    vertical-align: bottom;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      transition-property: transform, border-color;
+    }
+
+    &:before {
+      left: 0;
+      top: 0.1875rem;
+      width: 1.125rem;
+      height: 1.125rem;
+      border: 0.125rem solid $color-font;
+    }
+
+    &:after {
+      left: 0.4375rem;
+      top: 0.625rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      transform: scale(0);
+      background: $color-font;
+    }
+  }
+
+  .#{$prefix}radio__input {
+    visibility: visible;
+    opacity: 0;
+    position: absolute;
+
+    &:checked + .#{$prefix}radio__label:before {
+      background: $color-background;
+      border-color: $color-font;
+      animation: ripple 0.4s ease-in-out;
+    }
+
+    &:checked + .#{$prefix}radio__label:after {
+      transform: scale(1);
+    }
+
+    &:focus + .#{$prefix}radio__label:before,
+    &:active + .#{$prefix}radio__label:before {
+      animation: ripple 0.4s ease-in-out;
+    }
+
+    &:disabled + .#{$prefix}radio__label:before {
+      background: $color-background;
+      border-color: $color-disabled;
+      color: $color-disabled;
+      animation: none;
+      cursor: not-allowed;
+    }
+
+    &:disabled ~ .#{$prefix}radio__label {
+      color: $color-disabled;
+      cursor: not-allowed;
+    }
+  }
+
+  @warn ".#{$prefix}radio-inline is deprecated and will be removed in future versions, please use .#{$prefix}radio--inline instead";
+  .#{$prefix}radio-inline,
+  .#{$prefix}radio--inline {
+    display: inline-block;
   }
 }
 

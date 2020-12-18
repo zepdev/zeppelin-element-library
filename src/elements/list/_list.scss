@@ -2,9 +2,14 @@
 
 @mixin list {
   .#{$prefix}list {
-    @extend %typo-normal-body1;
+    @extend .#{$prefix}typo--body-default;
     color: map-deep-get($guidelines, 'color', 'font');
     margin-left: 1rem;
+
+    // to prevent style issues in case li classes are forgotten
+    > li {
+      @extend .#{$prefix}list__item;
+    }
   }
 
   //Bullet List / default
@@ -15,13 +20,13 @@
 
   // Attribute List
   .#{$prefix}list__item--attribute {
-    @extend %typo-normal-body1;
+    @extend .#{$prefix}typo--body-default;
     color: map-deep-get($guidelines, 'color', 'font');
     list-style-type: none;
     margin-left: -1rem;
   }
   .#{$prefix}list__label {
-    @extend %typo-normal-caption;
+    @extend .#{$prefix}typo--body-default;
     color: map-deep-get($guidelines, 'color', 'font');
     text-transform: uppercase;
     padding-right: 4rem;

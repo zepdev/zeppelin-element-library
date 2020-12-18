@@ -5,19 +5,19 @@ import Icon from '../icon/Icon';
 // take javascript example from https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/listbox/listbox-collapsible.htmla
 
 function SelectPage() {
-  const themes = ['indigo', 'yellow', 'red'];
+  const themes = ['none', 'indigo', 'yellow', 'red'];
   return (
     <>
-      <p style={{ marginBottom: 45 }}>With List</p>
+      <p style={{ marginBottom: 45 }}>Custom Select with list</p>
       {themes.map((elem) => (
         <div
           className={`theme-${elem}`}
-          style={{ marginBottom: 15 }}
+          style={{ marginBottom: 30 }}
           key={elem}
         >
           <div className="zep-select">
             <label id="exp_elem" className="zep-select__label">
-              Label
+              Label theme {elem}
             </label>
             <div id="exp_wrapper">
               <button

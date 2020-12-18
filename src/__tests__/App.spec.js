@@ -13,7 +13,7 @@ it('shows the requested content', () => {
   const wrapper = shallow(<App />);
   const buttons = wrapper.find('#main-navigation button');
 
-  expect(buttons).toHaveLength(14);
+  expect(buttons).toHaveLength(15);
 
   for (let i = 0; i < buttons.length; i++) {
     let btn = buttons.at(i);

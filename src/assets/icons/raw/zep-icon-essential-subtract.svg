@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Essential/Subtract</title>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Overview" transform="translate(-1545.000000, -450.000000)" fill="currentColor">
+            <g id="Icons" transform="translate(368.500000, 100.000000)">
+                <g id="Icon/Essential/Subtract" transform="translate(1176.500000, 350.000000)">
+                    <path d="M21.375,11.375 C21.720178,11.375 22,11.654822 22,12 C22,12.3137982 21.7687421,12.5735831 21.4673579,12.6182234 L21.375,12.625 L2.625,12.625 C2.27982203,12.625 2,12.345178 2,12 C2,11.6862018 2.23125788,11.4264169 2.53264208,11.3817766 L2.625,11.375 L21.375,11.375 Z" id="Subtract"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

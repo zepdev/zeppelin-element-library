@@ -2,20 +2,25 @@
 
 @mixin tag {
   .#{$prefix}tag {
-    @extend %typo-normal-body1;
+    $color: map-deep-get($guidelines, 'color', 'font');
+    @extend .#{$prefix}typo--body-default;
+
     box-sizing: border-box;
     display: inline-block;
     padding: 0.125rem 0.5rem;
     background-color: transparent;
-    color: map-deep-get($guidelines, 'color', 'font');
-    fill: map-deep-get($guidelines, 'color', 'font');
+    color: $color;
+    fill: $color;
+    border: 0.125rem solid $color;
+    cursor: pointer;
+
     @include themify($color_themes) {
-      border: 2px solid themed('primary');
-      &:hover,
-      &:focus,
-      &.#{$prefix}tag--hover {
+      border-color: themed('primary');
+
+      @include hover-supported('focus') {
         color: themed('hover');
         border-color: themed('hover');
+
         .#{$prefix}tag__icon {
           color: themed('hover');
           fill: themed('hover');
@@ -23,8 +28,19 @@
       }
     }
   }
+  .#{$prefix}tag--hover {
+    @include themify($color_themes) {
+      color: themed('hover');
+      border-color: themed('hover');
+
+      .#{$prefix}tag__icon {
+        color: themed('hover');
+        fill: themed('hover');
+      }
+    }
+  }
+
   .#{$prefix}tag__button {
-    cursor: pointer;
     border: none;
     outline: none;
     padding: 0;
@@ -32,10 +48,9 @@
   }
 
   .#{$prefix}tag__icon {
-    width: 12px;
-    height: 12px;
+    width: 0.75rem;
+    height: 0.75rem;
     margin-left: 0.625rem;
-    cursor: pointer;
     @include themify($color_themes) {
       color: themed('primary');
       fill: themed('primary');

@@ -1,15 +1,8 @@
-$min-screensize-map: (
-  xs: 576,
-  s: 768,
-  m: 992,
-  l: 1200,
-  xl: 1680,
-  xxl: 1920
-);
+$min-screensize-map: map-get($guidelines, 'breakpoint');
 
 @mixin breakpoint--min($size) {
   @if map-has-key($min-screensize-map, $size) {
-    @media screen and (min-width: #{map-get($min-screensize-map, $size)}px) {
+    @media screen and (min-width: #{map-get($min-screensize-map, $size)}) {
       @content;
     }
   } @else {
@@ -20,7 +13,7 @@ $min-screensize-map: (
 
 @mixin breakpoint--max($size) {
   @if map-has-key($min-screensize-map, $size) {
-    @media screen and (max-width: #{map-get($min-screensize-map, $size) - 1}px) {
+    @media screen and (max-width: #{map-get($min-screensize-map, $size) - 0.0625em}) {
       @content;
     }
   } @else {
@@ -33,7 +26,7 @@ $min-screensize-map: (
   @if map-has-key($min-screensize-map, $min-size) and
     map-has-key($min-screensize-map, $max-size)
   {
-    @media screen and (min-width: #{map-get($min-screensize-map, $min-size)}px) and (max-width: #{map-get($min-screensize-map, $max-size) - 1}px) {
+    @media screen and (min-width: #{map-get($min-screensize-map, $min-size)}) and (max-width: #{map-get($min-screensize-map, $max-size) - 0.0625em}) {
       @content;
     }
   } @else {
