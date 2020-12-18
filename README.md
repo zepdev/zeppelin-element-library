@@ -96,7 +96,7 @@ There are a few main parts to this project for use in the npm package;
 
 3. Logos - Update logos at src/assets/logos (please add them as a zip file) and 'yarn bundle' will move it to the folder assets/logos/ for you automatically.
 
-4. Icons - Update icons at src/assets/icons/raw and 'yarn svg:update' will prefix, optimize and move them into src/assets/icons/SVG. Also a sprite of all prepared SVGs will be generated at src/assets/icons/sprite. SVG and sprite folders within src/assets/icons/ will then be zipped automatically. By 'yarn bundle' the src/assets/icons/ folder except src/assets/icons/raw will be copied to the folder assets/icons/ which will be part of the npm package and also be available via CDN after deployment.
+4. Icons - Update icons at src/assets/icons/raw and 'yarn svg:update' will prefix, optimize and move them into src/assets/icons/SVG. Please be aware that always the complete icon set is needed in src/assets/icons/raw/. Also a sprite of all prepared SVGs will be generated at src/assets/icons/sprite. By 'yarn bundle' the src/assets/icons/ folder except src/assets/icons/raw will be copied to the folder assets/icons/ which will be part of the npm package and also be available via CDN after deployment. SVG and sprite folders within assets/icons/ will then also be zipped automatically.
 
 5. zel.css - please do not touch this file - This file is made by 'yarn build' and then automatically moved renamed and moved to the main folder by 'yarn bundle' for npm packaging.
 
