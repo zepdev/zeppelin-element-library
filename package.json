@@ -121,9 +121,10 @@
         "collectCoverageFrom": [
             "src/**/*.{js,jsx}",
             "!src/index.js",
+            "!src/setupTests.js",
             "!src/assets",
             "!src/serviceWorker.js",
-            "!src/**/*.min.js/"
+            "!src/**/*.min.js"
         ]
     },
     "devDependencies": {
