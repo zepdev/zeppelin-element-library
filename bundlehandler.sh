@@ -17,7 +17,7 @@ mkdir -p assets/logos
 #create target destination variable
 TARGET_FILE="bundle/zel.css"
 
-# copy build css file from react app build to project root
+# copy build css file from react app build to bundle
 echo -e "\nCopy build css file from react app build to project root"
 find build/static/css -name \*.css -exec cp {} $TARGET_FILE \;
 
@@ -71,8 +71,9 @@ sed -i.bak 's@/static/media/@../assets/fonts/@g' $TARGET_FILE
 rm $TARGET_FILE.bak
 
 # delete hash from font name in css file
+# WARNING: sed does not support PCRE
 echo -e "\nDelete hash from font names in css file"
-for font in eot woff woff2 ttf svg; do
+for font in eot woff ttf svg; do #woff2 matches with woff
   sed -i.bak 's/\(\.\)\(.[^\.]*\)\(\.'$font'\)/\3/g' $TARGET_FILE
 done
 rm $TARGET_FILE.bak
@@ -89,10 +90,6 @@ fi
   cat $TARGET_FILE
 ) >tmpfile
 mv tmpfile $TARGET_FILE
-
-# copy zel.css file from bundle to project root
-echo -e "\nCopy zel.css file from bundle to project root"
-cp -r bundle/zel.css .
 
 # gzip files
 echo -e "\ngzip bundled minified js files"

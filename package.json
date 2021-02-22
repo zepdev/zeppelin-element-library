@@ -14,7 +14,6 @@
     "unpkg": "bundle/zel.min.js",
     "files": [
         "src/*",
-        "dist/*",
         "assets/*",
         "guidelines.json",
         "zel.css"
