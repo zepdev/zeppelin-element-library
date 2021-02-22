@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/zepdev/zeppelin-element-library/compare/v3.0.0...v3.0.1) (2021-02-22)
+
+
+### Bug Fixes
+
+* **bundle:** fix font path and remove zel.css from root ([0ca8e77](https://github.com/zepdev/zeppelin-element-library/commit/0ca8e77b61ac1a0c986d9cb7876f4314d3ff6344))
+
 # [3.0.0](https://github.com/zepdev/zeppelin-element-library/compare/v2.0.2...v3.0.0) (2020-12-18)
 
 
