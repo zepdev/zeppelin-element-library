@@ -5,6 +5,7 @@ function ButtonPage() {
   const themes = ['none', 'indigo', 'yellow', 'red', 'blue'];
   const sizes = ['', 'medium', 'small'];
   const types = ['primary', 'secondary'];
+  const borders = ['round', 'square'];
   return (
     <>
       {types.map((type) => (
@@ -24,17 +25,27 @@ function ButtonPage() {
               <p className="zep-typo--body-default" style={{ marginBottom: 5 }}>
                 Theme {theme}
               </p>
-              {sizes.map((size) => (
-                <a
-                  href="https://www.zeppelin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`zep-button zep-button--${type} zep-button--${size}`}
-                  style={{ margin: 4 }}
-                  key={size}
-                >
-                  {type}
-                </a>
+              {borders.map((border) => (
+                <div style={{ marginBottom: 15 }} key={border}>
+                  <p
+                    className="zep-typo--body-small"
+                    style={{ marginBottom: 5 }}
+                  >
+                    Border {border}
+                  </p>
+                  {sizes.map((size) => (
+                    <a
+                      href="https://www.zeppelin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`zep-button zep-button--${type} zep-button--${size} zep-button--${border}`}
+                      style={{ margin: 4 }}
+                      key={size}
+                    >
+                      {type}
+                    </a>
+                  ))}
+                </div>
               ))}
             </div>
           ))}
@@ -42,17 +53,24 @@ function ButtonPage() {
             <p className="zep-typo--body-default" style={{ marginBottom: 10 }}>
               disabled
             </p>
-            {sizes.map((size2) => (
-              <a
-                href="https://www.zeppelin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`zep-button zep-button--${type} zep-button--${size2} zep-button-${type}--disabled`}
-                style={{ margin: 4 }}
-                key={size2}
-              >
-                {type}
-              </a>
+            {borders.map((border2) => (
+              <div style={{ marginBottom: 15 }} key={border2}>
+                <p className="zep-typo--body-small" style={{ marginBottom: 5 }}>
+                  Border {border2}
+                </p>
+                {sizes.map((size2) => (
+                  <a
+                    href="https://www.zeppelin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`zep-button zep-button--${type} zep-button--${size2} zep-button-${type}--disabled zep-button--${border2}`}
+                    style={{ margin: 4 }}
+                    key={size2}
+                  >
+                    {type}
+                  </a>
+                ))}
+              </div>
             ))}
           </div>
           <p className="zep-typo--headline-5" style={{ marginBottom: 15 }}>
@@ -67,14 +85,24 @@ function ButtonPage() {
               <p className="zep-typo--body-default" style={{ marginBottom: 5 }}>
                 Theme {theme2}
               </p>
-              {sizes.map((size3) => (
-                <button
-                  className={`zep-button zep-button--${type} zep-button--${size3}`}
-                  style={{ margin: 4 }}
-                  key={size3}
-                >
-                  {type}
-                </button>
+              {borders.map((border3) => (
+                <div style={{ marginBottom: 15 }} key={border3}>
+                  <p
+                    className="zep-typo--body-small"
+                    style={{ marginBottom: 5 }}
+                  >
+                    Border {border3}
+                  </p>
+                  {sizes.map((size3) => (
+                    <button
+                      className={`zep-button zep-button--${type} zep-button--${size3} zep-button--${border3}`}
+                      style={{ margin: 4 }}
+                      key={size3}
+                    >
+                      {type}
+                    </button>
+                  ))}
+                </div>
               ))}
             </div>
           ))}
@@ -82,15 +110,22 @@ function ButtonPage() {
             <p className="zep-typo--body-default" style={{ marginBottom: 10 }}>
               disabled
             </p>
-            {sizes.map((size4) => (
-              <button
-                className={`zep-button zep-button--${type} zep-button--${size4}`}
-                style={{ margin: 4 }}
-                key={size4}
-                disabled
-              >
-                {type}
-              </button>
+            {borders.map((border4) => (
+              <div style={{ marginBottom: 15 }} key={border4}>
+                <p className="zep-typo--body-small" style={{ marginBottom: 5 }}>
+                  Border {border4}
+                </p>
+                {sizes.map((size4) => (
+                  <button
+                    className={`zep-button zep-button--${type} zep-button--${size4} zep-button--${border4}`}
+                    style={{ margin: 4 }}
+                    key={size4}
+                    disabled
+                  >
+                    {type}
+                  </button>
+                ))}
+              </div>
             ))}
           </div>
           <p className="zep-typo--headline-5" style={{ marginBottom: 15 }}>

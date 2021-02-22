@@ -23,6 +23,10 @@
     background-color: map-deep-get($guidelines, 'color', 'global', almostWhite);
   }
 
+  .#{$prefix}button--square {
+    border-radius: 0;
+  }
+
   @warn ".#{$prefix}button-primary is deprecated and will be removed in future versions, please use .#{$prefix}button--primary instead";
   .#{$prefix}button-primary,
   .#{$prefix}button--primary {
