@@ -1,6 +1,6 @@
 {
     "name": "zeppelin-element-library",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
     "author": "Joerg Schneider <joerg.schneider@z-lab.com>",
     "license": "SEE LICENSE IN LICENSE",
@@ -14,7 +14,6 @@
     "unpkg": "bundle/zel.min.js",
     "files": [
         "src/*",
-        "dist/*",
         "assets/*",
         "guidelines.json",
         "zel.css"
@@ -121,9 +120,10 @@
         "collectCoverageFrom": [
             "src/**/*.{js,jsx}",
             "!src/index.js",
+            "!src/setupTests.js",
             "!src/assets",
             "!src/serviceWorker.js",
-            "!src/**/*.min.js/"
+            "!src/**/*.min.js"
         ]
     },
     "devDependencies": {
