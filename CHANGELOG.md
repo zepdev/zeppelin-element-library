@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/zepdev/zeppelin-element-library/compare/v3.0.1...v3.1.0) (2021-02-22)
+
+
+### Features
+
+* **button:** add button--square modifier ([b2773ba](https://github.com/zepdev/zeppelin-element-library/commit/b2773ba5d552f7cdb1849dbd60887b8c822dafa5))
+
 ## [3.0.1](https://github.com/zepdev/zeppelin-element-library/compare/v3.0.0...v3.0.1) (2021-02-22)
 
 
