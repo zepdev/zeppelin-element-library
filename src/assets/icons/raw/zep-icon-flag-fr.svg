@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Flag/FR</title>
+    <defs>
+        <rect id="path-1" x="2" y="4.5" width="20" height="15" rx="1"></rect>
+    </defs>
+    <g id="Icon/Flag/FR" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Mask"></g>
+        <g id="France" mask="url(#mask-2)" fill-rule="nonzero">
+            <g transform="translate(2.000000, 4.500000)">
+                <polygon id="#FFFFFF" fill="#FFFFFF" points="0 0 20 0 20 15 0 15"></polygon>
+                <polygon id="#EF4135" fill="#EF4135" points="13.334375 0 20 0 20 15 13.334375 15"></polygon>
+                <polygon id="#0055A4" fill="#0055A4" points="2.66453526e-15 0 6.665625 0 6.665625 15 2.66453526e-15 15"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
