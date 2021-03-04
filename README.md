@@ -80,9 +80,9 @@ To get the JavaScript running, initialize ZEL after the DOM has loaded. Place th
 
 ```html
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        ZEL.init();
-    });
+  document.addEventListener('DOMContentLoaded', function () {
+    ZEL.init();
+  });
 </script>
 ```
 
@@ -98,10 +98,8 @@ There are a few main parts to this project for use in the npm package;
 
 4. Icons - Update icons at src/assets/icons/raw and 'yarn svg:update' will prefix, optimize and move them into src/assets/icons/SVG. Please be aware that always the complete icon set is needed in src/assets/icons/raw/. Also a sprite of all prepared SVGs will be generated at src/assets/icons/sprite. By 'yarn bundle' the src/assets/icons/ folder except src/assets/icons/raw will be copied to the folder assets/icons/ which will be part of the npm package and also be available via CDN after deployment. SVG and sprite folders within assets/icons/ will then also be zipped automatically.
 
-5. zel.css - please do not touch this file - This file is made by 'yarn build' and then automatically moved renamed and moved to the main folder by 'yarn bundle' for npm packaging.
-
-6. guidelines.json - Update this file at src/assets/themes/guidelines.json and it will automatically be moved to the main folder by 'yarn bundle' for npm packings. Please do not touch the guidelines.json file in the root folder. If you make any changes made to src/assets/themes/guideslines.json please make sure to run 'yarn convert' to convert this file to a guidelines.scss file that can be used to make the zeppelin element library css.
+5. guidelines.json - Update this file at src/assets/themes/guidelines.json and it will automatically be moved to the main folder by 'yarn bundle' for npm packings. Please do not touch the guidelines.json file in the root folder. If you make any changes made to src/assets/themes/guideslines.json please make sure to run 'yarn convert' to convert this file to a guidelines.scss file that can be used to make the zeppelin element library css.
 
 Note on 'yarn convert': Nested variables can be accessed as 'map-deep-get(\$guideliness, "breakpoints", "xs")' (see \_variables.scss).
 
-7. bundle - This folder contains all compiled javascript for ZEL. It is made automatically by 'yarn build' and then renamed and moved by 'yarn bundle' for npm packaging.
+6. bundle - This folder contains all compiled javascript for ZEL. It is made automatically by 'yarn build' and then renamed and moved by 'yarn bundle' for npm packaging.

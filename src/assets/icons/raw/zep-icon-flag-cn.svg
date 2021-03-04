@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Flag/CN</title>
+    <defs>
+        <rect id="path-1" x="2" y="4.5" width="20" height="15" rx="1"></rect>
+    </defs>
+    <g id="Icon/Flag/CN" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Mask"></g>
+        <g id="China" mask="url(#mask-2)" fill-rule="nonzero">
+            <g transform="translate(2.000000, 4.500000)">
+                <polygon id="#DE2910" fill="#DE2910" points="0 0 20 0 20 15 0 15"></polygon>
+                <path d="M2.40001687,5.55 L3.75,1.5 L5.09998312,5.55 L1.50002812,3.075 L5.99997187,3.075 L2.40001687,5.55 Z M8.25534247,1.57761735 L6.86603315,1.88548764 L7.79275449,0.805602432 L7.70186243,2.25899205 L6.93087992,0.972296293 L8.25534247,1.57761735 Z M9.65747479,3.35460735 L8.2575096,3.09955284 L9.53050985,2.46360811 L8.883057,3.76799022 L8.67144873,2.28299125 L9.65747479,3.35460735 Z M9.45313272,5.8476303 L8.27891741,5.04378001 L9.70059943,4.98232169 L8.57745296,5.90922452 L8.98989779,4.4670424 L9.45313272,5.8476303 Z M7.68715126,7.47626927 L6.91451739,6.28127662 L8.24962092,6.77368813 L6.8556305,7.19486727 L7.79308434,6.02389319 L7.68715126,7.47626927 Z" id="#FFDE00" fill="#FFDE00"></path>
+            </g>
+        </g>
+    </g>
+</svg>
