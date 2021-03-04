@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/zepdev/zeppelin-element-library/compare/v3.2.0...v3.2.1) (2021-03-04)
+
+
+### Bug Fixes
+
+* **icons:** forgot to build ([4a6e908](https://github.com/zepdev/zeppelin-element-library/commit/4a6e90839cf083de9af287e74e05716bcb25f211))
+
 # [3.2.0](https://github.com/zepdev/zeppelin-element-library/compare/v3.1.0...v3.2.0) (2021-03-04)
 
 
