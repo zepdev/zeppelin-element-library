@@ -1,3 +1,10 @@
+## [3.2.3](https://github.com/zepdev/zeppelin-element-library/compare/v3.2.2...v3.2.3) (2021-03-05)
+
+
+### Bug Fixes
+
+* **bundle:** change files in package.json ([80b5eee](https://github.com/zepdev/zeppelin-element-library/commit/80b5eee2d568bfc980b7c42b873ca7f6189bda31))
+
 ## [3.2.2](https://github.com/zepdev/zeppelin-element-library/compare/v3.2.1...v3.2.2) (2021-03-05)
 
 
