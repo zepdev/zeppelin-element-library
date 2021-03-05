@@ -1,3 +1,10 @@
+## [3.2.2](https://github.com/zepdev/zeppelin-element-library/compare/v3.2.1...v3.2.2) (2021-03-05)
+
+
+### Bug Fixes
+
+* **bundle:** create and deliver scss copy of zel.css for zeppelin.com use case ([4f8d583](https://github.com/zepdev/zeppelin-element-library/commit/4f8d58329f70cc4553d64583206204ae4a20b62f))
+
 ## [3.2.1](https://github.com/zepdev/zeppelin-element-library/compare/v3.2.0...v3.2.1) (2021-03-04)
 
 
