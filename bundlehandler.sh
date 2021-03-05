@@ -22,7 +22,7 @@ echo -e "\nCopy build css file from react app build to bundle folder"
 find build/static/css -name \*.css -exec cp {} $TARGET_FILE \;
 
 # copy guidelines.json file from src to project root
-echo -e "\nCopy zel.css file from bundle to project root"
+echo -e "\nCopy guidelines.json file from src to project root"
 cp -r src/themes/*.json .
 
 # copy fonts into assets folder
@@ -90,6 +90,10 @@ fi
   cat $TARGET_FILE
 ) >tmpfile
 mv tmpfile $TARGET_FILE
+
+# create a scss copy of zel.css (zeppelin.com use case)
+echo -e "\nCreated .scss copy of zel.css"
+cp -r bundle/zel.css bundle/zel.scss
 
 # gzip files
 echo -e "\ngzip bundled minified js files"
