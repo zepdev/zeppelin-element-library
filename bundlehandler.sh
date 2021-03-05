@@ -93,7 +93,7 @@ mv tmpfile $TARGET_FILE
 
 # create a scss copy of zel.css (zeppelin.com use case)
 echo -e "\nCreated .scss copy of zel.css"
-cp -r bundle/zel.css bundle/zel.scss
+cp bundle/zel.css bundle/zel.scss
 
 # gzip files
 echo -e "\ngzip bundled minified js files"

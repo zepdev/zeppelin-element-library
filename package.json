@@ -15,8 +15,8 @@
     "files": [
         "src/*",
         "assets/*",
-        "guidelines.json",
-        "zel.css"
+        "bundle/*",
+        "guidelines.json"
     ],
     "scripts": {
         "start": "react-scripts start",
