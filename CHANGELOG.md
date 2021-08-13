@@ -1,3 +1,15 @@
+# [3.3.0](https://github.com/zepdev/zeppelin-element-library/compare/v3.2.3...v3.3.0) (2021-08-13)
+
+
+### Bug Fixes
+
+* **globals:** remove global svg styles ([c351fc2](https://github.com/zepdev/zeppelin-element-library/commit/c351fc25157c987ac25d0fee0f11e6cb89ca4510))
+
+
+### Features
+
+* **icons:** new icons heart, layout, lock ([397460c](https://github.com/zepdev/zeppelin-element-library/commit/397460cb89f5b7ebafd76272e64a801280be4a45))
+
 ## [3.2.3](https://github.com/zepdev/zeppelin-element-library/compare/v3.2.2...v3.2.3) (2021-03-05)
 
 
