@@ -22,13 +22,9 @@ a {
   cursor: pointer;
 }
 
-svg {
-  width: 32px;
-}
-
 /*
  Hide content (a11y)
- https://snook.ca/archives/html_and_css/hiding-content-for-accessibility 
+ https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 */
 
 .#{$prefix}visually-hidden {
