@@ -1,3 +1,10 @@
+# [3.4.0](https://github.com/zepdev/zeppelin-element-library/compare/v3.3.0...v3.4.0) (2021-11-09)
+
+
+### Features
+
+* **icon:** new icon ([b08751d](https://github.com/zepdev/zeppelin-element-library/commit/b08751d01b9c6358765aaedc53242a6ac0787709))
+
 # [3.3.0](https://github.com/zepdev/zeppelin-element-library/compare/v3.2.3...v3.3.0) (2021-08-13)
 
 
