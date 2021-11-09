@@ -1,169 +1,169 @@
 {
-    "name": "zeppelin-element-library",
-    "version": "3.2.3",
-    "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
-    "author": "Joerg Schneider <joerg.schneider@z-lab.com>",
-    "license": "SEE LICENSE IN LICENSE",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/zepdev/zeppelin-element-library.git"
-    },
-    "main": "bundle/zel.cjs.js",
-    "module": "bundle/zel.esm.js",
-    "browser": "bundle/zel.esm.js",
-    "unpkg": "bundle/zel.min.js",
-    "files": [
-        "src/*",
-        "assets/*",
-        "bundle/*",
-        "guidelines.json"
+  "name": "zeppelin-element-library",
+  "version": "3.3.3",
+  "description": "Zeppelin Elements Library is an element library for digital Zeppelin products.",
+  "author": "Joerg Schneider <joerg.schneider@z-lab.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zepdev/zeppelin-element-library.git"
+  },
+  "main": "bundle/zel.cjs.js",
+  "module": "bundle/zel.esm.js",
+  "browser": "bundle/zel.esm.js",
+  "unpkg": "bundle/zel.min.js",
+  "files": [
+    "src/*",
+    "assets/*",
+    "bundle/*",
+    "guidelines.json"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --coverage -u",
+    "eject": "react-scripts eject",
+    "bundle:js": "node rollup.build.js",
+    "bundle:misc": "./bundlehandler.sh",
+    "bundle": "yarn svg:update && rm -rf bundle && yarn bundle:js && yarn bundle:misc",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "prettier": "prettier src/**/*.js src/**/*.jsx",
+    "publish:check": "semantic-release --no-ci --dry-run",
+    "publish:dev": "yarn publish --tag=next",
+    "sonar-scanner": "sonar-scanner",
+    "lint:eslint": "eslint src/**/*.js src/**/*.jsx",
+    "lint:prettier": "yarn prettier --check",
+    "lint:prettier:fix": "yarn prettier --write",
+    "lint:sonarqube": "yarn lint:eslint -f json -o report.json",
+    "lint": "yarn lint:eslint && yarn lint:prettier",
+    "convert": "json-to-scss --sk='roboto,robotoCondensed,family,font-family,fontfamily,stack,font-stack,fontstack,face,font-face,fontface' src/themes/guidelines.json",
+    "svg:update": "./svghandler.sh"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ],
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test --coverage -u",
-        "eject": "react-scripts eject",
-        "bundle:js": "node rollup.build.js",
-        "bundle:misc": "./bundlehandler.sh",
-        "bundle": "yarn svg:update && rm -rf bundle && yarn bundle:js && yarn bundle:misc",
-        "commit": "git-cz",
-        "semantic-release": "semantic-release",
-        "prettier": "prettier src/**/*.js src/**/*.jsx",
-        "publish:check": "semantic-release --no-ci --dry-run",
-        "publish:dev": "yarn publish --tag=next",
-        "sonar-scanner": "sonar-scanner",
-        "lint:eslint": "eslint src/**/*.js src/**/*.jsx",
-        "lint:prettier": "yarn prettier --check",
-        "lint:prettier:fix": "yarn prettier --write",
-        "lint:sonarqube": "yarn lint:eslint -f json -o report.json",
-        "lint": "yarn lint:eslint && yarn lint:prettier",
-        "convert": "json-to-scss --sk='roboto,robotoCondensed,family,font-family,fontfamily,stack,font-stack,fontstack,face,font-face,fontface' src/themes/guidelines.json",
-        "svg:update": "./svghandler.sh"
-    },
-    "eslintConfig": {
-        "extends": "react-app"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged",
-            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-        }
-    },
-    "lint-staged": {
-        "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-            "prettier --write"
+    "rules": {
+      "header-max-length": [
+        2,
+        "always",
+        200
+      ],
+      "scope-case": [
+        1,
+        "always",
+        [
+          "upper-case",
+          "lower-case",
+          "pascal-case",
+          "start-case"
         ]
-    },
-    "commitlint": {
-        "extends": [
-            "@commitlint/config-conventional"
-        ],
-        "rules": {
-            "header-max-length": [
-                2,
-                "always",
-                200
-            ],
-            "scope-case": [
-                1,
-                "always",
-                [
-                    "upper-case",
-                    "lower-case",
-                    "pascal-case",
-                    "start-case"
-                ]
-            ],
-            "subject-case": [
-                1,
-                "always",
-                [
-                    "sentence-case",
-                    "lower-case",
-                    "start-case"
-                ]
-            ]
-        }
-    },
-    "release": {
-        "branches": [
-            "main",
-            "development"
-        ],
-        "plugins": [
-            "@semantic-release/commit-analyzer",
-            "@semantic-release/release-notes-generator",
-            "@semantic-release/npm",
-            "@semantic-release/github"
-        ],
-        "prepare": [
-            "@semantic-release/changelog",
-            "@semantic-release/npm",
-            {
-                "path": "@semantic-release/git",
-                "assets": [
-                    "package.json",
-                    "package-lock.json",
-                    "CHANGELOG.md"
-                ],
-                "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
-            }
+      ],
+      "subject-case": [
+        1,
+        "always",
+        [
+          "sentence-case",
+          "lower-case",
+          "start-case"
         ]
-    },
-    "browserslist": [
-        ">0.2%",
-        "not dead",
-        "ie 11",
-        "not op_mini all"
+      ]
+    }
+  },
+  "release": {
+    "branches": [
+      "main",
+      "development"
     ],
-    "jest": {
-        "collectCoverageFrom": [
-            "src/**/*.{js,jsx}",
-            "!src/index.js",
-            "!src/setupTests.js",
-            "!src/assets",
-            "!src/serviceWorker.js",
-            "!src/**/*.min.js"
-        ]
-    },
-    "devDependencies": {
-        "@babel/core": "^7.12.7",
-        "@babel/plugin-transform-classes": "^7.12.1",
-        "@babel/preset-env": "^7.12.7",
-        "@commitlint/cli": "^11.0.0",
-        "@commitlint/config-conventional": "^11.0.0",
-        "@semantic-release/changelog": "^5.0.1",
-        "@semantic-release/git": "^9.0.0",
-        "@testing-library/dom": "^7.28.1",
-        "@testing-library/jest-dom": "^5.11.6",
-        "@testing-library/react": "^11.2.2",
-        "commitizen": "^4.2.2",
-        "cz-conventional-changelog": "^3.3.0",
-        "enzyme": "^3.11.0",
-        "enzyme-adapter-react-16": "^1.15.5",
-        "husky": "^4.3.0",
-        "json-to-scss": "^1.6.2",
-        "lint-staged": "^10.5.1",
-        "node-sass": "4.14.1",
-        "prettier": "^2.2.0",
-        "react": "^17.0.1",
-        "react-dom": "^17.0.1",
-        "react-scripts": "^4.0.1",
-        "rollup": "^2.33.3",
-        "rollup-plugin-babel": "^4.4.0",
-        "rollup-plugin-json": "^4.0.0",
-        "rollup-plugin-node-resolve": "^5.2.0",
-        "rollup-plugin-uglify": "^6.0.4",
-        "semantic-release": "^17.3.0",
-        "sonarqube-scanner": "^2.8.0",
-        "spritesh": "^1.2.1",
-        "svgo": "^1.3.2",
-        "svgxuse": "^1.2.6"
-    },
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
-        }
-    },
-    "dependencies": {}
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "package.json",
+          "package-lock.json",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+      }
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "ie 11",
+    "not op_mini all"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js",
+      "!src/setupTests.js",
+      "!src/assets",
+      "!src/serviceWorker.js",
+      "!src/**/*.min.js"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.7",
+    "@babel/plugin-transform-classes": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@testing-library/dom": "^7.28.1",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "husky": "^4.3.0",
+    "json-to-scss": "^1.6.2",
+    "lint-staged": "^10.5.1",
+    "node-sass": "^6.0.1",
+    "prettier": "^2.2.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.1",
+    "rollup": "^2.33.3",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "semantic-release": "^17.3.0",
+    "sonarqube-scanner": "^2.8.0",
+    "spritesh": "^1.2.1",
+    "svgo": "^1.3.2",
+    "svgxuse": "^1.2.6"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {}
 }
