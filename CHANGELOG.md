@@ -1,3 +1,15 @@
+# [3.5.0](https://github.com/zepdev/zeppelin-element-library/compare/v3.4.0...v3.5.0) (2021-11-17)
+
+
+### Bug Fixes
+
+* **icons:** add correct title to icon-essential-configurator ([04f3f5a](https://github.com/zepdev/zeppelin-element-library/commit/04f3f5a0ff89b27bffa8b893ba4853506be740a3))
+
+
+### Features
+
+* **assets:** add fonts with cyrillic charset, update icons ([320fba8](https://github.com/zepdev/zeppelin-element-library/commit/320fba8cf15a3d6ce10edf9072e8999704e42d02))
+
 # [3.4.0](https://github.com/zepdev/zeppelin-element-library/compare/v3.3.0...v3.4.0) (2021-11-09)
 
 
