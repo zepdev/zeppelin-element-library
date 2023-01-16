@@ -1,3 +1,10 @@
+## [3.5.1](https://github.com/zepdev/zeppelin-element-library/compare/v3.5.0...v3.5.1) (2023-01-16)
+
+
+### Bug Fixes
+
+* **fake:** trigger release after changing secrets ([dbcbf2f](https://github.com/zepdev/zeppelin-element-library/commit/dbcbf2f98aea33551f61f31f9d4e561c63cbef76))
+
 # [3.5.0](https://github.com/zepdev/zeppelin-element-library/compare/v3.4.0...v3.5.0) (2021-11-17)
 
 
