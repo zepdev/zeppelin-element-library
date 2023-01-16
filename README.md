@@ -3,7 +3,7 @@
     <img alt="Zeppelin" src="https://s3.eu-central-1.amazonaws.com/com.zeppelin.zds.assets/zel/ZEP_Logo_rgb_DINlang.png" width="200"/>
 </p>
 <h1 style="text-align:center">
-  Zeppelin Element Library
+  Zeppelin Element Library 
 </h1>
 
 <span style="text-align:center">
