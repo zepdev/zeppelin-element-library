@@ -1,12 +1,13 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p style="text-align:center">
+<p align="center">
     <img alt="Zeppelin" src="https://s3.eu-central-1.amazonaws.com/com.zeppelin.zds.assets/zel/ZEP_Logo_rgb_DINlang.png" width="200"/>
 </p>
-<h1 style="text-align:center">
-  Zeppelin Element Library 
+<h1 align="center">
+  Zeppelin Element Library (Legacy)
 </h1>
+<h2 align="center">⚠️ This Design System is deprecated and will be removed in 2024 ⚠️<h2>
 
-<span style="text-align:center">
+<span align="center">
 
 [![CircleCI](https://circleci.com/gh/zepdev/zeppelin-element-library.svg?style=svg&circle-token=8459cd0c2f3c88c2cfde73dc36634f2a4d21f982)](https://circleci.com/gh/zepdev/zeppelin-element-library)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=zepdev_zeppelin-element-library&metric=alert_status)](https://sonarcloud.io/dashboard?id=zepdev_zeppelin-element-library)
