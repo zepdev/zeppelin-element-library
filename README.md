@@ -6,10 +6,8 @@
   Zeppelin Element Library (Legacy)
 </h1>
 <h2 align="center">⚠️ This Design System is deprecated and no longer maintained. npm packges will stay available, but please make sure to opt out until 2025 ⚠️<h2>
-
 <span align="center">
 
-[![CircleCI](https://circleci.com/gh/zepdev/zeppelin-element-library.svg?style=svg&circle-token=8459cd0c2f3c88c2cfde73dc36634f2a4d21f982)](https://circleci.com/gh/zepdev/zeppelin-element-library)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=zepdev_zeppelin-element-library&metric=alert_status)](https://sonarcloud.io/dashboard?id=zepdev_zeppelin-element-library)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=zepdev_zeppelin-element-library&metric=bugs)](https://sonarcloud.io/dashboard?id=zepdev_zeppelin-element-library)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=zepdev_zeppelin-element-library&metric=code_smells)](https://sonarcloud.io/dashboard?id=zepdev_zeppelin-element-library)
