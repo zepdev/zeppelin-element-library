@@ -5,7 +5,7 @@
 <h1 align="center">
   Zeppelin Element Library (Legacy)
 </h1>
-<h2 align="center">⚠️ This Design System is deprecated and will be removed in 2024 ⚠️<h2>
+<h2 align="center">⚠️ This Design System is deprecated and no longer maintained. npm packges will stay available, but please make sure to opt out until 2025 ⚠️<h2>
 
 <span align="center">
 
