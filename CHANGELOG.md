@@ -1,3 +1,10 @@
+## [3.5.2](https://github.com/zepdev/zeppelin-element-library/compare/v3.5.1...v3.5.2) (2023-09-15)
+
+
+### Bug Fixes
+
+* add deprication note - force release ([eba0b5b](https://github.com/zepdev/zeppelin-element-library/commit/eba0b5b815defebde651f42bab59c402ad9120ce))
+
 ## [3.5.1](https://github.com/zepdev/zeppelin-element-library/compare/v3.5.0...v3.5.1) (2023-01-16)
 
 
